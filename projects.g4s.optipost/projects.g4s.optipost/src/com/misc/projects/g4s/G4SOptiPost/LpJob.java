@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getJobsBefore <em>Jobs Before</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#isStartOfMonth <em>Start Of Month</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#isEndOfMonth <em>End Of Month</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpRoot <em>Lp Root</em>}</li>
  * </ul>
  * </p>
  *
@@ -140,5 +141,33 @@ public interface LpJob extends GeneratorTuple {
 	 * @generated
 	 */
 	void setEndOfMonth(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Lp Root</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getJobs <em>Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lp Root</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lp Root</em>' container reference.
+	 * @see #setLpRoot(LpRoot)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_LpRoot()
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getJobs
+	 * @model opposite="Jobs" transient="false"
+	 * @generated
+	 */
+	LpRoot getLpRoot();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpRoot <em>Lp Root</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Lp Root</em>' container reference.
+	 * @see #getLpRoot()
+	 * @generated
+	 */
+	void setLpRoot(LpRoot value);
 
 } // LpJob

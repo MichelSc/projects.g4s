@@ -6,21 +6,15 @@ import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -106,7 +100,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 */
 	public EList<LpOptiPostFlow> getLpOptiPostFlows() {
 		if (lpOptiPostFlows == null) {
-			lpOptiPostFlows = new EObjectContainmentEList<LpOptiPostFlow>(LpOptiPostFlow.class, this, G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS);
+			lpOptiPostFlows = new EObjectContainmentWithInverseEList<LpOptiPostFlow>(LpOptiPostFlow.class, this, G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS, G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO);
 		}
 		return lpOptiPostFlows;
 	}
@@ -142,6 +136,21 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.SCENARIO__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLpOptiPostFlows()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

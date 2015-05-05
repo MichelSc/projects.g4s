@@ -3,18 +3,18 @@
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.common.moplaf.solver.impl.GeneratorImpl;
-
+import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
 
+import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  * </p>
  *
@@ -134,9 +135,9 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		if (newLpRoot != lpRoot) {
 			NotificationChain msgs = null;
 			if (lpRoot != null)
-				msgs = ((InternalEObject)lpRoot).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT, null, msgs);
+				msgs = ((InternalEObject)lpRoot).eInverseRemove(this, G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW, LpRoot.class, msgs);
 			if (newLpRoot != null)
-				msgs = ((InternalEObject)newLpRoot).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT, null, msgs);
+				msgs = ((InternalEObject)newLpRoot).eInverseAdd(this, G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW, LpRoot.class, msgs);
 			msgs = basicSetLpRoot(newLpRoot, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -191,13 +192,90 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Scenario getScenario() {
+		if (eContainerFeatureID() != G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO) return null;
+		return (Scenario)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetScenario(Scenario newScenario, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newScenario, G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScenario(Scenario newScenario) {
+		if (newScenario != eInternalContainer() || (eContainerFeatureID() != G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO && newScenario != null)) {
+			if (EcoreUtil.isAncestor(this, newScenario))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newScenario != null)
+				msgs = ((InternalEObject)newScenario).eInverseAdd(this, G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS, Scenario.class, msgs);
+			msgs = basicSetScenario(newScenario, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO, newScenario, newScenario));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
+				if (lpRoot != null)
+					msgs = ((InternalEObject)lpRoot).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT, null, msgs);
+				return basicSetLpRoot((LpRoot)otherEnd, msgs);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetScenario((Scenario)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				return basicSetLpRoot(null, msgs);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
+				return basicSetScenario(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
+				return eInternalContainer().eInverseRemove(this, G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS, Scenario.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -214,6 +292,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return getMinOverlapPredecessor();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
 				return getMinOverlapSuccessor();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
+				return getScenario();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -234,6 +314,9 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
 				setMinOverlapSuccessor((Float)newValue);
+				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
+				setScenario((Scenario)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -256,6 +339,9 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
 				setMinOverlapSuccessor(MIN_OVERLAP_SUCCESSOR_EDEFAULT);
 				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
+				setScenario((Scenario)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -274,6 +360,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return minOverlapPredecessor != MIN_OVERLAP_PREDECESSOR_EDEFAULT;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
 				return minOverlapSuccessor != MIN_OVERLAP_SUCCESSOR_EDEFAULT;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
+				return getScenario() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -294,6 +382,13 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		result.append(minOverlapSuccessor);
 		result.append(')');
 		return result.toString();
+	}
+
+	@Override
+	public void generateRootTuples() {
+		LpRoot tupleroot = G4SOptiPostFactory.eINSTANCE.createLpRoot();
+		tupleroot.setCode("root");
+		this.setLpRoot(tupleroot); // owning
 	}
 
 } //LpOptiPostFlowImpl

@@ -378,6 +378,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLpOptiPostFlow_Scenario() {
+		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLpRoot() {
 		return lpRootEClass;
 	}
@@ -398,6 +407,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 */
 	public EReference getLpRoot_Jobs() {
 		return (EReference)lpRootEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLpRoot_LpOptiPostFlow() {
+		return (EReference)lpRootEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -459,6 +477,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLpJob_LpRoot() {
+		return (EReference)lpJobEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLpPrecedence() {
 		return lpPrecedenceEClass;
 	}
@@ -479,6 +506,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 */
 	public EReference getLpPrecedence_JobAfter() {
 		return (EReference)lpPrecedenceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLpPrecedence_LpRoot() {
+		return (EReference)lpPrecedenceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -538,10 +574,12 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__LP_ROOT);
 		createEAttribute(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR);
 		createEAttribute(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR);
+		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__SCENARIO);
 
 		lpRootEClass = createEClass(LP_ROOT);
 		createEReference(lpRootEClass, LP_ROOT__PRECEDENCES);
 		createEReference(lpRootEClass, LP_ROOT__JOBS);
+		createEReference(lpRootEClass, LP_ROOT__LP_OPTI_POST_FLOW);
 
 		lpJobEClass = createEClass(LP_JOB);
 		createEReference(lpJobEClass, LP_JOB__SHIFT);
@@ -549,10 +587,12 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpJobEClass, LP_JOB__JOBS_BEFORE);
 		createEAttribute(lpJobEClass, LP_JOB__START_OF_MONTH);
 		createEAttribute(lpJobEClass, LP_JOB__END_OF_MONTH);
+		createEReference(lpJobEClass, LP_JOB__LP_ROOT);
 
 		lpPrecedenceEClass = createEClass(LP_PRECEDENCE);
 		createEReference(lpPrecedenceEClass, LP_PRECEDENCE__JOB_BEFORE);
 		createEReference(lpPrecedenceEClass, LP_PRECEDENCE__JOB_AFTER);
+		createEReference(lpPrecedenceEClass, LP_PRECEDENCE__LP_ROOT);
 	}
 
 	/**
@@ -613,18 +653,20 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getLocation_LocationID(), ecorePackage.getEString(), "LocationID", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScenario_LpOptiPostFlows(), this.getLpOptiPostFlow(), null, "LpOptiPostFlows", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_LpOptiPostFlows(), this.getLpOptiPostFlow(), this.getLpOptiPostFlow_Scenario(), "LpOptiPostFlows", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_SelectedShifts(), this.getShift(), null, "SelectedShifts", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpOptiPostFlowEClass, LpOptiPostFlow.class, "LpOptiPostFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), null, "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), this.getLpRoot_LpOptiPostFlow(), "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLpOptiPostFlow_MinOverlapPredecessor(), ecorePackage.getEFloat(), "MinOverlapPredecessor", "0.25", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLpOptiPostFlow_MinOverlapSuccessor(), ecorePackage.getEFloat(), "MinOverlapSuccessor", "0.25", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpOptiPostFlow_Scenario(), this.getScenario(), this.getScenario_LpOptiPostFlows(), "Scenario", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpRootEClass, LpRoot.class, "LpRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLpRoot_Precedences(), this.getLpPrecedence(), null, "Precedences", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLpRoot_Jobs(), this.getLpJob(), null, "Jobs", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpRoot_Precedences(), this.getLpPrecedence(), this.getLpPrecedence_LpRoot(), "Precedences", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpRoot_Jobs(), this.getLpJob(), this.getLpJob_LpRoot(), "Jobs", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpRoot_LpOptiPostFlow(), this.getLpOptiPostFlow(), this.getLpOptiPostFlow_LpRoot(), "LpOptiPostFlow", null, 0, 1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpJobEClass, LpJob.class, "LpJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpJob_Shift(), this.getShift(), null, "Shift", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -632,10 +674,12 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpJob_JobsBefore(), this.getLpPrecedence(), this.getLpPrecedence_JobAfter(), "JobsBefore", null, 0, -1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLpJob_StartOfMonth(), ecorePackage.getEBoolean(), "StartOfMonth", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLpJob_EndOfMonth(), ecorePackage.getEBoolean(), "EndOfMonth", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpJob_LpRoot(), this.getLpRoot(), this.getLpRoot_Jobs(), "LpRoot", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpPrecedenceEClass, LpPrecedence.class, "LpPrecedence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpPrecedence_JobBefore(), this.getLpJob(), this.getLpJob_JobsAfter(), "JobBefore", null, 1, 1, LpPrecedence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpPrecedence_JobAfter(), this.getLpJob(), this.getLpJob_JobsBefore(), "JobAfter", null, 1, 1, LpPrecedence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpPrecedence_LpRoot(), this.getLpRoot(), this.getLpRoot_Precedences(), "LpRoot", null, 0, 1, LpPrecedence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

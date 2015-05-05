@@ -14,6 +14,7 @@ import com.misc.common.moplaf.solver.GeneratorTuple;
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobBefore <em>Job Before</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter <em>Job After</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot <em>Lp Root</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,5 +78,33 @@ public interface LpPrecedence extends GeneratorTuple {
 	 * @generated
 	 */
 	void setJobAfter(LpJob value);
+
+	/**
+	 * Returns the value of the '<em><b>Lp Root</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getPrecedences <em>Precedences</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lp Root</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lp Root</em>' container reference.
+	 * @see #setLpRoot(LpRoot)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpPrecedence_LpRoot()
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getPrecedences
+	 * @model opposite="Precedences" transient="false"
+	 * @generated
+	 */
+	LpRoot getLpRoot();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot <em>Lp Root</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Lp Root</em>' container reference.
+	 * @see #getLpRoot()
+	 * @generated
+	 */
+	void setLpRoot(LpRoot value);
 
 } // LpPrecedence

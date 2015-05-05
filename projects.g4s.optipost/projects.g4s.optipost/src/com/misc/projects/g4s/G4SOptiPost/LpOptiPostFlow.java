@@ -15,6 +15,7 @@ import com.misc.common.moplaf.solver.Generator;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,6 +26,7 @@ import com.misc.common.moplaf.solver.Generator;
 public interface LpOptiPostFlow extends Generator {
 	/**
 	 * Returns the value of the '<em><b>Lp Root</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Lp Root</em>' containment reference isn't clear,
@@ -34,7 +36,8 @@ public interface LpOptiPostFlow extends Generator {
 	 * @return the value of the '<em>Lp Root</em>' containment reference.
 	 * @see #setLpRoot(LpRoot)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_LpRoot()
-	 * @model containment="true"
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpOptiPostFlow
+	 * @model opposite="LpOptiPostFlow" containment="true"
 	 * @generated
 	 */
 	LpRoot getLpRoot();
@@ -102,5 +105,33 @@ public interface LpOptiPostFlow extends Generator {
 	 * @generated
 	 */
 	void setMinOverlapSuccessor(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getLpOptiPostFlows <em>Lp Opti Post Flows</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Scenario</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario</em>' container reference.
+	 * @see #setScenario(Scenario)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_Scenario()
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getLpOptiPostFlows
+	 * @model opposite="LpOptiPostFlows" transient="false"
+	 * @generated
+	 */
+	Scenario getScenario();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scenario</em>' container reference.
+	 * @see #getScenario()
+	 * @generated
+	 */
+	void setScenario(Scenario value);
 
 } // LpOptiPostFlow

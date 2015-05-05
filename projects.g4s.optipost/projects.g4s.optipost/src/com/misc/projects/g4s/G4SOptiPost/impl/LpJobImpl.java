@@ -7,6 +7,7 @@ import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
+import com.misc.projects.g4s.G4SOptiPost.LpRoot;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
 
 import java.util.Collection;
@@ -22,6 +23,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -36,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getJobsBefore <em>Jobs Before</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#isStartOfMonth <em>Start Of Month</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#isEndOfMonth <em>End Of Month</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getLpRoot <em>Lp Root</em>}</li>
  * </ul>
  * </p>
  *
@@ -240,6 +243,47 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public LpRoot getLpRoot() {
+		if (eContainerFeatureID() != G4SOptiPostPackage.LP_JOB__LP_ROOT) return null;
+		return (LpRoot)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLpRoot(LpRoot newLpRoot, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newLpRoot, G4SOptiPostPackage.LP_JOB__LP_ROOT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLpRoot(LpRoot newLpRoot) {
+		if (newLpRoot != eInternalContainer() || (eContainerFeatureID() != G4SOptiPostPackage.LP_JOB__LP_ROOT && newLpRoot != null)) {
+			if (EcoreUtil.isAncestor(this, newLpRoot))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newLpRoot != null)
+				msgs = ((InternalEObject)newLpRoot).eInverseAdd(this, G4SOptiPostPackage.LP_ROOT__JOBS, LpRoot.class, msgs);
+			msgs = basicSetLpRoot(newLpRoot, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__LP_ROOT, newLpRoot, newLpRoot));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -248,6 +292,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJobsAfter()).basicAdd(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJobsBefore()).basicAdd(otherEnd, msgs);
+			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetLpRoot((LpRoot)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -264,8 +312,24 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return ((InternalEList<?>)getJobsAfter()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
 				return ((InternalEList<?>)getJobsBefore()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
+				return basicSetLpRoot(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
+				return eInternalContainer().eInverseRemove(this, G4SOptiPostPackage.LP_ROOT__JOBS, LpRoot.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -287,6 +351,8 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return isStartOfMonth();
 			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
 				return isEndOfMonth();
+			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
+				return getLpRoot();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,6 +383,9 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
 				setEndOfMonth((Boolean)newValue);
 				return;
+			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
+				setLpRoot((LpRoot)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -344,6 +413,9 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
 				setEndOfMonth(END_OF_MONTH_EDEFAULT);
 				return;
+			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
+				setLpRoot((LpRoot)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -366,6 +438,8 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return startOfMonth != START_OF_MONTH_EDEFAULT;
 			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
 				return endOfMonth != END_OF_MONTH_EDEFAULT;
+			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
+				return getLpRoot() != null;
 		}
 		return super.eIsSet(featureID);
 	}

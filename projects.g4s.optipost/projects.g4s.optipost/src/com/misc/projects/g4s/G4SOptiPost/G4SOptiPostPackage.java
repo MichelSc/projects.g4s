@@ -497,13 +497,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__SCENARIO = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Lp Opti Post Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
+	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Generate</em>' operation.
@@ -669,13 +678,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT__JOBS = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Lp Opti Post Flow</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_ROOT__LP_OPTI_POST_FLOW = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Lp Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
+	int LP_ROOT_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -841,13 +859,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB__END_OF_MONTH = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Lp Root</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB__LP_ROOT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Lp Job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 5;
+	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -986,13 +1013,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE__JOB_AFTER = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Lp Root</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_PRECEDENCE__LP_ROOT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Lp Precedence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_PRECEDENCE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
+	int LP_PRECEDENCE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1308,6 +1344,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getLpOptiPostFlow_MinOverlapSuccessor();
 
 	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Scenario</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario()
+	 * @see #getLpOptiPostFlow()
+	 * @generated
+	 */
+	EReference getLpOptiPostFlow_Scenario();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot <em>Lp Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1338,6 +1385,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpRoot_Jobs();
+
+	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Lp Opti Post Flow</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpOptiPostFlow()
+	 * @see #getLpRoot()
+	 * @generated
+	 */
+	EReference getLpRoot_LpOptiPostFlow();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpJob <em>Lp Job</em>}'.
@@ -1405,6 +1463,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getLpJob_EndOfMonth();
 
 	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpRoot <em>Lp Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Lp Root</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpJob#getLpRoot()
+	 * @see #getLpJob()
+	 * @generated
+	 */
+	EReference getLpJob_LpRoot();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence <em>Lp Precedence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1435,6 +1504,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpPrecedence_JobAfter();
+
+	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot <em>Lp Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Lp Root</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot()
+	 * @see #getLpPrecedence()
+	 * @generated
+	 */
+	EReference getLpPrecedence_LpRoot();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1664,6 +1744,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		EAttribute LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR = eINSTANCE.getLpOptiPostFlow_MinOverlapSuccessor();
 
 		/**
+		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_OPTI_POST_FLOW__SCENARIO = eINSTANCE.getLpOptiPostFlow_Scenario();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl <em>Lp Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1688,6 +1776,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_ROOT__JOBS = eINSTANCE.getLpRoot_Jobs();
+
+		/**
+		 * The meta object literal for the '<em><b>Lp Opti Post Flow</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_ROOT__LP_OPTI_POST_FLOW = eINSTANCE.getLpRoot_LpOptiPostFlow();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl <em>Lp Job</em>}' class.
@@ -1740,6 +1836,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		EAttribute LP_JOB__END_OF_MONTH = eINSTANCE.getLpJob_EndOfMonth();
 
 		/**
+		 * The meta object literal for the '<em><b>Lp Root</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_JOB__LP_ROOT = eINSTANCE.getLpJob_LpRoot();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl <em>Lp Precedence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1764,6 +1868,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_PRECEDENCE__JOB_AFTER = eINSTANCE.getLpPrecedence_JobAfter();
+
+		/**
+		 * The meta object literal for the '<em><b>Lp Root</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_PRECEDENCE__LP_ROOT = eINSTANCE.getLpPrecedence_LpRoot();
 
 	}
 

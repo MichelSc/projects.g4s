@@ -6,17 +6,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
-
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-
 import org.eclipse.emf.edit.ui.action.ControlAction;
 import org.eclipse.emf.edit.ui.action.CreateChildAction;
 import org.eclipse.emf.edit.ui.action.CreateSiblingAction;
 import org.eclipse.emf.edit.ui.action.EditingDomainActionBarContributor;
 import org.eclipse.emf.edit.ui.action.LoadResourceAction;
 import org.eclipse.emf.edit.ui.action.ValidateAction;
-
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IAction;
@@ -28,16 +25,15 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.SubContributionItem;
-
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.Viewer;
-
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
+
 
 /**
  * This is the action bar contributor for the G4SOptiPost model editor.
@@ -116,6 +112,13 @@ public class G4SOptiPostActionBarContributor
 	 * @generated
 	 */
 	protected Collection<IAction> createChildActions;
+
+	/**
+	 * This action runs the object
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	protected RunAction runAction = new RunAction();
 
 	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
@@ -244,7 +247,6 @@ public class G4SOptiPostActionBarContributor
 	 * that can be added to the selected object and updating the menus accordingly.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public void selectionChanged(SelectionChangedEvent event) {
 		// Remove any menu items for old selection.
@@ -284,7 +286,9 @@ public class G4SOptiPostActionBarContributor
 			populateManager(createSiblingMenuManager, createSiblingActions, null);
 			createSiblingMenuManager.update(true);
 		}
-	}
+
+		this.runAction   .selectionChanged(activeEditorPart, selection);
+}
 
 	/**
 	 * This generates a {@link org.eclipse.emf.edit.ui.action.CreateChildAction} for each object in <code>descriptors</code>,
@@ -376,7 +380,6 @@ public class G4SOptiPostActionBarContributor
 	 * This populates the pop-up menu before it appears.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void menuAboutToShow(IMenuManager menuManager) {
@@ -390,7 +393,11 @@ public class G4SOptiPostActionBarContributor
 		submenuManager = new MenuManager(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
-	}
+
+		submenuManager = new MenuManager("G4S");
+		menuManager.insertBefore("edit", submenuManager);
+		submenuManager.add(this.runAction);
+}
 
 	/**
 	 * This inserts global actions before the "additions-end" separator.
