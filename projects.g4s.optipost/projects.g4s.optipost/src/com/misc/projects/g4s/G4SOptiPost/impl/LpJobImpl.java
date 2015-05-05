@@ -1,0 +1,391 @@
+/**
+ */
+package com.misc.projects.g4s.G4SOptiPost.impl;
+
+import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
+
+import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.LpJob;
+import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
+import com.misc.projects.g4s.G4SOptiPost.Shift;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Lp Job</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getShift <em>Shift</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getJobsAfter <em>Jobs After</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getJobsBefore <em>Jobs Before</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#isStartOfMonth <em>Start Of Month</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#isEndOfMonth <em>End Of Month</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
+	/**
+	 * The cached value of the '{@link #getShift() <em>Shift</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShift()
+	 * @generated
+	 * @ordered
+	 */
+	protected Shift shift;
+
+	/**
+	 * The cached value of the '{@link #getJobsAfter() <em>Jobs After</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobsAfter()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LpPrecedence> jobsAfter;
+
+	/**
+	 * The cached value of the '{@link #getJobsBefore() <em>Jobs Before</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobsBefore()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LpPrecedence> jobsBefore;
+
+	/**
+	 * The default value of the '{@link #isStartOfMonth() <em>Start Of Month</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isStartOfMonth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean START_OF_MONTH_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isStartOfMonth() <em>Start Of Month</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isStartOfMonth()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean startOfMonth = START_OF_MONTH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isEndOfMonth() <em>End Of Month</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEndOfMonth()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean END_OF_MONTH_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isEndOfMonth() <em>End Of Month</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isEndOfMonth()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean endOfMonth = END_OF_MONTH_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LpJobImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return G4SOptiPostPackage.Literals.LP_JOB;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shift getShift() {
+		if (shift != null && shift.eIsProxy()) {
+			InternalEObject oldShift = (InternalEObject)shift;
+			shift = (Shift)eResolveProxy(oldShift);
+			if (shift != oldShift) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, G4SOptiPostPackage.LP_JOB__SHIFT, oldShift, shift));
+			}
+		}
+		return shift;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Shift basicGetShift() {
+		return shift;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setShift(Shift newShift) {
+		Shift oldShift = shift;
+		shift = newShift;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__SHIFT, oldShift, shift));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<LpPrecedence> getJobsAfter() {
+		if (jobsAfter == null) {
+			jobsAfter = new EObjectWithInverseResolvingEList<LpPrecedence>(LpPrecedence.class, this, G4SOptiPostPackage.LP_JOB__JOBS_AFTER, G4SOptiPostPackage.LP_PRECEDENCE__JOB_BEFORE);
+		}
+		return jobsAfter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<LpPrecedence> getJobsBefore() {
+		if (jobsBefore == null) {
+			jobsBefore = new EObjectWithInverseResolvingEList<LpPrecedence>(LpPrecedence.class, this, G4SOptiPostPackage.LP_JOB__JOBS_BEFORE, G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER);
+		}
+		return jobsBefore;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isStartOfMonth() {
+		return startOfMonth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setStartOfMonth(boolean newStartOfMonth) {
+		boolean oldStartOfMonth = startOfMonth;
+		startOfMonth = newStartOfMonth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__START_OF_MONTH, oldStartOfMonth, startOfMonth));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isEndOfMonth() {
+		return endOfMonth;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEndOfMonth(boolean newEndOfMonth) {
+		boolean oldEndOfMonth = endOfMonth;
+		endOfMonth = newEndOfMonth;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__END_OF_MONTH, oldEndOfMonth, endOfMonth));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_JOB__JOBS_AFTER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJobsAfter()).basicAdd(otherEnd, msgs);
+			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJobsBefore()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_JOB__JOBS_AFTER:
+				return ((InternalEList<?>)getJobsAfter()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
+				return ((InternalEList<?>)getJobsBefore()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_JOB__SHIFT:
+				if (resolve) return getShift();
+				return basicGetShift();
+			case G4SOptiPostPackage.LP_JOB__JOBS_AFTER:
+				return getJobsAfter();
+			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
+				return getJobsBefore();
+			case G4SOptiPostPackage.LP_JOB__START_OF_MONTH:
+				return isStartOfMonth();
+			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
+				return isEndOfMonth();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_JOB__SHIFT:
+				setShift((Shift)newValue);
+				return;
+			case G4SOptiPostPackage.LP_JOB__JOBS_AFTER:
+				getJobsAfter().clear();
+				getJobsAfter().addAll((Collection<? extends LpPrecedence>)newValue);
+				return;
+			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
+				getJobsBefore().clear();
+				getJobsBefore().addAll((Collection<? extends LpPrecedence>)newValue);
+				return;
+			case G4SOptiPostPackage.LP_JOB__START_OF_MONTH:
+				setStartOfMonth((Boolean)newValue);
+				return;
+			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
+				setEndOfMonth((Boolean)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_JOB__SHIFT:
+				setShift((Shift)null);
+				return;
+			case G4SOptiPostPackage.LP_JOB__JOBS_AFTER:
+				getJobsAfter().clear();
+				return;
+			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
+				getJobsBefore().clear();
+				return;
+			case G4SOptiPostPackage.LP_JOB__START_OF_MONTH:
+				setStartOfMonth(START_OF_MONTH_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
+				setEndOfMonth(END_OF_MONTH_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_JOB__SHIFT:
+				return shift != null;
+			case G4SOptiPostPackage.LP_JOB__JOBS_AFTER:
+				return jobsAfter != null && !jobsAfter.isEmpty();
+			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
+				return jobsBefore != null && !jobsBefore.isEmpty();
+			case G4SOptiPostPackage.LP_JOB__START_OF_MONTH:
+				return startOfMonth != START_OF_MONTH_EDEFAULT;
+			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
+				return endOfMonth != END_OF_MONTH_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (StartOfMonth: ");
+		result.append(startOfMonth);
+		result.append(", EndOfMonth: ");
+		result.append(endOfMonth);
+		result.append(')');
+		return result.toString();
+	}
+
+} //LpJobImpl

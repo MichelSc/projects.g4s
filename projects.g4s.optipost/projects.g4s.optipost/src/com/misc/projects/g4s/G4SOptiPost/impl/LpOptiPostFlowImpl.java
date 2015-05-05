@@ -1,0 +1,299 @@
+/**
+ */
+package com.misc.projects.g4s.G4SOptiPost.impl;
+
+import com.misc.common.moplaf.solver.impl.GeneratorImpl;
+
+import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
+import com.misc.projects.g4s.G4SOptiPost.LpRoot;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Lp Opti Post Flow</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getLpRoot <em>Lp Root</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @generated
+ */
+public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow {
+	/**
+	 * The cached value of the '{@link #getLpRoot() <em>Lp Root</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLpRoot()
+	 * @generated
+	 * @ordered
+	 */
+	protected LpRoot lpRoot;
+
+	/**
+	 * The default value of the '{@link #getMinOverlapPredecessor() <em>Min Overlap Predecessor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinOverlapPredecessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float MIN_OVERLAP_PREDECESSOR_EDEFAULT = 0.25F;
+
+	/**
+	 * The cached value of the '{@link #getMinOverlapPredecessor() <em>Min Overlap Predecessor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinOverlapPredecessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected float minOverlapPredecessor = MIN_OVERLAP_PREDECESSOR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMinOverlapSuccessor() <em>Min Overlap Successor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinOverlapSuccessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float MIN_OVERLAP_SUCCESSOR_EDEFAULT = 0.25F;
+
+	/**
+	 * The cached value of the '{@link #getMinOverlapSuccessor() <em>Min Overlap Successor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinOverlapSuccessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected float minOverlapSuccessor = MIN_OVERLAP_SUCCESSOR_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LpOptiPostFlowImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LpRoot getLpRoot() {
+		return lpRoot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLpRoot(LpRoot newLpRoot, NotificationChain msgs) {
+		LpRoot oldLpRoot = lpRoot;
+		lpRoot = newLpRoot;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT, oldLpRoot, newLpRoot);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLpRoot(LpRoot newLpRoot) {
+		if (newLpRoot != lpRoot) {
+			NotificationChain msgs = null;
+			if (lpRoot != null)
+				msgs = ((InternalEObject)lpRoot).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT, null, msgs);
+			if (newLpRoot != null)
+				msgs = ((InternalEObject)newLpRoot).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT, null, msgs);
+			msgs = basicSetLpRoot(newLpRoot, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT, newLpRoot, newLpRoot));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public float getMinOverlapPredecessor() {
+		return minOverlapPredecessor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinOverlapPredecessor(float newMinOverlapPredecessor) {
+		float oldMinOverlapPredecessor = minOverlapPredecessor;
+		minOverlapPredecessor = newMinOverlapPredecessor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR, oldMinOverlapPredecessor, minOverlapPredecessor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public float getMinOverlapSuccessor() {
+		return minOverlapSuccessor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinOverlapSuccessor(float newMinOverlapSuccessor) {
+		float oldMinOverlapSuccessor = minOverlapSuccessor;
+		minOverlapSuccessor = newMinOverlapSuccessor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR, oldMinOverlapSuccessor, minOverlapSuccessor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
+				return basicSetLpRoot(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
+				return getLpRoot();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
+				return getMinOverlapPredecessor();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
+				return getMinOverlapSuccessor();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
+				setLpRoot((LpRoot)newValue);
+				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
+				setMinOverlapPredecessor((Float)newValue);
+				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
+				setMinOverlapSuccessor((Float)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
+				setLpRoot((LpRoot)null);
+				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
+				setMinOverlapPredecessor(MIN_OVERLAP_PREDECESSOR_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
+				setMinOverlapSuccessor(MIN_OVERLAP_SUCCESSOR_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
+				return lpRoot != null;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
+				return minOverlapPredecessor != MIN_OVERLAP_PREDECESSOR_EDEFAULT;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
+				return minOverlapSuccessor != MIN_OVERLAP_SUCCESSOR_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (MinOverlapPredecessor: ");
+		result.append(minOverlapPredecessor);
+		result.append(", MinOverlapSuccessor: ");
+		result.append(minOverlapSuccessor);
+		result.append(')');
+		return result.toString();
+	}
+
+} //LpOptiPostFlowImpl

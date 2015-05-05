@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.g4s.optipost/src" modelPluginID="projects.g4s.optipost"
+    modelName="G4SOptiPost" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>G4SOptiPost.ecore</foreignModel>
+  <genPackages prefix="G4SOptiPost" basePackage="com.misc.projects.g4s" disposableProviderFactory="true"
+      ecorePackage="G4SOptiPost.ecore#/">
+    <genClasses ecoreClass="G4SOptiPost.ecore#//Domain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/SubDomains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Shifts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Employees"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Locations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Scenarios"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Domain/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//Shift">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Shift/Location"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Shift/Employee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Shift/ShiftStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Shift/ShiftEnd"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//Employee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Employee/EmployeeID"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Location/LocationID"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//Scenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/LpOptiPostFlows"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/SelectedShifts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapPredecessor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapSuccessor"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//LpRoot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/Precedences"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/Jobs"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//LpJob">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpJob/Shift"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpJob/JobsAfter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpJob/JobsBefore"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpJob/StartOfMonth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpJob/EndOfMonth"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//LpPrecedence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpPrecedence/JobBefore"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpPrecedence/JobAfter"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated G4SOptiPost -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostModelWizardID"
+            name="%_UI_G4SOptiPostModelWizard_label"
+            class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/G4SOptiPostModelFile.gif">
+         <description>%_UI_G4SOptiPostModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated G4SOptiPost -->
+      <editor
+            id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorID"
+            name="%_UI_G4SOptiPostEditor_label"
+            icon="icons/full/obj16/G4SOptiPostModelFile.gif"
+            extensions="g4soptipost"
+            class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditor"
+            contributorClass="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
