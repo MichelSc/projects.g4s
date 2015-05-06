@@ -335,7 +335,7 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 		this.generatePrecedences();
 	}
 	
-    public void generateJobs() {
+    private void generateJobs() {
 		HashMap<Employee, LpEmployee> employees = new HashMap<Employee, LpEmployee>();
 		// Jobs
 		LpRoot root = this;
@@ -363,7 +363,7 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@SuppressWarnings("serial")
 	private class JobSet extends HashSet<LpJob>{};
 
-	void generatePrecedences(){
+	private void generatePrecedences(){
 		HashMap<Location, JobSet> jobsAtLocation = new HashMap<Location, JobSet>();
 		
 		for ( LpJob job : this.getJobs()){
@@ -383,8 +383,9 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	}
 
 	
-	void generatePrecedences(JobSet jobSet){
+	private void generatePrecedences(JobSet jobSet){
 		if ( jobSet.size()==0 ) { return; }
+		
 		List< LpJob > starts = new ArrayList< LpJob >( jobSet);
 		Collections.sort( starts, new Comparator< LpJob >( ){
 			@Override
@@ -404,24 +405,29 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 			}} );
 		
 		Iterator<LpJob> startIterator = starts.iterator();
-		Iterator<LpJob> endIterator   = starts.iterator();
+		Iterator<LpJob> endIterator   = ends  .iterator();
 		
 		LpJob nextStart = startIterator.next(); // first
-		LpJob nextEnd   = endIterator.next();   // first
+		LpJob nextEnd   = endIterator  .next(); // first
 		
 		JobSet currentJobs = new JobSet();
 		
 		boolean finished = false;
 		while ( ! finished  ){
-			if ( nextStart.getShift().getShiftStart().compareTo(nextEnd.getShift().getShiftEnd())>0) {
+			if ( nextStart == null
+			||	nextStart.getShift().getShiftStart().compareTo(nextEnd.getShift().getShiftEnd())>0) {
 				// next end qualifies as new event
 				LpJob jobLeaving = nextEnd;
 				currentJobs.remove(jobLeaving);
 				// loop control
-				nextEnd = endIterator.next();
+				if ( endIterator.hasNext() ){
+					nextEnd = endIterator.next();
+				} else {
+					finished = true;
+				}
 			}
 			else {
-				// start qualifies as new event
+				// next start qualifies as new event
 				LpJob jobEntering = nextStart;
 				for ( LpJob currentJob : currentJobs){
 					this.createPrecedence(currentJob, jobEntering);
@@ -430,15 +436,14 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 				// loop control
 				if ( startIterator.hasNext()){
 					nextStart = startIterator.next();
-					// start enters the overlappers
 				} else {
-					finished = true;
+					nextStart = null; // after last
 				}
 			} 
 		} // iterate
 	}  // method
 	
-	void createPrecedence(LpJob jobStartBefore, LpJob jobStartAfter){
+	private void createPrecedence(LpJob jobStartBefore, LpJob jobStartAfter){
 		// assert jobs at the same location
 		// assert jobs are overlapping
 		// assert couple of jobs will not be presented twice
