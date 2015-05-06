@@ -108,6 +108,10 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 				return createLpPrecedenceAdapter();
 			}
 			@Override
+			public Adapter caseLpEmployee(LpEmployee object) {
+				return createLpEmployeeAdapter();
+			}
+			@Override
 			public Adapter caseGenerator(Generator object) {
 				return createGeneratorAdapter();
 			}
@@ -262,6 +266,20 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLpPrecedenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee <em>Lp Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee
+	 * @generated
+	 */
+	public Adapter createLpEmployeeAdapter() {
 		return null;
 	}
 

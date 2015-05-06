@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.misc.projects.g4s.G4SOptiPost.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

@@ -65,6 +65,7 @@ public class G4SOptiPostFactoryImpl extends EFactoryImpl implements G4SOptiPostF
 			case G4SOptiPostPackage.LP_ROOT: return createLpRoot();
 			case G4SOptiPostPackage.LP_JOB: return createLpJob();
 			case G4SOptiPostPackage.LP_PRECEDENCE: return createLpPrecedence();
+			case G4SOptiPostPackage.LP_EMPLOYEE: return createLpEmployee();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -158,6 +159,16 @@ public class G4SOptiPostFactoryImpl extends EFactoryImpl implements G4SOptiPostF
 	public LpPrecedence createLpPrecedence() {
 		LpPrecedenceImpl lpPrecedence = new LpPrecedenceImpl();
 		return lpPrecedence;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LpEmployee createLpEmployee() {
+		LpEmployeeImpl lpEmployee = new LpEmployeeImpl();
+		return lpEmployee;
 	}
 
 	/**

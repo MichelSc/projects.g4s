@@ -5,6 +5,7 @@ package com.misc.projects.g4s.G4SOptiPost.impl;
 import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
 import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getPrecedences <em>Precedences</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getJobs <em>Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getLpEmployee <em>Lp Employee</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +61,16 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	 * @ordered
 	 */
 	protected EList<LpJob> jobs;
+
+	/**
+	 * The cached value of the '{@link #getLpEmployee() <em>Lp Employee</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLpEmployee()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LpEmployee> lpEmployee;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +161,18 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<LpEmployee> getLpEmployee() {
+		if (lpEmployee == null) {
+			lpEmployee = new EObjectContainmentWithInverseEList<LpEmployee>(LpEmployee.class, this, G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE, G4SOptiPostPackage.LP_EMPLOYEE__LP_ROOT);
+		}
+		return lpEmployee;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -161,6 +185,8 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetLpOptiPostFlow((LpOptiPostFlow)otherEnd, msgs);
+			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLpEmployee()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -179,6 +205,8 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 				return ((InternalEList<?>)getJobs()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
 				return basicSetLpOptiPostFlow(null, msgs);
+			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE:
+				return ((InternalEList<?>)getLpEmployee()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -211,6 +239,8 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 				return getJobs();
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
 				return getLpOptiPostFlow();
+			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE:
+				return getLpEmployee();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -235,6 +265,10 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
 				setLpOptiPostFlow((LpOptiPostFlow)newValue);
 				return;
+			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE:
+				getLpEmployee().clear();
+				getLpEmployee().addAll((Collection<? extends LpEmployee>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -256,6 +290,9 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
 				setLpOptiPostFlow((LpOptiPostFlow)null);
 				return;
+			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE:
+				getLpEmployee().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -274,6 +311,8 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 				return jobs != null && !jobs.isEmpty();
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
 				return getLpOptiPostFlow() != null;
+			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE:
+				return lpEmployee != null && !lpEmployee.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

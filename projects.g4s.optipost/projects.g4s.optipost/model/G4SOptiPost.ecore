@@ -51,6 +51,8 @@
         containment="true" eOpposite="#//LpJob/LpRoot"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpOptiPostFlow" eType="#//LpOptiPostFlow"
         eOpposite="#//LpOptiPostFlow/LpRoot"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LpEmployee" upperBound="-1"
+        eType="#//LpEmployee" containment="true" eOpposite="#//LpEmployee/LpRoot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpJob" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Shift" eType="#//Shift"/>
@@ -62,6 +64,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EndOfMonth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
         eOpposite="#//LpRoot/Jobs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LpEmployee" lowerBound="1"
+        eType="#//LpEmployee" eOpposite="#//LpEmployee/LpJobs"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpPrecedence" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
     <eStructuralFeatures xsi:type="ecore:EReference" name="JobBefore" lowerBound="1"
@@ -70,5 +74,13 @@
         eType="#//LpJob" eOpposite="#//LpJob/JobsBefore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
         eOpposite="#//LpRoot/Precedences"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LpEmployee">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
+        eOpposite="#//LpRoot/LpEmployee"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LpJobs" upperBound="-1"
+        eType="#//LpJob" eOpposite="#//LpJob/LpEmployee"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Employee" lowerBound="1"
+        eType="#//Employee"/>
   </eClassifiers>
 </ecore:EPackage>

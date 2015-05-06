@@ -279,6 +279,29 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.g4s.G4SOptiPost.LpEmployee} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LpEmployeeItemProvider lpEmployeeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.g4s.G4SOptiPost.LpEmployee}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLpEmployeeAdapter() {
+		if (lpEmployeeItemProvider == null) {
+			lpEmployeeItemProvider = new LpEmployeeItemProvider(this);
+		}
+
+		return lpEmployeeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -386,6 +409,7 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		if (lpRootItemProvider != null) lpRootItemProvider.dispose();
 		if (lpJobItemProvider != null) lpJobItemProvider.dispose();
 		if (lpPrecedenceItemProvider != null) lpPrecedenceItemProvider.dispose();
+		if (lpEmployeeItemProvider != null) lpEmployeeItemProvider.dispose();
 	}
 
 }

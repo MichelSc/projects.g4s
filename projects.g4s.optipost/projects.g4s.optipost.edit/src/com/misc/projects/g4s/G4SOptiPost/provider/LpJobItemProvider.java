@@ -54,6 +54,7 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 			addJobsBeforePropertyDescriptor(object);
 			addStartOfMonthPropertyDescriptor(object);
 			addEndOfMonthPropertyDescriptor(object);
+			addLpEmployeePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -164,6 +165,28 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Lp Employee feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLpEmployeePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LpJob_LpEmployee_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LpJob_LpEmployee_feature", "_UI_LpJob_type"),
+				 G4SOptiPostPackage.Literals.LP_JOB__LP_EMPLOYEE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

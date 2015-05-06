@@ -103,6 +103,15 @@ public interface G4SOptiPostFactory extends EFactory {
 	LpPrecedence createLpPrecedence();
 
 	/**
+	 * Returns a new object of class '<em>Lp Employee</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Lp Employee</em>'.
+	 * @generated
+	 */
+	LpEmployee createLpEmployee();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

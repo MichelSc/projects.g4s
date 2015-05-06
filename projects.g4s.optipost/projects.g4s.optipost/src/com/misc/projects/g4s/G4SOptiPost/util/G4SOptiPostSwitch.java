@@ -131,6 +131,12 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case G4SOptiPostPackage.LP_EMPLOYEE: {
+				LpEmployee lpEmployee = (LpEmployee)theEObject;
+				T result = caseLpEmployee(lpEmployee);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -267,6 +273,21 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLpPrecedence(LpPrecedence object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Lp Employee</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Lp Employee</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLpEmployee(LpEmployee object) {
 		return null;
 	}
 

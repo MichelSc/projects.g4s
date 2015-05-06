@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#isStartOfMonth <em>Start Of Month</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#isEndOfMonth <em>End Of Month</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpRoot <em>Lp Root</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpEmployee <em>Lp Employee</em>}</li>
  * </ul>
  * </p>
  *
@@ -169,5 +170,33 @@ public interface LpJob extends GeneratorTuple {
 	 * @generated
 	 */
 	void setLpRoot(LpRoot value);
+
+	/**
+	 * Returns the value of the '<em><b>Lp Employee</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpJobs <em>Lp Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Lp Employee</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Lp Employee</em>' reference.
+	 * @see #setLpEmployee(LpEmployee)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_LpEmployee()
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpJobs
+	 * @model opposite="LpJobs" required="true"
+	 * @generated
+	 */
+	LpEmployee getLpEmployee();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpEmployee <em>Lp Employee</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Lp Employee</em>' reference.
+	 * @see #getLpEmployee()
+	 * @generated
+	 */
+	void setLpEmployee(LpEmployee value);
 
 } // LpJob

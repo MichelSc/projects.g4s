@@ -687,13 +687,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT__LP_OPTI_POST_FLOW = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Lp Employee</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_ROOT__LP_EMPLOYEE = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Lp Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
+	int LP_ROOT_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -868,13 +877,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB__LP_ROOT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Lp Employee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB__LP_EMPLOYEE = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Lp Job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 6;
+	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1083,6 +1101,62 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_PRECEDENCE_OPERATION_COUNT = SolverPackage.GENERATOR_TUPLE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl <em>Lp Employee</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getLpEmployee()
+	 * @generated
+	 */
+	int LP_EMPLOYEE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Lp Root</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__LP_ROOT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Lp Jobs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__LP_JOBS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Employee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__EMPLOYEE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Lp Employee</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Lp Employee</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE_OPERATION_COUNT = 0;
 
 
 	/**
@@ -1398,6 +1472,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpRoot_LpOptiPostFlow();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployee <em>Lp Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Lp Employee</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployee()
+	 * @see #getLpRoot()
+	 * @generated
+	 */
+	EReference getLpRoot_LpEmployee();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpJob <em>Lp Job</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1474,6 +1559,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpJob_LpRoot();
 
 	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpEmployee <em>Lp Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Lp Employee</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpJob#getLpEmployee()
+	 * @see #getLpJob()
+	 * @generated
+	 */
+	EReference getLpJob_LpEmployee();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence <em>Lp Precedence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1515,6 +1611,49 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpPrecedence_LpRoot();
+
+	/**
+	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee <em>Lp Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Lp Employee</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee
+	 * @generated
+	 */
+	EClass getLpEmployee();
+
+	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpRoot <em>Lp Root</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Lp Root</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpRoot()
+	 * @see #getLpEmployee()
+	 * @generated
+	 */
+	EReference getLpEmployee_LpRoot();
+
+	/**
+	 * Returns the meta object for the reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpJobs <em>Lp Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Lp Jobs</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpJobs()
+	 * @see #getLpEmployee()
+	 * @generated
+	 */
+	EReference getLpEmployee_LpJobs();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getEmployee <em>Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Employee</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getEmployee()
+	 * @see #getLpEmployee()
+	 * @generated
+	 */
+	EReference getLpEmployee_Employee();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1786,6 +1925,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_ROOT__LP_OPTI_POST_FLOW = eINSTANCE.getLpRoot_LpOptiPostFlow();
 
 		/**
+		 * The meta object literal for the '<em><b>Lp Employee</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_ROOT__LP_EMPLOYEE = eINSTANCE.getLpRoot_LpEmployee();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl <em>Lp Job</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1844,6 +1991,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_JOB__LP_ROOT = eINSTANCE.getLpJob_LpRoot();
 
 		/**
+		 * The meta object literal for the '<em><b>Lp Employee</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_JOB__LP_EMPLOYEE = eINSTANCE.getLpJob_LpEmployee();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl <em>Lp Precedence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1876,6 +2031,40 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_PRECEDENCE__LP_ROOT = eINSTANCE.getLpPrecedence_LpRoot();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl <em>Lp Employee</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getLpEmployee()
+		 * @generated
+		 */
+		EClass LP_EMPLOYEE = eINSTANCE.getLpEmployee();
+
+		/**
+		 * The meta object literal for the '<em><b>Lp Root</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_EMPLOYEE__LP_ROOT = eINSTANCE.getLpEmployee_LpRoot();
+
+		/**
+		 * The meta object literal for the '<em><b>Lp Jobs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_EMPLOYEE__LP_JOBS = eINSTANCE.getLpEmployee_LpJobs();
+
+		/**
+		 * The meta object literal for the '<em><b>Employee</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_EMPLOYEE__EMPLOYEE = eINSTANCE.getLpEmployee_Employee();
 
 	}
 
