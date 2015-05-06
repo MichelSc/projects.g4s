@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost;
 
+import com.misc.common.moplaf.solver.GeneratorLpVar;
 import com.misc.common.moplaf.solver.GeneratorTuple;
 
 /**
@@ -15,6 +16,7 @@ import com.misc.common.moplaf.solver.GeneratorTuple;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobBefore <em>Job Before</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter <em>Job After</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot <em>Lp Root</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getVarInPost <em>Var In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,5 +108,31 @@ public interface LpPrecedence extends GeneratorTuple {
 	 * @generated
 	 */
 	void setLpRoot(LpRoot value);
+
+	/**
+	 * Returns the value of the '<em><b>Var In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Var In Post</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Var In Post</em>' containment reference.
+	 * @see #setVarInPost(GeneratorLpVar)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpPrecedence_VarInPost()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GeneratorLpVar getVarInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getVarInPost <em>Var In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Var In Post</em>' containment reference.
+	 * @see #getVarInPost()
+	 * @generated
+	 */
+	void setVarInPost(GeneratorLpVar value);
 
 } // LpPrecedence

@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost;
 
+import com.misc.common.moplaf.solver.GeneratorLpVar;
 import com.misc.common.moplaf.solver.GeneratorTuple;
 
 import org.eclipse.emf.common.util.EList;
@@ -21,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#isEndOfMonth <em>End Of Month</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpEmployee <em>Lp Employee</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarInPost <em>Var In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -198,5 +200,31 @@ public interface LpJob extends GeneratorTuple {
 	 * @generated
 	 */
 	void setLpEmployee(LpEmployee value);
+
+	/**
+	 * Returns the value of the '<em><b>Var In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Var In Post</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Var In Post</em>' containment reference.
+	 * @see #setVarInPost(GeneratorLpVar)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_VarInPost()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GeneratorLpVar getVarInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarInPost <em>Var In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Var In Post</em>' containment reference.
+	 * @see #getVarInPost()
+	 * @generated
+	 */
+	void setVarInPost(GeneratorLpVar value);
 
 } // LpJob

@@ -895,13 +895,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB__LP_EMPLOYEE = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Var In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB__VAR_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Lp Job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 7;
+	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1049,13 +1058,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE__LP_ROOT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Var In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_PRECEDENCE__VAR_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Lp Precedence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_PRECEDENCE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
+	int LP_PRECEDENCE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1213,13 +1231,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_EMPLOYEE__MIN_NR_JOBS = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Var In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__VAR_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Lp Employee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
+	int LP_EMPLOYEE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1698,6 +1725,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpJob_LpEmployee();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarInPost <em>Var In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Var In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpJob#getVarInPost()
+	 * @see #getLpJob()
+	 * @generated
+	 */
+	EReference getLpJob_VarInPost();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence <em>Lp Precedence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1739,6 +1777,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpPrecedence_LpRoot();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getVarInPost <em>Var In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Var In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getVarInPost()
+	 * @see #getLpPrecedence()
+	 * @generated
+	 */
+	EReference getLpPrecedence_VarInPost();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee <em>Lp Employee</em>}'.
@@ -1793,6 +1842,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLpEmployee_MinNrJobs();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getVarInPost <em>Var In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Var In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getVarInPost()
+	 * @see #getLpEmployee()
+	 * @generated
+	 */
+	EReference getLpEmployee_VarInPost();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2146,6 +2206,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_JOB__LP_EMPLOYEE = eINSTANCE.getLpJob_LpEmployee();
 
 		/**
+		 * The meta object literal for the '<em><b>Var In Post</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_JOB__VAR_IN_POST = eINSTANCE.getLpJob_VarInPost();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl <em>Lp Precedence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2178,6 +2246,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_PRECEDENCE__LP_ROOT = eINSTANCE.getLpPrecedence_LpRoot();
+
+		/**
+		 * The meta object literal for the '<em><b>Var In Post</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_PRECEDENCE__VAR_IN_POST = eINSTANCE.getLpPrecedence_VarInPost();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl <em>Lp Employee</em>}' class.
@@ -2220,6 +2296,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LP_EMPLOYEE__MIN_NR_JOBS = eINSTANCE.getLpEmployee_MinNrJobs();
+
+		/**
+		 * The meta object literal for the '<em><b>Var In Post</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_EMPLOYEE__VAR_IN_POST = eINSTANCE.getLpEmployee_VarInPost();
 
 	}
 

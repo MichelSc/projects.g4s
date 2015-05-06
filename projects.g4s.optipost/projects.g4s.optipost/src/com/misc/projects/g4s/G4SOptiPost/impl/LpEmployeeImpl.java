@@ -2,13 +2,18 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.solver.EnumLpVarType;
+import com.misc.common.moplaf.solver.GeneratorLpVar;
+import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -30,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getLpJobs <em>Lp Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getEmployee <em>Employee</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getMinNrJobs <em>Min Nr Jobs</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getVarInPost <em>Var In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +81,16 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 	 * @ordered
 	 */
 	protected int minNrJobs = MIN_NR_JOBS_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVarInPost() <em>Var In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVarInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeneratorLpVar varInPost;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,6 +228,49 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GeneratorLpVar getVarInPost() {
+		return varInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVarInPost(GeneratorLpVar newVarInPost, NotificationChain msgs) {
+		GeneratorLpVar oldVarInPost = varInPost;
+		varInPost = newVarInPost;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST, oldVarInPost, newVarInPost);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVarInPost(GeneratorLpVar newVarInPost) {
+		if (newVarInPost != varInPost) {
+			NotificationChain msgs = null;
+			if (varInPost != null)
+				msgs = ((InternalEObject)varInPost).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST, null, msgs);
+			if (newVarInPost != null)
+				msgs = ((InternalEObject)newVarInPost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST, null, msgs);
+			msgs = basicSetVarInPost(newVarInPost, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST, newVarInPost, newVarInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -238,6 +297,8 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 				return basicSetLpRoot(null, msgs);
 			case G4SOptiPostPackage.LP_EMPLOYEE__LP_JOBS:
 				return ((InternalEList<?>)getLpJobs()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
+				return basicSetVarInPost(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -273,6 +334,8 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 				return basicGetEmployee();
 			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
 				return getMinNrJobs();
+			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
+				return getVarInPost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -299,6 +362,9 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
 				setMinNrJobs((Integer)newValue);
 				return;
+			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
+				setVarInPost((GeneratorLpVar)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -323,6 +389,9 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
 				setMinNrJobs(MIN_NR_JOBS_EDEFAULT);
 				return;
+			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
+				setVarInPost((GeneratorLpVar)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -343,6 +412,8 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 				return employee != null;
 			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
 				return minNrJobs != MIN_NR_JOBS_EDEFAULT;
+			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
+				return varInPost != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -363,4 +434,19 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 		return result.toString();
 	}
 
+	@Override
+	public void generateVars() {
+		super.generateVars();
+		
+		this.generateVarInPost();
+	}
+	
+	private void generateVarInPost() {
+		GeneratorLpVar newVar = SolverFactory.eINSTANCE.createGeneratorLpVar();
+		newVar.setLowerBound(0.0f);
+		newVar.setLowerBound(1.0f);
+		newVar.setType(EnumLpVarType.ENUM_LITERAL_LP_VAR_INTEGER);
+		newVar.setName("inpost");
+		this.setVarInPost(newVar);
+	}
 } //LpEmployeeImpl
