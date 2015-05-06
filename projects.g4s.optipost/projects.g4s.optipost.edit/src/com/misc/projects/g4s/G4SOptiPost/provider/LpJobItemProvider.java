@@ -206,6 +206,8 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__VAR_IN_POST);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_FOLLOWED_IN_POST);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_PRECEDED_IN_POST);
 		}
 		return childrenFeatures;
 	}
@@ -266,6 +268,8 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.LP_JOB__VAR_IN_POST:
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST:
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -287,6 +291,39 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.LP_JOB__VAR_IN_POST,
 				 SolverFactory.eINSTANCE.createGeneratorLpVar()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_FOLLOWED_IN_POST,
+				 SolverFactory.eINSTANCE.createGeneratorLpCons()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_PRECEDED_IN_POST,
+				 SolverFactory.eINSTANCE.createGeneratorLpCons()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_FOLLOWED_IN_POST ||
+			childFeature == G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_PRECEDED_IN_POST;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

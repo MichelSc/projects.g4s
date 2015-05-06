@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost;
 
+import com.misc.common.moplaf.solver.GeneratorLpCons;
 import com.misc.common.moplaf.solver.GeneratorLpVar;
 import com.misc.common.moplaf.solver.GeneratorTuple;
 
@@ -23,6 +24,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getLpEmployee <em>Lp Employee</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarInPost <em>Var In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsFollowedInPost <em>Cons Is Followed In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsPrecededInPost <em>Cons Is Preceded In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -226,5 +229,57 @@ public interface LpJob extends GeneratorTuple {
 	 * @generated
 	 */
 	void setVarInPost(GeneratorLpVar value);
+
+	/**
+	 * Returns the value of the '<em><b>Cons Is Followed In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cons Is Followed In Post</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cons Is Followed In Post</em>' containment reference.
+	 * @see #setConsIsFollowedInPost(GeneratorLpCons)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_ConsIsFollowedInPost()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GeneratorLpCons getConsIsFollowedInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsFollowedInPost <em>Cons Is Followed In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cons Is Followed In Post</em>' containment reference.
+	 * @see #getConsIsFollowedInPost()
+	 * @generated
+	 */
+	void setConsIsFollowedInPost(GeneratorLpCons value);
+
+	/**
+	 * Returns the value of the '<em><b>Cons Is Preceded In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cons Is Preceded In Post</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cons Is Preceded In Post</em>' containment reference.
+	 * @see #setConsIsPrecededInPost(GeneratorLpCons)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_ConsIsPrecededInPost()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GeneratorLpCons getConsIsPrecededInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsPrecededInPost <em>Cons Is Preceded In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cons Is Preceded In Post</em>' containment reference.
+	 * @see #getConsIsPrecededInPost()
+	 * @generated
+	 */
+	void setConsIsPrecededInPost(GeneratorLpCons value);
 
 } // LpJob

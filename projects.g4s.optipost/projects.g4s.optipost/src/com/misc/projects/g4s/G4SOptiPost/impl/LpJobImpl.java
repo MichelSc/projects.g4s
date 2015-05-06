@@ -2,7 +2,9 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.solver.EnumLpConsType;
 import com.misc.common.moplaf.solver.EnumLpVarType;
+import com.misc.common.moplaf.solver.GeneratorLpCons;
 import com.misc.common.moplaf.solver.GeneratorLpVar;
 import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
@@ -40,6 +42,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getLpEmployee <em>Lp Employee</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getVarInPost <em>Var In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getConsIsFollowedInPost <em>Cons Is Followed In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getConsIsPrecededInPost <em>Cons Is Preceded In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -135,6 +139,26 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 * @ordered
 	 */
 	protected GeneratorLpVar varInPost;
+
+	/**
+	 * The cached value of the '{@link #getConsIsFollowedInPost() <em>Cons Is Followed In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsIsFollowedInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeneratorLpCons consIsFollowedInPost;
+
+	/**
+	 * The cached value of the '{@link #getConsIsPrecededInPost() <em>Cons Is Preceded In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsIsPrecededInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeneratorLpCons consIsPrecededInPost;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -408,6 +432,92 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GeneratorLpCons getConsIsFollowedInPost() {
+		return consIsFollowedInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConsIsFollowedInPost(GeneratorLpCons newConsIsFollowedInPost, NotificationChain msgs) {
+		GeneratorLpCons oldConsIsFollowedInPost = consIsFollowedInPost;
+		consIsFollowedInPost = newConsIsFollowedInPost;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST, oldConsIsFollowedInPost, newConsIsFollowedInPost);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConsIsFollowedInPost(GeneratorLpCons newConsIsFollowedInPost) {
+		if (newConsIsFollowedInPost != consIsFollowedInPost) {
+			NotificationChain msgs = null;
+			if (consIsFollowedInPost != null)
+				msgs = ((InternalEObject)consIsFollowedInPost).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST, null, msgs);
+			if (newConsIsFollowedInPost != null)
+				msgs = ((InternalEObject)newConsIsFollowedInPost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST, null, msgs);
+			msgs = basicSetConsIsFollowedInPost(newConsIsFollowedInPost, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST, newConsIsFollowedInPost, newConsIsFollowedInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeneratorLpCons getConsIsPrecededInPost() {
+		return consIsPrecededInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConsIsPrecededInPost(GeneratorLpCons newConsIsPrecededInPost, NotificationChain msgs) {
+		GeneratorLpCons oldConsIsPrecededInPost = consIsPrecededInPost;
+		consIsPrecededInPost = newConsIsPrecededInPost;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST, oldConsIsPrecededInPost, newConsIsPrecededInPost);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConsIsPrecededInPost(GeneratorLpCons newConsIsPrecededInPost) {
+		if (newConsIsPrecededInPost != consIsPrecededInPost) {
+			NotificationChain msgs = null;
+			if (consIsPrecededInPost != null)
+				msgs = ((InternalEObject)consIsPrecededInPost).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST, null, msgs);
+			if (newConsIsPrecededInPost != null)
+				msgs = ((InternalEObject)newConsIsPrecededInPost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST, null, msgs);
+			msgs = basicSetConsIsPrecededInPost(newConsIsPrecededInPost, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST, newConsIsPrecededInPost, newConsIsPrecededInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -446,6 +556,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return basicSetLpEmployee(null, msgs);
 			case G4SOptiPostPackage.LP_JOB__VAR_IN_POST:
 				return basicSetVarInPost(null, msgs);
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST:
+				return basicSetConsIsFollowedInPost(null, msgs);
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
+				return basicSetConsIsPrecededInPost(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -490,6 +604,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return basicGetLpEmployee();
 			case G4SOptiPostPackage.LP_JOB__VAR_IN_POST:
 				return getVarInPost();
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST:
+				return getConsIsFollowedInPost();
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
+				return getConsIsPrecededInPost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -529,6 +647,12 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__VAR_IN_POST:
 				setVarInPost((GeneratorLpVar)newValue);
 				return;
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST:
+				setConsIsFollowedInPost((GeneratorLpCons)newValue);
+				return;
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
+				setConsIsPrecededInPost((GeneratorLpCons)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -565,6 +689,12 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__VAR_IN_POST:
 				setVarInPost((GeneratorLpVar)null);
 				return;
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST:
+				setConsIsFollowedInPost((GeneratorLpCons)null);
+				return;
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
+				setConsIsPrecededInPost((GeneratorLpCons)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -593,6 +723,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return lpEmployee != null;
 			case G4SOptiPostPackage.LP_JOB__VAR_IN_POST:
 				return varInPost != null;
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST:
+				return consIsFollowedInPost != null;
+			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
+				return consIsPrecededInPost != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -616,12 +750,6 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	}
 
 	@Override
-	public void generateTuples() {
-		// TODO Auto-generated method stub
-		super.generateTuples();
-	}
-	
-	@Override
 	public void generateVars() {
 		super.generateVars();
 		
@@ -636,6 +764,43 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 		newVar.setName("inpost");
 		this.setVarInPost(newVar);
 	}
+
+	@Override
+	public void generateCons() {
+		super.generateCons();
+		
+		this.generateConsIsFollowedInPost();
+		this.generateConsIsPrecededInPost();
+	}
+	
+	private void generateConsIsFollowedInPost() {
+		if ( !this.isEndOfMonth()){
+			GeneratorLpCons newCons = SolverFactory.eINSTANCE.createGeneratorLpCons();
+			newCons.setRighHandSide(0.0f);
+			newCons.setType(EnumLpConsType.ENUM_LITERAL_LP_CONS_EQUAL);
+			newCons.setName("isFollowed");
+			newCons.constructTerm(this.getVarInPost(), 1.0f);
+			for ( LpPrecedence jobAfter : this.getJobsAfter()){
+				newCons.constructTerm(jobAfter.getVarInPost(), -1.0f);
+			}
+			this.setConsIsFollowedInPost(newCons);
+		}
+	}
+	
+	private void generateConsIsPrecededInPost() {
+		if ( !this.isStartOfMonth()){
+			GeneratorLpCons newCons = SolverFactory.eINSTANCE.createGeneratorLpCons();
+			newCons.setRighHandSide(0.0f);
+			newCons.setType(EnumLpConsType.ENUM_LITERAL_LP_CONS_EQUAL);
+			newCons.setName("isPreceded");
+			newCons.constructTerm(this.getVarInPost(), 1.0f);
+			for ( LpPrecedence jobBefore : this.getJobsBefore()){
+				newCons.constructTerm(jobBefore.getVarInPost(), -1.0f);
+			}
+			this.setConsIsPrecededInPost(newCons);
+		}
+	}
+	
 
 	
 } //LpJobImpl

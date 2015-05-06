@@ -133,6 +133,7 @@ public class LpEmployeeItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_EMPLOYEE__VAR_IN_POST);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST);
 		}
 		return childrenFeatures;
 	}
@@ -192,6 +193,7 @@ public class LpEmployeeItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
+			case G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -213,6 +215,11 @@ public class LpEmployeeItemProvider
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.LP_EMPLOYEE__VAR_IN_POST,
 				 SolverFactory.eINSTANCE.createGeneratorLpVar()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST,
+				 SolverFactory.eINSTANCE.createGeneratorLpCons()));
 	}
 
 	/**

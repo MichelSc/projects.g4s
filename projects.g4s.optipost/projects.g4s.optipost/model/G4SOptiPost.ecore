@@ -68,7 +68,11 @@
         eOpposite="#//LpRoot/Jobs"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpEmployee" lowerBound="1"
         eType="#//LpEmployee" eOpposite="#//LpEmployee/LpJobs"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VarInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConsIsFollowedInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpCons"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConsIsPrecededInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpCons"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpPrecedence" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
@@ -78,7 +82,7 @@
         eType="#//LpJob" eOpposite="#//LpJob/JobsBefore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
         eOpposite="#//LpRoot/Precedences"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VarInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpEmployee" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
@@ -90,7 +94,9 @@
         eType="#//Employee"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MinNrJobs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="20"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VarInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ConsEnoughJobsInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpCons"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

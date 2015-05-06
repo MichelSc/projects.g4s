@@ -2,7 +2,9 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.solver.EnumLpConsType;
 import com.misc.common.moplaf.solver.EnumLpVarType;
+import com.misc.common.moplaf.solver.GeneratorLpCons;
 import com.misc.common.moplaf.solver.GeneratorLpVar;
 import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
@@ -10,6 +12,7 @@ import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
+import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
 
 import java.util.Collection;
@@ -36,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getEmployee <em>Employee</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getMinNrJobs <em>Min Nr Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getVarInPost <em>Var In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getConsEnoughJobsInPost <em>Cons Enough Jobs In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,6 +95,16 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 	 * @ordered
 	 */
 	protected GeneratorLpVar varInPost;
+
+	/**
+	 * The cached value of the '{@link #getConsEnoughJobsInPost() <em>Cons Enough Jobs In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConsEnoughJobsInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeneratorLpCons consEnoughJobsInPost;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -271,6 +285,49 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GeneratorLpCons getConsEnoughJobsInPost() {
+		return consEnoughJobsInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConsEnoughJobsInPost(GeneratorLpCons newConsEnoughJobsInPost, NotificationChain msgs) {
+		GeneratorLpCons oldConsEnoughJobsInPost = consEnoughJobsInPost;
+		consEnoughJobsInPost = newConsEnoughJobsInPost;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST, oldConsEnoughJobsInPost, newConsEnoughJobsInPost);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConsEnoughJobsInPost(GeneratorLpCons newConsEnoughJobsInPost) {
+		if (newConsEnoughJobsInPost != consEnoughJobsInPost) {
+			NotificationChain msgs = null;
+			if (consEnoughJobsInPost != null)
+				msgs = ((InternalEObject)consEnoughJobsInPost).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST, null, msgs);
+			if (newConsEnoughJobsInPost != null)
+				msgs = ((InternalEObject)newConsEnoughJobsInPost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST, null, msgs);
+			msgs = basicSetConsEnoughJobsInPost(newConsEnoughJobsInPost, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST, newConsEnoughJobsInPost, newConsEnoughJobsInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -299,6 +356,8 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 				return ((InternalEList<?>)getLpJobs()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
 				return basicSetVarInPost(null, msgs);
+			case G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST:
+				return basicSetConsEnoughJobsInPost(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -336,6 +395,8 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 				return getMinNrJobs();
 			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
 				return getVarInPost();
+			case G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST:
+				return getConsEnoughJobsInPost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -365,6 +426,9 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
 				setVarInPost((GeneratorLpVar)newValue);
 				return;
+			case G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST:
+				setConsEnoughJobsInPost((GeneratorLpCons)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -392,6 +456,9 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
 				setVarInPost((GeneratorLpVar)null);
 				return;
+			case G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST:
+				setConsEnoughJobsInPost((GeneratorLpCons)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -414,6 +481,8 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 				return minNrJobs != MIN_NR_JOBS_EDEFAULT;
 			case G4SOptiPostPackage.LP_EMPLOYEE__VAR_IN_POST:
 				return varInPost != null;
+			case G4SOptiPostPackage.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST:
+				return consEnoughJobsInPost != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -449,4 +518,24 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 		newVar.setName("inpost");
 		this.setVarInPost(newVar);
 	}
+
+	@Override
+	public void generateCons() {
+		super.generateCons();
+		
+		this.generateConsEnoughJobsInPost();
+	}
+	
+	private void generateConsEnoughJobsInPost() {
+		GeneratorLpCons newCons = SolverFactory.eINSTANCE.createGeneratorLpCons();
+		newCons.setRighHandSide(0.0f );
+		newCons.setType(EnumLpConsType.ENUM_LITERAL_LP_CONS_BIGGER_OR_EQUAL);
+		newCons.setName("enoughJobs");
+		for (  LpJob employeeJob : this.getLpJobs()){
+			newCons.constructTerm(employeeJob.getVarInPost(), 1.0f);
+		}
+		newCons.constructTerm(this.getVarInPost(), -this.getMinNrJobs());
+		this.setConsEnoughJobsInPost(newCons);
+	}
+	
 } //LpEmployeeImpl

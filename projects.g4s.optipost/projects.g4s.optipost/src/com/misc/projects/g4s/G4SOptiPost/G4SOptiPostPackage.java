@@ -904,13 +904,31 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB__VAR_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Cons Is Followed In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB__CONS_IS_FOLLOWED_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Cons Is Preceded In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB__CONS_IS_PRECEDED_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Lp Job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 8;
+	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1240,13 +1258,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_EMPLOYEE__VAR_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Cons Enough Jobs In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Lp Employee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 5;
+	int LP_EMPLOYEE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1736,6 +1763,28 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpJob_VarInPost();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsFollowedInPost <em>Cons Is Followed In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Cons Is Followed In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsFollowedInPost()
+	 * @see #getLpJob()
+	 * @generated
+	 */
+	EReference getLpJob_ConsIsFollowedInPost();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsPrecededInPost <em>Cons Is Preceded In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Cons Is Preceded In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsPrecededInPost()
+	 * @see #getLpJob()
+	 * @generated
+	 */
+	EReference getLpJob_ConsIsPrecededInPost();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence <em>Lp Precedence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1853,6 +1902,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpEmployee_VarInPost();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getConsEnoughJobsInPost <em>Cons Enough Jobs In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Cons Enough Jobs In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getConsEnoughJobsInPost()
+	 * @see #getLpEmployee()
+	 * @generated
+	 */
+	EReference getLpEmployee_ConsEnoughJobsInPost();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2214,6 +2274,22 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_JOB__VAR_IN_POST = eINSTANCE.getLpJob_VarInPost();
 
 		/**
+		 * The meta object literal for the '<em><b>Cons Is Followed In Post</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_JOB__CONS_IS_FOLLOWED_IN_POST = eINSTANCE.getLpJob_ConsIsFollowedInPost();
+
+		/**
+		 * The meta object literal for the '<em><b>Cons Is Preceded In Post</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_JOB__CONS_IS_PRECEDED_IN_POST = eINSTANCE.getLpJob_ConsIsPrecededInPost();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl <em>Lp Precedence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2304,6 +2380,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_EMPLOYEE__VAR_IN_POST = eINSTANCE.getLpEmployee_VarInPost();
+
+		/**
+		 * The meta object literal for the '<em><b>Cons Enough Jobs In Post</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST = eINSTANCE.getLpEmployee_ConsEnoughJobsInPost();
 
 	}
 
