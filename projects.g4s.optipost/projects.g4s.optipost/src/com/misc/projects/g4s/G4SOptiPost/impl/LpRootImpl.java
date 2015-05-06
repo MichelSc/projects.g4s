@@ -6,6 +6,7 @@ import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.Location;
 import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
@@ -13,8 +14,17 @@ import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
+
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -320,6 +330,12 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	public void generateTuples() {
 		super.generateTuples();
+		
+		this.generateJobs();
+		this.generatePrecedences();
+	}
+	
+    public void generateJobs() {
 		HashMap<Employee, LpEmployee> employees = new HashMap<Employee, LpEmployee>();
 		// Jobs
 		LpRoot root = this;
@@ -342,4 +358,99 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
         	this.getJobs().add(lpjob);  // owning
         }  // traverse the selected shifts
 	}  // generateTuples
+	
+
+	@SuppressWarnings("serial")
+	private class JobSet extends HashSet<LpJob>{};
+
+	void generatePrecedences(){
+		HashMap<Location, JobSet> jobsAtLocation = new HashMap<Location, JobSet>();
+		
+		for ( LpJob job : this.getJobs()){
+			Shift shift = job.getShift();
+			Location location = shift.getLocation();
+			JobSet jobset = jobsAtLocation.get(location);
+			if ( jobset == null){
+				jobset = new JobSet();
+				jobsAtLocation.put(location, jobset);
+			}
+			jobset.add(job);
+		} // traverse the jobs
+		
+		for ( JobSet jobSet  : jobsAtLocation.values()){
+			this.generatePrecedences(jobSet);
+		}
+	}
+
+	
+	void generatePrecedences(JobSet jobSet){
+		if ( jobSet.size()==0 ) { return; }
+		List< LpJob > starts = new ArrayList< LpJob >( jobSet);
+		Collections.sort( starts, new Comparator< LpJob >( ){
+			@Override
+			public int compare(LpJob arg0, LpJob arg1) {
+				Date date0 = arg0.getShift().getShiftStart();
+				Date date1 = arg1.getShift().getShiftStart();
+				return date0.compareTo(date1);
+			}} );
+		
+		List< LpJob > ends = new ArrayList< LpJob >( jobSet);
+		Collections.sort( ends, new Comparator< LpJob >( ){
+			@Override
+			public int compare(LpJob arg0, LpJob arg1) {
+				Date date0 = arg0.getShift().getShiftEnd();
+				Date date1 = arg1.getShift().getShiftEnd();
+				return date0.compareTo(date1);
+			}} );
+		
+		Iterator<LpJob> startIterator = starts.iterator();
+		Iterator<LpJob> endIterator   = starts.iterator();
+		
+		LpJob nextStart = startIterator.next(); // first
+		LpJob nextEnd   = endIterator.next();   // first
+		
+		JobSet currentJobs = new JobSet();
+		
+		boolean finished = false;
+		while ( ! finished  ){
+			if ( nextStart.getShift().getShiftStart().compareTo(nextEnd.getShift().getShiftEnd())>0) {
+				// next end qualifies as new event
+				LpJob jobLeaving = nextEnd;
+				currentJobs.remove(jobLeaving);
+				// loop control
+				nextEnd = endIterator.next();
+			}
+			else {
+				// start qualifies as new event
+				LpJob jobEntering = nextStart;
+				for ( LpJob currentJob : currentJobs){
+					this.createPrecedence(currentJob, jobEntering);
+				}
+				currentJobs.add(jobEntering);
+				// loop control
+				if ( startIterator.hasNext()){
+					nextStart = startIterator.next();
+					// start enters the overlappers
+				} else {
+					finished = true;
+				}
+			} 
+		} // iterate
+	}  // method
+	
+	void createPrecedence(LpJob jobStartBefore, LpJob jobStartAfter){
+		// assert jobs at the same location
+		// assert jobs are overlapping
+		// assert couple of jobs will not be presented twice
+		boolean isPrecedence = true;
+		if ( isPrecedence ){
+        	LpPrecedence lpprecedence = G4SOptiPostFactory.eINSTANCE.createLpPrecedence();
+        	lpprecedence.setJobBefore(jobStartBefore);
+        	lpprecedence.setJobAfter(jobStartAfter);
+        	lpprecedence.setCode(jobStartBefore.getCode()+"_"+jobStartAfter.getCode());
+        	this.getPrecedences().add(lpprecedence);
+		}
+	}
+
+
 } //LpRootImpl
