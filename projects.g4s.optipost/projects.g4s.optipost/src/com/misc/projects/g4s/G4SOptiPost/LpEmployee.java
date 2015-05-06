@@ -2,9 +2,8 @@
  */
 package com.misc.projects.g4s.G4SOptiPost;
 
+import com.misc.common.moplaf.solver.GeneratorTuple;
 import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpJobs <em>Lp Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getEmployee <em>Employee</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getMinNrJobs <em>Min Nr Jobs</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface LpEmployee extends EObject {
+public interface LpEmployee extends GeneratorTuple {
 	/**
 	 * Returns the value of the '<em><b>Lp Root</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployee <em>Lp Employee</em>}'.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployees <em>Lp Employees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Lp Root</em>' container reference isn't clear,
@@ -37,8 +37,8 @@ public interface LpEmployee extends EObject {
 	 * @return the value of the '<em>Lp Root</em>' container reference.
 	 * @see #setLpRoot(LpRoot)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpEmployee_LpRoot()
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployee
-	 * @model opposite="LpEmployee" transient="false"
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployees
+	 * @model opposite="LpEmployees" transient="false"
 	 * @generated
 	 */
 	LpRoot getLpRoot();
@@ -96,5 +96,32 @@ public interface LpEmployee extends EObject {
 	 * @generated
 	 */
 	void setEmployee(Employee value);
+
+	/**
+	 * Returns the value of the '<em><b>Min Nr Jobs</b></em>' attribute.
+	 * The default value is <code>"20"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Min Nr Jobs</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Min Nr Jobs</em>' attribute.
+	 * @see #setMinNrJobs(int)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpEmployee_MinNrJobs()
+	 * @model default="20"
+	 * @generated
+	 */
+	int getMinNrJobs();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getMinNrJobs <em>Min Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Min Nr Jobs</em>' attribute.
+	 * @see #getMinNrJobs()
+	 * @generated
+	 */
+	void setMinNrJobs(int value);
 
 } // LpEmployee

@@ -187,13 +187,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int SHIFT__SHIFT_END = 3;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIFT__DESCRIPTION = 4;
+
+	/**
 	 * The number of structural features of the '<em>Shift</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIFT_FEATURE_COUNT = 4;
+	int SHIFT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Shift</em>' class.
@@ -687,13 +696,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT__LP_OPTI_POST_FLOW = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Lp Employee</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Lp Employees</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT__LP_EMPLOYEE = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
+	int LP_ROOT__LP_EMPLOYEES = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Lp Root</em>' class.
@@ -1114,13 +1123,67 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_EMPLOYEE = 9;
 
 	/**
+	 * The feature id for the '<em><b>Generator As Root</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__GENERATOR_AS_ROOT = SolverPackage.GENERATOR_TUPLE__GENERATOR_AS_ROOT;
+
+	/**
+	 * The feature id for the '<em><b>Tuple Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__TUPLE_ELEMENT = SolverPackage.GENERATOR_TUPLE__TUPLE_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Tuple Container</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__TUPLE_CONTAINER = SolverPackage.GENERATOR_TUPLE__TUPLE_CONTAINER;
+
+	/**
+	 * The feature id for the '<em><b>Var</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__VAR = SolverPackage.GENERATOR_TUPLE__VAR;
+
+	/**
+	 * The feature id for the '<em><b>Cons</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__CONS = SolverPackage.GENERATOR_TUPLE__CONS;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+
+	/**
 	 * The feature id for the '<em><b>Lp Root</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE__LP_ROOT = 0;
+	int LP_EMPLOYEE__LP_ROOT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Lp Jobs</b></em>' reference list.
@@ -1129,7 +1192,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE__LP_JOBS = 1;
+	int LP_EMPLOYEE__LP_JOBS = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Employee</b></em>' reference.
@@ -1138,7 +1201,16 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE__EMPLOYEE = 2;
+	int LP_EMPLOYEE__EMPLOYEE = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Min Nr Jobs</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__MIN_NR_JOBS = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Lp Employee</em>' class.
@@ -1147,7 +1219,52 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE_FEATURE_COUNT = 3;
+	int LP_EMPLOYEE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Generate Vars</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___GENERATE_VARS = SolverPackage.GENERATOR_TUPLE___GENERATE_VARS;
+
+	/**
+	 * The operation id for the '<em>Generate Cons</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___GENERATE_CONS = SolverPackage.GENERATOR_TUPLE___GENERATE_CONS;
+
+	/**
+	 * The operation id for the '<em>Generate Tuples</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___GENERATE_TUPLES = SolverPackage.GENERATOR_TUPLE___GENERATE_TUPLES;
+
+	/**
+	 * The operation id for the '<em>Get Generator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
+
+	/**
+	 * The operation id for the '<em>Visit Tuples</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Employee</em>' class.
@@ -1156,7 +1273,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE_OPERATION_COUNT = 0;
+	int LP_EMPLOYEE_OPERATION_COUNT = SolverPackage.GENERATOR_TUPLE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1288,6 +1405,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getShift_ShiftEnd();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Shift#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Shift#getDescription()
+	 * @see #getShift()
+	 * @generated
+	 */
+	EAttribute getShift_Description();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.Employee <em>Employee</em>}'.
@@ -1472,15 +1600,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpRoot_LpOptiPostFlow();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployee <em>Lp Employee</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployees <em>Lp Employees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Lp Employee</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployee()
+	 * @return the meta object for the containment reference list '<em>Lp Employees</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployees()
 	 * @see #getLpRoot()
 	 * @generated
 	 */
-	EReference getLpRoot_LpEmployee();
+	EReference getLpRoot_LpEmployees();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpJob <em>Lp Job</em>}'.
@@ -1656,6 +1784,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpEmployee_Employee();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getMinNrJobs <em>Min Nr Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Min Nr Jobs</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getMinNrJobs()
+	 * @see #getLpEmployee()
+	 * @generated
+	 */
+	EAttribute getLpEmployee_MinNrJobs();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1777,6 +1916,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SHIFT__SHIFT_END = eINSTANCE.getShift_ShiftEnd();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SHIFT__DESCRIPTION = eINSTANCE.getShift_Description();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.EmployeeImpl <em>Employee</em>}' class.
@@ -1925,12 +2072,12 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_ROOT__LP_OPTI_POST_FLOW = eINSTANCE.getLpRoot_LpOptiPostFlow();
 
 		/**
-		 * The meta object literal for the '<em><b>Lp Employee</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Lp Employees</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LP_ROOT__LP_EMPLOYEE = eINSTANCE.getLpRoot_LpEmployee();
+		EReference LP_ROOT__LP_EMPLOYEES = eINSTANCE.getLpRoot_LpEmployees();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl <em>Lp Job</em>}' class.
@@ -2065,6 +2212,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_EMPLOYEE__EMPLOYEE = eINSTANCE.getLpEmployee_Employee();
+
+		/**
+		 * The meta object literal for the '<em><b>Min Nr Jobs</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LP_EMPLOYEE__MIN_NR_JOBS = eINSTANCE.getLpEmployee_MinNrJobs();
 
 	}
 

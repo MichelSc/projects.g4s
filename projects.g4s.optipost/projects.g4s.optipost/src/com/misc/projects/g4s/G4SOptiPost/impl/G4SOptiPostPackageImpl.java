@@ -278,6 +278,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getShift_Description() {
+		return (EAttribute)shiftEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getEmployee() {
 		return employeeEClass;
 	}
@@ -431,7 +440,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLpRoot_LpEmployee() {
+	public EReference getLpRoot_LpEmployees() {
 		return (EReference)lpRootEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -584,6 +593,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLpEmployee_MinNrJobs() {
+		return (EAttribute)lpEmployeeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public G4SOptiPostFactory getG4SOptiPostFactory() {
 		return (G4SOptiPostFactory)getEFactoryInstance();
 	}
@@ -620,6 +638,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(shiftEClass, SHIFT__EMPLOYEE);
 		createEAttribute(shiftEClass, SHIFT__SHIFT_START);
 		createEAttribute(shiftEClass, SHIFT__SHIFT_END);
+		createEAttribute(shiftEClass, SHIFT__DESCRIPTION);
 
 		employeeEClass = createEClass(EMPLOYEE);
 		createEAttribute(employeeEClass, EMPLOYEE__EMPLOYEE_ID);
@@ -642,7 +661,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpRootEClass, LP_ROOT__PRECEDENCES);
 		createEReference(lpRootEClass, LP_ROOT__JOBS);
 		createEReference(lpRootEClass, LP_ROOT__LP_OPTI_POST_FLOW);
-		createEReference(lpRootEClass, LP_ROOT__LP_EMPLOYEE);
+		createEReference(lpRootEClass, LP_ROOT__LP_EMPLOYEES);
 
 		lpJobEClass = createEClass(LP_JOB);
 		createEReference(lpJobEClass, LP_JOB__SHIFT);
@@ -662,6 +681,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpEmployeeEClass, LP_EMPLOYEE__LP_ROOT);
 		createEReference(lpEmployeeEClass, LP_EMPLOYEE__LP_JOBS);
 		createEReference(lpEmployeeEClass, LP_EMPLOYEE__EMPLOYEE);
+		createEAttribute(lpEmployeeEClass, LP_EMPLOYEE__MIN_NR_JOBS);
 	}
 
 	/**
@@ -699,6 +719,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		lpRootEClass.getESuperTypes().add(theSolverPackage.getGeneratorTuple());
 		lpJobEClass.getESuperTypes().add(theSolverPackage.getGeneratorTuple());
 		lpPrecedenceEClass.getESuperTypes().add(theSolverPackage.getGeneratorTuple());
+		lpEmployeeEClass.getESuperTypes().add(theSolverPackage.getGeneratorTuple());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -714,6 +735,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getShift_Employee(), this.getEmployee(), null, "Employee", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShift_ShiftStart(), ecorePackage.getEDate(), "ShiftStart", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShift_ShiftEnd(), ecorePackage.getEDate(), "ShiftEnd", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShift_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Shift.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmployee_EmployeeID(), ecorePackage.getEString(), "EmployeeID", null, 0, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -736,7 +758,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpRoot_Precedences(), this.getLpPrecedence(), this.getLpPrecedence_LpRoot(), "Precedences", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpRoot_Jobs(), this.getLpJob(), this.getLpJob_LpRoot(), "Jobs", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpRoot_LpOptiPostFlow(), this.getLpOptiPostFlow(), this.getLpOptiPostFlow_LpRoot(), "LpOptiPostFlow", null, 0, 1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLpRoot_LpEmployee(), this.getLpEmployee(), this.getLpEmployee_LpRoot(), "LpEmployee", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpRoot_LpEmployees(), this.getLpEmployee(), this.getLpEmployee_LpRoot(), "LpEmployees", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpJobEClass, LpJob.class, "LpJob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpJob_Shift(), this.getShift(), null, "Shift", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -753,9 +775,10 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpPrecedence_LpRoot(), this.getLpRoot(), this.getLpRoot_Precedences(), "LpRoot", null, 0, 1, LpPrecedence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpEmployeeEClass, LpEmployee.class, "LpEmployee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLpEmployee_LpRoot(), this.getLpRoot(), this.getLpRoot_LpEmployee(), "LpRoot", null, 0, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpEmployee_LpRoot(), this.getLpRoot(), this.getLpRoot_LpEmployees(), "LpRoot", null, 0, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpEmployee_LpJobs(), this.getLpJob(), this.getLpJob_LpEmployee(), "LpJobs", null, 0, -1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpEmployee_Employee(), this.getEmployee(), null, "Employee", null, 1, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLpEmployee_MinNrJobs(), ecorePackage.getEInt(), "MinNrJobs", "20", 0, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

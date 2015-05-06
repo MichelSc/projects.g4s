@@ -68,7 +68,7 @@ public class LpRootItemProvider extends GeneratorTupleItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_ROOT__PRECEDENCES);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_ROOT__JOBS);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_ROOT__LP_EMPLOYEE);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_ROOT__LP_EMPLOYEES);
 		}
 		return childrenFeatures;
 	}
@@ -126,7 +126,7 @@ public class LpRootItemProvider extends GeneratorTupleItemProvider {
 		switch (notification.getFeatureID(LpRoot.class)) {
 			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
-			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE:
+			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -156,7 +156,7 @@ public class LpRootItemProvider extends GeneratorTupleItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(G4SOptiPostPackage.Literals.LP_ROOT__LP_EMPLOYEE,
+				(G4SOptiPostPackage.Literals.LP_ROOT__LP_EMPLOYEES,
 				 G4SOptiPostFactory.eINSTANCE.createLpEmployee()));
 	}
 

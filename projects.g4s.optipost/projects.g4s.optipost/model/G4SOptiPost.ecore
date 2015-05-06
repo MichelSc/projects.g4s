@@ -20,6 +20,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Employee" eType="#//Employee"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShiftStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShiftEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Employee">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EmployeeID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -51,7 +53,7 @@
         containment="true" eOpposite="#//LpJob/LpRoot"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpOptiPostFlow" eType="#//LpOptiPostFlow"
         eOpposite="#//LpOptiPostFlow/LpRoot"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LpEmployee" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="LpEmployees" upperBound="-1"
         eType="#//LpEmployee" containment="true" eOpposite="#//LpEmployee/LpRoot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpJob" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
@@ -75,12 +77,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
         eOpposite="#//LpRoot/Precedences"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LpEmployee">
+  <eClassifiers xsi:type="ecore:EClass" name="LpEmployee" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
-        eOpposite="#//LpRoot/LpEmployee"/>
+        eOpposite="#//LpRoot/LpEmployees"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpJobs" upperBound="-1"
         eType="#//LpJob" eOpposite="#//LpJob/LpEmployee"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Employee" lowerBound="1"
         eType="#//Employee"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MinNrJobs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="20"/>
   </eClassifiers>
 </ecore:EPackage>

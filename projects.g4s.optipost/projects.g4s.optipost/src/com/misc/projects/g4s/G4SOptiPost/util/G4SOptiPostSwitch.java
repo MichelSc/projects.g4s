@@ -134,6 +134,8 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 			case G4SOptiPostPackage.LP_EMPLOYEE: {
 				LpEmployee lpEmployee = (LpEmployee)theEObject;
 				T result = caseLpEmployee(lpEmployee);
+				if (result == null) result = caseGeneratorTuple(lpEmployee);
+				if (result == null) result = caseGeneratorElement(lpEmployee);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

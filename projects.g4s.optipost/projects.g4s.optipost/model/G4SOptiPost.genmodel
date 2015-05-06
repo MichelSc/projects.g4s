@@ -16,11 +16,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Scenarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Domain/Name"/>
     </genClasses>
-    <genClasses ecoreClass="G4SOptiPost.ecore#//Shift">
+    <genClasses ecoreClass="G4SOptiPost.ecore#//Shift" labelFeature="#//G4SOptiPost/Shift/Description">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Shift/Location"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Shift/Employee"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Shift/ShiftStart"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Shift/ShiftEnd"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Shift/Description"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//Employee">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Employee/EmployeeID"/>
@@ -37,10 +38,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapPredecessor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapSuccessor"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/Scenario"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//LpRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/Precedences"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/Jobs"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/LpOptiPostFlow"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/LpEmployee"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//LpJob">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpJob/Shift"/>
@@ -48,10 +52,19 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpJob/JobsBefore"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpJob/StartOfMonth"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpJob/EndOfMonth"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpJob/LpRoot"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpJob/LpEmployee"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//LpPrecedence">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpPrecedence/JobBefore"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpPrecedence/JobAfter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpPrecedence/LpRoot"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//LpEmployee">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpEmployee/LpRoot"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpEmployee/LpJobs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpEmployee/Employee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpEmployee/MinNrJobs"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

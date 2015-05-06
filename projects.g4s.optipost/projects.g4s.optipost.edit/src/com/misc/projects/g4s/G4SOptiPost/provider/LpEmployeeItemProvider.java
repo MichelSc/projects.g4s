@@ -3,24 +3,18 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+import com.misc.common.moplaf.solver.provider.GeneratorTupleItemProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
-
+import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.LpEmployee} object.
@@ -29,13 +23,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
  * @generated
  */
 public class LpEmployeeItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+	extends GeneratorTupleItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -59,6 +47,7 @@ public class LpEmployeeItemProvider
 
 			addLpJobsPropertyDescriptor(object);
 			addEmployeePropertyDescriptor(object);
+			addMinNrJobsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -108,6 +97,28 @@ public class LpEmployeeItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Min Nr Jobs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMinNrJobsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LpEmployee_MinNrJobs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LpEmployee_MinNrJobs_feature", "_UI_LpEmployee_type"),
+				 G4SOptiPostPackage.Literals.LP_EMPLOYEE__MIN_NR_JOBS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns LpEmployee.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,7 +137,10 @@ public class LpEmployeeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_LpEmployee_type");
+		String label = ((LpEmployee)object).getCode();
+		return label == null || label.length() == 0 ?
+			getString("_UI_LpEmployee_type") :
+			getString("_UI_LpEmployee_type") + " " + label;
 	}
 	
 
@@ -140,6 +154,12 @@ public class LpEmployeeItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(LpEmployee.class)) {
+			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

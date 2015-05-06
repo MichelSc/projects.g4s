@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getEmployee <em>Employee</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getShiftStart <em>Shift Start</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getShiftEnd <em>Shift End</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,6 +94,16 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 	 * @ordered
 	 */
 	protected Date shiftEnd = SHIFT_END_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -234,6 +245,17 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public String getDescription() {
+		String employeeid = this.getEmployee()==null ? null : this.getEmployee().getEmployeeID();
+		String startasstring = this.getShiftStart()==null ? null : String.format("%1$tm", this.getShiftStart());
+		String description = String.format("shift_%1$s_%2$s", startasstring, employeeid);
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -249,6 +271,8 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 				return getShiftStart();
 			case G4SOptiPostPackage.SHIFT__SHIFT_END:
 				return getShiftEnd();
+			case G4SOptiPostPackage.SHIFT__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,6 +341,8 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 				return SHIFT_START_EDEFAULT == null ? shiftStart != null : !SHIFT_START_EDEFAULT.equals(shiftStart);
 			case G4SOptiPostPackage.SHIFT__SHIFT_END:
 				return SHIFT_END_EDEFAULT == null ? shiftEnd != null : !SHIFT_END_EDEFAULT.equals(shiftEnd);
+			case G4SOptiPostPackage.SHIFT__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 		}
 		return super.eIsSet(featureID);
 	}

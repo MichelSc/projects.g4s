@@ -5,16 +5,11 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
-
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -65,6 +60,7 @@ public class ShiftItemProvider
 			addEmployeePropertyDescriptor(object);
 			addShiftStartPropertyDescriptor(object);
 			addShiftEndPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -158,6 +154,28 @@ public class ShiftItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Shift_Description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Shift_Description_feature", "_UI_Shift_type"),
+				 G4SOptiPostPackage.Literals.SHIFT__DESCRIPTION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Shift.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -176,8 +194,7 @@ public class ShiftItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Date labelValue = ((Shift)object).getShiftStart();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((Shift)object).getDescription();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Shift_type") :
 			getString("_UI_Shift_type") + " " + label;
@@ -198,6 +215,7 @@ public class ShiftItemProvider
 		switch (notification.getFeatureID(Shift.class)) {
 			case G4SOptiPostPackage.SHIFT__SHIFT_START:
 			case G4SOptiPostPackage.SHIFT__SHIFT_END:
+			case G4SOptiPostPackage.SHIFT__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getPrecedences <em>Precedences</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getJobs <em>Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployee <em>Lp Employee</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployees <em>Lp Employees</em>}</li>
  * </ul>
  * </p>
  *
@@ -91,21 +91,21 @@ public interface LpRoot extends GeneratorTuple {
 	void setLpOptiPostFlow(LpOptiPostFlow value);
 
 	/**
-	 * Returns the value of the '<em><b>Lp Employee</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Lp Employees</b></em>' containment reference list.
 	 * The list contents are of type {@link com.misc.projects.g4s.G4SOptiPost.LpEmployee}.
 	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpRoot <em>Lp Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Lp Employee</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Lp Employees</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Lp Employee</em>' containment reference list.
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpRoot_LpEmployee()
+	 * @return the value of the '<em>Lp Employees</em>' containment reference list.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpRoot_LpEmployees()
 	 * @see com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpRoot
 	 * @model opposite="LpRoot" containment="true"
 	 * @generated
 	 */
-	EList<LpEmployee> getLpEmployee();
+	EList<LpEmployee> getLpEmployees();
 
 } // LpRoot

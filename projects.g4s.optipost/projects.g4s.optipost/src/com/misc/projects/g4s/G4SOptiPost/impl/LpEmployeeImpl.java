@@ -2,25 +2,19 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -35,12 +29,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getLpJobs <em>Lp Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getEmployee <em>Employee</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getMinNrJobs <em>Min Nr Jobs</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEmployee {
+public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 	/**
 	 * The cached value of the '{@link #getLpJobs() <em>Lp Jobs</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -60,6 +55,26 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 	 * @ordered
 	 */
 	protected Employee employee;
+
+	/**
+	 * The default value of the '{@link #getMinNrJobs() <em>Min Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinNrJobs()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MIN_NR_JOBS_EDEFAULT = 20;
+
+	/**
+	 * The cached value of the '{@link #getMinNrJobs() <em>Min Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMinNrJobs()
+	 * @generated
+	 * @ordered
+	 */
+	protected int minNrJobs = MIN_NR_JOBS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,7 +128,7 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newLpRoot != null)
-				msgs = ((InternalEObject)newLpRoot).eInverseAdd(this, G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE, LpRoot.class, msgs);
+				msgs = ((InternalEObject)newLpRoot).eInverseAdd(this, G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEES, LpRoot.class, msgs);
 			msgs = basicSetLpRoot(newLpRoot, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -176,6 +191,27 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getMinNrJobs() {
+		return minNrJobs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMinNrJobs(int newMinNrJobs) {
+		int oldMinNrJobs = minNrJobs;
+		minNrJobs = newMinNrJobs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS, oldMinNrJobs, minNrJobs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -215,7 +251,7 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case G4SOptiPostPackage.LP_EMPLOYEE__LP_ROOT:
-				return eInternalContainer().eInverseRemove(this, G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEE, LpRoot.class, msgs);
+				return eInternalContainer().eInverseRemove(this, G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEES, LpRoot.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -235,6 +271,8 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 			case G4SOptiPostPackage.LP_EMPLOYEE__EMPLOYEE:
 				if (resolve) return getEmployee();
 				return basicGetEmployee();
+			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
+				return getMinNrJobs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,6 +296,9 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 			case G4SOptiPostPackage.LP_EMPLOYEE__EMPLOYEE:
 				setEmployee((Employee)newValue);
 				return;
+			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
+				setMinNrJobs((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -279,6 +320,9 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 			case G4SOptiPostPackage.LP_EMPLOYEE__EMPLOYEE:
 				setEmployee((Employee)null);
 				return;
+			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
+				setMinNrJobs(MIN_NR_JOBS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -297,8 +341,26 @@ public class LpEmployeeImpl extends MinimalEObjectImpl.Container implements LpEm
 				return lpJobs != null && !lpJobs.isEmpty();
 			case G4SOptiPostPackage.LP_EMPLOYEE__EMPLOYEE:
 				return employee != null;
+			case G4SOptiPostPackage.LP_EMPLOYEE__MIN_NR_JOBS:
+				return minNrJobs != MIN_NR_JOBS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (MinNrJobs: ");
+		result.append(minNrJobs);
+		result.append(')');
+		return result.toString();
 	}
 
 } //LpEmployeeImpl
