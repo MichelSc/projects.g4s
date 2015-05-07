@@ -8,8 +8,7 @@ Bundle-Activator: com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEdit
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: com.misc.projects.g4s.G4SOptiPost.presentation,
- solvercplex.presentation
+Export-Package: com.misc.projects.g4s.G4SOptiPost.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  projects.g4s.optipost.edit;visibility:=reexport,

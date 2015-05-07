@@ -446,7 +446,7 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 	private void generateVarInPost() {
 		GeneratorLpVar newVar = SolverFactory.eINSTANCE.createGeneratorLpVar();
 		newVar.setLowerBound(0.0f);
-		newVar.setLowerBound(1.0f);
+		newVar.setUpperBound(1.0f);
 		newVar.setType(EnumLpVarType.ENUM_LITERAL_LP_VAR_INTEGER);
 		newVar.setName("inpost");
 		this.setVarInPost(newVar);
