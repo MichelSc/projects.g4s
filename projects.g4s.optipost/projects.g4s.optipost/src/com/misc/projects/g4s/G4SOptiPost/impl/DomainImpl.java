@@ -5,6 +5,7 @@ package com.misc.projects.g4s.G4SOptiPost.impl;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.JobsImporter;
 import com.misc.projects.g4s.G4SOptiPost.Location;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
@@ -23,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -38,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getLocations <em>Locations</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getJobsImporter <em>Jobs Importer</em>}</li>
  * </ul>
  * </p>
  *
@@ -113,6 +116,16 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getJobsImporter() <em>Jobs Importer</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getJobsImporter()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<JobsImporter> jobsImporter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,6 +232,33 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<JobsImporter> getJobsImporter() {
+		if (jobsImporter == null) {
+			jobsImporter = new EObjectContainmentWithInverseEList<JobsImporter>(JobsImporter.class, this, G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER, G4SOptiPostPackage.JOBS_IMPORTER__DOMAIN);
+		}
+		return jobsImporter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJobsImporter()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -232,6 +272,8 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 				return ((InternalEList<?>)getLocations()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.DOMAIN__SCENARIOS:
 				return ((InternalEList<?>)getScenarios()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
+				return ((InternalEList<?>)getJobsImporter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -256,6 +298,8 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 				return getScenarios();
 			case G4SOptiPostPackage.DOMAIN__NAME:
 				return getName();
+			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
+				return getJobsImporter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -292,6 +336,10 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 			case G4SOptiPostPackage.DOMAIN__NAME:
 				setName((String)newValue);
 				return;
+			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
+				getJobsImporter().clear();
+				getJobsImporter().addAll((Collection<? extends JobsImporter>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -322,6 +370,9 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 			case G4SOptiPostPackage.DOMAIN__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
+				getJobsImporter().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -346,6 +397,8 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 				return scenarios != null && !scenarios.isEmpty();
 			case G4SOptiPostPackage.DOMAIN__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
+				return jobsImporter != null && !jobsImporter.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getLocations <em>Locations</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getName <em>Name</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getJobsImporter <em>Jobs Importer</em>}</li>
  * </ul>
  * </p>
  *
@@ -133,5 +134,23 @@ public interface Domain extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Jobs Importer</b></em>' containment reference list.
+	 * The list contents are of type {@link com.misc.projects.g4s.G4SOptiPost.JobsImporter}.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#getDomain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Jobs Importer</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Jobs Importer</em>' containment reference list.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getDomain_JobsImporter()
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#getDomain
+	 * @model opposite="Domain" containment="true"
+	 * @generated
+	 */
+	EList<JobsImporter> getJobsImporter();
 
 } // Domain

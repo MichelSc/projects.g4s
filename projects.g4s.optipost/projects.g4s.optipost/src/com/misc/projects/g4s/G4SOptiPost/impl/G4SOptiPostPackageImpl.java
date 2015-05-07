@@ -250,6 +250,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDomain_JobsImporter() {
+		return (EReference)domainEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getShift() {
 		return shiftEClass;
 	}
@@ -700,6 +709,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getJobsImporter_Domain() {
+		return (EReference)jobsImporterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getJobsImporter__FormatWorkerID__int() {
 		return jobsImporterEClass.getEOperations().get(0);
 	}
@@ -793,6 +811,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(domainEClass, DOMAIN__LOCATIONS);
 		createEReference(domainEClass, DOMAIN__SCENARIOS);
 		createEAttribute(domainEClass, DOMAIN__NAME);
+		createEReference(domainEClass, DOMAIN__JOBS_IMPORTER);
 
 		shiftEClass = createEClass(SHIFT);
 		createEReference(shiftEClass, SHIFT__LOCATION);
@@ -853,6 +872,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpEmployeeEClass, LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST);
 
 		jobsImporterEClass = createEClass(JOBS_IMPORTER);
+		createEReference(jobsImporterEClass, JOBS_IMPORTER__DOMAIN);
 		createEOperation(jobsImporterEClass, JOBS_IMPORTER___FORMAT_WORKER_ID__INT);
 		createEOperation(jobsImporterEClass, JOBS_IMPORTER___GET_OR_CREATE_EMPLOYEE__STRING);
 		createEOperation(jobsImporterEClass, JOBS_IMPORTER___GET_OR_CREATE_LOCATION__STRING_STRING);
@@ -911,6 +931,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getDomain_Locations(), this.getLocation(), null, "Locations", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDomain_Scenarios(), this.getScenario(), null, "Scenarios", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDomain_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDomain_JobsImporter(), this.getJobsImporter(), this.getJobsImporter_Domain(), "JobsImporter", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shiftEClass, Shift.class, "Shift", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getShift_Location(), this.getLocation(), null, "Location", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -971,6 +992,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpEmployee_ConsEnoughJobsInPost(), theSolverPackage.getGeneratorLpCons(), null, "ConsEnoughJobsInPost", null, 0, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(jobsImporterEClass, JobsImporter.class, "JobsImporter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getJobsImporter_Domain(), this.getDomain(), this.getDomain_JobsImporter(), "Domain", null, 0, 1, JobsImporter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getJobsImporter__FormatWorkerID__int(), ecorePackage.getEString(), "formatWorkerID", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "idAsInt", 0, 1, IS_UNIQUE, IS_ORDERED);

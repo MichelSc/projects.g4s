@@ -107,6 +107,7 @@ public class DomainItemProvider
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__EMPLOYEES);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__LOCATIONS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__SCENARIOS);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__JOBS_IMPORTER);
 		}
 		return childrenFeatures;
 	}
@@ -170,6 +171,7 @@ public class DomainItemProvider
 			case G4SOptiPostPackage.DOMAIN__EMPLOYEES:
 			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
 			case G4SOptiPostPackage.DOMAIN__SCENARIOS:
+			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -211,6 +213,11 @@ public class DomainItemProvider
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.DOMAIN__SCENARIOS,
 				 G4SOptiPostFactory.eINSTANCE.createScenario()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.DOMAIN__JOBS_IMPORTER,
+				 G4SOptiPostFactory.eINSTANCE.createJobsImporterSpreadsheet()));
 	}
 
 	/**

@@ -124,13 +124,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int DOMAIN__NAME = 5;
 
 	/**
+	 * The feature id for the '<em><b>Jobs Importer</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__JOBS_IMPORTER = 6;
+
+	/**
 	 * The number of structural features of the '<em>Domain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_FEATURE_COUNT = 6;
+	int DOMAIN_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Domain</em>' class.
@@ -1360,13 +1369,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int JOBS_IMPORTER = 10;
 
 	/**
+	 * The feature id for the '<em><b>Domain</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER__DOMAIN = 0;
+
+	/**
 	 * The number of structural features of the '<em>Jobs Importer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS_IMPORTER_FEATURE_COUNT = 0;
+	int JOBS_IMPORTER_FEATURE_COUNT = 1;
 
 	/**
 	 * The operation id for the '<em>Format Worker ID</em>' operation.
@@ -1431,6 +1449,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	int JOBS_IMPORTER_SPREADSHEET = 11;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__DOMAIN = JOBS_IMPORTER__DOMAIN;
 
 	/**
 	 * The feature id for the '<em><b>Spreadsheet</b></em>' reference.
@@ -1580,6 +1607,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDomain_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.Domain#getJobsImporter <em>Jobs Importer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Jobs Importer</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Domain#getJobsImporter()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_JobsImporter();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.Shift <em>Shift</em>}'.
@@ -2122,6 +2160,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EClass getJobsImporter();
 
 	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#getDomain <em>Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Domain</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#getDomain()
+	 * @see #getJobsImporter()
+	 * @generated
+	 */
+	EReference getJobsImporter_Domain();
+
+	/**
 	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#formatWorkerID(int) <em>Format Worker ID</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2272,6 +2321,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOMAIN__NAME = eINSTANCE.getDomain_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Jobs Importer</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__JOBS_IMPORTER = eINSTANCE.getDomain_JobsImporter();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl <em>Shift</em>}' class.
@@ -2692,6 +2749,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EClass JOBS_IMPORTER = eINSTANCE.getJobsImporter();
+
+		/**
+		 * The meta object literal for the '<em><b>Domain</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOBS_IMPORTER__DOMAIN = eINSTANCE.getJobsImporter_Domain();
 
 		/**
 		 * The meta object literal for the '<em><b>Format Worker ID</b></em>' operation.

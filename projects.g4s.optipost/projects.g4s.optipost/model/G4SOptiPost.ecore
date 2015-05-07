@@ -14,6 +14,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Scenarios" upperBound="-1"
         eType="#//Scenario" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="JobsImporter" upperBound="-1"
+        eType="#//JobsImporter" containment="true" eOpposite="#//JobsImporter/Domain"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Shift">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Location" eType="#//Location"/>
@@ -124,6 +126,8 @@
       <eParameters name="shiftEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     </eOperations>
     <eOperations name="import"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Domain" eType="#//Domain"
+        eOpposite="#//Domain/JobsImporter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="JobsImporterSpreadsheet" eSuperTypes="#//JobsImporter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Spreadsheet" eType="ecore:EClass ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.ecore#//Spreadsheet"/>
