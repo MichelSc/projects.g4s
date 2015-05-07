@@ -515,7 +515,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__SCENARIO = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference.
+	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1620,10 +1620,10 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpOptiPostFlow_Scenario();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Cplex Solver</em>'.
+	 * @return the meta object for the containment reference list '<em>Cplex Solver</em>'.
 	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver()
 	 * @see #getLpOptiPostFlow()
 	 * @generated
@@ -2178,7 +2178,7 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_OPTI_POST_FLOW__SCENARIO = eINSTANCE.getLpOptiPostFlow_Scenario();
 
 		/**
-		 * The meta object literal for the '<em><b>Cplex Solver</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Cplex Solver</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

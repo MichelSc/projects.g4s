@@ -5,6 +5,7 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 
 import com.misc.common.moplaf.solver.EnumObjectiveType;
 import com.misc.common.moplaf.solver.provider.GeneratorItemProvider;
+import com.misc.common.moplaf.solver.solvercplex.SolvercplexFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
@@ -198,7 +199,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__CPLEX_SOLVER,
-				 com.misc.common.moplaf.solver.solvercplex.SolvercplexFactory.eINSTANCE.createSolverCplex()));
+				 SolvercplexFactory.eINSTANCE.createSolverCplex()));
 	}
 
 	/**

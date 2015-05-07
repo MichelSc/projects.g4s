@@ -45,7 +45,8 @@
         defaultValueLiteral="0.25"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Scenario" eType="#//Scenario"
         eOpposite="#//Scenario/LpOptiPostFlows"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CplexSolver" eType="ecore:EClass ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore#//SolverCplex"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CplexSolver" upperBound="-1"
+        eType="ecore:EClass ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore#//SolverCplex"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpRoot" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
@@ -64,8 +65,10 @@
         eType="#//LpPrecedence" eOpposite="#//LpPrecedence/JobBefore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="JobsBefore" upperBound="-1"
         eType="#//LpPrecedence" eOpposite="#//LpPrecedence/JobAfter"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StartOfMonth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EndOfMonth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="StartOfMonth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EndOfMonth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
         eOpposite="#//LpRoot/Jobs"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpEmployee" lowerBound="1"

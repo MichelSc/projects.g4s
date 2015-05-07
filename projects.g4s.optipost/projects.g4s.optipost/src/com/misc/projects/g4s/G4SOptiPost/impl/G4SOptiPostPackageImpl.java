@@ -3,6 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.common.moplaf.solver.SolverPackage;
+import com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
@@ -145,7 +146,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		isInited = true;
 
 		// Initialize simple dependencies
-		com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage.eINSTANCE.eClass();
+		SolvercplexPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theG4SOptiPostPackage.createPackageContents();
@@ -776,7 +777,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		// Obtain other dependent packages
 		SolverPackage theSolverPackage = (SolverPackage)EPackage.Registry.INSTANCE.getEPackage(SolverPackage.eNS_URI);
-		com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage theSolvercplexPackage = (com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage)EPackage.Registry.INSTANCE.getEPackage(com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage.eNS_URI);
+		SolvercplexPackage theSolvercplexPackage = (SolvercplexPackage)EPackage.Registry.INSTANCE.getEPackage(SolvercplexPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -821,7 +822,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getLpOptiPostFlow_MinOverlapPredecessor(), ecorePackage.getEFloat(), "MinOverlapPredecessor", "0.25", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLpOptiPostFlow_MinOverlapSuccessor(), ecorePackage.getEFloat(), "MinOverlapSuccessor", "0.25", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_Scenario(), this.getScenario(), this.getScenario_LpOptiPostFlows(), "Scenario", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLpOptiPostFlow_CplexSolver(), theSolvercplexPackage.getSolverCplex(), null, "CplexSolver", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpOptiPostFlow_CplexSolver(), theSolvercplexPackage.getSolverCplex(), null, "CplexSolver", null, 0, -1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpRootEClass, LpRoot.class, "LpRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpRoot_Precedences(), this.getLpPrecedence(), this.getLpPrecedence_LpRoot(), "Precedences", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -833,8 +834,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpJob_Shift(), this.getShift(), null, "Shift", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpJob_JobsAfter(), this.getLpPrecedence(), this.getLpPrecedence_JobBefore(), "JobsAfter", null, 0, -1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpJob_JobsBefore(), this.getLpPrecedence(), this.getLpPrecedence_JobAfter(), "JobsBefore", null, 0, -1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpJob_StartOfMonth(), ecorePackage.getEBoolean(), "StartOfMonth", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpJob_EndOfMonth(), ecorePackage.getEBoolean(), "EndOfMonth", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLpJob_StartOfMonth(), ecorePackage.getEBoolean(), "StartOfMonth", null, 0, 1, LpJob.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLpJob_EndOfMonth(), ecorePackage.getEBoolean(), "EndOfMonth", null, 0, 1, LpJob.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getLpJob_LpRoot(), this.getLpRoot(), this.getLpRoot_Jobs(), "LpRoot", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpJob_LpEmployee(), this.getLpEmployee(), this.getLpEmployee_LpJobs(), "LpEmployee", null, 1, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpJob_VarInPost(), theSolverPackage.getGeneratorLpVar(), null, "VarInPost", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

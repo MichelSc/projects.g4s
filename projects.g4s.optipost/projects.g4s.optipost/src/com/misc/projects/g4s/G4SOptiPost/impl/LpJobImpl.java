@@ -15,7 +15,10 @@ import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -91,16 +94,6 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	protected static final boolean START_OF_MONTH_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isStartOfMonth() <em>Start Of Month</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isStartOfMonth()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean startOfMonth = START_OF_MONTH_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #isEndOfMonth() <em>End Of Month</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -109,16 +102,6 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 * @ordered
 	 */
 	protected static final boolean END_OF_MONTH_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isEndOfMonth() <em>End Of Month</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isEndOfMonth()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean endOfMonth = END_OF_MONTH_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getLpEmployee() <em>Lp Employee</em>}' reference.
@@ -244,43 +227,29 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean isStartOfMonth() {
-		return startOfMonth;
+		if ( this.getShift()==null){ return false; }
+		Date shiftStart = this.getShift().getShiftStart();
+		if ( shiftStart == null ) { return false; }
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(shiftStart);
+		boolean isStart = calendar.get(Calendar.DAY_OF_MONTH)==calendar.getActualMinimum(Calendar.DAY_OF_MONTH);
+		return isStart;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setStartOfMonth(boolean newStartOfMonth) {
-		boolean oldStartOfMonth = startOfMonth;
-		startOfMonth = newStartOfMonth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__START_OF_MONTH, oldStartOfMonth, startOfMonth));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean isEndOfMonth() {
-		return endOfMonth;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEndOfMonth(boolean newEndOfMonth) {
-		boolean oldEndOfMonth = endOfMonth;
-		endOfMonth = newEndOfMonth;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__END_OF_MONTH, oldEndOfMonth, endOfMonth));
+		if ( this.getShift()==null){ return false; }
+		Date shiftEnd= this.getShift().getShiftEnd();
+		if ( shiftEnd== null ) { return false; }
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTime(shiftEnd);
+		boolean isEnd= calendar.get(Calendar.DAY_OF_MONTH)==calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+		return isEnd;
 	}
 
 	/**
@@ -632,12 +601,6 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				getJobsBefore().clear();
 				getJobsBefore().addAll((Collection<? extends LpPrecedence>)newValue);
 				return;
-			case G4SOptiPostPackage.LP_JOB__START_OF_MONTH:
-				setStartOfMonth((Boolean)newValue);
-				return;
-			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
-				setEndOfMonth((Boolean)newValue);
-				return;
 			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
 				setLpRoot((LpRoot)newValue);
 				return;
@@ -674,12 +637,6 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
 				getJobsBefore().clear();
 				return;
-			case G4SOptiPostPackage.LP_JOB__START_OF_MONTH:
-				setStartOfMonth(START_OF_MONTH_EDEFAULT);
-				return;
-			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
-				setEndOfMonth(END_OF_MONTH_EDEFAULT);
-				return;
 			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
 				setLpRoot((LpRoot)null);
 				return;
@@ -714,9 +671,9 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__JOBS_BEFORE:
 				return jobsBefore != null && !jobsBefore.isEmpty();
 			case G4SOptiPostPackage.LP_JOB__START_OF_MONTH:
-				return startOfMonth != START_OF_MONTH_EDEFAULT;
+				return isStartOfMonth() != START_OF_MONTH_EDEFAULT;
 			case G4SOptiPostPackage.LP_JOB__END_OF_MONTH:
-				return endOfMonth != END_OF_MONTH_EDEFAULT;
+				return isEndOfMonth() != END_OF_MONTH_EDEFAULT;
 			case G4SOptiPostPackage.LP_JOB__LP_ROOT:
 				return getLpRoot() != null;
 			case G4SOptiPostPackage.LP_JOB__LP_EMPLOYEE:
@@ -729,24 +686,6 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return consIsPrecededInPost != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (StartOfMonth: ");
-		result.append(startOfMonth);
-		result.append(", EndOfMonth: ");
-		result.append(endOfMonth);
-		result.append(')');
-		return result.toString();
 	}
 
 	@Override

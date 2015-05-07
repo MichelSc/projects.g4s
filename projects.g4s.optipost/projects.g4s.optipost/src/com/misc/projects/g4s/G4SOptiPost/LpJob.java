@@ -105,22 +105,11 @@ public interface LpJob extends GeneratorTuple {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start Of Month</em>' attribute.
-	 * @see #setStartOfMonth(boolean)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_StartOfMonth()
-	 * @model
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	boolean isStartOfMonth();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#isStartOfMonth <em>Start Of Month</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start Of Month</em>' attribute.
-	 * @see #isStartOfMonth()
-	 * @generated
-	 */
-	void setStartOfMonth(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>End Of Month</b></em>' attribute.
@@ -131,22 +120,11 @@ public interface LpJob extends GeneratorTuple {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End Of Month</em>' attribute.
-	 * @see #setEndOfMonth(boolean)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_EndOfMonth()
-	 * @model
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	boolean isEndOfMonth();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#isEndOfMonth <em>End Of Month</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End Of Month</em>' attribute.
-	 * @see #isEndOfMonth()
-	 * @generated
-	 */
-	void setEndOfMonth(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Lp Root</b></em>' container reference.

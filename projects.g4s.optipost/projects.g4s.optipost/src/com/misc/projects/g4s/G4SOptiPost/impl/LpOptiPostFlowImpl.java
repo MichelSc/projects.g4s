@@ -3,17 +3,22 @@
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.common.moplaf.solver.impl.GeneratorImpl;
+import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -84,14 +89,14 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	protected float minOverlapSuccessor = MIN_OVERLAP_SUCCESSOR_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCplexSolver() <em>Cplex Solver</em>}' containment reference.
+	 * The cached value of the '{@link #getCplexSolver() <em>Cplex Solver</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCplexSolver()
 	 * @generated
 	 * @ordered
 	 */
-	protected com.misc.common.moplaf.solver.solvercplex.SolverCplex cplexSolver;
+	protected EList<SolverCplex> cplexSolver;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -243,42 +248,11 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public com.misc.common.moplaf.solver.solvercplex.SolverCplex getCplexSolver() {
+	public EList<SolverCplex> getCplexSolver() {
+		if (cplexSolver == null) {
+			cplexSolver = new EObjectContainmentEList<SolverCplex>(SolverCplex.class, this, G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER);
+		}
 		return cplexSolver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCplexSolver(com.misc.common.moplaf.solver.solvercplex.SolverCplex newCplexSolver, NotificationChain msgs) {
-		com.misc.common.moplaf.solver.solvercplex.SolverCplex oldCplexSolver = cplexSolver;
-		cplexSolver = newCplexSolver;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER, oldCplexSolver, newCplexSolver);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCplexSolver(com.misc.common.moplaf.solver.solvercplex.SolverCplex newCplexSolver) {
-		if (newCplexSolver != cplexSolver) {
-			NotificationChain msgs = null;
-			if (cplexSolver != null)
-				msgs = ((InternalEObject)cplexSolver).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER, null, msgs);
-			if (newCplexSolver != null)
-				msgs = ((InternalEObject)newCplexSolver).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER, null, msgs);
-			msgs = basicSetCplexSolver(newCplexSolver, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER, newCplexSolver, newCplexSolver));
 	}
 
 	/**
@@ -314,7 +288,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				return basicSetScenario(null, msgs);
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				return basicSetCplexSolver(null, msgs);
+				return ((InternalEList<?>)getCplexSolver()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -360,6 +334,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -376,7 +351,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				setScenario((Scenario)newValue);
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				setCplexSolver((com.misc.common.moplaf.solver.solvercplex.SolverCplex)newValue);
+				getCplexSolver().clear();
+				getCplexSolver().addAll((Collection<? extends SolverCplex>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -403,7 +379,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				setScenario((Scenario)null);
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				setCplexSolver((com.misc.common.moplaf.solver.solvercplex.SolverCplex)null);
+				getCplexSolver().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -426,7 +402,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				return getScenario() != null;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				return cplexSolver != null;
+				return cplexSolver != null && !cplexSolver.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
