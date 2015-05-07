@@ -13,5 +13,6 @@ Export-Package: com.misc.projects.g4s.G4SOptiPost,
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  com.misc.common.moplaf.solver.emf;visibility:=reexport,
- com.misc.common.moplaf.solver.cplex.emf;visibility:=reexport
+ com.misc.common.moplaf.solver.cplex.emf;visibility:=reexport,
+ com.misc.common.moplaf.spreadsheet.emf;visibility:=reexport
 Bundle-ActivationPolicy: lazy

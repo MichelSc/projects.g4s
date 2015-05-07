@@ -112,6 +112,15 @@ public interface G4SOptiPostFactory extends EFactory {
 	LpEmployee createLpEmployee();
 
 	/**
+	 * Returns a new object of class '<em>Jobs Importer Spreadsheet</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Jobs Importer Spreadsheet</em>'.
+	 * @generated
+	 */
+	JobsImporterSpreadsheet createJobsImporterSpreadsheet();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

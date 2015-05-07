@@ -18,6 +18,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Shift">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Location" eType="#//Location"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Employee" eType="#//Employee"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShiftDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShiftStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShiftEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -103,5 +104,28 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ConsEnoughJobsInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpCons"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JobsImporter" abstract="true">
+    <eOperations name="formatWorkerID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="idAsInt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="getOrCreateEmployee" eType="#//Employee">
+      <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getOrCreateLocation" eType="#//Location">
+      <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="createJob" eType="#//Shift">
+      <eParameters name="employee" eType="#//Employee"/>
+      <eParameters name="location" eType="#//Location"/>
+      <eParameters name="shiftDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      <eParameters name="shiftStart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      <eParameters name="shiftEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eOperations>
+    <eOperations name="import"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JobsImporterSpreadsheet" eSuperTypes="#//JobsImporter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Spreadsheet" eType="ecore:EClass ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.ecore#//Spreadsheet"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -139,6 +139,19 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case G4SOptiPostPackage.JOBS_IMPORTER: {
+				JobsImporter jobsImporter = (JobsImporter)theEObject;
+				T result = caseJobsImporter(jobsImporter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET: {
+				JobsImporterSpreadsheet jobsImporterSpreadsheet = (JobsImporterSpreadsheet)theEObject;
+				T result = caseJobsImporterSpreadsheet(jobsImporterSpreadsheet);
+				if (result == null) result = caseJobsImporter(jobsImporterSpreadsheet);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -290,6 +303,36 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLpEmployee(LpEmployee object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Jobs Importer</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Jobs Importer</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJobsImporter(JobsImporter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Jobs Importer Spreadsheet</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Jobs Importer Spreadsheet</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseJobsImporterSpreadsheet(JobsImporterSpreadsheet object) {
 		return null;
 	}
 

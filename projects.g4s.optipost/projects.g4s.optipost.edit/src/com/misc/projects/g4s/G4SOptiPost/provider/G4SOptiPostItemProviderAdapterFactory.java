@@ -302,6 +302,29 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected JobsImporterSpreadsheetItemProvider jobsImporterSpreadsheetItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createJobsImporterSpreadsheetAdapter() {
+		if (jobsImporterSpreadsheetItemProvider == null) {
+			jobsImporterSpreadsheetItemProvider = new JobsImporterSpreadsheetItemProvider(this);
+		}
+
+		return jobsImporterSpreadsheetItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,6 +433,7 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		if (lpJobItemProvider != null) lpJobItemProvider.dispose();
 		if (lpPrecedenceItemProvider != null) lpPrecedenceItemProvider.dispose();
 		if (lpEmployeeItemProvider != null) lpEmployeeItemProvider.dispose();
+		if (jobsImporterSpreadsheetItemProvider != null) jobsImporterSpreadsheetItemProvider.dispose();
 	}
 
 }

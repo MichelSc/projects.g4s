@@ -66,6 +66,7 @@ public class G4SOptiPostFactoryImpl extends EFactoryImpl implements G4SOptiPostF
 			case G4SOptiPostPackage.LP_JOB: return createLpJob();
 			case G4SOptiPostPackage.LP_PRECEDENCE: return createLpPrecedence();
 			case G4SOptiPostPackage.LP_EMPLOYEE: return createLpEmployee();
+			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET: return createJobsImporterSpreadsheet();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -169,6 +170,16 @@ public class G4SOptiPostFactoryImpl extends EFactoryImpl implements G4SOptiPostF
 	public LpEmployee createLpEmployee() {
 		LpEmployeeImpl lpEmployee = new LpEmployeeImpl();
 		return lpEmployee;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public JobsImporterSpreadsheet createJobsImporterSpreadsheet() {
+		JobsImporterSpreadsheetImpl jobsImporterSpreadsheet = new JobsImporterSpreadsheetImpl();
+		return jobsImporterSpreadsheet;
 	}
 
 	/**

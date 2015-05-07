@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getLocation <em>Location</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getEmployee <em>Employee</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getShiftDate <em>Shift Date</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getShiftStart <em>Shift Start</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getShiftEnd <em>Shift End</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getDescription <em>Description</em>}</li>
@@ -78,6 +79,32 @@ public interface Shift extends EObject {
 	 * @generated
 	 */
 	void setEmployee(Employee value);
+
+	/**
+	 * Returns the value of the '<em><b>Shift Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shift Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shift Date</em>' attribute.
+	 * @see #setShiftDate(Date)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getShift_ShiftDate()
+	 * @model
+	 * @generated
+	 */
+	Date getShiftDate();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.Shift#getShiftDate <em>Shift Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Shift Date</em>' attribute.
+	 * @see #getShiftDate()
+	 * @generated
+	 */
+	void setShiftDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Shift Start</b></em>' attribute.

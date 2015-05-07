@@ -58,6 +58,7 @@ public class ShiftItemProvider
 
 			addLocationPropertyDescriptor(object);
 			addEmployeePropertyDescriptor(object);
+			addShiftDatePropertyDescriptor(object);
 			addShiftStartPropertyDescriptor(object);
 			addShiftEndPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
@@ -105,6 +106,28 @@ public class ShiftItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Shift Date feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addShiftDatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Shift_ShiftDate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Shift_ShiftDate_feature", "_UI_Shift_type"),
+				 G4SOptiPostPackage.Literals.SHIFT__SHIFT_DATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -213,6 +236,7 @@ public class ShiftItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Shift.class)) {
+			case G4SOptiPostPackage.SHIFT__SHIFT_DATE:
 			case G4SOptiPostPackage.SHIFT__SHIFT_START:
 			case G4SOptiPostPackage.SHIFT__SHIFT_END:
 			case G4SOptiPostPackage.SHIFT__DESCRIPTION:

@@ -4,10 +4,13 @@ package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.common.moplaf.solver.SolverPackage;
 import com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage;
+import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.JobsImporter;
+import com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet;
 import com.misc.projects.g4s.G4SOptiPost.Location;
 import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
@@ -18,6 +21,7 @@ import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -100,6 +104,20 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	private EClass lpEmployeeEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass jobsImporterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass jobsImporterSpreadsheetEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -147,6 +165,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		// Initialize simple dependencies
 		SolvercplexPackage.eINSTANCE.eClass();
+		SpreadsheetPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theG4SOptiPostPackage.createPackageContents();
@@ -258,7 +277,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getShift_ShiftStart() {
+	public EAttribute getShift_ShiftDate() {
 		return (EAttribute)shiftEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -267,7 +286,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getShift_ShiftEnd() {
+	public EAttribute getShift_ShiftStart() {
 		return (EAttribute)shiftEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -276,8 +295,17 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getShift_Description() {
+	public EAttribute getShift_ShiftEnd() {
 		return (EAttribute)shiftEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getShift_Description() {
+		return (EAttribute)shiftEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -663,6 +691,78 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getJobsImporter() {
+		return jobsImporterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getJobsImporter__FormatWorkerID__int() {
+		return jobsImporterEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getJobsImporter__GetOrCreateEmployee__String() {
+		return jobsImporterEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getJobsImporter__GetOrCreateLocation__String_String() {
+		return jobsImporterEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getJobsImporter__CreateJob__Employee_Location_Date_Date_Date() {
+		return jobsImporterEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getJobsImporter__Import_() {
+		return jobsImporterEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getJobsImporterSpreadsheet() {
+		return jobsImporterSpreadsheetEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getJobsImporterSpreadsheet_Spreadsheet() {
+		return (EReference)jobsImporterSpreadsheetEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public G4SOptiPostFactory getG4SOptiPostFactory() {
 		return (G4SOptiPostFactory)getEFactoryInstance();
 	}
@@ -697,6 +797,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		shiftEClass = createEClass(SHIFT);
 		createEReference(shiftEClass, SHIFT__LOCATION);
 		createEReference(shiftEClass, SHIFT__EMPLOYEE);
+		createEAttribute(shiftEClass, SHIFT__SHIFT_DATE);
 		createEAttribute(shiftEClass, SHIFT__SHIFT_START);
 		createEAttribute(shiftEClass, SHIFT__SHIFT_END);
 		createEAttribute(shiftEClass, SHIFT__DESCRIPTION);
@@ -750,6 +851,16 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEAttribute(lpEmployeeEClass, LP_EMPLOYEE__MIN_NR_JOBS);
 		createEReference(lpEmployeeEClass, LP_EMPLOYEE__VAR_IN_POST);
 		createEReference(lpEmployeeEClass, LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST);
+
+		jobsImporterEClass = createEClass(JOBS_IMPORTER);
+		createEOperation(jobsImporterEClass, JOBS_IMPORTER___FORMAT_WORKER_ID__INT);
+		createEOperation(jobsImporterEClass, JOBS_IMPORTER___GET_OR_CREATE_EMPLOYEE__STRING);
+		createEOperation(jobsImporterEClass, JOBS_IMPORTER___GET_OR_CREATE_LOCATION__STRING_STRING);
+		createEOperation(jobsImporterEClass, JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE);
+		createEOperation(jobsImporterEClass, JOBS_IMPORTER___IMPORT_);
+
+		jobsImporterSpreadsheetEClass = createEClass(JOBS_IMPORTER_SPREADSHEET);
+		createEReference(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__SPREADSHEET);
 	}
 
 	/**
@@ -778,6 +889,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		// Obtain other dependent packages
 		SolverPackage theSolverPackage = (SolverPackage)EPackage.Registry.INSTANCE.getEPackage(SolverPackage.eNS_URI);
 		SolvercplexPackage theSolvercplexPackage = (SolvercplexPackage)EPackage.Registry.INSTANCE.getEPackage(SolvercplexPackage.eNS_URI);
+		SpreadsheetPackage theSpreadsheetPackage = (SpreadsheetPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -789,6 +901,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		lpJobEClass.getESuperTypes().add(theSolverPackage.getGeneratorTuple());
 		lpPrecedenceEClass.getESuperTypes().add(theSolverPackage.getGeneratorTuple());
 		lpEmployeeEClass.getESuperTypes().add(theSolverPackage.getGeneratorTuple());
+		jobsImporterSpreadsheetEClass.getESuperTypes().add(this.getJobsImporter());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -802,6 +915,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEClass(shiftEClass, Shift.class, "Shift", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getShift_Location(), this.getLocation(), null, "Location", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getShift_Employee(), this.getEmployee(), null, "Employee", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getShift_ShiftDate(), ecorePackage.getEDate(), "ShiftDate", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShift_ShiftStart(), ecorePackage.getEDate(), "ShiftStart", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShift_ShiftEnd(), ecorePackage.getEDate(), "ShiftEnd", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getShift_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Shift.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
@@ -855,6 +969,30 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getLpEmployee_MinNrJobs(), ecorePackage.getEInt(), "MinNrJobs", "20", 0, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpEmployee_VarInPost(), theSolverPackage.getGeneratorLpVar(), null, "VarInPost", null, 0, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpEmployee_ConsEnoughJobsInPost(), theSolverPackage.getGeneratorLpCons(), null, "ConsEnoughJobsInPost", null, 0, 1, LpEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(jobsImporterEClass, JobsImporter.class, "JobsImporter", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getJobsImporter__FormatWorkerID__int(), ecorePackage.getEString(), "formatWorkerID", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "idAsInt", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getJobsImporter__GetOrCreateEmployee__String(), this.getEmployee(), "getOrCreateEmployee", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getJobsImporter__GetOrCreateLocation__String_String(), this.getLocation(), "getOrCreateLocation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "id", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "description", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getJobsImporter__CreateJob__Employee_Location_Date_Date_Date(), this.getShift(), "createJob", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEmployee(), "employee", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getLocation(), "location", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "shiftDate", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "shiftStart", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDate(), "shiftEnd", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getJobsImporter__Import_(), null, "import_", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(jobsImporterSpreadsheetEClass, JobsImporterSpreadsheet.class, "JobsImporterSpreadsheet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getJobsImporterSpreadsheet_Spreadsheet(), theSpreadsheetPackage.getSpreadsheet(), null, "Spreadsheet", null, 0, 1, JobsImporterSpreadsheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

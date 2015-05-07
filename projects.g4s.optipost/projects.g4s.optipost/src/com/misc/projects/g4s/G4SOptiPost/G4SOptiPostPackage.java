@@ -6,6 +6,7 @@ import com.misc.common.moplaf.solver.SolverPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -169,13 +170,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int SHIFT__EMPLOYEE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Shift Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHIFT__SHIFT_DATE = 2;
+
+	/**
 	 * The feature id for the '<em><b>Shift Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SHIFT__SHIFT_START = 2;
+	int SHIFT__SHIFT_START = 3;
 
 	/**
 	 * The feature id for the '<em><b>Shift End</b></em>' attribute.
@@ -184,7 +194,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIFT__SHIFT_END = 3;
+	int SHIFT__SHIFT_END = 4;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -193,7 +203,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIFT__DESCRIPTION = 4;
+	int SHIFT__DESCRIPTION = 5;
 
 	/**
 	 * The number of structural features of the '<em>Shift</em>' class.
@@ -202,7 +212,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHIFT_FEATURE_COUNT = 5;
+	int SHIFT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Shift</em>' class.
@@ -1340,6 +1350,162 @@ public interface G4SOptiPostPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterImpl <em>Jobs Importer</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterImpl
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getJobsImporter()
+	 * @generated
+	 */
+	int JOBS_IMPORTER = 10;
+
+	/**
+	 * The number of structural features of the '<em>Jobs Importer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Format Worker ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER___FORMAT_WORKER_ID__INT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Or Create Employee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER___GET_OR_CREATE_EMPLOYEE__STRING = 1;
+
+	/**
+	 * The operation id for the '<em>Get Or Create Location</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER___GET_OR_CREATE_LOCATION__STRING_STRING = 2;
+
+	/**
+	 * The operation id for the '<em>Create Job</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE = 3;
+
+	/**
+	 * The operation id for the '<em>Import </em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER___IMPORT_ = 4;
+
+	/**
+	 * The number of operations of the '<em>Jobs Importer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_OPERATION_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl <em>Jobs Importer Spreadsheet</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	int JOBS_IMPORTER_SPREADSHEET = 11;
+
+	/**
+	 * The feature id for the '<em><b>Spreadsheet</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__SPREADSHEET = JOBS_IMPORTER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Jobs Importer Spreadsheet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET_FEATURE_COUNT = JOBS_IMPORTER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Format Worker ID</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET___FORMAT_WORKER_ID__INT = JOBS_IMPORTER___FORMAT_WORKER_ID__INT;
+
+	/**
+	 * The operation id for the '<em>Get Or Create Employee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET___GET_OR_CREATE_EMPLOYEE__STRING = JOBS_IMPORTER___GET_OR_CREATE_EMPLOYEE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Or Create Location</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET___GET_OR_CREATE_LOCATION__STRING_STRING = JOBS_IMPORTER___GET_OR_CREATE_LOCATION__STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Create Job</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE = JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE;
+
+	/**
+	 * The operation id for the '<em>Import </em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET___IMPORT_ = JOBS_IMPORTER___IMPORT_;
+
+	/**
+	 * The number of operations of the '<em>Jobs Importer Spreadsheet</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET_OPERATION_COUNT = JOBS_IMPORTER_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.Domain <em>Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1446,6 +1612,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getShift_Employee();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Shift#getShiftDate <em>Shift Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Shift Date</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Shift#getShiftDate()
+	 * @see #getShift()
+	 * @generated
+	 */
+	EAttribute getShift_ShiftDate();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Shift#getShiftStart <em>Shift Start</em>}'.
@@ -1935,6 +2112,87 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpEmployee_ConsEnoughJobsInPost();
 
 	/**
+	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter <em>Jobs Importer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Jobs Importer</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter
+	 * @generated
+	 */
+	EClass getJobsImporter();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#formatWorkerID(int) <em>Format Worker ID</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Format Worker ID</em>' operation.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#formatWorkerID(int)
+	 * @generated
+	 */
+	EOperation getJobsImporter__FormatWorkerID__int();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#getOrCreateEmployee(java.lang.String) <em>Get Or Create Employee</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Or Create Employee</em>' operation.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#getOrCreateEmployee(java.lang.String)
+	 * @generated
+	 */
+	EOperation getJobsImporter__GetOrCreateEmployee__String();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#getOrCreateLocation(java.lang.String, java.lang.String) <em>Get Or Create Location</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Or Create Location</em>' operation.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#getOrCreateLocation(java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getJobsImporter__GetOrCreateLocation__String_String();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#createJob(com.misc.projects.g4s.G4SOptiPost.Employee, com.misc.projects.g4s.G4SOptiPost.Location, java.util.Date, java.util.Date, java.util.Date) <em>Create Job</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Job</em>' operation.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#createJob(com.misc.projects.g4s.G4SOptiPost.Employee, com.misc.projects.g4s.G4SOptiPost.Location, java.util.Date, java.util.Date, java.util.Date)
+	 * @generated
+	 */
+	EOperation getJobsImporter__CreateJob__Employee_Location_Date_Date_Date();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#import_() <em>Import </em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Import </em>' operation.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#import_()
+	 * @generated
+	 */
+	EOperation getJobsImporter__Import_();
+
+	/**
+	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet <em>Jobs Importer Spreadsheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Jobs Importer Spreadsheet</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet
+	 * @generated
+	 */
+	EClass getJobsImporterSpreadsheet();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getSpreadsheet <em>Spreadsheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Spreadsheet</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getSpreadsheet()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EReference getJobsImporterSpreadsheet_Spreadsheet();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2040,6 +2298,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SHIFT__EMPLOYEE = eINSTANCE.getShift_Employee();
+
+		/**
+		 * The meta object literal for the '<em><b>Shift Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SHIFT__SHIFT_DATE = eINSTANCE.getShift_ShiftDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Shift Start</b></em>' attribute feature.
@@ -2416,6 +2682,74 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST = eINSTANCE.getLpEmployee_ConsEnoughJobsInPost();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterImpl <em>Jobs Importer</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterImpl
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getJobsImporter()
+		 * @generated
+		 */
+		EClass JOBS_IMPORTER = eINSTANCE.getJobsImporter();
+
+		/**
+		 * The meta object literal for the '<em><b>Format Worker ID</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation JOBS_IMPORTER___FORMAT_WORKER_ID__INT = eINSTANCE.getJobsImporter__FormatWorkerID__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Or Create Employee</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation JOBS_IMPORTER___GET_OR_CREATE_EMPLOYEE__STRING = eINSTANCE.getJobsImporter__GetOrCreateEmployee__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Or Create Location</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation JOBS_IMPORTER___GET_OR_CREATE_LOCATION__STRING_STRING = eINSTANCE.getJobsImporter__GetOrCreateLocation__String_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Job</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE = eINSTANCE.getJobsImporter__CreateJob__Employee_Location_Date_Date_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Import </b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation JOBS_IMPORTER___IMPORT_ = eINSTANCE.getJobsImporter__Import_();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl <em>Jobs Importer Spreadsheet</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getJobsImporterSpreadsheet()
+		 * @generated
+		 */
+		EClass JOBS_IMPORTER_SPREADSHEET = eINSTANCE.getJobsImporterSpreadsheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Spreadsheet</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JOBS_IMPORTER_SPREADSHEET__SPREADSHEET = eINSTANCE.getJobsImporterSpreadsheet_Spreadsheet();
 
 	}
 

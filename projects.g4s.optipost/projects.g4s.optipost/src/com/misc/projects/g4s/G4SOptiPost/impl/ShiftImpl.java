@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getEmployee <em>Employee</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getShiftDate <em>Shift Date</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getShiftStart <em>Shift Start</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getShiftEnd <em>Shift End</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getDescription <em>Description</em>}</li>
@@ -54,6 +55,26 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 	 * @ordered
 	 */
 	protected Employee employee;
+
+	/**
+	 * The default value of the '{@link #getShiftDate() <em>Shift Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShiftDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date SHIFT_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getShiftDate() <em>Shift Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShiftDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date shiftDate = SHIFT_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getShiftStart() <em>Shift Start</em>}' attribute.
@@ -205,6 +226,27 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Date getShiftDate() {
+		return shiftDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setShiftDate(Date newShiftDate) {
+		Date oldShiftDate = shiftDate;
+		shiftDate = newShiftDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.SHIFT__SHIFT_DATE, oldShiftDate, shiftDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Date getShiftStart() {
 		return shiftStart;
 	}
@@ -248,8 +290,8 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 	 */
 	public String getDescription() {
 		String employeeid = this.getEmployee()==null ? null : this.getEmployee().getEmployeeID();
-		String startasstring = this.getShiftStart()==null ? null : String.format("%1$tm", this.getShiftStart());
-		String description = String.format("%2$s_D%1$s", startasstring, employeeid);
+		String dateasstring = this.getShiftDate()==null ? null : String.format("%1$tm", this.getShiftDate());
+		String description = String.format("%2$s_D%1$s", dateasstring, employeeid);
 		return description;
 	}
 
@@ -267,6 +309,8 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 			case G4SOptiPostPackage.SHIFT__EMPLOYEE:
 				if (resolve) return getEmployee();
 				return basicGetEmployee();
+			case G4SOptiPostPackage.SHIFT__SHIFT_DATE:
+				return getShiftDate();
 			case G4SOptiPostPackage.SHIFT__SHIFT_START:
 				return getShiftStart();
 			case G4SOptiPostPackage.SHIFT__SHIFT_END:
@@ -290,6 +334,9 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 				return;
 			case G4SOptiPostPackage.SHIFT__EMPLOYEE:
 				setEmployee((Employee)newValue);
+				return;
+			case G4SOptiPostPackage.SHIFT__SHIFT_DATE:
+				setShiftDate((Date)newValue);
 				return;
 			case G4SOptiPostPackage.SHIFT__SHIFT_START:
 				setShiftStart((Date)newValue);
@@ -315,6 +362,9 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 			case G4SOptiPostPackage.SHIFT__EMPLOYEE:
 				setEmployee((Employee)null);
 				return;
+			case G4SOptiPostPackage.SHIFT__SHIFT_DATE:
+				setShiftDate(SHIFT_DATE_EDEFAULT);
+				return;
 			case G4SOptiPostPackage.SHIFT__SHIFT_START:
 				setShiftStart(SHIFT_START_EDEFAULT);
 				return;
@@ -337,6 +387,8 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 				return location != null;
 			case G4SOptiPostPackage.SHIFT__EMPLOYEE:
 				return employee != null;
+			case G4SOptiPostPackage.SHIFT__SHIFT_DATE:
+				return SHIFT_DATE_EDEFAULT == null ? shiftDate != null : !SHIFT_DATE_EDEFAULT.equals(shiftDate);
 			case G4SOptiPostPackage.SHIFT__SHIFT_START:
 				return SHIFT_START_EDEFAULT == null ? shiftStart != null : !SHIFT_START_EDEFAULT.equals(shiftStart);
 			case G4SOptiPostPackage.SHIFT__SHIFT_END:
@@ -357,7 +409,9 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (ShiftStart: ");
+		result.append(" (ShiftDate: ");
+		result.append(shiftDate);
+		result.append(", ShiftStart: ");
 		result.append(shiftStart);
 		result.append(", ShiftEnd: ");
 		result.append(shiftEnd);

@@ -112,6 +112,14 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 				return createLpEmployeeAdapter();
 			}
 			@Override
+			public Adapter caseJobsImporter(JobsImporter object) {
+				return createJobsImporterAdapter();
+			}
+			@Override
+			public Adapter caseJobsImporterSpreadsheet(JobsImporterSpreadsheet object) {
+				return createJobsImporterSpreadsheetAdapter();
+			}
+			@Override
 			public Adapter caseGenerator(Generator object) {
 				return createGeneratorAdapter();
 			}
@@ -280,6 +288,34 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLpEmployeeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter <em>Jobs Importer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter
+	 * @generated
+	 */
+	public Adapter createJobsImporterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet <em>Jobs Importer Spreadsheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet
+	 * @generated
+	 */
+	public Adapter createJobsImporterSpreadsheetAdapter() {
 		return null;
 	}
 
