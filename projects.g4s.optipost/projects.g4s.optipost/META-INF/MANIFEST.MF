@@ -9,8 +9,12 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.misc.projects.g4s.G4SOptiPost,
  com.misc.projects.g4s.G4SOptiPost.impl,
- com.misc.projects.g4s.G4SOptiPost.util
+ com.misc.projects.g4s.G4SOptiPost.util,
+ solvercplex,
+ solvercplex.impl,
+ solvercplex.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- com.misc.common.moplaf.solver.emf;visibility:=reexport
+ com.misc.common.moplaf.solver.emf;visibility:=reexport,
+ com.misc.common.moplaf.solver.cplex.emf;visibility:=reexport
 Bundle-ActivationPolicy: lazy

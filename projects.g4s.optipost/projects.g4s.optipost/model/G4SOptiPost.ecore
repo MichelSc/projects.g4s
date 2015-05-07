@@ -45,6 +45,8 @@
         defaultValueLiteral="0.25"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Scenario" eType="#//Scenario"
         eOpposite="#//Scenario/LpOptiPostFlows"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CplexSolver" eType="ecore:EClass ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore#//SolverCplex"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpRoot" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Precedences" upperBound="-1"

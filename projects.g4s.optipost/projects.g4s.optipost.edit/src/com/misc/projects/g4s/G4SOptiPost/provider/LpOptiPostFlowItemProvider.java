@@ -4,23 +4,16 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
 import com.misc.common.moplaf.solver.EnumObjectiveType;
-
 import com.misc.common.moplaf.solver.provider.GeneratorItemProvider;
-
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -117,6 +110,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__LP_ROOT);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__CPLEX_SOLVER);
 		}
 		return childrenFeatures;
 	}
@@ -178,6 +172,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -199,6 +194,11 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__LP_ROOT,
 				 G4SOptiPostFactory.eINSTANCE.createLpRoot()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__CPLEX_SOLVER,
+				 com.misc.common.moplaf.solver.solvercplex.SolvercplexFactory.eINSTANCE.createSolverCplex()));
 	}
 
 	/**

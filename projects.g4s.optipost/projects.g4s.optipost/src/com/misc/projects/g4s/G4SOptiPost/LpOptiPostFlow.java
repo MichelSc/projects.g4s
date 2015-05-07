@@ -16,6 +16,7 @@ import com.misc.common.moplaf.solver.Generator;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}</li>
  * </ul>
  * </p>
  *
@@ -133,5 +134,31 @@ public interface LpOptiPostFlow extends Generator {
 	 * @generated
 	 */
 	void setScenario(Scenario value);
+
+	/**
+	 * Returns the value of the '<em><b>Cplex Solver</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cplex Solver</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cplex Solver</em>' containment reference.
+	 * @see #setCplexSolver(com.misc.common.moplaf.solver.solvercplex.SolverCplex)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_CplexSolver()
+	 * @model containment="true"
+	 * @generated
+	 */
+	com.misc.common.moplaf.solver.solvercplex.SolverCplex getCplexSolver();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cplex Solver</em>' containment reference.
+	 * @see #getCplexSolver()
+	 * @generated
+	 */
+	void setCplexSolver(com.misc.common.moplaf.solver.solvercplex.SolverCplex value);
 
 } // LpOptiPostFlow
