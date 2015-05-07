@@ -2158,26 +2158,6 @@
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_ZYyxYPP6EeS4of_pLXqEmQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_ZYyxYfP6EeS4of_pLXqEmQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_ZYyxYvP6EeS4of_pLXqEmQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </computedStyleDescriptions>
-          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_ZYyxY_P6EeS4of_pLXqEmQ" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
-            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </computedStyleDescriptions>
           <computedStyleDescriptions xmi:type="style:EdgeStyleDescription" xmi:id="_TgeyQvSREeSgOqg4Lqr3Eg" sourceArrow="FillDiamond" sizeComputationExpression="1" routingStyle="manhattan">
             <strokeColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription xmi:type="style:CenterLabelStyleDescription" xmi:id="_TgeyQ_SREeSgOqg4Lqr3Eg" showIcon="false" labelExpression="service:render">
@@ -2278,6 +2258,26 @@
             <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_blue']"/>
             <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_s6bPgvSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_s6bPivSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_s6bPkvSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
+          <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_s6bPmvSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+            <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </computedStyleDescriptions>
           <cache xmi:type="diagram:DiagramElementMapping2ModelElement" xmi:id="_ZYyxdPP6EeS4of_pLXqEmQ">
             <key xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='Bi-directional%20EC_EReference%20']"/>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_TgojWPSREeSgOqg4Lqr3Eg">
@@ -2331,38 +2331,6 @@
                 </value>
               </value>
             </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_ZYyxi_P6EeS4of_pLXqEmQ">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/Type"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_ZYyxjPP6EeS4of_pLXqEmQ" key="_ZYyye_P6EeS4of_pLXqEmQ">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_ZYyxjfP6EeS4of_pLXqEmQ" value="_ZYyxYPP6EeS4of_pLXqEmQ">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
-                </value>
-              </value>
-            </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_ZYyxjvP6EeS4of_pLXqEmQ">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/LowerBound"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_ZYyxj_P6EeS4of_pLXqEmQ" key="_ZYyygPP6EeS4of_pLXqEmQ">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_ZYyxkPP6EeS4of_pLXqEmQ" value="_ZYyxYfP6EeS4of_pLXqEmQ">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
-                </value>
-              </value>
-            </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_ZYyxkfP6EeS4of_pLXqEmQ">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/UpperBound"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_ZYyxkvP6EeS4of_pLXqEmQ" key="_ZYyyhfP6EeS4of_pLXqEmQ">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_ZYyxk_P6EeS4of_pLXqEmQ" value="_ZYyxYvP6EeS4of_pLXqEmQ">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
-                </value>
-              </value>
-            </value>
-            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_ZYyxlPP6EeS4of_pLXqEmQ">
-              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/ObjectiveCoeff"/>
-              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_ZYyxlfP6EeS4of_pLXqEmQ" key="_ZYyyivP6EeS4of_pLXqEmQ">
-                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_ZYyxlvP6EeS4of_pLXqEmQ" value="_ZYyxY_P6EeS4of_pLXqEmQ">
-                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
-                </value>
-              </value>
-            </value>
             <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_spmjEPSiEeSgOqg4Lqr3Eg">
               <key xmi:type="ecore:EAttribute" href="G4SOptiPost.ecore#//LpJob/StartOfMonth"/>
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_spmjEfSiEeSgOqg4Lqr3Eg" key="_ZYyxzvP6EeS4of_pLXqEmQ">
@@ -2376,6 +2344,38 @@
               <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_tnV9sfSiEeSgOqg4Lqr3Eg" key="_ZYyx0_P6EeS4of_pLXqEmQ">
                 <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_tnV9s_SiEeSgOqg4Lqr3Eg" value="_tnV9svSiEeSgOqg4Lqr3Eg">
                   <key xmi:type="ecore:EClass" href="G4SOptiPost.ecore#//LpJob"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_s6bPgPSxEeSgOqg4Lqr3Eg">
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/Type"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_s6bPgfSxEeSgOqg4Lqr3Eg" key="_ZYyye_P6EeS4of_pLXqEmQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_s6bPg_SxEeSgOqg4Lqr3Eg" value="_s6bPgvSxEeSgOqg4Lqr3Eg">
+                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_s6bPiPSxEeSgOqg4Lqr3Eg">
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/LowerBound"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_s6bPifSxEeSgOqg4Lqr3Eg" key="_ZYyygPP6EeS4of_pLXqEmQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_s6bPi_SxEeSgOqg4Lqr3Eg" value="_s6bPivSxEeSgOqg4Lqr3Eg">
+                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_s6bPkPSxEeSgOqg4Lqr3Eg">
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/UpperBound"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_s6bPkfSxEeSgOqg4Lqr3Eg" key="_ZYyyhfP6EeS4of_pLXqEmQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_s6bPk_SxEeSgOqg4Lqr3Eg" value="_s6bPkvSxEeSgOqg4Lqr3Eg">
+                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
+                </value>
+              </value>
+            </value>
+            <value xmi:type="diagram:ModelElement2ViewVariable" xmi:id="_s6bPmPSxEeSgOqg4Lqr3Eg">
+              <key xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/ObjectiveCoeff"/>
+              <value xmi:type="diagram:ViewVariable2ContainerVariable" xmi:id="_s6bPmfSxEeSgOqg4Lqr3Eg" key="_ZYyyivP6EeS4of_pLXqEmQ">
+                <value xmi:type="diagram:ContainerVariable2StyleDescription" xmi:id="_s6bPm_SxEeSgOqg4Lqr3Eg" value="_s6bPmvSxEeSgOqg4Lqr3Eg">
+                  <key xmi:type="ecore:EClass" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"/>
                 </value>
               </value>
             </value>
@@ -2696,40 +2696,40 @@
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZYyye_P6EeS4of_pLXqEmQ" name="Type : EnumLpVarType = Integer" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/Type"/>
           <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/Type"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ZYyyfPP6EeS4of_pLXqEmQ" labelFormat="bold" labelAlignment="LEFT" description="_ZYyxYPP6EeS4of_pLXqEmQ">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyffP6EeS4of_pLXqEmQ"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyfvP6EeS4of_pLXqEmQ"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyf_P6EeS4of_pLXqEmQ"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s6bPhPSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelAlignment="LEFT" description="_s6bPgvSxEeSgOqg4Lqr3Eg">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPhfSxEeSgOqg4Lqr3Eg"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPhvSxEeSgOqg4Lqr3Eg"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_s6bPh_SxEeSgOqg4Lqr3Eg"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZYyygPP6EeS4of_pLXqEmQ" name="LowerBound : EFloat = 0.0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/LowerBound"/>
           <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/LowerBound"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ZYyygfP6EeS4of_pLXqEmQ" labelFormat="bold" labelAlignment="LEFT" description="_ZYyxYfP6EeS4of_pLXqEmQ">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyygvP6EeS4of_pLXqEmQ"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyg_P6EeS4of_pLXqEmQ"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyhPP6EeS4of_pLXqEmQ"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s6bPjPSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelAlignment="LEFT" description="_s6bPivSxEeSgOqg4Lqr3Eg">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPjfSxEeSgOqg4Lqr3Eg"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPjvSxEeSgOqg4Lqr3Eg"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_s6bPj_SxEeSgOqg4Lqr3Eg"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZYyyhfP6EeS4of_pLXqEmQ" name="UpperBound : EFloat = 0.0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/UpperBound"/>
           <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/UpperBound"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ZYyyhvP6EeS4of_pLXqEmQ" labelFormat="bold" labelAlignment="LEFT" description="_ZYyxYvP6EeS4of_pLXqEmQ">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyh_P6EeS4of_pLXqEmQ"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyiPP6EeS4of_pLXqEmQ"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyifP6EeS4of_pLXqEmQ"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s6bPlPSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelAlignment="LEFT" description="_s6bPkvSxEeSgOqg4Lqr3Eg">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPlfSxEeSgOqg4Lqr3Eg"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPlvSxEeSgOqg4Lqr3Eg"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_s6bPl_SxEeSgOqg4Lqr3Eg"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
         <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ZYyyivP6EeS4of_pLXqEmQ" name="ObjectiveCoeff : EFloat = 0.0" tooltipText="">
           <target xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/ObjectiveCoeff"/>
           <semanticElements xmi:type="ecore:EAttribute" href="platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar/ObjectiveCoeff"/>
-          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ZYyyi_P6EeS4of_pLXqEmQ" labelFormat="bold" labelAlignment="LEFT" description="_ZYyxY_P6EeS4of_pLXqEmQ">
-            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyjPP6EeS4of_pLXqEmQ"/>
-            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyjfP6EeS4of_pLXqEmQ"/>
-            <color xmi:type="viewpoint:RGBValues" xmi:id="_ZYyyjvP6EeS4of_pLXqEmQ"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_s6bPnPSxEeSgOqg4Lqr3Eg" labelFormat="bold" labelAlignment="LEFT" description="_s6bPmvSxEeSgOqg4Lqr3Eg">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPnfSxEeSgOqg4Lqr3Eg"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_s6bPnvSxEeSgOqg4Lqr3Eg"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_s6bPn_SxEeSgOqg4Lqr3Eg"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
