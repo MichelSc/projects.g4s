@@ -61,6 +61,7 @@ public class LocationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addLocationIDPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -79,6 +80,28 @@ public class LocationItemProvider
 				 getString("_UI_Location_LocationID_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Location_LocationID_feature", "_UI_Location_type"),
 				 G4SOptiPostPackage.Literals.LOCATION__LOCATION_ID,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Location_Description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Location_Description_feature", "_UI_Location_type"),
+				 G4SOptiPostPackage.Literals.LOCATION__DESCRIPTION,
 				 true,
 				 false,
 				 false,
@@ -126,6 +149,7 @@ public class LocationItemProvider
 
 		switch (notification.getFeatureID(Location.class)) {
 			case G4SOptiPostPackage.LOCATION__LOCATION_ID:
+			case G4SOptiPostPackage.LOCATION__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

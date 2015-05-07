@@ -289,13 +289,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LOCATION__LOCATION_ID = 0;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOCATION__DESCRIPTION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Location</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOCATION_FEATURE_COUNT = 1;
+	int LOCATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Location</em>' class.
@@ -1738,6 +1747,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getLocation_LocationID();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Location#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Location#getDescription()
+	 * @see #getLocation()
+	 * @generated
+	 */
+	EAttribute getLocation_Description();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.Scenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2423,6 +2443,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LOCATION__LOCATION_ID = eINSTANCE.getLocation_LocationID();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOCATION__DESCRIPTION = eINSTANCE.getLocation_Description();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl <em>Scenario</em>}' class.

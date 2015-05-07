@@ -31,6 +31,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="LocationID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpOptiPostFlows" upperBound="-1"

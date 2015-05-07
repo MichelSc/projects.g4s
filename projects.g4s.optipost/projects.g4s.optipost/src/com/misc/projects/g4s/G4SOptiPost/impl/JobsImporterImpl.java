@@ -4,6 +4,7 @@ package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
+import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.JobsImporter;
 import com.misc.projects.g4s.G4SOptiPost.Location;
@@ -113,23 +114,42 @@ public abstract class JobsImporterImpl extends MinimalEObjectImpl.Container impl
 	public Employee getOrCreateEmployee(String id) {
 		if ( this.employeeIndex == null){
 			this.employeeIndex = new HashMap<String, Employee>();
+			for(Employee e : this.getDomain().getEmployees()){
+				this.employeeIndex.put(e.getEmployeeID(), e);
+			}
 		}
 		Employee employee = this.employeeIndex.get(id);
 		if ( employee==null){
-			
+			employee = G4SOptiPostFactory.eINSTANCE.createEmployee();
+			employee.setEmployeeID(id);
+			this.getDomain().getEmployees().add(employee);
+			this.employeeIndex.put(id, employee);
 		}
-		return null;
+		return employee;
 	}
+
+	private HashMap<String, Location> locationIndex = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public Location getOrCreateLocation(String id, String description) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		if ( this.locationIndex == null){
+			this.locationIndex = new HashMap<String, Location>();
+			for(Location l : this.getDomain().getLocations()){
+				this.locationIndex.put(l.getLocationID(), l);
+			}
+		}
+		Location location = this.locationIndex.get(id);
+		if ( location==null){
+			location = G4SOptiPostFactory.eINSTANCE.createLocation();
+			location.setLocationID(id);
+			location.setDescription(description);
+			this.getDomain().getLocations().add(location);
+			this.locationIndex.put(id, location);
+		}
+		return location;
 	}
 
 	/**

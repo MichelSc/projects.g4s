@@ -358,6 +358,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLocation_Description() {
+		return (EAttribute)locationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getScenario() {
 		return scenarioEClass;
 	}
@@ -826,6 +835,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		locationEClass = createEClass(LOCATION);
 		createEAttribute(locationEClass, LOCATION__LOCATION_ID);
+		createEAttribute(locationEClass, LOCATION__DESCRIPTION);
 
 		scenarioEClass = createEClass(SCENARIO);
 		createEReference(scenarioEClass, SCENARIO__LP_OPTI_POST_FLOWS);
@@ -946,6 +956,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLocation_LocationID(), ecorePackage.getEString(), "LocationID", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLocation_Description(), ecorePackage.getEString(), "Description", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scenarioEClass, Scenario.class, "Scenario", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScenario_LpOptiPostFlows(), this.getLpOptiPostFlow(), this.getLpOptiPostFlow_Scenario(), "LpOptiPostFlows", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
