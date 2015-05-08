@@ -57,8 +57,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpRoot" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Precedences" upperBound="-1"
-        eType="#//LpPrecedence" containment="true" eOpposite="#//LpPrecedence/LpRoot"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Jobs" upperBound="-1" eType="#//LpJob"
         containment="true" eOpposite="#//LpJob/LpRoot"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpOptiPostFlow" eType="#//LpOptiPostFlow"
@@ -71,7 +69,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="JobsAfter" upperBound="-1"
         eType="#//LpPrecedence" eOpposite="#//LpPrecedence/JobBefore"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="JobsBefore" upperBound="-1"
-        eType="#//LpPrecedence" eOpposite="#//LpPrecedence/JobAfter"/>
+        eType="#//LpPrecedence" containment="true" eOpposite="#//LpPrecedence/JobAfter"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="StartOfMonth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EndOfMonth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
@@ -92,8 +90,6 @@
         eType="#//LpJob" eOpposite="#//LpJob/JobsAfter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="JobAfter" lowerBound="1"
         eType="#//LpJob" eOpposite="#//LpJob/JobsBefore"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
-        eOpposite="#//LpRoot/Precedences"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="VarInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
         containment="true"/>
   </eClassifiers>

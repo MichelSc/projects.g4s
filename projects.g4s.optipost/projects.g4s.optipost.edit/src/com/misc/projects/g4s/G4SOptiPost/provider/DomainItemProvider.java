@@ -3,6 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetpoiFactory;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
@@ -219,7 +220,7 @@ public class DomainItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.DOMAIN__SPREADSHEETS,
-				 com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetpoiFactory.eINSTANCE.createSpreadsheetPOI()));
+				 SpreadsheetpoiFactory.eINSTANCE.createSpreadsheetPOI()));
 	}
 
 	/**

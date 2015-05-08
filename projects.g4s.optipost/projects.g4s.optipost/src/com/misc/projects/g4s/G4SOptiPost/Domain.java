@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost;
 
+import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -167,6 +168,6 @@ public interface Domain extends EObject {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI> getSpreadsheets();
+	EList<SpreadsheetPOI> getSpreadsheets();
 
 } // Domain

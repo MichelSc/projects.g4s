@@ -6,6 +6,7 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.provider.GeneratorTupleItemProvider;
 
+import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 
@@ -205,6 +206,9 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__SHIFT);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__JOBS_AFTER);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__JOBS_BEFORE);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__VAR_IN_POST);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_FOLLOWED_IN_POST);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_PRECEDED_IN_POST);
@@ -286,6 +290,11 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_JOB__JOBS_BEFORE,
+				 G4SOptiPostFactory.eINSTANCE.createLpPrecedence()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -9,8 +9,6 @@ import com.misc.common.moplaf.solver.impl.GeneratorTupleImpl;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
-import com.misc.projects.g4s.G4SOptiPost.LpRoot;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
@@ -27,7 +25,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl#getJobBefore <em>Job Before</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl#getJobAfter <em>Job After</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl#getVarInPost <em>Var In Post</em>}</li>
  * </ul>
  * </p>
@@ -44,16 +41,6 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 	 * @ordered
 	 */
 	protected LpJob jobBefore;
-
-	/**
-	 * The cached value of the '{@link #getJobAfter() <em>Job After</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getJobAfter()
-	 * @generated
-	 * @ordered
-	 */
-	protected LpJob jobAfter;
 
 	/**
 	 * The cached value of the '{@link #getVarInPost() <em>Var In Post</em>}' containment reference.
@@ -150,24 +137,8 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 	 * @generated
 	 */
 	public LpJob getJobAfter() {
-		if (jobAfter != null && jobAfter.eIsProxy()) {
-			InternalEObject oldJobAfter = (InternalEObject)jobAfter;
-			jobAfter = (LpJob)eResolveProxy(oldJobAfter);
-			if (jobAfter != oldJobAfter) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER, oldJobAfter, jobAfter));
-			}
-		}
-		return jobAfter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LpJob basicGetJobAfter() {
-		return jobAfter;
+		if (eContainerFeatureID() != G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER) return null;
+		return (LpJob)eInternalContainer();
 	}
 
 	/**
@@ -176,12 +147,7 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 	 * @generated
 	 */
 	public NotificationChain basicSetJobAfter(LpJob newJobAfter, NotificationChain msgs) {
-		LpJob oldJobAfter = jobAfter;
-		jobAfter = newJobAfter;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER, oldJobAfter, newJobAfter);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
+		msgs = eBasicSetContainer((InternalEObject)newJobAfter, G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER, msgs);
 		return msgs;
 	}
 
@@ -191,10 +157,12 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 	 * @generated
 	 */
 	public void setJobAfter(LpJob newJobAfter) {
-		if (newJobAfter != jobAfter) {
+		if (newJobAfter != eInternalContainer() || (eContainerFeatureID() != G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER && newJobAfter != null)) {
+			if (EcoreUtil.isAncestor(this, newJobAfter))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
-			if (jobAfter != null)
-				msgs = ((InternalEObject)jobAfter).eInverseRemove(this, G4SOptiPostPackage.LP_JOB__JOBS_BEFORE, LpJob.class, msgs);
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
 			if (newJobAfter != null)
 				msgs = ((InternalEObject)newJobAfter).eInverseAdd(this, G4SOptiPostPackage.LP_JOB__JOBS_BEFORE, LpJob.class, msgs);
 			msgs = basicSetJobAfter(newJobAfter, msgs);
@@ -202,47 +170,6 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER, newJobAfter, newJobAfter));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LpRoot getLpRoot() {
-		if (eContainerFeatureID() != G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT) return null;
-		return (LpRoot)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLpRoot(LpRoot newLpRoot, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newLpRoot, G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLpRoot(LpRoot newLpRoot) {
-		if (newLpRoot != eInternalContainer() || (eContainerFeatureID() != G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT && newLpRoot != null)) {
-			if (EcoreUtil.isAncestor(this, newLpRoot))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newLpRoot != null)
-				msgs = ((InternalEObject)newLpRoot).eInverseAdd(this, G4SOptiPostPackage.LP_ROOT__PRECEDENCES, LpRoot.class, msgs);
-			msgs = basicSetLpRoot(newLpRoot, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT, newLpRoot, newLpRoot));
 	}
 
 	/**
@@ -301,13 +228,9 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 					msgs = ((InternalEObject)jobBefore).eInverseRemove(this, G4SOptiPostPackage.LP_JOB__JOBS_AFTER, LpJob.class, msgs);
 				return basicSetJobBefore((LpJob)otherEnd, msgs);
 			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER:
-				if (jobAfter != null)
-					msgs = ((InternalEObject)jobAfter).eInverseRemove(this, G4SOptiPostPackage.LP_JOB__JOBS_BEFORE, LpJob.class, msgs);
-				return basicSetJobAfter((LpJob)otherEnd, msgs);
-			case G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetLpRoot((LpRoot)otherEnd, msgs);
+				return basicSetJobAfter((LpJob)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -324,8 +247,6 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 				return basicSetJobBefore(null, msgs);
 			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER:
 				return basicSetJobAfter(null, msgs);
-			case G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT:
-				return basicSetLpRoot(null, msgs);
 			case G4SOptiPostPackage.LP_PRECEDENCE__VAR_IN_POST:
 				return basicSetVarInPost(null, msgs);
 		}
@@ -340,8 +261,8 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT:
-				return eInternalContainer().eInverseRemove(this, G4SOptiPostPackage.LP_ROOT__PRECEDENCES, LpRoot.class, msgs);
+			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER:
+				return eInternalContainer().eInverseRemove(this, G4SOptiPostPackage.LP_JOB__JOBS_BEFORE, LpJob.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -358,10 +279,7 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 				if (resolve) return getJobBefore();
 				return basicGetJobBefore();
 			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER:
-				if (resolve) return getJobAfter();
-				return basicGetJobAfter();
-			case G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT:
-				return getLpRoot();
+				return getJobAfter();
 			case G4SOptiPostPackage.LP_PRECEDENCE__VAR_IN_POST:
 				return getVarInPost();
 		}
@@ -381,9 +299,6 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 				return;
 			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER:
 				setJobAfter((LpJob)newValue);
-				return;
-			case G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT:
-				setLpRoot((LpRoot)newValue);
 				return;
 			case G4SOptiPostPackage.LP_PRECEDENCE__VAR_IN_POST:
 				setVarInPost((GeneratorLpVar)newValue);
@@ -406,9 +321,6 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER:
 				setJobAfter((LpJob)null);
 				return;
-			case G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT:
-				setLpRoot((LpRoot)null);
-				return;
 			case G4SOptiPostPackage.LP_PRECEDENCE__VAR_IN_POST:
 				setVarInPost((GeneratorLpVar)null);
 				return;
@@ -427,9 +339,7 @@ public class LpPrecedenceImpl extends GeneratorTupleImpl implements LpPrecedence
 			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_BEFORE:
 				return jobBefore != null;
 			case G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER:
-				return jobAfter != null;
-			case G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT:
-				return getLpRoot() != null;
+				return getJobAfter() != null;
 			case G4SOptiPostPackage.LP_PRECEDENCE__VAR_IN_POST:
 				return varInPost != null;
 		}

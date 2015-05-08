@@ -132,6 +132,7 @@ public class LpEmployeeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_EMPLOYEE__EMPLOYEE);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_EMPLOYEE__VAR_IN_POST);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_EMPLOYEE__CONS_ENOUGH_JOBS_IN_POST);
 		}

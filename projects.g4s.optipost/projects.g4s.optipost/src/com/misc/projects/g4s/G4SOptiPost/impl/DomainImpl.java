@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
@@ -130,7 +131,7 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI> spreadsheets;
+	protected EList<SpreadsheetPOI> spreadsheets;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -249,9 +250,9 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI> getSpreadsheets() {
+	public EList<SpreadsheetPOI> getSpreadsheets() {
 		if (spreadsheets == null) {
-			spreadsheets = new EObjectContainmentEList<com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI>(com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI.class, this, G4SOptiPostPackage.DOMAIN__SPREADSHEETS);
+			spreadsheets = new EObjectContainmentEList<SpreadsheetPOI>(SpreadsheetPOI.class, this, G4SOptiPostPackage.DOMAIN__SPREADSHEETS);
 		}
 		return spreadsheets;
 	}
@@ -363,7 +364,7 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 				return;
 			case G4SOptiPostPackage.DOMAIN__SPREADSHEETS:
 				getSpreadsheets().clear();
-				getSpreadsheets().addAll((Collection<? extends com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI>)newValue);
+				getSpreadsheets().addAll((Collection<? extends SpreadsheetPOI>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

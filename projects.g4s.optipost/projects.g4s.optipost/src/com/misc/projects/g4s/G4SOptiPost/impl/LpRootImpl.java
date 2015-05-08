@@ -42,7 +42,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getPrecedences <em>Precedences</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getJobs <em>Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getLpEmployees <em>Lp Employees</em>}</li>
@@ -52,16 +51,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
-	/**
-	 * The cached value of the '{@link #getPrecedences() <em>Precedences</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPrecedences()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<LpPrecedence> precedences;
-
 	/**
 	 * The cached value of the '{@link #getJobs() <em>Jobs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -99,18 +88,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	protected EClass eStaticClass() {
 		return G4SOptiPostPackage.Literals.LP_ROOT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<LpPrecedence> getPrecedences() {
-		if (precedences == null) {
-			precedences = new EObjectContainmentWithInverseEList<LpPrecedence>(LpPrecedence.class, this, G4SOptiPostPackage.LP_ROOT__PRECEDENCES, G4SOptiPostPackage.LP_PRECEDENCE__LP_ROOT);
-		}
-		return precedences;
 	}
 
 	/**
@@ -187,8 +164,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPrecedences()).basicAdd(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getJobs()).basicAdd(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
@@ -209,8 +184,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
-				return ((InternalEList<?>)getPrecedences()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
 				return ((InternalEList<?>)getJobs()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
@@ -243,8 +216,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
-				return getPrecedences();
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
 				return getJobs();
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
@@ -264,10 +235,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
-				getPrecedences().clear();
-				getPrecedences().addAll((Collection<? extends LpPrecedence>)newValue);
-				return;
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
 				getJobs().clear();
 				getJobs().addAll((Collection<? extends LpJob>)newValue);
@@ -291,9 +258,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
-				getPrecedences().clear();
-				return;
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
 				getJobs().clear();
 				return;
@@ -315,8 +279,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
-				return precedences != null && !precedences.isEmpty();
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
 				return jobs != null && !jobs.isEmpty();
 			case G4SOptiPostPackage.LP_ROOT__LP_OPTI_POST_FLOW:
@@ -346,16 +308,18 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
         	lpjob.setShift(shift);
         	lpjob.setCode(shift.getDescription());
         	Employee employee = shift.getEmployee();
-        	LpEmployee lpemployee = employees.get(employee);
-        	if ( lpemployee == null){
-            	lpemployee = G4SOptiPostFactory.eINSTANCE.createLpEmployee();
-            	lpemployee.setEmployee(employee);
-            	lpemployee.setCode(employee.getEmployeeID());
-            	employees.put(employee, lpemployee);
-            	this.getLpEmployees().add(lpemployee);
+        	if ( employee != null ) {
+            	LpEmployee lpemployee = employees.get(employee);
+            	if ( lpemployee == null){
+                	lpemployee = G4SOptiPostFactory.eINSTANCE.createLpEmployee();
+                	lpemployee.setEmployee(employee);
+                	lpemployee.setCode(employee.getEmployeeID());
+                	employees.put(employee, lpemployee);
+                	this.getLpEmployees().add(lpemployee);
+            	}
+            	lpjob.setLpEmployee(lpemployee);
+            	this.getJobs().add(lpjob);  // owning
         	}
-        	lpjob.setLpEmployee(lpemployee);
-        	this.getJobs().add(lpjob);  // owning
         }  // traverse the selected shifts
 	}  // generateTuples
 	
@@ -453,7 +417,6 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
         	lpprecedence.setJobBefore(jobStartBefore);
         	lpprecedence.setJobAfter(jobStartAfter);
         	lpprecedence.setCode(jobStartBefore.getCode()+"_"+jobStartAfter.getCode());
-        	this.getPrecedences().add(lpprecedence);
 		}
 	}
 

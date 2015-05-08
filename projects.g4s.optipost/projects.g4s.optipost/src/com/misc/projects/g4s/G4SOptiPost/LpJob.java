@@ -79,7 +79,7 @@ public interface LpJob extends GeneratorTuple {
 	EList<LpPrecedence> getJobsAfter();
 
 	/**
-	 * Returns the value of the '<em><b>Jobs Before</b></em>' reference list.
+	 * Returns the value of the '<em><b>Jobs Before</b></em>' containment reference list.
 	 * The list contents are of type {@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence}.
 	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter <em>Job After</em>}'.
 	 * <!-- begin-user-doc -->
@@ -88,10 +88,10 @@ public interface LpJob extends GeneratorTuple {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Jobs Before</em>' reference list.
+	 * @return the value of the '<em>Jobs Before</em>' containment reference list.
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_JobsBefore()
 	 * @see com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter
-	 * @model opposite="JobAfter"
+	 * @model opposite="JobAfter" containment="true"
 	 * @generated
 	 */
 	EList<LpPrecedence> getJobsBefore();

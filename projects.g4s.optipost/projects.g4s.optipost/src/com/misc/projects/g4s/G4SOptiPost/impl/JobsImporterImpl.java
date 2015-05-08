@@ -155,12 +155,17 @@ public abstract class JobsImporterImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public Shift createJob(Employee employee, Location location, Date shiftDate, Date shiftStart, Date shiftEnd) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Domain domain = this.getDomain();
+		Shift newShift = G4SOptiPostFactory.eINSTANCE.createShift();
+		newShift.setEmployee(employee);
+		newShift.setLocation(location);
+		newShift.setShiftDate(shiftDate);
+		newShift.setShiftStart(shiftStart);
+		newShift.setShiftEnd(shiftEnd);
+		domain.getShifts().add(newShift);
+		return newShift;
 	}
 
 	/**

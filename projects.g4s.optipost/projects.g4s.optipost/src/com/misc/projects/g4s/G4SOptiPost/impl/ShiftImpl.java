@@ -290,7 +290,7 @@ public class ShiftImpl extends MinimalEObjectImpl.Container implements Shift {
 	 */
 	public String getDescription() {
 		String employeeid = this.getEmployee()==null ? null : this.getEmployee().getEmployeeID();
-		String dateasstring = this.getShiftDate()==null ? null : String.format("%1$tm", this.getShiftDate());
+		String dateasstring = this.getShiftDate()==null ? null : String.format("%1$td", this.getShiftDate());
 		String description = String.format("%2$s_D%1$s", dateasstring, employeeid);
 		return description;
 	}

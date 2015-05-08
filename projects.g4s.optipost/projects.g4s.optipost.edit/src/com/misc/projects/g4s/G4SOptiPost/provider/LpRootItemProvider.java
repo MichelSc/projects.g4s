@@ -66,7 +66,6 @@ public class LpRootItemProvider extends GeneratorTupleItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_ROOT__PRECEDENCES);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_ROOT__JOBS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_ROOT__LP_EMPLOYEES);
 		}
@@ -124,7 +123,6 @@ public class LpRootItemProvider extends GeneratorTupleItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LpRoot.class)) {
-			case G4SOptiPostPackage.LP_ROOT__PRECEDENCES:
 			case G4SOptiPostPackage.LP_ROOT__JOBS:
 			case G4SOptiPostPackage.LP_ROOT__LP_EMPLOYEES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -143,11 +141,6 @@ public class LpRootItemProvider extends GeneratorTupleItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(G4SOptiPostPackage.Literals.LP_ROOT__PRECEDENCES,
-				 G4SOptiPostFactory.eINSTANCE.createLpPrecedence()));
 
 		newChildDescriptors.add
 			(createChildParameter

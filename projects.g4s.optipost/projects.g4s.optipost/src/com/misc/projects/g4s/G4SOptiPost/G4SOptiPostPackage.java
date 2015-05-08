@@ -715,22 +715,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
 
 	/**
-	 * The feature id for the '<em><b>Precedences</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_ROOT__PRECEDENCES = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Jobs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT__JOBS = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 1;
+	int LP_ROOT__JOBS = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Lp Opti Post Flow</b></em>' container reference.
@@ -739,7 +730,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT__LP_OPTI_POST_FLOW = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
+	int LP_ROOT__LP_OPTI_POST_FLOW = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Lp Employees</b></em>' containment reference list.
@@ -748,7 +739,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT__LP_EMPLOYEES = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
+	int LP_ROOT__LP_EMPLOYEES = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Lp Root</em>' class.
@@ -757,7 +748,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
+	int LP_ROOT_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -896,7 +887,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB__JOBS_AFTER = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Jobs Before</b></em>' reference list.
+	 * The feature id for the '<em><b>Jobs Before</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1104,7 +1095,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE__JOB_BEFORE = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Job After</b></em>' reference.
+	 * The feature id for the '<em><b>Job After</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1113,22 +1104,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE__JOB_AFTER = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Lp Root</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_PRECEDENCE__LP_ROOT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Var In Post</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_PRECEDENCE__VAR_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
+	int LP_PRECEDENCE__VAR_IN_POST = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Lp Precedence</em>' class.
@@ -1137,7 +1119,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_PRECEDENCE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 4;
+	int LP_PRECEDENCE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
@@ -1959,17 +1941,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	EClass getLpRoot();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getPrecedences <em>Precedences</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Precedences</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpRoot#getPrecedences()
-	 * @see #getLpRoot()
-	 * @generated
-	 */
-	EReference getLpRoot_Precedences();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getJobs <em>Jobs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2035,10 +2006,10 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpJob_JobsAfter();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getJobsBefore <em>Jobs Before</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getJobsBefore <em>Jobs Before</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Jobs Before</em>'.
+	 * @return the meta object for the containment reference list '<em>Jobs Before</em>'.
 	 * @see com.misc.projects.g4s.G4SOptiPost.LpJob#getJobsBefore()
 	 * @see #getLpJob()
 	 * @generated
@@ -2144,26 +2115,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpPrecedence_JobBefore();
 
 	/**
-	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter <em>Job After</em>}'.
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter <em>Job After</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Job After</em>'.
+	 * @return the meta object for the container reference '<em>Job After</em>'.
 	 * @see com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter()
 	 * @see #getLpPrecedence()
 	 * @generated
 	 */
 	EReference getLpPrecedence_JobAfter();
-
-	/**
-	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot <em>Lp Root</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Lp Root</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot()
-	 * @see #getLpPrecedence()
-	 * @generated
-	 */
-	EReference getLpPrecedence_LpRoot();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getVarInPost <em>Var In Post</em>}'.
@@ -2715,14 +2675,6 @@ public interface G4SOptiPostPackage extends EPackage {
 		EClass LP_ROOT = eINSTANCE.getLpRoot();
 
 		/**
-		 * The meta object literal for the '<em><b>Precedences</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LP_ROOT__PRECEDENCES = eINSTANCE.getLpRoot_Precedences();
-
-		/**
 		 * The meta object literal for the '<em><b>Jobs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2773,7 +2725,7 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_JOB__JOBS_AFTER = eINSTANCE.getLpJob_JobsAfter();
 
 		/**
-		 * The meta object literal for the '<em><b>Jobs Before</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Jobs Before</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2855,20 +2807,12 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_PRECEDENCE__JOB_BEFORE = eINSTANCE.getLpPrecedence_JobBefore();
 
 		/**
-		 * The meta object literal for the '<em><b>Job After</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Job After</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LP_PRECEDENCE__JOB_AFTER = eINSTANCE.getLpPrecedence_JobAfter();
-
-		/**
-		 * The meta object literal for the '<em><b>Lp Root</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LP_PRECEDENCE__LP_ROOT = eINSTANCE.getLpPrecedence_LpRoot();
 
 		/**
 		 * The meta object literal for the '<em><b>Var In Post</b></em>' containment reference feature.

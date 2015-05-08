@@ -26,6 +26,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -74,7 +75,7 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	protected EList<LpPrecedence> jobsAfter;
 
 	/**
-	 * The cached value of the '{@link #getJobsBefore() <em>Jobs Before</em>}' reference list.
+	 * The cached value of the '{@link #getJobsBefore() <em>Jobs Before</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getJobsBefore()
@@ -219,7 +220,7 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 */
 	public EList<LpPrecedence> getJobsBefore() {
 		if (jobsBefore == null) {
-			jobsBefore = new EObjectWithInverseResolvingEList<LpPrecedence>(LpPrecedence.class, this, G4SOptiPostPackage.LP_JOB__JOBS_BEFORE, G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER);
+			jobsBefore = new EObjectContainmentWithInverseEList<LpPrecedence>(LpPrecedence.class, this, G4SOptiPostPackage.LP_JOB__JOBS_BEFORE, G4SOptiPostPackage.LP_PRECEDENCE__JOB_AFTER);
 		}
 		return jobsBefore;
 	}

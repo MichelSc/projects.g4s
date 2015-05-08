@@ -544,8 +544,6 @@ public class JobsImporterSpreadsheetImpl extends JobsImporterImpl implements Job
 		Spreadsheet spreadsheet = this.getSpreadsheet();
 		if ( spreadsheet == null) { return; }
 
-		spreadsheet.readFile();
-		
 		Sheet sheet = spreadsheet.getSheet(this.getDataSheetNr());
 		if ( sheet == null ) { return; }
 		

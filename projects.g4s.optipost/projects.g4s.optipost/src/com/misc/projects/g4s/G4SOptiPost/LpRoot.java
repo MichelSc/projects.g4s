@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getPrecedences <em>Precedences</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getJobs <em>Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployees <em>Lp Employees</em>}</li>
@@ -26,24 +25,6 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface LpRoot extends GeneratorTuple {
-	/**
-	 * Returns the value of the '<em><b>Precedences</b></em>' containment reference list.
-	 * The list contents are of type {@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence}.
-	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot <em>Lp Root</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Precedences</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Precedences</em>' containment reference list.
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpRoot_Precedences()
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getLpRoot
-	 * @model opposite="LpRoot" containment="true"
-	 * @generated
-	 */
-	EList<LpPrecedence> getPrecedences();
-
 	/**
 	 * Returns the value of the '<em><b>Jobs</b></em>' containment reference list.
 	 * The list contents are of type {@link com.misc.projects.g4s.G4SOptiPost.LpJob}.

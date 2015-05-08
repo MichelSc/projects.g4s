@@ -112,6 +112,8 @@ public class LpPrecedenceItemProvider extends GeneratorTupleItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_PRECEDENCE__JOB_BEFORE);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_PRECEDENCE__JOB_AFTER);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_PRECEDENCE__VAR_IN_POST);
 		}
 		return childrenFeatures;
