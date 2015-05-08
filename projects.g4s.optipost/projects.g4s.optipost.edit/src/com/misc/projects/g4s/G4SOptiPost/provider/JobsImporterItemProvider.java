@@ -6,11 +6,12 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 import java.util.Collection;
 import java.util.List;
 
+import org.eclipse.emf.common.command.Command;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.edit.command.CommandParameter;
+import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -18,6 +19,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+
+import com.misc.common.moplaf.emf.edit.command.RunCommand;
+import com.misc.projects.g4s.G4SOptiPost.JobsImporter;
 
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.JobsImporter} object.
@@ -106,4 +110,33 @@ public class JobsImporterItemProvider
 		return G4SOptiPostEditPlugin.INSTANCE;
 	}
 
+	public class JobsImporterRunCommand extends RunCommand{
+		private JobsImporter jobsImporter;
+		
+		// constructor
+		public JobsImporterRunCommand(JobsImporter anImporter)	{
+			super();
+			this.jobsImporter = anImporter;
+			String tmp = "Import the Jobs";
+			String label = "label:"+tmp;
+			String description = "desc:"+tmp;
+			this.setDescription(description);
+			this.setLabel(label);
+		}
+
+		@Override
+		public void execute() {
+			this.jobsImporter.importJobs();
+		}
+	} // class GeneratorRunCommand
+
+	@Override
+	public Command createCommand(Object object, EditingDomain domain,
+			Class<? extends Command> commandClass,
+			CommandParameter commandParameter) {
+		if ( commandClass == RunCommand.class){
+			return new JobsImporterRunCommand((JobsImporter) object); 
+		}
+		return super.createCommand(object, domain, commandClass, commandParameter);
+	}
 }

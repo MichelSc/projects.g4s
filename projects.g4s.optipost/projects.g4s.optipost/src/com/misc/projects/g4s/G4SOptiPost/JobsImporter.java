@@ -89,6 +89,6 @@ public interface JobsImporter extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void import_();
+	void importJobs();
 
 } // JobsImporter

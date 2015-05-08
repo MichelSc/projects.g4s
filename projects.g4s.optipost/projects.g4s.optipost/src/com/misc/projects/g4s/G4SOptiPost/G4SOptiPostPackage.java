@@ -133,13 +133,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int DOMAIN__JOBS_IMPORTER = 6;
 
 	/**
+	 * The feature id for the '<em><b>Spreadsheets</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__SPREADSHEETS = 7;
+
+	/**
 	 * The number of structural features of the '<em>Domain</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_FEATURE_COUNT = 7;
+	int DOMAIN_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Domain</em>' class.
@@ -1432,13 +1441,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE = 3;
 
 	/**
-	 * The operation id for the '<em>Import </em>' operation.
+	 * The operation id for the '<em>Import Jobs</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS_IMPORTER___IMPORT_ = 4;
+	int JOBS_IMPORTER___IMPORT_JOBS = 4;
 
 	/**
 	 * The number of operations of the '<em>Jobs Importer</em>' class.
@@ -1478,13 +1487,76 @@ public interface G4SOptiPostPackage extends EPackage {
 	int JOBS_IMPORTER_SPREADSHEET__SPREADSHEET = JOBS_IMPORTER_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Data Sheet Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__DATA_SHEET_NR = JOBS_IMPORTER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Worker Id Col Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__WORKER_ID_COL_NR = JOBS_IMPORTER_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Location Id Col Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__LOCATION_ID_COL_NR = JOBS_IMPORTER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Job Date Col Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__JOB_DATE_COL_NR = JOBS_IMPORTER_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Job Start Col Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__JOB_START_COL_NR = JOBS_IMPORTER_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Job End Col Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__JOB_END_COL_NR = JOBS_IMPORTER_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Location Description Col Nr</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR = JOBS_IMPORTER_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Jobs Importer Spreadsheet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS_IMPORTER_SPREADSHEET_FEATURE_COUNT = JOBS_IMPORTER_FEATURE_COUNT + 1;
+	int JOBS_IMPORTER_SPREADSHEET_FEATURE_COUNT = JOBS_IMPORTER_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>Format Worker ID</em>' operation.
@@ -1523,13 +1595,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int JOBS_IMPORTER_SPREADSHEET___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE = JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE;
 
 	/**
-	 * The operation id for the '<em>Import </em>' operation.
+	 * The operation id for the '<em>Import Jobs</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS_IMPORTER_SPREADSHEET___IMPORT_ = JOBS_IMPORTER___IMPORT_;
+	int JOBS_IMPORTER_SPREADSHEET___IMPORT_JOBS = JOBS_IMPORTER___IMPORT_JOBS;
 
 	/**
 	 * The number of operations of the '<em>Jobs Importer Spreadsheet</em>' class.
@@ -1627,6 +1699,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDomain_JobsImporter();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.Domain#getSpreadsheets <em>Spreadsheets</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Spreadsheets</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Domain#getSpreadsheets()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_Spreadsheets();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.Shift <em>Shift</em>}'.
@@ -2231,14 +2314,14 @@ public interface G4SOptiPostPackage extends EPackage {
 	EOperation getJobsImporter__CreateJob__Employee_Location_Date_Date_Date();
 
 	/**
-	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#import_() <em>Import </em>}' operation.
+	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporter#importJobs() <em>Import Jobs</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Import </em>' operation.
-	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#import_()
+	 * @return the meta object for the '<em>Import Jobs</em>' operation.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporter#importJobs()
 	 * @generated
 	 */
-	EOperation getJobsImporter__Import_();
+	EOperation getJobsImporter__ImportJobs();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet <em>Jobs Importer Spreadsheet</em>}'.
@@ -2260,6 +2343,83 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getJobsImporterSpreadsheet_Spreadsheet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getDataSheetNr <em>Data Sheet Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Data Sheet Nr</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getDataSheetNr()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_DataSheetNr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getWorkerIdColNr <em>Worker Id Col Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Worker Id Col Nr</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getWorkerIdColNr()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_WorkerIdColNr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getLocationIdColNr <em>Location Id Col Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Location Id Col Nr</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getLocationIdColNr()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_LocationIdColNr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobDateColNr <em>Job Date Col Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Job Date Col Nr</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobDateColNr()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_JobDateColNr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobStartColNr <em>Job Start Col Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Job Start Col Nr</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobStartColNr()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_JobStartColNr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobEndColNr <em>Job End Col Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Job End Col Nr</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobEndColNr()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_JobEndColNr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getLocationDescriptionColNr <em>Location Description Col Nr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Location Description Col Nr</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getLocationDescriptionColNr()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_LocationDescriptionColNr();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2349,6 +2509,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DOMAIN__JOBS_IMPORTER = eINSTANCE.getDomain_JobsImporter();
+
+		/**
+		 * The meta object literal for the '<em><b>Spreadsheets</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__SPREADSHEETS = eINSTANCE.getDomain_Spreadsheets();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl <em>Shift</em>}' class.
@@ -2819,12 +2987,12 @@ public interface G4SOptiPostPackage extends EPackage {
 		EOperation JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE = eINSTANCE.getJobsImporter__CreateJob__Employee_Location_Date_Date_Date();
 
 		/**
-		 * The meta object literal for the '<em><b>Import </b></em>' operation.
+		 * The meta object literal for the '<em><b>Import Jobs</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation JOBS_IMPORTER___IMPORT_ = eINSTANCE.getJobsImporter__Import_();
+		EOperation JOBS_IMPORTER___IMPORT_JOBS = eINSTANCE.getJobsImporter__ImportJobs();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl <em>Jobs Importer Spreadsheet</em>}' class.
@@ -2843,6 +3011,62 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference JOBS_IMPORTER_SPREADSHEET__SPREADSHEET = eINSTANCE.getJobsImporterSpreadsheet_Spreadsheet();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Sheet Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__DATA_SHEET_NR = eINSTANCE.getJobsImporterSpreadsheet_DataSheetNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Worker Id Col Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__WORKER_ID_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_WorkerIdColNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Location Id Col Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__LOCATION_ID_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_LocationIdColNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Job Date Col Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__JOB_DATE_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_JobDateColNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Job Start Col Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__JOB_START_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_JobStartColNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Job End Col Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__JOB_END_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_JobEndColNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Location Description Col Nr</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_LocationDescriptionColNr();
 
 	}
 

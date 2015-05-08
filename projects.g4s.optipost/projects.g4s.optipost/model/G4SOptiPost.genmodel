@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.g4s.optipost/src" modelPluginID="projects.g4s.optipost"
     modelName="G4SOptiPost" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.genmodel#//solvercplex ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.genmodel#//spreadsheet"
+    usedGenPackages="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.genmodel#//solvercplex ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.genmodel#//spreadsheet ../../com.misc.common.moplaf.spreadsheet.poi.emf/model/spreadsheetpoi.genmodel#//spreadsheetpoi"
     operationReflection="true" importOrganizing="true">
   <foreignModel>G4SOptiPost.ecore</foreignModel>
   <genPackages prefix="G4SOptiPost" basePackage="com.misc.projects.g4s" disposableProviderFactory="true"
@@ -15,6 +15,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Locations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Scenarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Domain/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/JobsImporter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Spreadsheets"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//Shift" labelFeature="#//G4SOptiPost/Shift/Description">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Shift/Location"/>
@@ -29,6 +31,7 @@
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//Location">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Location/LocationID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Location/Description"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//Scenario">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/LpOptiPostFlows"/>
@@ -75,6 +78,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpEmployee/ConsEnoughJobsInPost"/>
     </genClasses>
     <genClasses image="false" ecoreClass="G4SOptiPost.ecore#//JobsImporter">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//JobsImporter/Domain"/>
       <genOperations ecoreOperation="G4SOptiPost.ecore#//JobsImporter/formatWorkerID">
         <genParameters ecoreParameter="G4SOptiPost.ecore#//JobsImporter/formatWorkerID/idAsInt"/>
       </genOperations>
@@ -92,10 +96,17 @@
         <genParameters ecoreParameter="G4SOptiPost.ecore#//JobsImporter/createJob/shiftStart"/>
         <genParameters ecoreParameter="G4SOptiPost.ecore#//JobsImporter/createJob/shiftEnd"/>
       </genOperations>
-      <genOperations ecoreOperation="G4SOptiPost.ecore#//JobsImporter/import"/>
+      <genOperations ecoreOperation="G4SOptiPost.ecore#//JobsImporter/importJobs"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//JobsImporterSpreadsheet">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//JobsImporterSpreadsheet/Spreadsheet"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/DataSheetNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/WorkerIdColNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/LocationIdColNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/JobDateColNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/JobStartColNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/JobEndColNr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/LocationDescriptionColNr"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

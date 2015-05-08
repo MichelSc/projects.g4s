@@ -6,17 +6,12 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
-
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -108,6 +103,7 @@ public class DomainItemProvider
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__LOCATIONS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__SCENARIOS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__JOBS_IMPORTER);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__SPREADSHEETS);
 		}
 		return childrenFeatures;
 	}
@@ -172,6 +168,7 @@ public class DomainItemProvider
 			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
 			case G4SOptiPostPackage.DOMAIN__SCENARIOS:
 			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
+			case G4SOptiPostPackage.DOMAIN__SPREADSHEETS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -218,6 +215,11 @@ public class DomainItemProvider
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.DOMAIN__JOBS_IMPORTER,
 				 G4SOptiPostFactory.eINSTANCE.createJobsImporterSpreadsheet()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.DOMAIN__SPREADSHEETS,
+				 com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetpoiFactory.eINSTANCE.createSpreadsheetPOI()));
 	}
 
 	/**

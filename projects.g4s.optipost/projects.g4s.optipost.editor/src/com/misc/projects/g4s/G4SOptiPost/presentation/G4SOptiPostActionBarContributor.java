@@ -121,6 +121,13 @@ public class G4SOptiPostActionBarContributor
 	protected RunAction runAction = new RunAction();
 
 	/**
+	 * This action reads the object
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	protected ReadAction readAction = new ReadAction();
+
+	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -288,6 +295,7 @@ public class G4SOptiPostActionBarContributor
 		}
 
 		this.runAction   .selectionChanged(activeEditorPart, selection);
+		this.readAction  .selectionChanged(activeEditorPart, selection);
 }
 
 	/**
@@ -397,6 +405,7 @@ public class G4SOptiPostActionBarContributor
 		submenuManager = new MenuManager("G4S");
 		menuManager.insertBefore("edit", submenuManager);
 		submenuManager.add(this.runAction);
+		submenuManager.add(this.readAction);
 }
 
 	/**

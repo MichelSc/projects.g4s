@@ -8,27 +8,27 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchPart;
 
-import com.misc.common.moplaf.emf.edit.command.RunCommand;
+import com.misc.common.moplaf.emf.edit.command.ReadCommand;
 
 
 
-public class RunAction extends Action {
-		public final static String ID = "com.misc.projects.g4s.optipost.RunActionID";
+public class ReadAction extends Action {
+		public final static String ID = "com.misc.projects.g4s.optipost.ReadActionID";
 
 		Command currentCommand = null;
 		EditingDomain editingDomain = null;
 
 
-		public RunAction()	{
+		public ReadAction()	{
 			setId(ID);
 			setText("Run");
-			setToolTipText("Run the selected object");
+			setToolTipText("Read the selected object");
 			//setImageDescriptor();
 		}
 
 		public void selectionChanged(IWorkbenchPart part, ISelection incomingselection) {
 			boolean enabled = false;
-			String tooltip = "Run the object";
+			String tooltip = "Read the object";
 			currentCommand = null;
 			editingDomain = null;
 			if ( part != null  && incomingselection instanceof IStructuredSelection ) {
@@ -38,7 +38,7 @@ public class RunAction extends Action {
 						IEditingDomainProvider editindomainprovider = (IEditingDomainProvider)part;
 						Object selection = structuredselection.getFirstElement();
 						editingDomain = editindomainprovider.getEditingDomain();
-						currentCommand = RunCommand.create(editingDomain, selection);
+						currentCommand = ReadCommand.create(editingDomain, selection);
 						if ( currentCommand!=null){
 							enabled = currentCommand.canExecute();
 	     				}

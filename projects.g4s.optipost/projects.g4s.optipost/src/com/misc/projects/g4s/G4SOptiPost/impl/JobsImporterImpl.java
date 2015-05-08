@@ -168,7 +168,7 @@ public abstract class JobsImporterImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void import_() {
+	public void importJobs() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -292,8 +292,8 @@ public abstract class JobsImporterImpl extends MinimalEObjectImpl.Container impl
 				return getOrCreateLocation((String)arguments.get(0), (String)arguments.get(1));
 			case G4SOptiPostPackage.JOBS_IMPORTER___CREATE_JOB__EMPLOYEE_LOCATION_DATE_DATE_DATE:
 				return createJob((Employee)arguments.get(0), (Location)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3), (Date)arguments.get(4));
-			case G4SOptiPostPackage.JOBS_IMPORTER___IMPORT_:
-				import_();
+			case G4SOptiPostPackage.JOBS_IMPORTER___IMPORT_JOBS:
+				importJobs();
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

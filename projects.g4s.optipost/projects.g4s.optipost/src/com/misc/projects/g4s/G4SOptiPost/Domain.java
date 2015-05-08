@@ -3,7 +3,6 @@
 package com.misc.projects.g4s.G4SOptiPost;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getScenarios <em>Scenarios</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getName <em>Name</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getJobsImporter <em>Jobs Importer</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getSpreadsheets <em>Spreadsheets</em>}</li>
  * </ul>
  * </p>
  *
@@ -152,5 +152,21 @@ public interface Domain extends EObject {
 	 * @generated
 	 */
 	EList<JobsImporter> getJobsImporter();
+
+	/**
+	 * Returns the value of the '<em><b>Spreadsheets</b></em>' containment reference list.
+	 * The list contents are of type {@link com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Spreadsheets</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Spreadsheets</em>' containment reference list.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getDomain_Spreadsheets()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOI> getSpreadsheets();
 
 } // Domain
