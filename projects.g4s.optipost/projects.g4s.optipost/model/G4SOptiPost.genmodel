@@ -40,10 +40,12 @@
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapPredecessor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapSuccessor"/>
+      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapPredecessor"/>
+      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MinOverlapSuccessor"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/Scenario"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/CplexSolver"/>
+      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/AbsoluteMinEmployeeNrJob"/>
+      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/AbsoluteMaxEmployeeNrJobs"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//LpRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/Jobs"/>
