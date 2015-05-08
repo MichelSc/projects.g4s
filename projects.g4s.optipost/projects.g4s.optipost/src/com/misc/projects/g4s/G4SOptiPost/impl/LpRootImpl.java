@@ -312,6 +312,14 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
             	LpEmployee lpemployee = employees.get(employee);
             	if ( lpemployee == null){
                 	lpemployee = G4SOptiPostFactory.eINSTANCE.createLpEmployee();
+                	int minJobs = lpemployee.getMinNrJobs();
+                	if ( minJobs>generator.getAbsoluteMaxEmployeeNrJobs()){
+                		minJobs = generator.getAbsoluteMaxEmployeeNrJobs();
+                	}
+                	if ( minJobs<generator.getAbsoluteMinEmployeeNrJob() ){
+                		minJobs = generator.getAbsoluteMinEmployeeNrJob();
+                	}
+                	lpemployee.setMinNrJobs(minJobs);
                 	lpemployee.setEmployee(employee);
                 	lpemployee.setCode(employee.getEmployeeID());
                 	employees.put(employee, lpemployee);

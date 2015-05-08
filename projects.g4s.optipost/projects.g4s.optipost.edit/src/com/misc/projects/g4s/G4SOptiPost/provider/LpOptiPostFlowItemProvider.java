@@ -50,6 +50,8 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 
 			addMinOverlapPredecessorPropertyDescriptor(object);
 			addMinOverlapSuccessorPropertyDescriptor(object);
+			addAbsoluteMinEmployeeNrJobPropertyDescriptor(object);
+			addAbsoluteMaxEmployeeNrJobsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -94,6 +96,50 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Absolute Min Employee Nr Job feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAbsoluteMinEmployeeNrJobPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LpOptiPostFlow_AbsoluteMinEmployeeNrJob_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_AbsoluteMinEmployeeNrJob_feature", "_UI_LpOptiPostFlow_type"),
+				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Absolute Max Employee Nr Jobs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAbsoluteMaxEmployeeNrJobsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LpOptiPostFlow_AbsoluteMaxEmployeeNrJobs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_AbsoluteMaxEmployeeNrJobs_feature", "_UI_LpOptiPostFlow_type"),
+				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -170,6 +216,8 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		switch (notification.getFeatureID(LpOptiPostFlow.class)) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:

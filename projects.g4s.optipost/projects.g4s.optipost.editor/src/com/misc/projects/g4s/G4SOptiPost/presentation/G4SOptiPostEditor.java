@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IMarker;
 import org.eclipse.core.resources.IResource;
@@ -115,11 +116,14 @@ import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
+
 import com.misc.projects.g4s.G4SOptiPost.provider.G4SOptiPostItemProviderAdapterFactory;
+import com.misc.common.moplaf.emf.editor.AdapterFactoryContentProviderExtended;
 import com.misc.common.moplaf.solver.provider.SolverItemProviderAdapterFactory;
 import com.misc.common.moplaf.solver.solvercplex.provider.SolvercplexItemProviderAdapterFactory;
 import com.misc.common.moplaf.spreadsheet.provider.SpreadsheetItemProviderAdapterFactory;
 import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.provider.SpreadsheetpoiItemProviderAdapterFactory;
+
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -1360,7 +1364,6 @@ public class G4SOptiPostEditor
 	 * This accesses a cached version of the property sheet.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public IPropertySheetPage getPropertySheetPage() {
 		PropertySheetPage propertySheetPage =
@@ -1377,7 +1380,9 @@ public class G4SOptiPostEditor
 					getActionBarContributor().shareGlobalActions(this, actionBars);
 				}
 			};
-		propertySheetPage.setPropertySourceProvider(new AdapterFactoryContentProvider(adapterFactory));
+		AdapterFactoryContentProviderExtended propertySourceProvider = new AdapterFactoryContentProviderExtended(adapterFactory);
+		propertySourceProvider.editDateTimes.addSelectorAll();
+		propertySheetPage.setPropertySourceProvider(propertySourceProvider);
 		propertySheetPages.add(propertySheetPage);
 
 		return propertySheetPage;

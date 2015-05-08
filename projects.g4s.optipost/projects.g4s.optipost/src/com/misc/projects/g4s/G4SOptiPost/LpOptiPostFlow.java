@@ -19,6 +19,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}</li>
  * </ul>
  * </p>
  *
@@ -152,5 +154,59 @@ public interface LpOptiPostFlow extends Generator {
 	 * @generated
 	 */
 	EList<SolverCplex> getCplexSolver();
+
+	/**
+	 * Returns the value of the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute.
+	 * The default value is <code>"50"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Absolute Min Employee Nr Job</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Absolute Min Employee Nr Job</em>' attribute.
+	 * @see #setAbsoluteMinEmployeeNrJob(int)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_AbsoluteMinEmployeeNrJob()
+	 * @model default="50"
+	 * @generated
+	 */
+	int getAbsoluteMinEmployeeNrJob();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Absolute Min Employee Nr Job</em>' attribute.
+	 * @see #getAbsoluteMinEmployeeNrJob()
+	 * @generated
+	 */
+	void setAbsoluteMinEmployeeNrJob(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Absolute Max Employee Nr Jobs</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Absolute Max Employee Nr Jobs</em>' attribute.
+	 * @see #setAbsoluteMaxEmployeeNrJobs(int)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs()
+	 * @model default="0"
+	 * @generated
+	 */
+	int getAbsoluteMaxEmployeeNrJobs();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Absolute Max Employee Nr Jobs</em>' attribute.
+	 * @see #getAbsoluteMaxEmployeeNrJobs()
+	 * @generated
+	 */
+	void setAbsoluteMaxEmployeeNrJobs(int value);
 
 } // LpOptiPostFlow

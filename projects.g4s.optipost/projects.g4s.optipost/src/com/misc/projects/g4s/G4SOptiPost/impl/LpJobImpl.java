@@ -231,10 +231,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 */
 	public boolean isStartOfMonth() {
 		if ( this.getShift()==null){ return false; }
-		Date shiftStart = this.getShift().getShiftStart();
-		if ( shiftStart == null ) { return false; }
+		Date shiftDate= this.getShift().getShiftDate();
+		if ( shiftDate== null ) { return false; }
 		Calendar calendar = new GregorianCalendar();
-		calendar.setTime(shiftStart);
+		calendar.setTime(shiftDate);
 		boolean isStart = calendar.get(Calendar.DAY_OF_MONTH)==calendar.getActualMinimum(Calendar.DAY_OF_MONTH);
 		return isStart;
 	}
@@ -245,10 +245,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 */
 	public boolean isEndOfMonth() {
 		if ( this.getShift()==null){ return false; }
-		Date shiftEnd= this.getShift().getShiftEnd();
-		if ( shiftEnd== null ) { return false; }
+		Date shiftDate= this.getShift().getShiftDate();
+		if ( shiftDate== null ) { return false; }
 		Calendar calendar = new GregorianCalendar();
-		calendar.setTime(shiftEnd);
+		calendar.setTime(shiftDate);
 		boolean isEnd= calendar.get(Calendar.DAY_OF_MONTH)==calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 		return isEnd;
 	}

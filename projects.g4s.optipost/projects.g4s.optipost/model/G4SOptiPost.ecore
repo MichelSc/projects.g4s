@@ -55,6 +55,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="CplexSolver" upperBound="-1"
         eType="ecore:EClass ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore#//SolverCplex"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AbsoluteMinEmployeeNrJob"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="50"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AbsoluteMaxEmployeeNrJobs"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpRoot" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Jobs" upperBound="-1" eType="#//LpJob"

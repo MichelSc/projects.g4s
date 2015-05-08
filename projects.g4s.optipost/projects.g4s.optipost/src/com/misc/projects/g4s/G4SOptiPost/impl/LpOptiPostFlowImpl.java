@@ -32,6 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getCplexSolver <em>Cplex Solver</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,6 +99,46 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * @ordered
 	 */
 	protected EList<SolverCplex> cplexSolver;
+
+	/**
+	 * The default value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMinEmployeeNrJob()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT = 50;
+
+	/**
+	 * The cached value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMinEmployeeNrJob()
+	 * @generated
+	 * @ordered
+	 */
+	protected int absoluteMinEmployeeNrJob = ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMaxEmployeeNrJobs()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMaxEmployeeNrJobs()
+	 * @generated
+	 * @ordered
+	 */
+	protected int absoluteMaxEmployeeNrJobs = ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -260,6 +302,48 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getAbsoluteMinEmployeeNrJob() {
+		return absoluteMinEmployeeNrJob;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAbsoluteMinEmployeeNrJob(int newAbsoluteMinEmployeeNrJob) {
+		int oldAbsoluteMinEmployeeNrJob = absoluteMinEmployeeNrJob;
+		absoluteMinEmployeeNrJob = newAbsoluteMinEmployeeNrJob;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB, oldAbsoluteMinEmployeeNrJob, absoluteMinEmployeeNrJob));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getAbsoluteMaxEmployeeNrJobs() {
+		return absoluteMaxEmployeeNrJobs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAbsoluteMaxEmployeeNrJobs(int newAbsoluteMaxEmployeeNrJobs) {
+		int oldAbsoluteMaxEmployeeNrJobs = absoluteMaxEmployeeNrJobs;
+		absoluteMaxEmployeeNrJobs = newAbsoluteMaxEmployeeNrJobs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS, oldAbsoluteMaxEmployeeNrJobs, absoluteMaxEmployeeNrJobs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -325,6 +409,10 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return getScenario();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				return getCplexSolver();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				return getAbsoluteMinEmployeeNrJob();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				return getAbsoluteMaxEmployeeNrJobs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,6 +442,12 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				getCplexSolver().clear();
 				getCplexSolver().addAll((Collection<? extends SolverCplex>)newValue);
 				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				setAbsoluteMinEmployeeNrJob((Integer)newValue);
+				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				setAbsoluteMaxEmployeeNrJobs((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -381,6 +475,12 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				getCplexSolver().clear();
 				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				setAbsoluteMinEmployeeNrJob(ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				setAbsoluteMaxEmployeeNrJobs(ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -403,6 +503,10 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return getScenario() != null;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				return cplexSolver != null && !cplexSolver.isEmpty();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				return absoluteMinEmployeeNrJob != ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				return absoluteMaxEmployeeNrJobs != ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -421,6 +525,10 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		result.append(minOverlapPredecessor);
 		result.append(", MinOverlapSuccessor: ");
 		result.append(minOverlapSuccessor);
+		result.append(", AbsoluteMinEmployeeNrJob: ");
+		result.append(absoluteMinEmployeeNrJob);
+		result.append(", AbsoluteMaxEmployeeNrJobs: ");
+		result.append(absoluteMaxEmployeeNrJobs);
 		result.append(')');
 		return result.toString();
 	}

@@ -561,13 +561,31 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__CPLEX_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB = SolverPackage.GENERATOR_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS = SolverPackage.GENERATOR_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Lp Opti Post Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 5;
+	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Generate</em>' operation.
@@ -1931,6 +1949,28 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpOptiPostFlow_CplexSolver();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Absolute Min Employee Nr Job</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMinEmployeeNrJob()
+	 * @see #getLpOptiPostFlow()
+	 * @generated
+	 */
+	EAttribute getLpOptiPostFlow_AbsoluteMinEmployeeNrJob();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Absolute Max Employee Nr Jobs</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMaxEmployeeNrJobs()
+	 * @see #getLpOptiPostFlow()
+	 * @generated
+	 */
+	EAttribute getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot <em>Lp Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2663,6 +2703,22 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_OPTI_POST_FLOW__CPLEX_SOLVER = eINSTANCE.getLpOptiPostFlow_CplexSolver();
+
+		/**
+		 * The meta object literal for the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB = eINSTANCE.getLpOptiPostFlow_AbsoluteMinEmployeeNrJob();
+
+		/**
+		 * The meta object literal for the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS = eINSTANCE.getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl <em>Lp Root</em>}' class.
