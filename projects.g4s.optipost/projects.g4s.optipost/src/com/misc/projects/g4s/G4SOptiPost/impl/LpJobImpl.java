@@ -14,12 +14,10 @@ import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
-
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.GregorianCalendar;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -48,6 +46,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getVarInPost <em>Var In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getConsIsFollowedInPost <em>Cons Is Followed In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getConsIsPrecededInPost <em>Cons Is Preceded In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getVarIsFirstInPost <em>Var Is First In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getVarIsLastInPost <em>Var Is Last In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -143,6 +143,26 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 * @ordered
 	 */
 	protected GeneratorLpCons consIsPrecededInPost;
+
+	/**
+	 * The cached value of the '{@link #getVarIsFirstInPost() <em>Var Is First In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVarIsFirstInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeneratorLpVar varIsFirstInPost;
+
+	/**
+	 * The cached value of the '{@link #getVarIsLastInPost() <em>Var Is Last In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVarIsLastInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeneratorLpVar varIsLastInPost;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -488,6 +508,92 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GeneratorLpVar getVarIsFirstInPost() {
+		return varIsFirstInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVarIsFirstInPost(GeneratorLpVar newVarIsFirstInPost, NotificationChain msgs) {
+		GeneratorLpVar oldVarIsFirstInPost = varIsFirstInPost;
+		varIsFirstInPost = newVarIsFirstInPost;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST, oldVarIsFirstInPost, newVarIsFirstInPost);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVarIsFirstInPost(GeneratorLpVar newVarIsFirstInPost) {
+		if (newVarIsFirstInPost != varIsFirstInPost) {
+			NotificationChain msgs = null;
+			if (varIsFirstInPost != null)
+				msgs = ((InternalEObject)varIsFirstInPost).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST, null, msgs);
+			if (newVarIsFirstInPost != null)
+				msgs = ((InternalEObject)newVarIsFirstInPost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST, null, msgs);
+			msgs = basicSetVarIsFirstInPost(newVarIsFirstInPost, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST, newVarIsFirstInPost, newVarIsFirstInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeneratorLpVar getVarIsLastInPost() {
+		return varIsLastInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVarIsLastInPost(GeneratorLpVar newVarIsLastInPost, NotificationChain msgs) {
+		GeneratorLpVar oldVarIsLastInPost = varIsLastInPost;
+		varIsLastInPost = newVarIsLastInPost;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST, oldVarIsLastInPost, newVarIsLastInPost);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVarIsLastInPost(GeneratorLpVar newVarIsLastInPost) {
+		if (newVarIsLastInPost != varIsLastInPost) {
+			NotificationChain msgs = null;
+			if (varIsLastInPost != null)
+				msgs = ((InternalEObject)varIsLastInPost).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST, null, msgs);
+			if (newVarIsLastInPost != null)
+				msgs = ((InternalEObject)newVarIsLastInPost).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST, null, msgs);
+			msgs = basicSetVarIsLastInPost(newVarIsLastInPost, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST, newVarIsLastInPost, newVarIsLastInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -530,6 +636,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return basicSetConsIsFollowedInPost(null, msgs);
 			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
 				return basicSetConsIsPrecededInPost(null, msgs);
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST:
+				return basicSetVarIsFirstInPost(null, msgs);
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST:
+				return basicSetVarIsLastInPost(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -578,6 +688,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return getConsIsFollowedInPost();
 			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
 				return getConsIsPrecededInPost();
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST:
+				return getVarIsFirstInPost();
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST:
+				return getVarIsLastInPost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -617,6 +731,12 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
 				setConsIsPrecededInPost((GeneratorLpCons)newValue);
 				return;
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST:
+				setVarIsFirstInPost((GeneratorLpVar)newValue);
+				return;
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST:
+				setVarIsLastInPost((GeneratorLpVar)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -653,6 +773,12 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
 				setConsIsPrecededInPost((GeneratorLpCons)null);
 				return;
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST:
+				setVarIsFirstInPost((GeneratorLpVar)null);
+				return;
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST:
+				setVarIsLastInPost((GeneratorLpVar)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -685,6 +811,10 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 				return consIsFollowedInPost != null;
 			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
 				return consIsPrecededInPost != null;
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST:
+				return varIsFirstInPost != null;
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST:
+				return varIsLastInPost != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -694,6 +824,8 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 		super.generateVars();
 		
 		this.generateVarInPost();
+		this.generateVarIsFirstInPost();
+		this.generateVarIsLastInPost();
 	}
 	
 	private void generateVarInPost() {
@@ -705,6 +837,28 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 		this.setVarInPost(newVar);
 	}
 
+	private void generateVarIsFirstInPost() {
+		if ( this.isStartOfMonth()){
+			GeneratorLpVar newVar = SolverFactory.eINSTANCE.createGeneratorLpVar();
+			newVar.setLowerBound(0.0f);
+			newVar.setUpperBound(1.0f);
+			newVar.setType(EnumLpVarType.ENUM_LITERAL_LP_VAR_INTEGER);
+			newVar.setName("isfirst");
+			this.setVarIsFirstInPost(newVar);
+		}
+	}
+
+	private void generateVarIsLastInPost() {
+		if ( this.isEndOfMonth()){
+			GeneratorLpVar newVar = SolverFactory.eINSTANCE.createGeneratorLpVar();
+			newVar.setLowerBound(0.0f);
+			newVar.setUpperBound(1.0f);
+			newVar.setType(EnumLpVarType.ENUM_LITERAL_LP_VAR_INTEGER);
+			newVar.setName("islast");
+			this.setVarIsLastInPost(newVar);
+		}
+	}
+
 	@Override
 	public void generateCons() {
 		super.generateCons();
@@ -714,31 +868,33 @@ public class LpJobImpl extends GeneratorTupleImpl implements LpJob {
 	}
 	
 	private void generateConsIsFollowedInPost() {
-		if ( !this.isEndOfMonth()){
-			GeneratorLpCons newCons = SolverFactory.eINSTANCE.createGeneratorLpCons();
-			newCons.setRighHandSide(0.0f);
-			newCons.setType(EnumLpConsType.ENUM_LITERAL_LP_CONS_EQUAL);
-			newCons.setName("isFollowed");
-			newCons.constructTerm(this.getVarInPost(), 1.0f);
-			for ( LpPrecedence jobAfter : this.getJobsAfter()){
-				newCons.constructTerm(jobAfter.getVarInPost(), -1.0f);
-			}
-			this.setConsIsFollowedInPost(newCons);
+		GeneratorLpCons newCons = SolverFactory.eINSTANCE.createGeneratorLpCons();
+		newCons.setRighHandSide(0.0f);
+		newCons.setType(EnumLpConsType.ENUM_LITERAL_LP_CONS_EQUAL);
+		newCons.setName("isFollowed");
+		newCons.constructTerm(this.getVarInPost(), 1.0f);
+		for ( LpPrecedence jobAfter : this.getJobsAfter()){
+			newCons.constructTerm(jobAfter.getVarInPost(), -1.0f);
 		}
+		if ( this.isEndOfMonth()){
+			newCons.constructTerm(this.getVarIsLastInPost(), -1.0f);
+		}
+		this.setConsIsFollowedInPost(newCons);
 	}
 	
 	private void generateConsIsPrecededInPost() {
-		if ( !this.isStartOfMonth()){
-			GeneratorLpCons newCons = SolverFactory.eINSTANCE.createGeneratorLpCons();
-			newCons.setRighHandSide(0.0f);
-			newCons.setType(EnumLpConsType.ENUM_LITERAL_LP_CONS_EQUAL);
-			newCons.setName("isPreceded");
-			newCons.constructTerm(this.getVarInPost(), 1.0f);
-			for ( LpPrecedence jobBefore : this.getJobsBefore()){
-				newCons.constructTerm(jobBefore.getVarInPost(), -1.0f);
-			}
-			this.setConsIsPrecededInPost(newCons);
+		GeneratorLpCons newCons = SolverFactory.eINSTANCE.createGeneratorLpCons();
+		newCons.setRighHandSide(0.0f);
+		newCons.setType(EnumLpConsType.ENUM_LITERAL_LP_CONS_EQUAL);
+		newCons.setName("isPreceded");
+		newCons.constructTerm(this.getVarInPost(), 1.0f);
+		for ( LpPrecedence jobBefore : this.getJobsBefore()){
+			newCons.constructTerm(jobBefore.getVarInPost(), -1.0f);
 		}
+		if ( this.isStartOfMonth()){
+			newCons.constructTerm(this.getVarIsFirstInPost(), -1.0f);
+		}
+		this.setConsIsPrecededInPost(newCons);
 	}
 	
 

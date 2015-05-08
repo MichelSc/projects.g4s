@@ -212,6 +212,8 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__VAR_IN_POST);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_FOLLOWED_IN_POST);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_PRECEDED_IN_POST);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__VAR_IS_FIRST_IN_POST);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_JOB__VAR_IS_LAST_IN_POST);
 		}
 		return childrenFeatures;
 	}
@@ -274,6 +276,8 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 			case G4SOptiPostPackage.LP_JOB__VAR_IN_POST:
 			case G4SOptiPostPackage.LP_JOB__CONS_IS_FOLLOWED_IN_POST:
 			case G4SOptiPostPackage.LP_JOB__CONS_IS_PRECEDED_IN_POST:
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_FIRST_IN_POST:
+			case G4SOptiPostPackage.LP_JOB__VAR_IS_LAST_IN_POST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -310,6 +314,16 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_PRECEDED_IN_POST,
 				 SolverFactory.eINSTANCE.createGeneratorLpCons()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_JOB__VAR_IS_FIRST_IN_POST,
+				 SolverFactory.eINSTANCE.createGeneratorLpVar()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_JOB__VAR_IS_LAST_IN_POST,
+				 SolverFactory.eINSTANCE.createGeneratorLpVar()));
 	}
 
 	/**
@@ -324,6 +338,9 @@ public class LpJobItemProvider extends GeneratorTupleItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
+			childFeature == G4SOptiPostPackage.Literals.LP_JOB__VAR_IN_POST ||
+			childFeature == G4SOptiPostPackage.Literals.LP_JOB__VAR_IS_FIRST_IN_POST ||
+			childFeature == G4SOptiPostPackage.Literals.LP_JOB__VAR_IS_LAST_IN_POST ||
 			childFeature == G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_FOLLOWED_IN_POST ||
 			childFeature == G4SOptiPostPackage.Literals.LP_JOB__CONS_IS_PRECEDED_IN_POST;
 

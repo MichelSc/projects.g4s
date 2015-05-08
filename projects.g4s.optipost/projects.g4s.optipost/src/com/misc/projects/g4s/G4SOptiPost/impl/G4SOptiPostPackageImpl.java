@@ -661,6 +661,24 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLpJob_VarIsFirstInPost() {
+		return (EReference)lpJobEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLpJob_VarIsLastInPost() {
+		return (EReference)lpJobEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLpPrecedence() {
 		return lpPrecedenceEClass;
 	}
@@ -1127,6 +1145,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpJobEClass, LP_JOB__VAR_IN_POST);
 		createEReference(lpJobEClass, LP_JOB__CONS_IS_FOLLOWED_IN_POST);
 		createEReference(lpJobEClass, LP_JOB__CONS_IS_PRECEDED_IN_POST);
+		createEReference(lpJobEClass, LP_JOB__VAR_IS_FIRST_IN_POST);
+		createEReference(lpJobEClass, LP_JOB__VAR_IS_LAST_IN_POST);
 
 		lpPrecedenceEClass = createEClass(LP_PRECEDENCE);
 		createEReference(lpPrecedenceEClass, LP_PRECEDENCE__JOB_BEFORE);
@@ -1278,6 +1298,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpJob_VarInPost(), theSolverPackage.getGeneratorLpVar(), null, "VarInPost", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpJob_ConsIsFollowedInPost(), theSolverPackage.getGeneratorLpCons(), null, "ConsIsFollowedInPost", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpJob_ConsIsPrecededInPost(), theSolverPackage.getGeneratorLpCons(), null, "ConsIsPrecededInPost", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpJob_VarIsFirstInPost(), theSolverPackage.getGeneratorLpVar(), null, "VarIsFirstInPost", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpJob_VarIsLastInPost(), theSolverPackage.getGeneratorLpVar(), null, "VarIsLastInPost", null, 0, 1, LpJob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpPrecedenceEClass, LpPrecedence.class, "LpPrecedence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpPrecedence_JobBefore(), this.getLpJob(), this.getLpJob_JobsAfter(), "JobBefore", null, 1, 1, LpPrecedence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

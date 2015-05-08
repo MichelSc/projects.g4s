@@ -26,6 +26,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarInPost <em>Var In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsFollowedInPost <em>Cons Is Followed In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getConsIsPrecededInPost <em>Cons Is Preceded In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarIsFirstInPost <em>Var Is First In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarIsLastInPost <em>Var Is Last In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -259,5 +261,57 @@ public interface LpJob extends GeneratorTuple {
 	 * @generated
 	 */
 	void setConsIsPrecededInPost(GeneratorLpCons value);
+
+	/**
+	 * Returns the value of the '<em><b>Var Is First In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Var Is First In Post</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Var Is First In Post</em>' containment reference.
+	 * @see #setVarIsFirstInPost(GeneratorLpVar)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_VarIsFirstInPost()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GeneratorLpVar getVarIsFirstInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarIsFirstInPost <em>Var Is First In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Var Is First In Post</em>' containment reference.
+	 * @see #getVarIsFirstInPost()
+	 * @generated
+	 */
+	void setVarIsFirstInPost(GeneratorLpVar value);
+
+	/**
+	 * Returns the value of the '<em><b>Var Is Last In Post</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Var Is Last In Post</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Var Is Last In Post</em>' containment reference.
+	 * @see #setVarIsLastInPost(GeneratorLpVar)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob_VarIsLastInPost()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GeneratorLpVar getVarIsLastInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarIsLastInPost <em>Var Is Last In Post</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Var Is Last In Post</em>' containment reference.
+	 * @see #getVarIsLastInPost()
+	 * @generated
+	 */
+	void setVarIsLastInPost(GeneratorLpVar value);
 
 } // LpJob

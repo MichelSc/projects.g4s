@@ -90,6 +90,10 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ConsIsPrecededInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpCons"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VarIsFirstInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="VarIsLastInPost" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpVar"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpPrecedence" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">
     <eStructuralFeatures xsi:type="ecore:EReference" name="JobBefore" lowerBound="1"
