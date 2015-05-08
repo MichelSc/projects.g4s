@@ -21,7 +21,7 @@ public class ReadAction extends Action {
 
 		public ReadAction()	{
 			setId(ID);
-			setText("Run");
+			setText("Read");
 			setToolTipText("Read the selected object");
 			//setImageDescriptor();
 		}
