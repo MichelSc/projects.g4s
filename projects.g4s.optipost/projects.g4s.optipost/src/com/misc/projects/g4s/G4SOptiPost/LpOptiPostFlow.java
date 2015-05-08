@@ -157,7 +157,7 @@ public interface LpOptiPostFlow extends Generator {
 
 	/**
 	 * Returns the value of the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute.
-	 * The default value is <code>"50"</code>.
+	 * The default value is <code>"10"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Absolute Min Employee Nr Job</em>' attribute isn't clear,
@@ -167,7 +167,7 @@ public interface LpOptiPostFlow extends Generator {
 	 * @return the value of the '<em>Absolute Min Employee Nr Job</em>' attribute.
 	 * @see #setAbsoluteMinEmployeeNrJob(int)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_AbsoluteMinEmployeeNrJob()
-	 * @model default="50"
+	 * @model default="10"
 	 * @generated
 	 */
 	int getAbsoluteMinEmployeeNrJob();
@@ -184,7 +184,7 @@ public interface LpOptiPostFlow extends Generator {
 
 	/**
 	 * Returns the value of the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
+	 * The default value is <code>"50"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Absolute Max Employee Nr Jobs</em>' attribute isn't clear,
@@ -194,7 +194,7 @@ public interface LpOptiPostFlow extends Generator {
 	 * @return the value of the '<em>Absolute Max Employee Nr Jobs</em>' attribute.
 	 * @see #setAbsoluteMaxEmployeeNrJobs(int)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs()
-	 * @model default="0"
+	 * @model default="50"
 	 * @generated
 	 */
 	int getAbsoluteMaxEmployeeNrJobs();

@@ -37,6 +37,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/LpOptiPostFlows"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/SelectedShifts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/Name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/Solutions"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
@@ -113,6 +114,29 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/JobStartColNr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/JobEndColNr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/LocationDescriptionColNr"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//OptiPostSolution">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolution/Lp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolution/Posts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolution/Employees"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//OptiPostSolution/NrEmployees"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//OptiPostSolutionPost">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolutionPost/Shifts"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolutionPost/Location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//OptiPostSolutionPost/NrShifts"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//OptiPostSolutionEmployee">
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolutionEmployee/Shifts"/>
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolutionEmployee/Employee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//OptiPostSolutionEmployee/NrShifts"/>
+    </genClasses>
+    <genClasses ecoreClass="G4SOptiPost.ecore#//OptiPostSolutionShift">
+      <genFeatures notify="false" children="true" createChild="false" propertySortChoices="true"
+          ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolutionShift/Shift"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

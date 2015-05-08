@@ -74,7 +74,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI__40G4SPropertyCategory"),
 				 null));
 	}
 
@@ -96,7 +96,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI__40G4SPropertyCategory"),
 				 null));
 	}
 
@@ -118,7 +118,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI__40G4SPropertyCategory"),
 				 null));
 	}
 
@@ -140,7 +140,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
+				 getString("_UI__40G4SPropertyCategory"),
 				 null));
 	}
 

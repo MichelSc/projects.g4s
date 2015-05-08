@@ -325,6 +325,98 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OptiPostSolutionItemProvider optiPostSolutionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOptiPostSolutionAdapter() {
+		if (optiPostSolutionItemProvider == null) {
+			optiPostSolutionItemProvider = new OptiPostSolutionItemProvider(this);
+		}
+
+		return optiPostSolutionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OptiPostSolutionPostItemProvider optiPostSolutionPostItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOptiPostSolutionPostAdapter() {
+		if (optiPostSolutionPostItemProvider == null) {
+			optiPostSolutionPostItemProvider = new OptiPostSolutionPostItemProvider(this);
+		}
+
+		return optiPostSolutionPostItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OptiPostSolutionEmployeeItemProvider optiPostSolutionEmployeeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOptiPostSolutionEmployeeAdapter() {
+		if (optiPostSolutionEmployeeItemProvider == null) {
+			optiPostSolutionEmployeeItemProvider = new OptiPostSolutionEmployeeItemProvider(this);
+		}
+
+		return optiPostSolutionEmployeeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OptiPostSolutionShiftItemProvider optiPostSolutionShiftItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOptiPostSolutionShiftAdapter() {
+		if (optiPostSolutionShiftItemProvider == null) {
+			optiPostSolutionShiftItemProvider = new OptiPostSolutionShiftItemProvider(this);
+		}
+
+		return optiPostSolutionShiftItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -434,6 +526,10 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		if (lpPrecedenceItemProvider != null) lpPrecedenceItemProvider.dispose();
 		if (lpEmployeeItemProvider != null) lpEmployeeItemProvider.dispose();
 		if (jobsImporterSpreadsheetItemProvider != null) jobsImporterSpreadsheetItemProvider.dispose();
+		if (optiPostSolutionItemProvider != null) optiPostSolutionItemProvider.dispose();
+		if (optiPostSolutionPostItemProvider != null) optiPostSolutionPostItemProvider.dispose();
+		if (optiPostSolutionEmployeeItemProvider != null) optiPostSolutionEmployeeItemProvider.dispose();
+		if (optiPostSolutionShiftItemProvider != null) optiPostSolutionShiftItemProvider.dispose();
 	}
 
 }

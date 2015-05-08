@@ -152,6 +152,30 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION: {
+				OptiPostSolution optiPostSolution = (OptiPostSolution)theEObject;
+				T result = caseOptiPostSolution(optiPostSolution);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST: {
+				OptiPostSolutionPost optiPostSolutionPost = (OptiPostSolutionPost)theEObject;
+				T result = caseOptiPostSolutionPost(optiPostSolutionPost);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE: {
+				OptiPostSolutionEmployee optiPostSolutionEmployee = (OptiPostSolutionEmployee)theEObject;
+				T result = caseOptiPostSolutionEmployee(optiPostSolutionEmployee);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_SHIFT: {
+				OptiPostSolutionShift optiPostSolutionShift = (OptiPostSolutionShift)theEObject;
+				T result = caseOptiPostSolutionShift(optiPostSolutionShift);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -333,6 +357,66 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseJobsImporterSpreadsheet(JobsImporterSpreadsheet object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Opti Post Solution</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Opti Post Solution</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOptiPostSolution(OptiPostSolution object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Opti Post Solution Post</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Opti Post Solution Post</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOptiPostSolutionPost(OptiPostSolutionPost object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Opti Post Solution Employee</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Opti Post Solution Employee</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOptiPostSolutionEmployee(OptiPostSolutionEmployee object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Opti Post Solution Shift</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Opti Post Solution Shift</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOptiPostSolutionShift(OptiPostSolutionShift object) {
 		return null;
 	}
 

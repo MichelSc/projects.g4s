@@ -362,13 +362,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int SCENARIO__NAME = 2;
 
 	/**
+	 * The feature id for the '<em><b>Solutions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__SOLUTIONS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 3;
+	int SCENARIO_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -1614,6 +1623,226 @@ public interface G4SOptiPostPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl <em>Opti Post Solution</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolution()
+	 * @generated
+	 */
+	int OPTI_POST_SOLUTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Lp</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__LP = 0;
+
+	/**
+	 * The feature id for the '<em><b>Posts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__POSTS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Employees</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__EMPLOYEES = 2;
+
+	/**
+	 * The feature id for the '<em><b>Nr Employees</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__NR_EMPLOYEES = 3;
+
+	/**
+	 * The number of structural features of the '<em>Opti Post Solution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Opti Post Solution</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl <em>Opti Post Solution Post</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolutionPost()
+	 * @generated
+	 */
+	int OPTI_POST_SOLUTION_POST = 13;
+
+	/**
+	 * The feature id for the '<em><b>Shifts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_POST__SHIFTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_POST__LOCATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Nr Shifts</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_POST__NR_SHIFTS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Opti Post Solution Post</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_POST_FEATURE_COUNT = 3;
+
+	/**
+	 * The operation id for the '<em>Add Shift</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_POST___ADD_SHIFT__SHIFT = 0;
+
+	/**
+	 * The number of operations of the '<em>Opti Post Solution Post</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_POST_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl <em>Opti Post Solution Employee</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolutionEmployee()
+	 * @generated
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE = 14;
+
+	/**
+	 * The feature id for the '<em><b>Shifts</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE__SHIFTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Employee</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Nr Shifts</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Opti Post Solution Employee</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Opti Post Solution Employee</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl <em>Opti Post Solution Shift</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl
+	 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolutionShift()
+	 * @generated
+	 */
+	int OPTI_POST_SOLUTION_SHIFT = 15;
+
+	/**
+	 * The feature id for the '<em><b>Shift</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_SHIFT__SHIFT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Opti Post Solution Shift</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_SHIFT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Opti Post Solution Shift</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_SHIFT_OPERATION_COUNT = 0;
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.Domain <em>Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1882,6 +2111,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getScenario_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getSolutions <em>Solutions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Solutions</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getSolutions()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_Solutions();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow <em>Lp Opti Post Flow</em>}'.
@@ -2422,6 +2662,177 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getJobsImporterSpreadsheet_LocationDescriptionColNr();
 
 	/**
+	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution <em>Opti Post Solution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Opti Post Solution</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution
+	 * @generated
+	 */
+	EClass getOptiPostSolution();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getLp <em>Lp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Lp</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getLp()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EReference getOptiPostSolution_Lp();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getPosts <em>Posts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Posts</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getPosts()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EReference getOptiPostSolution_Posts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getEmployees <em>Employees</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Employees</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getEmployees()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EReference getOptiPostSolution_Employees();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getNrEmployees <em>Nr Employees</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nr Employees</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getNrEmployees()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolution_NrEmployees();
+
+	/**
+	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost <em>Opti Post Solution Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Opti Post Solution Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost
+	 * @generated
+	 */
+	EClass getOptiPostSolutionPost();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getShifts <em>Shifts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Shifts</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getShifts()
+	 * @see #getOptiPostSolutionPost()
+	 * @generated
+	 */
+	EReference getOptiPostSolutionPost_Shifts();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getLocation <em>Location</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Location</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getLocation()
+	 * @see #getOptiPostSolutionPost()
+	 * @generated
+	 */
+	EReference getOptiPostSolutionPost_Location();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getNrShifts <em>Nr Shifts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nr Shifts</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getNrShifts()
+	 * @see #getOptiPostSolutionPost()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolutionPost_NrShifts();
+
+	/**
+	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#addShift(com.misc.projects.g4s.G4SOptiPost.Shift) <em>Add Shift</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Shift</em>' operation.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#addShift(com.misc.projects.g4s.G4SOptiPost.Shift)
+	 * @generated
+	 */
+	EOperation getOptiPostSolutionPost__AddShift__Shift();
+
+	/**
+	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee <em>Opti Post Solution Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Opti Post Solution Employee</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee
+	 * @generated
+	 */
+	EClass getOptiPostSolutionEmployee();
+
+	/**
+	 * Returns the meta object for the reference list '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getShifts <em>Shifts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Shifts</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getShifts()
+	 * @see #getOptiPostSolutionEmployee()
+	 * @generated
+	 */
+	EReference getOptiPostSolutionEmployee_Shifts();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getEmployee <em>Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Employee</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getEmployee()
+	 * @see #getOptiPostSolutionEmployee()
+	 * @generated
+	 */
+	EReference getOptiPostSolutionEmployee_Employee();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getNrShifts <em>Nr Shifts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nr Shifts</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getNrShifts()
+	 * @see #getOptiPostSolutionEmployee()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolutionEmployee_NrShifts();
+
+	/**
+	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift <em>Opti Post Solution Shift</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Opti Post Solution Shift</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift
+	 * @generated
+	 */
+	EClass getOptiPostSolutionShift();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift#getShift <em>Shift</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Shift</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift#getShift()
+	 * @see #getOptiPostSolutionShift()
+	 * @generated
+	 */
+	EReference getOptiPostSolutionShift_Shift();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2653,6 +3064,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCENARIO__NAME = eINSTANCE.getScenario_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Solutions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__SOLUTIONS = eINSTANCE.getScenario_Solutions();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl <em>Lp Opti Post Flow</em>}' class.
@@ -3067,6 +3486,142 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_LocationDescriptionColNr();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl <em>Opti Post Solution</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolution()
+		 * @generated
+		 */
+		EClass OPTI_POST_SOLUTION = eINSTANCE.getOptiPostSolution();
+
+		/**
+		 * The meta object literal for the '<em><b>Lp</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION__LP = eINSTANCE.getOptiPostSolution_Lp();
+
+		/**
+		 * The meta object literal for the '<em><b>Posts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION__POSTS = eINSTANCE.getOptiPostSolution_Posts();
+
+		/**
+		 * The meta object literal for the '<em><b>Employees</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION__EMPLOYEES = eINSTANCE.getOptiPostSolution_Employees();
+
+		/**
+		 * The meta object literal for the '<em><b>Nr Employees</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION__NR_EMPLOYEES = eINSTANCE.getOptiPostSolution_NrEmployees();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl <em>Opti Post Solution Post</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolutionPost()
+		 * @generated
+		 */
+		EClass OPTI_POST_SOLUTION_POST = eINSTANCE.getOptiPostSolutionPost();
+
+		/**
+		 * The meta object literal for the '<em><b>Shifts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION_POST__SHIFTS = eINSTANCE.getOptiPostSolutionPost_Shifts();
+
+		/**
+		 * The meta object literal for the '<em><b>Location</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION_POST__LOCATION = eINSTANCE.getOptiPostSolutionPost_Location();
+
+		/**
+		 * The meta object literal for the '<em><b>Nr Shifts</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION_POST__NR_SHIFTS = eINSTANCE.getOptiPostSolutionPost_NrShifts();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Shift</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation OPTI_POST_SOLUTION_POST___ADD_SHIFT__SHIFT = eINSTANCE.getOptiPostSolutionPost__AddShift__Shift();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl <em>Opti Post Solution Employee</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolutionEmployee()
+		 * @generated
+		 */
+		EClass OPTI_POST_SOLUTION_EMPLOYEE = eINSTANCE.getOptiPostSolutionEmployee();
+
+		/**
+		 * The meta object literal for the '<em><b>Shifts</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION_EMPLOYEE__SHIFTS = eINSTANCE.getOptiPostSolutionEmployee_Shifts();
+
+		/**
+		 * The meta object literal for the '<em><b>Employee</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE = eINSTANCE.getOptiPostSolutionEmployee_Employee();
+
+		/**
+		 * The meta object literal for the '<em><b>Nr Shifts</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS = eINSTANCE.getOptiPostSolutionEmployee_NrShifts();
+
+		/**
+		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl <em>Opti Post Solution Shift</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl
+		 * @see com.misc.projects.g4s.G4SOptiPost.impl.G4SOptiPostPackageImpl#getOptiPostSolutionShift()
+		 * @generated
+		 */
+		EClass OPTI_POST_SOLUTION_SHIFT = eINSTANCE.getOptiPostSolutionShift();
+
+		/**
+		 * The meta object literal for the '<em><b>Shift</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION_SHIFT__SHIFT = eINSTANCE.getOptiPostSolutionShift_Shift();
 
 	}
 

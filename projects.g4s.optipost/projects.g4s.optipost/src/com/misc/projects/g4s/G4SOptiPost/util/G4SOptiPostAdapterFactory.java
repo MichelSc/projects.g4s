@@ -120,6 +120,22 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 				return createJobsImporterSpreadsheetAdapter();
 			}
 			@Override
+			public Adapter caseOptiPostSolution(OptiPostSolution object) {
+				return createOptiPostSolutionAdapter();
+			}
+			@Override
+			public Adapter caseOptiPostSolutionPost(OptiPostSolutionPost object) {
+				return createOptiPostSolutionPostAdapter();
+			}
+			@Override
+			public Adapter caseOptiPostSolutionEmployee(OptiPostSolutionEmployee object) {
+				return createOptiPostSolutionEmployeeAdapter();
+			}
+			@Override
+			public Adapter caseOptiPostSolutionShift(OptiPostSolutionShift object) {
+				return createOptiPostSolutionShiftAdapter();
+			}
+			@Override
 			public Adapter caseGenerator(Generator object) {
 				return createGeneratorAdapter();
 			}
@@ -316,6 +332,62 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createJobsImporterSpreadsheetAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution <em>Opti Post Solution</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution
+	 * @generated
+	 */
+	public Adapter createOptiPostSolutionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost <em>Opti Post Solution Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost
+	 * @generated
+	 */
+	public Adapter createOptiPostSolutionPostAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee <em>Opti Post Solution Employee</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee
+	 * @generated
+	 */
+	public Adapter createOptiPostSolutionEmployeeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift <em>Opti Post Solution Shift</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift
+	 * @generated
+	 */
+	public Adapter createOptiPostSolutionShiftAdapter() {
 		return null;
 	}
 

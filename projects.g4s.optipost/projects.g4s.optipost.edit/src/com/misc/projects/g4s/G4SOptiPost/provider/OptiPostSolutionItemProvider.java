@@ -5,7 +5,7 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
-import com.misc.projects.g4s.G4SOptiPost.Scenario;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolution;
 
 import java.util.Collection;
 import java.util.List;
@@ -29,12 +29,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.Scenario} object.
+ * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ScenarioItemProvider 
+public class OptiPostSolutionItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +48,7 @@ public class ScenarioItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScenarioItemProvider(AdapterFactory adapterFactory) {
+	public OptiPostSolutionItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,26 +63,26 @@ public class ScenarioItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSelectedShiftsPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
+			addLpPropertyDescriptor(object);
+			addNrEmployeesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Selected Shifts feature.
+	 * This adds a property descriptor for the Lp feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSelectedShiftsPropertyDescriptor(Object object) {
+	protected void addLpPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Scenario_SelectedShifts_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_SelectedShifts_feature", "_UI_Scenario_type"),
-				 G4SOptiPostPackage.Literals.SCENARIO__SELECTED_SHIFTS,
+				 getString("_UI_OptiPostSolution_Lp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OptiPostSolution_Lp_feature", "_UI_OptiPostSolution_type"),
+				 G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__LP,
 				 true,
 				 false,
 				 true,
@@ -92,23 +92,23 @@ public class ScenarioItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Nr Employees feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addNrEmployeesPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Scenario_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_Name_feature", "_UI_Scenario_type"),
-				 G4SOptiPostPackage.Literals.SCENARIO__NAME,
+				 getString("_UI_OptiPostSolution_NrEmployees_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OptiPostSolution_NrEmployees_feature", "_UI_OptiPostSolution_type"),
+				 G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__NR_EMPLOYEES,
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -125,8 +125,8 @@ public class ScenarioItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.SCENARIO__LP_OPTI_POST_FLOWS);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.SCENARIO__SOLUTIONS);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__POSTS);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__EMPLOYEES);
 		}
 		return childrenFeatures;
 	}
@@ -145,14 +145,14 @@ public class ScenarioItemProvider
 	}
 
 	/**
-	 * This returns Scenario.gif.
+	 * This returns OptiPostSolution.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Scenario"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/OptiPostSolution"));
 	}
 
 	/**
@@ -163,10 +163,8 @@ public class ScenarioItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Scenario)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Scenario_type") :
-			getString("_UI_Scenario_type") + " " + label;
+		OptiPostSolution optiPostSolution = (OptiPostSolution)object;
+		return getString("_UI_OptiPostSolution_type") + " " + optiPostSolution.getNrEmployees();
 	}
 	
 
@@ -181,12 +179,12 @@ public class ScenarioItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Scenario.class)) {
-			case G4SOptiPostPackage.SCENARIO__NAME:
+		switch (notification.getFeatureID(OptiPostSolution.class)) {
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS:
-			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__POSTS:
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,13 +204,13 @@ public class ScenarioItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(G4SOptiPostPackage.Literals.SCENARIO__LP_OPTI_POST_FLOWS,
-				 G4SOptiPostFactory.eINSTANCE.createLpOptiPostFlow()));
+				(G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__POSTS,
+				 G4SOptiPostFactory.eINSTANCE.createOptiPostSolutionPost()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(G4SOptiPostPackage.Literals.SCENARIO__SOLUTIONS,
-				 G4SOptiPostFactory.eINSTANCE.createOptiPostSolution()));
+				(G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__EMPLOYEES,
+				 G4SOptiPostFactory.eINSTANCE.createOptiPostSolutionEmployee()));
 	}
 
 	/**

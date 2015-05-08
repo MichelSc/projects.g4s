@@ -4,6 +4,7 @@ package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolution;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
 import java.util.Collection;
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getLpOptiPostFlows <em>Lp Opti Post Flows</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getSelectedShifts <em>Selected Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getSolutions <em>Solutions</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,6 +76,16 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSolutions() <em>Solutions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSolutions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OptiPostSolution> solutions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,6 +156,18 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<OptiPostSolution> getSolutions() {
+		if (solutions == null) {
+			solutions = new EObjectContainmentEList<OptiPostSolution>(OptiPostSolution.class, this, G4SOptiPostPackage.SCENARIO__SOLUTIONS);
+		}
+		return solutions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -163,6 +188,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		switch (featureID) {
 			case G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS:
 				return ((InternalEList<?>)getLpOptiPostFlows()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
+				return ((InternalEList<?>)getSolutions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -181,6 +208,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return getSelectedShifts();
 			case G4SOptiPostPackage.SCENARIO__NAME:
 				return getName();
+			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
+				return getSolutions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -205,6 +234,10 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case G4SOptiPostPackage.SCENARIO__NAME:
 				setName((String)newValue);
 				return;
+			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
+				getSolutions().clear();
+				getSolutions().addAll((Collection<? extends OptiPostSolution>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -226,6 +259,9 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case G4SOptiPostPackage.SCENARIO__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
+				getSolutions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -244,6 +280,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return selectedShifts != null && !selectedShifts.isEmpty();
 			case G4SOptiPostPackage.SCENARIO__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
+				return solutions != null && !solutions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

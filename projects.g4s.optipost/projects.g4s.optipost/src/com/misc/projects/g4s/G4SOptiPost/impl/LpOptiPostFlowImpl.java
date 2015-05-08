@@ -2,14 +2,22 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.solver.GeneratorLpVar;
+import com.misc.common.moplaf.solver.Solution;
 import com.misc.common.moplaf.solver.impl.GeneratorImpl;
 import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
+import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolution;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -108,7 +116,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT = 50;
+	protected static final int ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT = 10;
 
 	/**
 	 * The cached value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
@@ -128,7 +136,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT = 0;
+	protected static final int ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT = 50;
 
 	/**
 	 * The cached value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.
@@ -540,4 +548,38 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		this.setLpRoot(tupleroot); // owning
 	}
 
+	/* (non-Javadoc)
+	 * @see com.misc.common.moplaf.solver.impl.GeneratorImpl#acceptSolution(com.misc.common.moplaf.solver.SolutionProvider)
+	 */
+	@Override
+	public void acceptSolution(Solution solution) {
+		Scenario scenario = this.getScenario();
+		OptiPostSolution sol = G4SOptiPostFactory.eINSTANCE.createOptiPostSolution();
+		sol.setLp(this);
+		for (  LpJob lpjob: this.getLpRoot().getJobs()){
+			if ( !lpjob.isStartOfMonth()) { continue; }
+			GeneratorLpVar var = lpjob.getVarInPost();
+			if ( !var.isSolutionOne(solution)){ continue; }
+			// here we go: this is a post
+			OptiPostSolutionPost newpost = G4SOptiPostFactory.eINSTANCE.createOptiPostSolutionPost();
+			newpost.addShift(lpjob.getShift());
+			while ( ! lpjob.isEndOfMonth()){
+				LpJob nextJob = null;
+				for( LpPrecedence jobafter : lpjob.getJobsAfter()){
+					if ( jobafter.getVarInPost().isSolutionOne(solution) ){
+						nextJob = jobafter.getJobAfter();
+						break; // ok next job found
+					}
+				}
+				if ( nextJob==null){
+					// this should not happen
+					return;
+				}
+				lpjob = nextJob;
+				newpost.addShift(lpjob.getShift());
+			}
+			sol.getPosts().add(newpost);
+		}
+		scenario.getSolutions().add(sol);
+	}
 } //LpOptiPostFlowImpl

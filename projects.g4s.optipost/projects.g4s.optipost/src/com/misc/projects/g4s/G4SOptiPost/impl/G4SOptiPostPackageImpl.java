@@ -18,6 +18,10 @@ import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
 import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
 import com.misc.projects.g4s.G4SOptiPost.LpRoot;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolution;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
 import org.eclipse.emf.ecore.EAttribute;
@@ -117,6 +121,34 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * @generated
 	 */
 	private EClass jobsImporterSpreadsheetEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass optiPostSolutionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass optiPostSolutionPostEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass optiPostSolutionEmployeeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass optiPostSolutionShiftEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -406,6 +438,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 */
 	public EAttribute getScenario_Name() {
 		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getScenario_Solutions() {
+		return (EReference)scenarioEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -863,6 +904,150 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOptiPostSolution() {
+		return optiPostSolutionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolution_Lp() {
+		return (EReference)optiPostSolutionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolution_Posts() {
+		return (EReference)optiPostSolutionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolution_Employees() {
+		return (EReference)optiPostSolutionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOptiPostSolution_NrEmployees() {
+		return (EAttribute)optiPostSolutionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOptiPostSolutionPost() {
+		return optiPostSolutionPostEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolutionPost_Shifts() {
+		return (EReference)optiPostSolutionPostEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolutionPost_Location() {
+		return (EReference)optiPostSolutionPostEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOptiPostSolutionPost_NrShifts() {
+		return (EAttribute)optiPostSolutionPostEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getOptiPostSolutionPost__AddShift__Shift() {
+		return optiPostSolutionPostEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOptiPostSolutionEmployee() {
+		return optiPostSolutionEmployeeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolutionEmployee_Shifts() {
+		return (EReference)optiPostSolutionEmployeeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolutionEmployee_Employee() {
+		return (EReference)optiPostSolutionEmployeeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOptiPostSolutionEmployee_NrShifts() {
+		return (EAttribute)optiPostSolutionEmployeeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOptiPostSolutionShift() {
+		return optiPostSolutionShiftEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolutionShift_Shift() {
+		return (EReference)optiPostSolutionShiftEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public G4SOptiPostFactory getG4SOptiPostFactory() {
 		return (G4SOptiPostFactory)getEFactoryInstance();
 	}
@@ -915,6 +1100,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(scenarioEClass, SCENARIO__LP_OPTI_POST_FLOWS);
 		createEReference(scenarioEClass, SCENARIO__SELECTED_SHIFTS);
 		createEAttribute(scenarioEClass, SCENARIO__NAME);
+		createEReference(scenarioEClass, SCENARIO__SOLUTIONS);
 
 		lpOptiPostFlowEClass = createEClass(LP_OPTI_POST_FLOW);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__LP_ROOT);
@@ -972,6 +1158,26 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEAttribute(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__JOB_START_COL_NR);
 		createEAttribute(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__JOB_END_COL_NR);
 		createEAttribute(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR);
+
+		optiPostSolutionEClass = createEClass(OPTI_POST_SOLUTION);
+		createEReference(optiPostSolutionEClass, OPTI_POST_SOLUTION__LP);
+		createEReference(optiPostSolutionEClass, OPTI_POST_SOLUTION__POSTS);
+		createEReference(optiPostSolutionEClass, OPTI_POST_SOLUTION__EMPLOYEES);
+		createEAttribute(optiPostSolutionEClass, OPTI_POST_SOLUTION__NR_EMPLOYEES);
+
+		optiPostSolutionPostEClass = createEClass(OPTI_POST_SOLUTION_POST);
+		createEReference(optiPostSolutionPostEClass, OPTI_POST_SOLUTION_POST__SHIFTS);
+		createEReference(optiPostSolutionPostEClass, OPTI_POST_SOLUTION_POST__LOCATION);
+		createEAttribute(optiPostSolutionPostEClass, OPTI_POST_SOLUTION_POST__NR_SHIFTS);
+		createEOperation(optiPostSolutionPostEClass, OPTI_POST_SOLUTION_POST___ADD_SHIFT__SHIFT);
+
+		optiPostSolutionEmployeeEClass = createEClass(OPTI_POST_SOLUTION_EMPLOYEE);
+		createEReference(optiPostSolutionEmployeeEClass, OPTI_POST_SOLUTION_EMPLOYEE__SHIFTS);
+		createEReference(optiPostSolutionEmployeeEClass, OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE);
+		createEAttribute(optiPostSolutionEmployeeEClass, OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS);
+
+		optiPostSolutionShiftEClass = createEClass(OPTI_POST_SOLUTION_SHIFT);
+		createEReference(optiPostSolutionShiftEClass, OPTI_POST_SOLUTION_SHIFT__SHIFT);
 	}
 
 	/**
@@ -1045,6 +1251,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getScenario_LpOptiPostFlows(), this.getLpOptiPostFlow(), this.getLpOptiPostFlow_Scenario(), "LpOptiPostFlows", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_SelectedShifts(), this.getShift(), null, "SelectedShifts", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_Solutions(), this.getOptiPostSolution(), null, "Solutions", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpOptiPostFlowEClass, LpOptiPostFlow.class, "LpOptiPostFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), this.getLpRoot_LpOptiPostFlow(), "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1052,8 +1259,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getLpOptiPostFlow_MinOverlapSuccessor(), ecorePackage.getEFloat(), "MinOverlapSuccessor", "0.25", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_Scenario(), this.getScenario(), this.getScenario_LpOptiPostFlows(), "Scenario", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_CplexSolver(), theSolvercplexPackage.getSolverCplex(), null, "CplexSolver", null, 0, -1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpOptiPostFlow_AbsoluteMinEmployeeNrJob(), ecorePackage.getEInt(), "AbsoluteMinEmployeeNrJob", "50", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs(), ecorePackage.getEInt(), "AbsoluteMaxEmployeeNrJobs", "0", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLpOptiPostFlow_AbsoluteMinEmployeeNrJob(), ecorePackage.getEInt(), "AbsoluteMinEmployeeNrJob", "10", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs(), ecorePackage.getEInt(), "AbsoluteMaxEmployeeNrJobs", "50", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpRootEClass, LpRoot.class, "LpRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpRoot_Jobs(), this.getLpJob(), this.getLpJob_LpRoot(), "Jobs", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1116,6 +1323,28 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getJobsImporterSpreadsheet_JobStartColNr(), ecorePackage.getEInt(), "JobStartColNr", "3", 0, 1, JobsImporterSpreadsheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobsImporterSpreadsheet_JobEndColNr(), ecorePackage.getEInt(), "JobEndColNr", "4", 0, 1, JobsImporterSpreadsheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobsImporterSpreadsheet_LocationDescriptionColNr(), ecorePackage.getEInt(), "LocationDescriptionColNr", "9", 0, 1, JobsImporterSpreadsheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(optiPostSolutionEClass, OptiPostSolution.class, "OptiPostSolution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOptiPostSolution_Lp(), this.getLpOptiPostFlow(), null, "Lp", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOptiPostSolution_Posts(), this.getOptiPostSolutionPost(), null, "Posts", null, 0, -1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOptiPostSolution_Employees(), this.getOptiPostSolutionEmployee(), null, "Employees", null, 0, -1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptiPostSolution_NrEmployees(), ecorePackage.getEInt(), "NrEmployees", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(optiPostSolutionPostEClass, OptiPostSolutionPost.class, "OptiPostSolutionPost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOptiPostSolutionPost_Shifts(), this.getOptiPostSolutionShift(), null, "Shifts", null, 0, -1, OptiPostSolutionPost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOptiPostSolutionPost_Location(), this.getLocation(), null, "Location", null, 0, 1, OptiPostSolutionPost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptiPostSolutionPost_NrShifts(), ecorePackage.getEInt(), "NrShifts", null, 0, 1, OptiPostSolutionPost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getOptiPostSolutionPost__AddShift__Shift(), null, "addShift", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getShift(), "shift", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(optiPostSolutionEmployeeEClass, OptiPostSolutionEmployee.class, "OptiPostSolutionEmployee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOptiPostSolutionEmployee_Shifts(), this.getOptiPostSolutionShift(), null, "Shifts", null, 0, -1, OptiPostSolutionEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOptiPostSolutionEmployee_Employee(), this.getEmployee(), null, "Employee", null, 0, 1, OptiPostSolutionEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptiPostSolutionEmployee_NrShifts(), ecorePackage.getEInt(), "NrShifts", null, 0, 1, OptiPostSolutionEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(optiPostSolutionShiftEClass, OptiPostSolutionShift.class, "OptiPostSolutionShift", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOptiPostSolutionShift_Shift(), this.getShift(), null, "Shift", null, 0, 1, OptiPostSolutionShift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

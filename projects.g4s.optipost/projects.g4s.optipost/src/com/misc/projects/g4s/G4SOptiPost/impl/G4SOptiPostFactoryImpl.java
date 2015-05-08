@@ -67,6 +67,10 @@ public class G4SOptiPostFactoryImpl extends EFactoryImpl implements G4SOptiPostF
 			case G4SOptiPostPackage.LP_PRECEDENCE: return createLpPrecedence();
 			case G4SOptiPostPackage.LP_EMPLOYEE: return createLpEmployee();
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET: return createJobsImporterSpreadsheet();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION: return createOptiPostSolution();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST: return createOptiPostSolutionPost();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE: return createOptiPostSolutionEmployee();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_SHIFT: return createOptiPostSolutionShift();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -180,6 +184,46 @@ public class G4SOptiPostFactoryImpl extends EFactoryImpl implements G4SOptiPostF
 	public JobsImporterSpreadsheet createJobsImporterSpreadsheet() {
 		JobsImporterSpreadsheetImpl jobsImporterSpreadsheet = new JobsImporterSpreadsheetImpl();
 		return jobsImporterSpreadsheet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OptiPostSolution createOptiPostSolution() {
+		OptiPostSolutionImpl optiPostSolution = new OptiPostSolutionImpl();
+		return optiPostSolution;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OptiPostSolutionPost createOptiPostSolutionPost() {
+		OptiPostSolutionPostImpl optiPostSolutionPost = new OptiPostSolutionPostImpl();
+		return optiPostSolutionPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OptiPostSolutionEmployee createOptiPostSolutionEmployee() {
+		OptiPostSolutionEmployeeImpl optiPostSolutionEmployee = new OptiPostSolutionEmployeeImpl();
+		return optiPostSolutionEmployee;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OptiPostSolutionShift createOptiPostSolutionShift() {
+		OptiPostSolutionShiftImpl optiPostSolutionShift = new OptiPostSolutionShiftImpl();
+		return optiPostSolutionShift;
 	}
 
 	/**

@@ -42,6 +42,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="SelectedShifts" upperBound="-1"
         eType="#//Shift"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Solutions" upperBound="-1"
+        eType="#//OptiPostSolution" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpOptiPostFlow" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//Generator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
@@ -148,5 +150,31 @@
         defaultValueLiteral="4"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="LocationDescriptionColNr"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolution">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Lp" eType="#//LpOptiPostFlow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Posts" upperBound="-1"
+        eType="#//OptiPostSolutionPost" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Employees" upperBound="-1"
+        eType="#//OptiPostSolutionEmployee" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrEmployees" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionPost">
+    <eOperations name="addShift">
+      <eParameters name="shift" eType="#//Shift"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Shifts" upperBound="-1"
+        eType="#//OptiPostSolutionShift" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Location" eType="#//Location"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionEmployee">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Shifts" upperBound="-1"
+        eType="#//OptiPostSolutionShift"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Employee" eType="#//Employee"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionShift">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Shift" eType="#//Shift"/>
   </eClassifiers>
 </ecore:EPackage>

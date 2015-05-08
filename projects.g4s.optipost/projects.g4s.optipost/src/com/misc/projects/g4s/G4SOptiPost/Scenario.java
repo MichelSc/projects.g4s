@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getLpOptiPostFlows <em>Lp Opti Post Flows</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getSelectedShifts <em>Selected Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getName <em>Name</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getSolutions <em>Solutions</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,5 +85,21 @@ public interface Scenario extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Solutions</b></em>' containment reference list.
+	 * The list contents are of type {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Solutions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Solutions</em>' containment reference list.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_Solutions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OptiPostSolution> getSolutions();
 
 } // Scenario

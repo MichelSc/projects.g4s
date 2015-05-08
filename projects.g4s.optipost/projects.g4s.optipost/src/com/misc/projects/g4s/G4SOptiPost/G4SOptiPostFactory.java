@@ -121,6 +121,42 @@ public interface G4SOptiPostFactory extends EFactory {
 	JobsImporterSpreadsheet createJobsImporterSpreadsheet();
 
 	/**
+	 * Returns a new object of class '<em>Opti Post Solution</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Opti Post Solution</em>'.
+	 * @generated
+	 */
+	OptiPostSolution createOptiPostSolution();
+
+	/**
+	 * Returns a new object of class '<em>Opti Post Solution Post</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Opti Post Solution Post</em>'.
+	 * @generated
+	 */
+	OptiPostSolutionPost createOptiPostSolutionPost();
+
+	/**
+	 * Returns a new object of class '<em>Opti Post Solution Employee</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Opti Post Solution Employee</em>'.
+	 * @generated
+	 */
+	OptiPostSolutionEmployee createOptiPostSolutionEmployee();
+
+	/**
+	 * Returns a new object of class '<em>Opti Post Solution Shift</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Opti Post Solution Shift</em>'.
+	 * @generated
+	 */
+	OptiPostSolutionShift createOptiPostSolutionShift();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
