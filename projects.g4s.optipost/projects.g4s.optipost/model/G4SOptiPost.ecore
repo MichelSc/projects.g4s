@@ -161,22 +161,25 @@
         eType="#//OptiPostSolutionPost" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Employees" upperBound="-1"
         eType="#//OptiPostSolutionEmployee" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrEmployees" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrEmployees" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionPost">
-    <eOperations name="addShift">
+    <eOperations name="addShift" eType="#//OptiPostSolutionShift">
       <eParameters name="shift" eType="#//Shift"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Shifts" upperBound="-1"
         eType="#//OptiPostSolutionShift" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Location" eType="#//Location"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionEmployee">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Shifts" upperBound="-1"
         eType="#//OptiPostSolutionShift"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Employee" eType="#//Employee"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionShift">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Shift" eType="#//Shift"/>

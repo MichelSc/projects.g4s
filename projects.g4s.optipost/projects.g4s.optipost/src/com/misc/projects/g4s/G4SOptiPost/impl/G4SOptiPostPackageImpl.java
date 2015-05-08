@@ -1350,20 +1350,20 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getOptiPostSolution_Lp(), this.getLpOptiPostFlow(), null, "Lp", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOptiPostSolution_Posts(), this.getOptiPostSolutionPost(), null, "Posts", null, 0, -1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOptiPostSolution_Employees(), this.getOptiPostSolutionEmployee(), null, "Employees", null, 0, -1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOptiPostSolution_NrEmployees(), ecorePackage.getEInt(), "NrEmployees", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptiPostSolution_NrEmployees(), ecorePackage.getEInt(), "NrEmployees", null, 0, 1, OptiPostSolution.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(optiPostSolutionPostEClass, OptiPostSolutionPost.class, "OptiPostSolutionPost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOptiPostSolutionPost_Shifts(), this.getOptiPostSolutionShift(), null, "Shifts", null, 0, -1, OptiPostSolutionPost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOptiPostSolutionPost_Location(), this.getLocation(), null, "Location", null, 0, 1, OptiPostSolutionPost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOptiPostSolutionPost_NrShifts(), ecorePackage.getEInt(), "NrShifts", null, 0, 1, OptiPostSolutionPost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptiPostSolutionPost_NrShifts(), ecorePackage.getEInt(), "NrShifts", null, 0, 1, OptiPostSolutionPost.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getOptiPostSolutionPost__AddShift__Shift(), null, "addShift", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getOptiPostSolutionPost__AddShift__Shift(), this.getOptiPostSolutionShift(), "addShift", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getShift(), "shift", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(optiPostSolutionEmployeeEClass, OptiPostSolutionEmployee.class, "OptiPostSolutionEmployee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOptiPostSolutionEmployee_Shifts(), this.getOptiPostSolutionShift(), null, "Shifts", null, 0, -1, OptiPostSolutionEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOptiPostSolutionEmployee_Employee(), this.getEmployee(), null, "Employee", null, 0, 1, OptiPostSolutionEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOptiPostSolutionEmployee_NrShifts(), ecorePackage.getEInt(), "NrShifts", null, 0, 1, OptiPostSolutionEmployee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptiPostSolutionEmployee_NrShifts(), ecorePackage.getEInt(), "NrShifts", null, 0, 1, OptiPostSolutionEmployee.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(optiPostSolutionShiftEClass, OptiPostSolutionShift.class, "OptiPostSolutionShift", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOptiPostSolutionShift_Shift(), this.getShift(), null, "Shift", null, 0, 1, OptiPostSolutionShift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

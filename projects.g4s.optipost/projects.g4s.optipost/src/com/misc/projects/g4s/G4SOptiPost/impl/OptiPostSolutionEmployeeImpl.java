@@ -68,16 +68,6 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 	protected static final int NR_SHIFTS_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNrShifts() <em>Nr Shifts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNrShifts()
-	 * @generated
-	 * @ordered
-	 */
-	protected int nrShifts = NR_SHIFTS_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -149,22 +139,9 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public int getNrShifts() {
-		return nrShifts;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNrShifts(int newNrShifts) {
-		int oldNrShifts = nrShifts;
-		nrShifts = newNrShifts;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS, oldNrShifts, nrShifts));
+		return this.getShifts()==null ? 0 : this.getShifts().size();
 	}
 
 	/**
@@ -202,9 +179,6 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE:
 				setEmployee((Employee)newValue);
 				return;
-			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS:
-				setNrShifts((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,9 +197,6 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE:
 				setEmployee((Employee)null);
 				return;
-			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS:
-				setNrShifts(NR_SHIFTS_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -243,25 +214,9 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE:
 				return employee != null;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS:
-				return nrShifts != NR_SHIFTS_EDEFAULT;
+				return getNrShifts() != NR_SHIFTS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (NrShifts: ");
-		result.append(nrShifts);
-		result.append(')');
-		return result.toString();
 	}
 
 } //OptiPostSolutionEmployeeImpl

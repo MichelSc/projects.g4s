@@ -82,16 +82,6 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 	protected static final int NR_EMPLOYEES_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getNrEmployees() <em>Nr Employees</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNrEmployees()
-	 * @generated
-	 * @ordered
-	 */
-	protected int nrEmployees = NR_EMPLOYEES_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -175,22 +165,9 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public int getNrEmployees() {
-		return nrEmployees;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNrEmployees(int newNrEmployees) {
-		int oldNrEmployees = nrEmployees;
-		nrEmployees = newNrEmployees;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES, oldNrEmployees, nrEmployees));
+		return this.getEmployees()==null ? 0 : this.getEmployees().size();
 	}
 
 	/**
@@ -250,9 +227,6 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				getEmployees().clear();
 				getEmployees().addAll((Collection<? extends OptiPostSolutionEmployee>)newValue);
 				return;
-			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
-				setNrEmployees((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -274,9 +248,6 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES:
 				getEmployees().clear();
 				return;
-			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
-				setNrEmployees(NR_EMPLOYEES_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,25 +267,9 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES:
 				return employees != null && !employees.isEmpty();
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
-				return nrEmployees != NR_EMPLOYEES_EDEFAULT;
+				return getNrEmployees() != NR_EMPLOYEES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (NrEmployees: ");
-		result.append(nrEmployees);
-		result.append(')');
-		return result.toString();
 	}
 
 } //OptiPostSolutionImpl

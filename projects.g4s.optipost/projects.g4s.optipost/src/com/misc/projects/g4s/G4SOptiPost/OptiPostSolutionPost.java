@@ -76,29 +76,18 @@ public interface OptiPostSolutionPost extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nr Shifts</em>' attribute.
-	 * @see #setNrShifts(int)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolutionPost_NrShifts()
-	 * @model
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	int getNrShifts();
 
 	/**
-	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getNrShifts <em>Nr Shifts</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nr Shifts</em>' attribute.
-	 * @see #getNrShifts()
-	 * @generated
-	 */
-	void setNrShifts(int value);
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
-	void addShift(Shift shift);
+	OptiPostSolutionShift addShift(Shift shift);
 
 } // OptiPostSolutionPost

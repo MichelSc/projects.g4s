@@ -93,21 +93,10 @@ public interface OptiPostSolution extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nr Employees</em>' attribute.
-	 * @see #setNrEmployees(int)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolution_NrEmployees()
-	 * @model
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	int getNrEmployees();
-
-	/**
-	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getNrEmployees <em>Nr Employees</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nr Employees</em>' attribute.
-	 * @see #getNrEmployees()
-	 * @generated
-	 */
-	void setNrEmployees(int value);
 
 } // OptiPostSolution
