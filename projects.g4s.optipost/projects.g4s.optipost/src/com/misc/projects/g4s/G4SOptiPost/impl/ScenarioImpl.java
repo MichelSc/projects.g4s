@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -158,7 +157,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 */
 	public EList<OptiPostSolution> getSolutions() {
 		if (solutions == null) {
-			solutions = new EObjectContainmentEList<OptiPostSolution>(OptiPostSolution.class, this, G4SOptiPostPackage.SCENARIO__SOLUTIONS);
+			solutions = new EObjectContainmentWithInverseEList<OptiPostSolution>(OptiPostSolution.class, this, G4SOptiPostPackage.SCENARIO__SOLUTIONS, G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO);
 		}
 		return solutions;
 	}
@@ -174,6 +173,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		switch (featureID) {
 			case G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLpOptiPostFlows()).basicAdd(otherEnd, msgs);
+			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSolutions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}

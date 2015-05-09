@@ -89,6 +89,7 @@ public interface Scenario extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Solutions</b></em>' containment reference list.
 	 * The list contents are of type {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution}.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getScenario <em>Scenario</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Solutions</em>' containment reference list isn't clear,
@@ -97,7 +98,8 @@ public interface Scenario extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Solutions</em>' containment reference list.
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_Solutions()
-	 * @model containment="true"
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getScenario
+	 * @model opposite="Scenario" containment="true"
 	 * @generated
 	 */
 	EList<OptiPostSolution> getSolutions();

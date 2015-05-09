@@ -985,6 +985,24 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getOptiPostSolution_ShiftsInPost() {
+		return (EAttribute)optiPostSolutionEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOptiPostSolution_Scenario() {
+		return (EReference)optiPostSolutionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOptiPostSolutionPost() {
 		return optiPostSolutionPostEClass;
 	}
@@ -1240,6 +1258,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEAttribute(optiPostSolutionEClass, OPTI_POST_SOLUTION__NR_EMPLOYEES);
 		createEAttribute(optiPostSolutionEClass, OPTI_POST_SOLUTION__DESCRIPTION);
 		createEAttribute(optiPostSolutionEClass, OPTI_POST_SOLUTION__EMPLOYEES_IN_POST);
+		createEAttribute(optiPostSolutionEClass, OPTI_POST_SOLUTION__SHIFTS_IN_POST);
+		createEReference(optiPostSolutionEClass, OPTI_POST_SOLUTION__SCENARIO);
 
 		optiPostSolutionPostEClass = createEClass(OPTI_POST_SOLUTION_POST);
 		createEReference(optiPostSolutionPostEClass, OPTI_POST_SOLUTION_POST__SHIFTS);
@@ -1331,7 +1351,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getScenario_LpOptiPostFlows(), this.getLpOptiPostFlow(), this.getLpOptiPostFlow_Scenario(), "LpOptiPostFlows", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_SelectedShifts(), this.getShift(), null, "SelectedShifts", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScenario_Solutions(), this.getOptiPostSolution(), null, "Solutions", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_Solutions(), this.getOptiPostSolution(), this.getOptiPostSolution_Scenario(), "Solutions", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpOptiPostFlowEClass, LpOptiPostFlow.class, "LpOptiPostFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), this.getLpRoot_LpOptiPostFlow(), "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1413,6 +1433,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getOptiPostSolution_NrEmployees(), ecorePackage.getEInt(), "NrEmployees", null, 0, 1, OptiPostSolution.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOptiPostSolution_Description(), ecorePackage.getEString(), "Description", null, 0, 1, OptiPostSolution.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOptiPostSolution_EmployeesInPost(), ecorePackage.getEInt(), "EmployeesInPost", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOptiPostSolution_ShiftsInPost(), ecorePackage.getEInt(), "ShiftsInPost", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOptiPostSolution_Scenario(), this.getScenario(), this.getScenario_Solutions(), "Scenario", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(optiPostSolutionPostEClass, OptiPostSolutionPost.class, "OptiPostSolutionPost", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOptiPostSolutionPost_Shifts(), this.getOptiPostSolutionShift(), null, "Shifts", null, 0, -1, OptiPostSolutionPost.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

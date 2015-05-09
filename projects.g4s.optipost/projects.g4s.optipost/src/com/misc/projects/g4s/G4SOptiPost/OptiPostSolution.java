@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getNrEmployees <em>Nr Employees</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getEmployeesInPost <em>Employees In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getShiftsInPost <em>Shifts In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getScenario <em>Scenario</em>}</li>
  * </ul>
  * </p>
  *
@@ -141,5 +143,59 @@ public interface OptiPostSolution extends EObject {
 	 * @generated
 	 */
 	void setEmployeesInPost(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Shifts In Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Shifts In Post</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Shifts In Post</em>' attribute.
+	 * @see #setShiftsInPost(int)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolution_ShiftsInPost()
+	 * @model
+	 * @generated
+	 */
+	int getShiftsInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getShiftsInPost <em>Shifts In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Shifts In Post</em>' attribute.
+	 * @see #getShiftsInPost()
+	 * @generated
+	 */
+	void setShiftsInPost(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getSolutions <em>Solutions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Scenario</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scenario</em>' container reference.
+	 * @see #setScenario(Scenario)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolution_Scenario()
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getSolutions
+	 * @model opposite="Solutions" transient="false"
+	 * @generated
+	 */
+	Scenario getScenario();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getScenario <em>Scenario</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Scenario</em>' container reference.
+	 * @see #getScenario()
+	 * @generated
+	 */
+	void setScenario(Scenario value);
 
 } // OptiPostSolution

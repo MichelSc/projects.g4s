@@ -8,6 +8,7 @@ import com.misc.projects.g4s.G4SOptiPost.OptiPostSolution;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost;
 
+import com.misc.projects.g4s.G4SOptiPost.Scenario;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getNrEmployees <em>Nr Employees</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getEmployeesInPost <em>Employees In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getShiftsInPost <em>Shifts In Post</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
  * </p>
  *
@@ -108,6 +112,26 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected int employeesInPost = EMPLOYEES_IN_POST_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getShiftsInPost() <em>Shifts In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShiftsInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int SHIFTS_IN_POST_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getShiftsInPost() <em>Shifts In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShiftsInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected int shiftsInPost = SHIFTS_IN_POST_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,8 +227,10 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 */
 	public String getDescription() {
-		String description = String.format("emps in post = %d", 
-                this.getEmployeesInPost());
+		String description = String.format("emps in post = %d, shifts in post %d/%d", 
+                this.getEmployeesInPost(),
+                this.getShiftsInPost(),
+                this.getScenario().getSelectedShifts().size());
 		return description;
 	}
 
@@ -234,6 +260,84 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getShiftsInPost() {
+		return shiftsInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setShiftsInPost(int newShiftsInPost) {
+		int oldShiftsInPost = shiftsInPost;
+		shiftsInPost = newShiftsInPost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.OPTI_POST_SOLUTION__SHIFTS_IN_POST, oldShiftsInPost, shiftsInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scenario getScenario() {
+		if (eContainerFeatureID() != G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO) return null;
+		return (Scenario)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetScenario(Scenario newScenario, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newScenario, G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScenario(Scenario newScenario) {
+		if (newScenario != eInternalContainer() || (eContainerFeatureID() != G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO && newScenario != null)) {
+			if (EcoreUtil.isAncestor(this, newScenario))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newScenario != null)
+				msgs = ((InternalEObject)newScenario).eInverseAdd(this, G4SOptiPostPackage.SCENARIO__SOLUTIONS, Scenario.class, msgs);
+			msgs = basicSetScenario(newScenario, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO, newScenario, newScenario));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetScenario((Scenario)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -241,8 +345,24 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				return ((InternalEList<?>)getPosts()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES:
 				return ((InternalEList<?>)getEmployees()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO:
+				return basicSetScenario(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO:
+				return eInternalContainer().eInverseRemove(this, G4SOptiPostPackage.SCENARIO__SOLUTIONS, Scenario.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -266,6 +386,10 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				return getDescription();
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
 				return getEmployeesInPost();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SHIFTS_IN_POST:
+				return getShiftsInPost();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO:
+				return getScenario();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -293,6 +417,12 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
 				setEmployeesInPost((Integer)newValue);
 				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SHIFTS_IN_POST:
+				setShiftsInPost((Integer)newValue);
+				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO:
+				setScenario((Scenario)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -316,6 +446,12 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				return;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
 				setEmployeesInPost(EMPLOYEES_IN_POST_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SHIFTS_IN_POST:
+				setShiftsInPost(SHIFTS_IN_POST_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO:
+				setScenario((Scenario)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -341,6 +477,10 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
 				return employeesInPost != EMPLOYEES_IN_POST_EDEFAULT;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SHIFTS_IN_POST:
+				return shiftsInPost != SHIFTS_IN_POST_EDEFAULT;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SCENARIO:
+				return getScenario() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -357,6 +497,8 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (EmployeesInPost: ");
 		result.append(employeesInPost);
+		result.append(", ShiftsInPost: ");
+		result.append(shiftsInPost);
 		result.append(')');
 		return result.toString();
 	}

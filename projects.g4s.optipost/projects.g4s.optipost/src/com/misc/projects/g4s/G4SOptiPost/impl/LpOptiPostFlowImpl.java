@@ -562,6 +562,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		OptiPostSolution sol = G4SOptiPostFactory.eINSTANCE.createOptiPostSolution();
 		sol.setLp(this);
 		int empsInPost = 0;
+		int shiftsInPost = 0;
 		for (  LpJob lpjob: this.getLpRoot().getJobs()){
 			if ( !lpjob.isStartOfMonth()) { continue; }
 			GeneratorLpVar var = lpjob.getVarIsFirstInPost();
@@ -571,6 +572,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			newpost.setLocation(lpjob.getShift().getLocation());
 			do{
 				// the current job is in the post
+				shiftsInPost++;
 				OptiPostSolutionShift solshift = newpost.addShift(lpjob.getShift());
 				Employee employee = lpjob.getLpEmployee().getEmployee();
 				OptiPostSolutionEmployee solemployee = solemployees.get(employee);
@@ -595,6 +597,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				lpjob = nextJob;
 			} while ( lpjob!=null);
 			sol.getPosts().add(newpost);
+			sol.setShiftsInPost(shiftsInPost);
 		}
 		sol.setEmployeesInPost(empsInPost);
 		scenario.getSolutions().add(sol);

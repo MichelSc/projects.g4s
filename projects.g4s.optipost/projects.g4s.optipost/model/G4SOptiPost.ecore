@@ -43,7 +43,7 @@
         eType="#//Shift"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Solutions" upperBound="-1"
-        eType="#//OptiPostSolution" containment="true"/>
+        eType="#//OptiPostSolution" containment="true" eOpposite="#//OptiPostSolution/Scenario"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpOptiPostFlow" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//Generator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
@@ -166,6 +166,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EmployeesInPost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShiftsInPost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Scenario" eType="#//Scenario"
+        eOpposite="#//Scenario/Solutions"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionPost">
     <eOperations name="addShift" eType="#//OptiPostSolutionShift">

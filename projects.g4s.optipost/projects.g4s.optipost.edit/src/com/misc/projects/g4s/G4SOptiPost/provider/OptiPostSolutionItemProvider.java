@@ -67,6 +67,7 @@ public class OptiPostSolutionItemProvider
 			addNrEmployeesPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addEmployeesInPostPropertyDescriptor(object);
+			addShiftsInPostPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -160,6 +161,28 @@ public class OptiPostSolutionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Shifts In Post feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addShiftsInPostPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OptiPostSolution_ShiftsInPost_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OptiPostSolution_ShiftsInPost_feature", "_UI_OptiPostSolution_type"),
+				 G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__SHIFTS_IN_POST,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -231,6 +254,7 @@ public class OptiPostSolutionItemProvider
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__DESCRIPTION:
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__SHIFTS_IN_POST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__POSTS:

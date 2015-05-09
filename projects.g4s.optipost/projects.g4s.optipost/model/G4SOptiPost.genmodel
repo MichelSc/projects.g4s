@@ -41,8 +41,9 @@
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MaxOverlapPredecessor"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MaxOverlapSuccessor"/>
+      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MaxOverlapPredecessor"/>
+      <genFeatures createChild="false" propertyCategory="40 G4S" propertyDescription=""
+          ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MaxOverlapSuccessor"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/Scenario"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/CplexSolver"/>
       <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/AbsoluteMinEmployeeNrJob"/>
@@ -123,6 +124,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolution/Employees"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//OptiPostSolution/NrEmployees"/>
       <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//OptiPostSolution/Description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//OptiPostSolution/EmployeesInPost"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//OptiPostSolution/ShiftsInPost"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolution/Scenario"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//OptiPostSolutionPost" labelFeature="#//G4SOptiPost/OptiPostSolutionPost/Description">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolutionPost/Shifts"/>

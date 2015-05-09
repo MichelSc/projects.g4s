@@ -1705,13 +1705,31 @@ public interface G4SOptiPostPackage extends EPackage {
 	int OPTI_POST_SOLUTION__EMPLOYEES_IN_POST = 5;
 
 	/**
+	 * The feature id for the '<em><b>Shifts In Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__SHIFTS_IN_POST = 6;
+
+	/**
+	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__SCENARIO = 7;
+
+	/**
 	 * The number of structural features of the '<em>Opti Post Solution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTI_POST_SOLUTION_FEATURE_COUNT = 6;
+	int OPTI_POST_SOLUTION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Opti Post Solution</em>' class.
@@ -2832,6 +2850,28 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getOptiPostSolution_EmployeesInPost();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getShiftsInPost <em>Shifts In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Shifts In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getShiftsInPost()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolution_ShiftsInPost();
+
+	/**
+	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getScenario <em>Scenario</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Scenario</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getScenario()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EReference getOptiPostSolution_Scenario();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost <em>Opti Post Solution Post</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3720,6 +3760,22 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OPTI_POST_SOLUTION__EMPLOYEES_IN_POST = eINSTANCE.getOptiPostSolution_EmployeesInPost();
+
+		/**
+		 * The meta object literal for the '<em><b>Shifts In Post</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION__SHIFTS_IN_POST = eINSTANCE.getOptiPostSolution_ShiftsInPost();
+
+		/**
+		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTI_POST_SOLUTION__SCENARIO = eINSTANCE.getOptiPostSolution_Scenario();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl <em>Opti Post Solution Post</em>}' class.
