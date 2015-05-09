@@ -48,9 +48,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="LpOptiPostFlow" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//Generator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
         containment="true" eOpposite="#//LpRoot/LpOptiPostFlow"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MinOverlapPredecessor"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MaxOverlapPredecessor"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="0.25"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MinOverlapSuccessor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="MaxOverlapSuccessor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
         defaultValueLiteral="0.25"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Scenario" eType="#//Scenario"
         eOpposite="#//Scenario/LpOptiPostFlows"/>
@@ -163,6 +163,9 @@
         eType="#//OptiPostSolutionEmployee" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrEmployees" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EmployeesInPost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionPost">
     <eOperations name="addShift" eType="#//OptiPostSolutionShift">
@@ -173,6 +176,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Location" eType="#//Location"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionEmployee">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Shifts" upperBound="-1"
@@ -180,8 +185,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Employee" eType="#//Employee"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="NrShifts" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="InPost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolutionShift">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Shift" eType="#//Shift"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
 </ecore:EPackage>

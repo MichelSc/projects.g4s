@@ -65,6 +65,7 @@ public class OptiPostSolutionPostItemProvider
 
 			addLocationPropertyDescriptor(object);
 			addNrShiftsPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,6 +115,28 @@ public class OptiPostSolutionPostItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OptiPostSolutionPost_Description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OptiPostSolutionPost_Description_feature", "_UI_OptiPostSolutionPost_type"),
+				 G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION_POST__DESCRIPTION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -126,7 +149,6 @@ public class OptiPostSolutionPostItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION_POST__SHIFTS);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION_POST__LOCATION);
 		}
 		return childrenFeatures;
 	}
@@ -163,8 +185,10 @@ public class OptiPostSolutionPostItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		OptiPostSolutionPost optiPostSolutionPost = (OptiPostSolutionPost)object;
-		return getString("_UI_OptiPostSolutionPost_type") + " " + optiPostSolutionPost.getNrShifts();
+		String label = ((OptiPostSolutionPost)object).getDescription();
+		return label == null || label.length() == 0 ?
+			getString("_UI_OptiPostSolutionPost_type") :
+			getString("_UI_OptiPostSolutionPost_type") + " " + label;
 	}
 	
 
@@ -181,6 +205,7 @@ public class OptiPostSolutionPostItemProvider
 
 		switch (notification.getFeatureID(OptiPostSolutionPost.class)) {
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST__NR_SHIFTS:
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST__SHIFTS:

@@ -32,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getShifts <em>Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getNrShifts <em>Nr Shifts</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,6 +68,16 @@ public class OptiPostSolutionPostImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected static final int NR_SHIFTS_EDEFAULT = 0;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +160,17 @@ public class OptiPostSolutionPostImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
+	public String getDescription() {
+		String description = String.format("%s (%d)", 
+				                          this.getLocation().getLocationID(),
+				                          this.getNrShifts());
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
 	public OptiPostSolutionShift addShift(Shift shift) {
 		OptiPostSolutionShift newshift= G4SOptiPostFactory.eINSTANCE.createOptiPostSolutionShift();
 		newshift.setShift(shift);
@@ -185,6 +207,8 @@ public class OptiPostSolutionPostImpl extends MinimalEObjectImpl.Container imple
 				return basicGetLocation();
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST__NR_SHIFTS:
 				return getNrShifts();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -241,6 +265,8 @@ public class OptiPostSolutionPostImpl extends MinimalEObjectImpl.Container imple
 				return location != null;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST__NR_SHIFTS:
 				return getNrShifts() != NR_SHIFTS_EDEFAULT;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_POST__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 		}
 		return super.eIsSet(featureID);
 	}

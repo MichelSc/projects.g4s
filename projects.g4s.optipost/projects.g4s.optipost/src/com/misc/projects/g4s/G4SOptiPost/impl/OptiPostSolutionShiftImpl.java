@@ -7,10 +7,8 @@ import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
 import com.misc.projects.g4s.G4SOptiPost.Shift;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -22,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl#getShift <em>Shift</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +36,16 @@ public class OptiPostSolutionShiftImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected Shift shift;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,6 +107,16 @@ public class OptiPostSolutionShiftImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public String getDescription() {
+		String description = String.format("%s", 
+                this.getShift().getDescription());
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -106,6 +125,8 @@ public class OptiPostSolutionShiftImpl extends MinimalEObjectImpl.Container impl
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_SHIFT__SHIFT:
 				if (resolve) return getShift();
 				return basicGetShift();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_SHIFT__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +171,8 @@ public class OptiPostSolutionShiftImpl extends MinimalEObjectImpl.Container impl
 		switch (featureID) {
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_SHIFT__SHIFT:
 				return shift != null;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_SHIFT__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 		}
 		return super.eIsSet(featureID);
 	}

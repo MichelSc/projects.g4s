@@ -416,9 +416,19 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	}  // method
 	
 	private void createPrecedence(LpJob jobStartBefore, LpJob jobStartAfter){
+		LpRoot root = this;
+		LpOptiPostFlow generator = root.getLpOptiPostFlow();
 		// assert jobs at the same location
 		// assert jobs are overlapping
 		// assert couple of jobs will not be presented twice
+		long start1 = jobStartBefore.getShift().getShiftStart().getTime();
+		long end1   = jobStartBefore.getShift().getShiftEnd().getTime();
+		long start2 = jobStartAfter .getShift().getShiftStart().getTime();
+		long end2   = jobStartAfter .getShift().getShiftEnd().getTime();
+		long start  = Math.max(start1, start2);
+		long end    = Math.min(end1, end2);
+		if ( (float)(end-start)/(float)(end1-start1)>generator.getMaxOverlapPredecessor()) { return; }
+		if ( (float)(end-start)/(float)(end2-start2)>generator.getMaxOverlapSuccessor()) { return; }
 		boolean isPrecedence = true;
 		if ( isPrecedence ){
         	LpPrecedence lpprecedence = G4SOptiPostFactory.eINSTANCE.createLpPrecedence();

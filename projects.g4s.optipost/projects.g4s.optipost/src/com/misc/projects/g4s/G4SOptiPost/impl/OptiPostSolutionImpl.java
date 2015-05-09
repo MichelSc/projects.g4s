@@ -12,15 +12,11 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,6 +31,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getPosts <em>Posts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getEmployees <em>Employees</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getNrEmployees <em>Nr Employees</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getEmployeesInPost <em>Employees In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,6 +78,36 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected static final int NR_EMPLOYEES_EDEFAULT = 0;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #getEmployeesInPost() <em>Employees In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmployeesInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int EMPLOYEES_IN_POST_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getEmployeesInPost() <em>Employees In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmployeesInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected int employeesInPost = EMPLOYEES_IN_POST_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,6 +201,37 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public String getDescription() {
+		String description = String.format("emps in post = %d", 
+                this.getEmployeesInPost());
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getEmployeesInPost() {
+		return employeesInPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmployeesInPost(int newEmployeesInPost) {
+		int oldEmployeesInPost = employeesInPost;
+		employeesInPost = newEmployeesInPost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST, oldEmployeesInPost, employeesInPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -203,6 +262,10 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				return getEmployees();
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
 				return getNrEmployees();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__DESCRIPTION:
+				return getDescription();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
+				return getEmployeesInPost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -227,6 +290,9 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				getEmployees().clear();
 				getEmployees().addAll((Collection<? extends OptiPostSolutionEmployee>)newValue);
 				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
+				setEmployeesInPost((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -248,6 +314,9 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES:
 				getEmployees().clear();
 				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
+				setEmployeesInPost(EMPLOYEES_IN_POST_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -268,8 +337,28 @@ public class OptiPostSolutionImpl extends MinimalEObjectImpl.Container implement
 				return employees != null && !employees.isEmpty();
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
 				return getNrEmployees() != NR_EMPLOYEES_EDEFAULT;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
+				return employeesInPost != EMPLOYEES_IN_POST_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (EmployeesInPost: ");
+		result.append(employeesInPost);
+		result.append(')');
+		return result.toString();
 	}
 
 } //OptiPostSolutionImpl

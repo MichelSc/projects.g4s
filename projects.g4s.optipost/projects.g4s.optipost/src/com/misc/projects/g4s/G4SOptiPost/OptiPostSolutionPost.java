@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getShifts <em>Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getLocation <em>Location</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getNrShifts <em>Nr Shifts</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,6 +82,21 @@ public interface OptiPostSolutionPost extends EObject {
 	 * @generated
 	 */
 	int getNrShifts();
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolutionPost_Description()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getDescription();
 
 	/**
 	 * <!-- begin-user-doc -->

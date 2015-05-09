@@ -40,8 +40,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getLpRoot <em>Lp Root</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getCplexSolver <em>Cplex Solver</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}</li>
@@ -63,44 +63,44 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	protected LpRoot lpRoot;
 
 	/**
-	 * The default value of the '{@link #getMinOverlapPredecessor() <em>Min Overlap Predecessor</em>}' attribute.
+	 * The default value of the '{@link #getMaxOverlapPredecessor() <em>Max Overlap Predecessor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMinOverlapPredecessor()
+	 * @see #getMaxOverlapPredecessor()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float MIN_OVERLAP_PREDECESSOR_EDEFAULT = 0.25F;
+	protected static final float MAX_OVERLAP_PREDECESSOR_EDEFAULT = 0.25F;
 
 	/**
-	 * The cached value of the '{@link #getMinOverlapPredecessor() <em>Min Overlap Predecessor</em>}' attribute.
+	 * The cached value of the '{@link #getMaxOverlapPredecessor() <em>Max Overlap Predecessor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMinOverlapPredecessor()
+	 * @see #getMaxOverlapPredecessor()
 	 * @generated
 	 * @ordered
 	 */
-	protected float minOverlapPredecessor = MIN_OVERLAP_PREDECESSOR_EDEFAULT;
+	protected float maxOverlapPredecessor = MAX_OVERLAP_PREDECESSOR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getMinOverlapSuccessor() <em>Min Overlap Successor</em>}' attribute.
+	 * The default value of the '{@link #getMaxOverlapSuccessor() <em>Max Overlap Successor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMinOverlapSuccessor()
+	 * @see #getMaxOverlapSuccessor()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float MIN_OVERLAP_SUCCESSOR_EDEFAULT = 0.25F;
+	protected static final float MAX_OVERLAP_SUCCESSOR_EDEFAULT = 0.25F;
 
 	/**
-	 * The cached value of the '{@link #getMinOverlapSuccessor() <em>Min Overlap Successor</em>}' attribute.
+	 * The cached value of the '{@link #getMaxOverlapSuccessor() <em>Max Overlap Successor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMinOverlapSuccessor()
+	 * @see #getMaxOverlapSuccessor()
 	 * @generated
 	 * @ordered
 	 */
-	protected float minOverlapSuccessor = MIN_OVERLAP_SUCCESSOR_EDEFAULT;
+	protected float maxOverlapSuccessor = MAX_OVERLAP_SUCCESSOR_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCplexSolver() <em>Cplex Solver</em>}' containment reference list.
@@ -219,8 +219,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getMinOverlapPredecessor() {
-		return minOverlapPredecessor;
+	public float getMaxOverlapPredecessor() {
+		return maxOverlapPredecessor;
 	}
 
 	/**
@@ -228,11 +228,11 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMinOverlapPredecessor(float newMinOverlapPredecessor) {
-		float oldMinOverlapPredecessor = minOverlapPredecessor;
-		minOverlapPredecessor = newMinOverlapPredecessor;
+	public void setMaxOverlapPredecessor(float newMaxOverlapPredecessor) {
+		float oldMaxOverlapPredecessor = maxOverlapPredecessor;
+		maxOverlapPredecessor = newMaxOverlapPredecessor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR, oldMinOverlapPredecessor, minOverlapPredecessor));
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR, oldMaxOverlapPredecessor, maxOverlapPredecessor));
 	}
 
 	/**
@@ -240,8 +240,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getMinOverlapSuccessor() {
-		return minOverlapSuccessor;
+	public float getMaxOverlapSuccessor() {
+		return maxOverlapSuccessor;
 	}
 
 	/**
@@ -249,11 +249,11 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setMinOverlapSuccessor(float newMinOverlapSuccessor) {
-		float oldMinOverlapSuccessor = minOverlapSuccessor;
-		minOverlapSuccessor = newMinOverlapSuccessor;
+	public void setMaxOverlapSuccessor(float newMaxOverlapSuccessor) {
+		float oldMaxOverlapSuccessor = maxOverlapSuccessor;
+		maxOverlapSuccessor = newMaxOverlapSuccessor;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR, oldMinOverlapSuccessor, minOverlapSuccessor));
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR, oldMaxOverlapSuccessor, maxOverlapSuccessor));
 	}
 
 	/**
@@ -413,10 +413,10 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		switch (featureID) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				return getLpRoot();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
-				return getMinOverlapPredecessor();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
-				return getMinOverlapSuccessor();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
+				return getMaxOverlapPredecessor();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
+				return getMaxOverlapSuccessor();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				return getScenario();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
@@ -441,11 +441,11 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				setLpRoot((LpRoot)newValue);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
-				setMinOverlapPredecessor((Float)newValue);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
+				setMaxOverlapPredecessor((Float)newValue);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
-				setMinOverlapSuccessor((Float)newValue);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
+				setMaxOverlapSuccessor((Float)newValue);
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				setScenario((Scenario)newValue);
@@ -475,11 +475,11 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				setLpRoot((LpRoot)null);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
-				setMinOverlapPredecessor(MIN_OVERLAP_PREDECESSOR_EDEFAULT);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
+				setMaxOverlapPredecessor(MAX_OVERLAP_PREDECESSOR_EDEFAULT);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
-				setMinOverlapSuccessor(MIN_OVERLAP_SUCCESSOR_EDEFAULT);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
+				setMaxOverlapSuccessor(MAX_OVERLAP_SUCCESSOR_EDEFAULT);
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				setScenario((Scenario)null);
@@ -507,10 +507,10 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		switch (featureID) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				return lpRoot != null;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
-				return minOverlapPredecessor != MIN_OVERLAP_PREDECESSOR_EDEFAULT;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
-				return minOverlapSuccessor != MIN_OVERLAP_SUCCESSOR_EDEFAULT;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
+				return maxOverlapPredecessor != MAX_OVERLAP_PREDECESSOR_EDEFAULT;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
+				return maxOverlapSuccessor != MAX_OVERLAP_SUCCESSOR_EDEFAULT;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				return getScenario() != null;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
@@ -533,10 +533,10 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (MinOverlapPredecessor: ");
-		result.append(minOverlapPredecessor);
-		result.append(", MinOverlapSuccessor: ");
-		result.append(minOverlapSuccessor);
+		result.append(" (MaxOverlapPredecessor: ");
+		result.append(maxOverlapPredecessor);
+		result.append(", MaxOverlapSuccessor: ");
+		result.append(maxOverlapSuccessor);
 		result.append(", AbsoluteMinEmployeeNrJob: ");
 		result.append(absoluteMinEmployeeNrJob);
 		result.append(", AbsoluteMaxEmployeeNrJobs: ");
@@ -561,6 +561,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		HashMap<Employee, OptiPostSolutionEmployee> solemployees = new HashMap<Employee, OptiPostSolutionEmployee>();
 		OptiPostSolution sol = G4SOptiPostFactory.eINSTANCE.createOptiPostSolution();
 		sol.setLp(this);
+		int empsInPost = 0;
 		for (  LpJob lpjob: this.getLpRoot().getJobs()){
 			if ( !lpjob.isStartOfMonth()) { continue; }
 			GeneratorLpVar var = lpjob.getVarIsFirstInPost();
@@ -576,6 +577,9 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				if ( solemployee==null){
 					solemployee = G4SOptiPostFactory.eINSTANCE.createOptiPostSolutionEmployee();
 					solemployee.setEmployee(employee);
+					boolean employeeInPost = lpjob.getLpEmployee().getVarInPost().isSolutionOne(solution);
+					solemployee.setInPost(employeeInPost);
+					if ( employeeInPost) { empsInPost++; }
 					sol.getEmployees().add(solemployee); // owning
 					solemployees.put(employee, solemployee);
 				}
@@ -592,6 +596,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			} while ( lpjob!=null);
 			sol.getPosts().add(newpost);
 		}
+		sol.setEmployeesInPost(empsInPost);
 		scenario.getSolutions().add(sol);
 	}
 } //LpOptiPostFlowImpl

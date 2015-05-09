@@ -15,8 +15,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getLpRoot <em>Lp Root</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapSuccessor <em>Min Overlap Successor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}</li>
@@ -58,58 +58,58 @@ public interface LpOptiPostFlow extends Generator {
 	void setLpRoot(LpRoot value);
 
 	/**
-	 * Returns the value of the '<em><b>Min Overlap Predecessor</b></em>' attribute.
+	 * Returns the value of the '<em><b>Max Overlap Predecessor</b></em>' attribute.
 	 * The default value is <code>"0.25"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Min Overlap Predecessor</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Max Overlap Predecessor</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Min Overlap Predecessor</em>' attribute.
-	 * @see #setMinOverlapPredecessor(float)
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_MinOverlapPredecessor()
+	 * @return the value of the '<em>Max Overlap Predecessor</em>' attribute.
+	 * @see #setMaxOverlapPredecessor(float)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_MaxOverlapPredecessor()
 	 * @model default="0.25"
 	 * @generated
 	 */
-	float getMinOverlapPredecessor();
+	float getMaxOverlapPredecessor();
 
 	/**
-	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}' attribute.
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min Overlap Predecessor</em>' attribute.
-	 * @see #getMinOverlapPredecessor()
+	 * @param value the new value of the '<em>Max Overlap Predecessor</em>' attribute.
+	 * @see #getMaxOverlapPredecessor()
 	 * @generated
 	 */
-	void setMinOverlapPredecessor(float value);
+	void setMaxOverlapPredecessor(float value);
 
 	/**
-	 * Returns the value of the '<em><b>Min Overlap Successor</b></em>' attribute.
+	 * Returns the value of the '<em><b>Max Overlap Successor</b></em>' attribute.
 	 * The default value is <code>"0.25"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Min Overlap Successor</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Max Overlap Successor</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Min Overlap Successor</em>' attribute.
-	 * @see #setMinOverlapSuccessor(float)
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_MinOverlapSuccessor()
+	 * @return the value of the '<em>Max Overlap Successor</em>' attribute.
+	 * @see #setMaxOverlapSuccessor(float)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_MaxOverlapSuccessor()
 	 * @model default="0.25"
 	 * @generated
 	 */
-	float getMinOverlapSuccessor();
+	float getMaxOverlapSuccessor();
 
 	/**
-	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapSuccessor <em>Min Overlap Successor</em>}' attribute.
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min Overlap Successor</em>' attribute.
-	 * @see #getMinOverlapSuccessor()
+	 * @param value the new value of the '<em>Max Overlap Successor</em>' attribute.
+	 * @see #getMaxOverlapSuccessor()
 	 * @generated
 	 */
-	void setMinOverlapSuccessor(float value);
+	void setMaxOverlapSuccessor(float value);
 
 	/**
 	 * Returns the value of the '<em><b>Scenario</b></em>' container reference.

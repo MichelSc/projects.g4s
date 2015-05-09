@@ -534,22 +534,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__LP_ROOT = SolverPackage.GENERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Min Overlap Predecessor</b></em>' attribute.
+	 * The feature id for the '<em><b>Max Overlap Predecessor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR = SolverPackage.GENERATOR_FEATURE_COUNT + 1;
+	int LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR = SolverPackage.GENERATOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Min Overlap Successor</b></em>' attribute.
+	 * The feature id for the '<em><b>Max Overlap Successor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
+	int LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
@@ -1687,13 +1687,31 @@ public interface G4SOptiPostPackage extends EPackage {
 	int OPTI_POST_SOLUTION__NR_EMPLOYEES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__DESCRIPTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Employees In Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION__EMPLOYEES_IN_POST = 5;
+
+	/**
 	 * The number of structural features of the '<em>Opti Post Solution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTI_POST_SOLUTION_FEATURE_COUNT = 4;
+	int OPTI_POST_SOLUTION_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Opti Post Solution</em>' class.
@@ -1742,13 +1760,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int OPTI_POST_SOLUTION_POST__NR_SHIFTS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_POST__DESCRIPTION = 3;
+
+	/**
 	 * The number of structural features of the '<em>Opti Post Solution Post</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTI_POST_SOLUTION_POST_FEATURE_COUNT = 3;
+	int OPTI_POST_SOLUTION_POST_FEATURE_COUNT = 4;
 
 	/**
 	 * The operation id for the '<em>Add Shift</em>' operation.
@@ -1806,13 +1833,31 @@ public interface G4SOptiPostPackage extends EPackage {
 	int OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE__DESCRIPTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>In Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_EMPLOYEE__IN_POST = 4;
+
+	/**
 	 * The number of structural features of the '<em>Opti Post Solution Employee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTI_POST_SOLUTION_EMPLOYEE_FEATURE_COUNT = 3;
+	int OPTI_POST_SOLUTION_EMPLOYEE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Opti Post Solution Employee</em>' class.
@@ -1843,13 +1888,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int OPTI_POST_SOLUTION_SHIFT__SHIFT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTI_POST_SOLUTION_SHIFT__DESCRIPTION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Opti Post Solution Shift</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPTI_POST_SOLUTION_SHIFT_FEATURE_COUNT = 1;
+	int OPTI_POST_SOLUTION_SHIFT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Opti Post Solution Shift</em>' class.
@@ -2163,26 +2217,26 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpOptiPostFlow_LpRoot();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapPredecessor <em>Min Overlap Predecessor</em>}'.
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Overlap Predecessor</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapPredecessor()
+	 * @return the meta object for the attribute '<em>Max Overlap Predecessor</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapPredecessor()
 	 * @see #getLpOptiPostFlow()
 	 * @generated
 	 */
-	EAttribute getLpOptiPostFlow_MinOverlapPredecessor();
+	EAttribute getLpOptiPostFlow_MaxOverlapPredecessor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapSuccessor <em>Min Overlap Successor</em>}'.
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Min Overlap Successor</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMinOverlapSuccessor()
+	 * @return the meta object for the attribute '<em>Max Overlap Successor</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapSuccessor()
 	 * @see #getLpOptiPostFlow()
 	 * @generated
 	 */
-	EAttribute getLpOptiPostFlow_MinOverlapSuccessor();
+	EAttribute getLpOptiPostFlow_MaxOverlapSuccessor();
 
 	/**
 	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}'.
@@ -2756,6 +2810,28 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getOptiPostSolution_NrEmployees();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getDescription()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolution_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getEmployeesInPost <em>Employees In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Employees In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getEmployeesInPost()
+	 * @see #getOptiPostSolution()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolution_EmployeesInPost();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost <em>Opti Post Solution Post</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2797,6 +2873,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getOptiPostSolutionPost_NrShifts();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#getDescription()
+	 * @see #getOptiPostSolutionPost()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolutionPost_Description();
 
 	/**
 	 * Returns the meta object for the '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost#addShift(com.misc.projects.g4s.G4SOptiPost.Shift) <em>Add Shift</em>}' operation.
@@ -2852,6 +2939,28 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getOptiPostSolutionEmployee_NrShifts();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getDescription()
+	 * @see #getOptiPostSolutionEmployee()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolutionEmployee_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#isInPost <em>In Post</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>In Post</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#isInPost()
+	 * @see #getOptiPostSolutionEmployee()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolutionEmployee_InPost();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift <em>Opti Post Solution Shift</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2871,6 +2980,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getOptiPostSolutionShift_Shift();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift#getDescription()
+	 * @see #getOptiPostSolutionShift()
+	 * @generated
+	 */
+	EAttribute getOptiPostSolutionShift_Description();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3132,20 +3252,20 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_OPTI_POST_FLOW__LP_ROOT = eINSTANCE.getLpOptiPostFlow_LpRoot();
 
 		/**
-		 * The meta object literal for the '<em><b>Min Overlap Predecessor</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Max Overlap Predecessor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR = eINSTANCE.getLpOptiPostFlow_MinOverlapPredecessor();
+		EAttribute LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR = eINSTANCE.getLpOptiPostFlow_MaxOverlapPredecessor();
 
 		/**
-		 * The meta object literal for the '<em><b>Min Overlap Successor</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Max Overlap Successor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR = eINSTANCE.getLpOptiPostFlow_MinOverlapSuccessor();
+		EAttribute LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR = eINSTANCE.getLpOptiPostFlow_MaxOverlapSuccessor();
 
 		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.
@@ -3586,6 +3706,22 @@ public interface G4SOptiPostPackage extends EPackage {
 		EAttribute OPTI_POST_SOLUTION__NR_EMPLOYEES = eINSTANCE.getOptiPostSolution_NrEmployees();
 
 		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION__DESCRIPTION = eINSTANCE.getOptiPostSolution_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Employees In Post</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION__EMPLOYEES_IN_POST = eINSTANCE.getOptiPostSolution_EmployeesInPost();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl <em>Opti Post Solution Post</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3618,6 +3754,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OPTI_POST_SOLUTION_POST__NR_SHIFTS = eINSTANCE.getOptiPostSolutionPost_NrShifts();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION_POST__DESCRIPTION = eINSTANCE.getOptiPostSolutionPost_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Shift</b></em>' operation.
@@ -3662,6 +3806,22 @@ public interface G4SOptiPostPackage extends EPackage {
 		EAttribute OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS = eINSTANCE.getOptiPostSolutionEmployee_NrShifts();
 
 		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION_EMPLOYEE__DESCRIPTION = eINSTANCE.getOptiPostSolutionEmployee_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>In Post</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION_EMPLOYEE__IN_POST = eINSTANCE.getOptiPostSolutionEmployee_InPost();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl <em>Opti Post Solution Shift</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3678,6 +3838,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference OPTI_POST_SOLUTION_SHIFT__SHIFT = eINSTANCE.getOptiPostSolutionShift_Shift();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPTI_POST_SOLUTION_SHIFT__DESCRIPTION = eINSTANCE.getOptiPostSolutionShift_Description();
 
 	}
 

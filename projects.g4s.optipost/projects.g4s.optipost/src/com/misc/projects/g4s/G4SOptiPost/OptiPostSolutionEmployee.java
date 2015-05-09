@@ -17,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getShifts <em>Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getEmployee <em>Employee</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getNrShifts <em>Nr Shifts</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#isInPost <em>In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -81,5 +83,46 @@ public interface OptiPostSolutionEmployee extends EObject {
 	 * @generated
 	 */
 	int getNrShifts();
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolutionEmployee_Description()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getDescription();
+
+	/**
+	 * Returns the value of the '<em><b>In Post</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>In Post</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>In Post</em>' attribute.
+	 * @see #setInPost(boolean)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolutionEmployee_InPost()
+	 * @model
+	 * @generated
+	 */
+	boolean isInPost();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee#isInPost <em>In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>In Post</em>' attribute.
+	 * @see #isInPost()
+	 * @generated
+	 */
+	void setInPost(boolean value);
 
 } // OptiPostSolutionEmployee

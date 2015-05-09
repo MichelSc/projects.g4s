@@ -10,15 +10,11 @@ import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
@@ -31,6 +27,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#getShifts <em>Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#getEmployee <em>Employee</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#getNrShifts <em>Nr Shifts</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#isInPost <em>In Post</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +64,36 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 	 * @ordered
 	 */
 	protected static final int NR_SHIFTS_EDEFAULT = 0;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
+
+	/**
+	 * The default value of the '{@link #isInPost() <em>In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IN_POST_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isInPost() <em>In Post</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInPost()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean inPost = IN_POST_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,6 +175,39 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public String getDescription() {
+		String description = String.format("%s (%d, %s)", 
+                this.getEmployee().getEmployeeID(),
+                this.getNrShifts(),
+                this.isInPost());
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isInPost() {
+		return inPost;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInPost(boolean newInPost) {
+		boolean oldInPost = inPost;
+		inPost = newInPost;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__IN_POST, oldInPost, inPost));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -159,6 +220,10 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 				return basicGetEmployee();
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS:
 				return getNrShifts();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__DESCRIPTION:
+				return getDescription();
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__IN_POST:
+				return isInPost();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,6 +244,9 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE:
 				setEmployee((Employee)newValue);
 				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__IN_POST:
+				setInPost((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -196,6 +264,9 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 				return;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__EMPLOYEE:
 				setEmployee((Employee)null);
+				return;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__IN_POST:
+				setInPost(IN_POST_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -215,8 +286,28 @@ public class OptiPostSolutionEmployeeImpl extends MinimalEObjectImpl.Container i
 				return employee != null;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__NR_SHIFTS:
 				return getNrShifts() != NR_SHIFTS_EDEFAULT;
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION_EMPLOYEE__IN_POST:
+				return inPost != IN_POST_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (InPost: ");
+		result.append(inPost);
+		result.append(')');
+		return result.toString();
 	}
 
 } //OptiPostSolutionEmployeeImpl

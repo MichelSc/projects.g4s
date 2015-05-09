@@ -48,8 +48,8 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMinOverlapPredecessorPropertyDescriptor(object);
-			addMinOverlapSuccessorPropertyDescriptor(object);
+			addMaxOverlapPredecessorPropertyDescriptor(object);
+			addMaxOverlapSuccessorPropertyDescriptor(object);
 			addAbsoluteMinEmployeeNrJobPropertyDescriptor(object);
 			addAbsoluteMaxEmployeeNrJobsPropertyDescriptor(object);
 		}
@@ -57,46 +57,46 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Min Overlap Predecessor feature.
+	 * This adds a property descriptor for the Max Overlap Predecessor feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMinOverlapPredecessorPropertyDescriptor(Object object) {
+	protected void addMaxOverlapPredecessorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LpOptiPostFlow_MinOverlapPredecessor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_MinOverlapPredecessor_feature", "_UI_LpOptiPostFlow_type"),
-				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR,
+				 getString("_UI_LpOptiPostFlow_MaxOverlapPredecessor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_MaxOverlapPredecessor_feature", "_UI_LpOptiPostFlow_type"),
+				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 getString("_UI__40G4SPropertyCategory"),
+				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Min Overlap Successor feature.
+	 * This adds a property descriptor for the Max Overlap Successor feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addMinOverlapSuccessorPropertyDescriptor(Object object) {
+	protected void addMaxOverlapSuccessorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_LpOptiPostFlow_MinOverlapSuccessor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_MinOverlapSuccessor_feature", "_UI_LpOptiPostFlow_type"),
-				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR,
+				 getString("_UI_LpOptiPostFlow_MaxOverlapSuccessor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_MaxOverlapSuccessor_feature", "_UI_LpOptiPostFlow_type"),
+				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 getString("_UI__40G4SPropertyCategory"),
+				 null,
 				 null));
 	}
 
@@ -214,8 +214,8 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LpOptiPostFlow.class)) {
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_PREDECESSOR:
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MIN_OVERLAP_SUCCESSOR:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

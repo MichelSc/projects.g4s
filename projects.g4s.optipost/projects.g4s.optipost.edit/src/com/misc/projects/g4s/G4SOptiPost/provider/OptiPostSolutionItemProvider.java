@@ -65,6 +65,8 @@ public class OptiPostSolutionItemProvider
 
 			addLpPropertyDescriptor(object);
 			addNrEmployeesPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
+			addEmployeesInPostPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -105,6 +107,50 @@ public class OptiPostSolutionItemProvider
 				 getString("_UI_OptiPostSolution_NrEmployees_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OptiPostSolution_NrEmployees_feature", "_UI_OptiPostSolution_type"),
 				 G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__NR_EMPLOYEES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OptiPostSolution_Description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OptiPostSolution_Description_feature", "_UI_OptiPostSolution_type"),
+				 G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__DESCRIPTION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Employees In Post feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEmployeesInPostPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OptiPostSolution_EmployeesInPost_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OptiPostSolution_EmployeesInPost_feature", "_UI_OptiPostSolution_type"),
+				 G4SOptiPostPackage.Literals.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST,
 				 true,
 				 false,
 				 false,
@@ -163,8 +209,10 @@ public class OptiPostSolutionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		OptiPostSolution optiPostSolution = (OptiPostSolution)object;
-		return getString("_UI_OptiPostSolution_type") + " " + optiPostSolution.getNrEmployees();
+		String label = ((OptiPostSolution)object).getDescription();
+		return label == null || label.length() == 0 ?
+			getString("_UI_OptiPostSolution_type") :
+			getString("_UI_OptiPostSolution_type") + " " + label;
 	}
 	
 
@@ -181,6 +229,8 @@ public class OptiPostSolutionItemProvider
 
 		switch (notification.getFeatureID(OptiPostSolution.class)) {
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__NR_EMPLOYEES:
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__DESCRIPTION:
+			case G4SOptiPostPackage.OPTI_POST_SOLUTION__EMPLOYEES_IN_POST:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.OPTI_POST_SOLUTION__POSTS:
