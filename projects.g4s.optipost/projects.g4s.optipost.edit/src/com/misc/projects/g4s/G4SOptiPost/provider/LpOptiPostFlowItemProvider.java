@@ -3,7 +3,6 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
-import com.misc.common.moplaf.solver.EnumObjectiveType;
 import com.misc.common.moplaf.solver.provider.GeneratorItemProvider;
 import com.misc.common.moplaf.solver.solvercplex.SolvercplexFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
@@ -194,8 +193,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		EnumObjectiveType labelValue = ((LpOptiPostFlow)object).getObjectiveType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((LpOptiPostFlow)object).getCode();
 		return label == null || label.length() == 0 ?
 			getString("_UI_LpOptiPostFlow_type") :
 			getString("_UI_LpOptiPostFlow_type") + " " + label;

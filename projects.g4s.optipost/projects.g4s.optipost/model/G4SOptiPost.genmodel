@@ -39,7 +39,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/Name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/Solutions"/>
     </genClasses>
-    <genClasses ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow">
+    <genClasses ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow" labelFeature="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver/Generator/Code">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
       <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MaxOverlapPredecessor"/>
       <genFeatures createChild="false" propertyCategory="40 G4S" propertyDescription=""
