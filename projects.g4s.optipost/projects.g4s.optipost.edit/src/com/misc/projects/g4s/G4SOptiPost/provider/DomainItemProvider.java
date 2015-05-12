@@ -126,11 +126,10 @@ public class DomainItemProvider
 	 * This returns Domain.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Domain"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/folder265.png"));
 	}
 
 	/**

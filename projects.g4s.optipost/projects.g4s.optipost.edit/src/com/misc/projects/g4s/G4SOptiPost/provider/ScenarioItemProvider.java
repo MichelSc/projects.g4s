@@ -148,11 +148,10 @@ public class ScenarioItemProvider
 	 * This returns Scenario.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Scenario"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/puzzle17.png"));
 	}
 
 	/**

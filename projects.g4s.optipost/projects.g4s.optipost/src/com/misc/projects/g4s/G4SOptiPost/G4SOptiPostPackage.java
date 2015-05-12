@@ -648,7 +648,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___ACCEPT_SOLUTION__SOLUTION = SolverPackage.GENERATOR___ACCEPT_SOLUTION__SOLUTION;
+	int LP_OPTI_POST_FLOW___ACCEPT_SOLUTION__SOLUTION_1 = SolverPackage.GENERATOR___ACCEPT_SOLUTION__SOLUTION;
 
 	/**
 	 * The operation id for the '<em>Select Feature Mode</em>' operation.
@@ -657,7 +657,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE = SolverPackage.GENERATOR___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE;
+	int LP_OPTI_POST_FLOW___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE_1 = SolverPackage.GENERATOR___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE;
 
 	/**
 	 * The operation id for the '<em>Visit Tuples</em>' operation.
@@ -666,7 +666,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_OPTI_POST_FLOW___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Opti Post Flow</em>' class.
@@ -820,7 +820,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_ROOT___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Root</em>' class.
@@ -1055,7 +1055,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_JOB___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_JOB___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Job</em>' class.
@@ -1209,7 +1209,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_PRECEDENCE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_PRECEDENCE___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Precedence</em>' class.
@@ -1391,7 +1391,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_EMPLOYEE___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Employee</em>' class.
