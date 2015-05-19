@@ -14,9 +14,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -47,100 +45,8 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addMaxOverlapPredecessorPropertyDescriptor(object);
-			addMaxOverlapSuccessorPropertyDescriptor(object);
-			addAbsoluteMinEmployeeNrJobPropertyDescriptor(object);
-			addAbsoluteMaxEmployeeNrJobsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Max Overlap Predecessor feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMaxOverlapPredecessorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LpOptiPostFlow_MaxOverlapPredecessor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_MaxOverlapPredecessor_feature", "_UI_LpOptiPostFlow_type"),
-				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 getString("_UI__40G4SPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Max Overlap Successor feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMaxOverlapSuccessorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LpOptiPostFlow_MaxOverlapSuccessor_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_MaxOverlapSuccessor_feature", "_UI_LpOptiPostFlow_type"),
-				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
-				 getString("_UI__40G4SPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Absolute Min Employee Nr Job feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAbsoluteMinEmployeeNrJobPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LpOptiPostFlow_AbsoluteMinEmployeeNrJob_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_AbsoluteMinEmployeeNrJob_feature", "_UI_LpOptiPostFlow_type"),
-				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI__40G4SPropertyCategory"),
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Absolute Max Employee Nr Jobs feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAbsoluteMaxEmployeeNrJobsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_LpOptiPostFlow_AbsoluteMaxEmployeeNrJobs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_LpOptiPostFlow_AbsoluteMaxEmployeeNrJobs_feature", "_UI_LpOptiPostFlow_type"),
-				 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 getString("_UI__40G4SPropertyCategory"),
-				 null));
 	}
 
 	/**
@@ -201,12 +107,6 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(LpOptiPostFlow.class)) {
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

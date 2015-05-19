@@ -371,13 +371,49 @@ public interface G4SOptiPostPackage extends EPackage {
 	int SCENARIO__SOLUTIONS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB = 4;
+
+	/**
+	 * The feature id for the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS = 5;
+
+	/**
+	 * The feature id for the '<em><b>Max Overlap Predecessor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__MAX_OVERLAP_PREDECESSOR = 6;
+
+	/**
+	 * The feature id for the '<em><b>Max Overlap Successor</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__MAX_OVERLAP_SUCCESSOR = 7;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 4;
+	int SCENARIO_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -534,31 +570,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__LP_ROOT = SolverPackage.GENERATOR_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Max Overlap Predecessor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR = SolverPackage.GENERATOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Max Overlap Successor</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Scenario</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__SCENARIO = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
+	int LP_OPTI_POST_FLOW__SCENARIO = SolverPackage.GENERATOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference list.
@@ -567,25 +585,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__CPLEX_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB = SolverPackage.GENERATOR_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS = SolverPackage.GENERATOR_FEATURE_COUNT + 6;
+	int LP_OPTI_POST_FLOW__CPLEX_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Lp Opti Post Flow</em>' class.
@@ -594,7 +594,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 7;
+	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Generate</em>' operation.
@@ -648,7 +648,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___ACCEPT_SOLUTION__SOLUTION_1 = SolverPackage.GENERATOR___ACCEPT_SOLUTION__SOLUTION;
+	int LP_OPTI_POST_FLOW___ACCEPT_SOLUTION__SOLUTION = SolverPackage.GENERATOR___ACCEPT_SOLUTION__SOLUTION;
 
 	/**
 	 * The operation id for the '<em>Select Feature Mode</em>' operation.
@@ -657,7 +657,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE_1 = SolverPackage.GENERATOR___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE;
+	int LP_OPTI_POST_FLOW___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE = SolverPackage.GENERATOR___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE;
 
 	/**
 	 * The operation id for the '<em>Visit Tuples</em>' operation.
@@ -666,7 +666,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_OPTI_POST_FLOW___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Opti Post Flow</em>' class.
@@ -820,7 +820,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_ROOT___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Root</em>' class.
@@ -1055,7 +1055,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_JOB___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_JOB___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Job</em>' class.
@@ -1209,7 +1209,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_PRECEDENCE___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_PRECEDENCE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Precedence</em>' class.
@@ -1391,7 +1391,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE___VISIT_TUPLES__ITUPLEVISITOR_1 = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+	int LP_EMPLOYEE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
 	 * The number of operations of the '<em>Lp Employee</em>' class.
@@ -2214,6 +2214,50 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getScenario_Solutions();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Absolute Min Employee Nr Job</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMinEmployeeNrJob()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_AbsoluteMinEmployeeNrJob();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Absolute Max Employee Nr Jobs</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMaxEmployeeNrJobs()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_AbsoluteMaxEmployeeNrJobs();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Overlap Predecessor</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapPredecessor()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_MaxOverlapPredecessor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Overlap Successor</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapSuccessor()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_MaxOverlapSuccessor();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow <em>Lp Opti Post Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2233,28 +2277,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpOptiPostFlow_LpRoot();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Overlap Predecessor</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapPredecessor()
-	 * @see #getLpOptiPostFlow()
-	 * @generated
-	 */
-	EAttribute getLpOptiPostFlow_MaxOverlapPredecessor();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Max Overlap Successor</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getMaxOverlapSuccessor()
-	 * @see #getLpOptiPostFlow()
-	 * @generated
-	 */
-	EAttribute getLpOptiPostFlow_MaxOverlapSuccessor();
 
 	/**
 	 * Returns the meta object for the container reference '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}'.
@@ -2277,28 +2299,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpOptiPostFlow_CplexSolver();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Absolute Min Employee Nr Job</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMinEmployeeNrJob()
-	 * @see #getLpOptiPostFlow()
-	 * @generated
-	 */
-	EAttribute getLpOptiPostFlow_AbsoluteMinEmployeeNrJob();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Absolute Max Employee Nr Jobs</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getAbsoluteMaxEmployeeNrJobs()
-	 * @see #getLpOptiPostFlow()
-	 * @generated
-	 */
-	EAttribute getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot <em>Lp Root</em>}'.
@@ -3274,6 +3274,38 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference SCENARIO__SOLUTIONS = eINSTANCE.getScenario_Solutions();
 
 		/**
+		 * The meta object literal for the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB = eINSTANCE.getScenario_AbsoluteMinEmployeeNrJob();
+
+		/**
+		 * The meta object literal for the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS = eINSTANCE.getScenario_AbsoluteMaxEmployeeNrJobs();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Overlap Predecessor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__MAX_OVERLAP_PREDECESSOR = eINSTANCE.getScenario_MaxOverlapPredecessor();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Overlap Successor</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__MAX_OVERLAP_SUCCESSOR = eINSTANCE.getScenario_MaxOverlapSuccessor();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl <em>Lp Opti Post Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3292,22 +3324,6 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_OPTI_POST_FLOW__LP_ROOT = eINSTANCE.getLpOptiPostFlow_LpRoot();
 
 		/**
-		 * The meta object literal for the '<em><b>Max Overlap Predecessor</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR = eINSTANCE.getLpOptiPostFlow_MaxOverlapPredecessor();
-
-		/**
-		 * The meta object literal for the '<em><b>Max Overlap Successor</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR = eINSTANCE.getLpOptiPostFlow_MaxOverlapSuccessor();
-
-		/**
 		 * The meta object literal for the '<em><b>Scenario</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3322,22 +3338,6 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_OPTI_POST_FLOW__CPLEX_SOLVER = eINSTANCE.getLpOptiPostFlow_CplexSolver();
-
-		/**
-		 * The meta object literal for the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB = eINSTANCE.getLpOptiPostFlow_AbsoluteMinEmployeeNrJob();
-
-		/**
-		 * The meta object literal for the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS = eINSTANCE.getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl <em>Lp Root</em>}' class.

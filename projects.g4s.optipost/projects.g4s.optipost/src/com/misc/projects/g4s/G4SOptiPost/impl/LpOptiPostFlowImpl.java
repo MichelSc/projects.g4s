@@ -40,12 +40,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getLpRoot <em>Lp Root</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getCplexSolver <em>Cplex Solver</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,46 +59,6 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	protected LpRoot lpRoot;
 
 	/**
-	 * The default value of the '{@link #getMaxOverlapPredecessor() <em>Max Overlap Predecessor</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxOverlapPredecessor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final float MAX_OVERLAP_PREDECESSOR_EDEFAULT = 0.25F;
-
-	/**
-	 * The cached value of the '{@link #getMaxOverlapPredecessor() <em>Max Overlap Predecessor</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxOverlapPredecessor()
-	 * @generated
-	 * @ordered
-	 */
-	protected float maxOverlapPredecessor = MAX_OVERLAP_PREDECESSOR_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMaxOverlapSuccessor() <em>Max Overlap Successor</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxOverlapSuccessor()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final float MAX_OVERLAP_SUCCESSOR_EDEFAULT = 0.25F;
-
-	/**
-	 * The cached value of the '{@link #getMaxOverlapSuccessor() <em>Max Overlap Successor</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMaxOverlapSuccessor()
-	 * @generated
-	 * @ordered
-	 */
-	protected float maxOverlapSuccessor = MAX_OVERLAP_SUCCESSOR_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getCplexSolver() <em>Cplex Solver</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -111,46 +67,6 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * @ordered
 	 */
 	protected EList<SolverCplex> cplexSolver;
-
-	/**
-	 * The default value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbsoluteMinEmployeeNrJob()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT = 10;
-
-	/**
-	 * The cached value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbsoluteMinEmployeeNrJob()
-	 * @generated
-	 * @ordered
-	 */
-	protected int absoluteMinEmployeeNrJob = ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbsoluteMaxEmployeeNrJobs()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT = 50;
-
-	/**
-	 * The cached value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbsoluteMaxEmployeeNrJobs()
-	 * @generated
-	 * @ordered
-	 */
-	protected int absoluteMaxEmployeeNrJobs = ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -219,48 +135,6 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getMaxOverlapPredecessor() {
-		return maxOverlapPredecessor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMaxOverlapPredecessor(float newMaxOverlapPredecessor) {
-		float oldMaxOverlapPredecessor = maxOverlapPredecessor;
-		maxOverlapPredecessor = newMaxOverlapPredecessor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR, oldMaxOverlapPredecessor, maxOverlapPredecessor));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public float getMaxOverlapSuccessor() {
-		return maxOverlapSuccessor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMaxOverlapSuccessor(float newMaxOverlapSuccessor) {
-		float oldMaxOverlapSuccessor = maxOverlapSuccessor;
-		maxOverlapSuccessor = newMaxOverlapSuccessor;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR, oldMaxOverlapSuccessor, maxOverlapSuccessor));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Scenario getScenario() {
 		if (eContainerFeatureID() != G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO) return null;
 		return (Scenario)eInternalContainer();
@@ -307,48 +181,6 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			cplexSolver = new EObjectContainmentEList<SolverCplex>(SolverCplex.class, this, G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER);
 		}
 		return cplexSolver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getAbsoluteMinEmployeeNrJob() {
-		return absoluteMinEmployeeNrJob;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAbsoluteMinEmployeeNrJob(int newAbsoluteMinEmployeeNrJob) {
-		int oldAbsoluteMinEmployeeNrJob = absoluteMinEmployeeNrJob;
-		absoluteMinEmployeeNrJob = newAbsoluteMinEmployeeNrJob;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB, oldAbsoluteMinEmployeeNrJob, absoluteMinEmployeeNrJob));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getAbsoluteMaxEmployeeNrJobs() {
-		return absoluteMaxEmployeeNrJobs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAbsoluteMaxEmployeeNrJobs(int newAbsoluteMaxEmployeeNrJobs) {
-		int oldAbsoluteMaxEmployeeNrJobs = absoluteMaxEmployeeNrJobs;
-		absoluteMaxEmployeeNrJobs = newAbsoluteMaxEmployeeNrJobs;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS, oldAbsoluteMaxEmployeeNrJobs, absoluteMaxEmployeeNrJobs));
 	}
 
 	/**
@@ -413,18 +245,10 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		switch (featureID) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				return getLpRoot();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
-				return getMaxOverlapPredecessor();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
-				return getMaxOverlapSuccessor();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				return getScenario();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				return getCplexSolver();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
-				return getAbsoluteMinEmployeeNrJob();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
-				return getAbsoluteMaxEmployeeNrJobs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -441,24 +265,12 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				setLpRoot((LpRoot)newValue);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
-				setMaxOverlapPredecessor((Float)newValue);
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
-				setMaxOverlapSuccessor((Float)newValue);
-				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				setScenario((Scenario)newValue);
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				getCplexSolver().clear();
 				getCplexSolver().addAll((Collection<? extends SolverCplex>)newValue);
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
-				setAbsoluteMinEmployeeNrJob((Integer)newValue);
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
-				setAbsoluteMaxEmployeeNrJobs((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -475,23 +287,11 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				setLpRoot((LpRoot)null);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
-				setMaxOverlapPredecessor(MAX_OVERLAP_PREDECESSOR_EDEFAULT);
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
-				setMaxOverlapSuccessor(MAX_OVERLAP_SUCCESSOR_EDEFAULT);
-				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				setScenario((Scenario)null);
 				return;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				getCplexSolver().clear();
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
-				setAbsoluteMinEmployeeNrJob(ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT);
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
-				setAbsoluteMaxEmployeeNrJobs(ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -507,42 +307,12 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		switch (featureID) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 				return lpRoot != null;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR:
-				return maxOverlapPredecessor != MAX_OVERLAP_PREDECESSOR_EDEFAULT;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR:
-				return maxOverlapSuccessor != MAX_OVERLAP_SUCCESSOR_EDEFAULT;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SCENARIO:
 				return getScenario() != null;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				return cplexSolver != null && !cplexSolver.isEmpty();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
-				return absoluteMinEmployeeNrJob != ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
-				return absoluteMaxEmployeeNrJobs != ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (MaxOverlapPredecessor: ");
-		result.append(maxOverlapPredecessor);
-		result.append(", MaxOverlapSuccessor: ");
-		result.append(maxOverlapSuccessor);
-		result.append(", AbsoluteMinEmployeeNrJob: ");
-		result.append(absoluteMinEmployeeNrJob);
-		result.append(", AbsoluteMaxEmployeeNrJobs: ");
-		result.append(absoluteMaxEmployeeNrJobs);
-		result.append(')');
-		return result.toString();
 	}
 
 	@Override

@@ -313,11 +313,11 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
             	if ( lpemployee == null){
                 	lpemployee = G4SOptiPostFactory.eINSTANCE.createLpEmployee();
                 	int minJobs = lpemployee.getMinNrJobs();
-                	if ( minJobs>generator.getAbsoluteMaxEmployeeNrJobs()){
-                		minJobs = generator.getAbsoluteMaxEmployeeNrJobs();
+                	if ( minJobs>scenario.getAbsoluteMaxEmployeeNrJobs()){
+                		minJobs = scenario.getAbsoluteMaxEmployeeNrJobs();
                 	}
-                	if ( minJobs<generator.getAbsoluteMinEmployeeNrJob() ){
-                		minJobs = generator.getAbsoluteMinEmployeeNrJob();
+                	if ( minJobs<scenario.getAbsoluteMinEmployeeNrJob() ){
+                		minJobs = scenario.getAbsoluteMinEmployeeNrJob();
                 	}
                 	lpemployee.setMinNrJobs(minJobs);
                 	lpemployee.setEmployee(employee);
@@ -418,6 +418,7 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 	private void createPrecedence(LpJob jobStartBefore, LpJob jobStartAfter){
 		LpRoot root = this;
 		LpOptiPostFlow generator = root.getLpOptiPostFlow();
+		Scenario scenario = generator.getScenario();
 		// assert jobs at the same location
 		// assert jobs are overlapping
 		// assert couple of jobs will not be presented twice
@@ -427,8 +428,8 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
 		long end2   = jobStartAfter .getShift().getShiftEnd().getTime();
 		long start  = Math.max(start1, start2);
 		long end    = Math.min(end1, end2);
-		if ( (float)(end-start)/(float)(end1-start1)>generator.getMaxOverlapPredecessor()) { return; }
-		if ( (float)(end-start)/(float)(end2-start2)>generator.getMaxOverlapSuccessor()) { return; }
+		if ( (float)(end-start)/(float)(end1-start1)>scenario.getMaxOverlapPredecessor()) { return; }
+		if ( (float)(end-start)/(float)(end2-start2)>scenario.getMaxOverlapSuccessor()) { return; }
 		boolean isPrecedence = true;
 		if ( isPrecedence ){
         	LpPrecedence lpprecedence = G4SOptiPostFactory.eINSTANCE.createLpPrecedence();

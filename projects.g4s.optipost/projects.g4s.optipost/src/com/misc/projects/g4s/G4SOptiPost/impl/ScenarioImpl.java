@@ -30,6 +30,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getSelectedShifts <em>Selected Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getSolutions <em>Solutions</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  * </ul>
  * </p>
  *
@@ -85,6 +89,86 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected EList<OptiPostSolution> solutions;
+
+	/**
+	 * The default value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMinEmployeeNrJob()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT = 10;
+
+	/**
+	 * The cached value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMinEmployeeNrJob()
+	 * @generated
+	 * @ordered
+	 */
+	protected int absoluteMinEmployeeNrJob = ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMaxEmployeeNrJobs()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT = 50;
+
+	/**
+	 * The cached value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbsoluteMaxEmployeeNrJobs()
+	 * @generated
+	 * @ordered
+	 */
+	protected int absoluteMaxEmployeeNrJobs = ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxOverlapPredecessor() <em>Max Overlap Predecessor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxOverlapPredecessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float MAX_OVERLAP_PREDECESSOR_EDEFAULT = 0.25F;
+
+	/**
+	 * The cached value of the '{@link #getMaxOverlapPredecessor() <em>Max Overlap Predecessor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxOverlapPredecessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected float maxOverlapPredecessor = MAX_OVERLAP_PREDECESSOR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxOverlapSuccessor() <em>Max Overlap Successor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxOverlapSuccessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float MAX_OVERLAP_SUCCESSOR_EDEFAULT = 0.25F;
+
+	/**
+	 * The cached value of the '{@link #getMaxOverlapSuccessor() <em>Max Overlap Successor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxOverlapSuccessor()
+	 * @generated
+	 * @ordered
+	 */
+	protected float maxOverlapSuccessor = MAX_OVERLAP_SUCCESSOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,6 +251,90 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getAbsoluteMinEmployeeNrJob() {
+		return absoluteMinEmployeeNrJob;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAbsoluteMinEmployeeNrJob(int newAbsoluteMinEmployeeNrJob) {
+		int oldAbsoluteMinEmployeeNrJob = absoluteMinEmployeeNrJob;
+		absoluteMinEmployeeNrJob = newAbsoluteMinEmployeeNrJob;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB, oldAbsoluteMinEmployeeNrJob, absoluteMinEmployeeNrJob));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getAbsoluteMaxEmployeeNrJobs() {
+		return absoluteMaxEmployeeNrJobs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAbsoluteMaxEmployeeNrJobs(int newAbsoluteMaxEmployeeNrJobs) {
+		int oldAbsoluteMaxEmployeeNrJobs = absoluteMaxEmployeeNrJobs;
+		absoluteMaxEmployeeNrJobs = newAbsoluteMaxEmployeeNrJobs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS, oldAbsoluteMaxEmployeeNrJobs, absoluteMaxEmployeeNrJobs));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public float getMaxOverlapPredecessor() {
+		return maxOverlapPredecessor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxOverlapPredecessor(float newMaxOverlapPredecessor) {
+		float oldMaxOverlapPredecessor = maxOverlapPredecessor;
+		maxOverlapPredecessor = newMaxOverlapPredecessor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_PREDECESSOR, oldMaxOverlapPredecessor, maxOverlapPredecessor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public float getMaxOverlapSuccessor() {
+		return maxOverlapSuccessor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaxOverlapSuccessor(float newMaxOverlapSuccessor) {
+		float oldMaxOverlapSuccessor = maxOverlapSuccessor;
+		maxOverlapSuccessor = newMaxOverlapSuccessor;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR, oldMaxOverlapSuccessor, maxOverlapSuccessor));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -211,6 +379,14 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return getName();
 			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
 				return getSolutions();
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				return getAbsoluteMinEmployeeNrJob();
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				return getAbsoluteMaxEmployeeNrJobs();
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_PREDECESSOR:
+				return getMaxOverlapPredecessor();
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
+				return getMaxOverlapSuccessor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -239,6 +415,18 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				getSolutions().clear();
 				getSolutions().addAll((Collection<? extends OptiPostSolution>)newValue);
 				return;
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				setAbsoluteMinEmployeeNrJob((Integer)newValue);
+				return;
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				setAbsoluteMaxEmployeeNrJobs((Integer)newValue);
+				return;
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_PREDECESSOR:
+				setMaxOverlapPredecessor((Float)newValue);
+				return;
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
+				setMaxOverlapSuccessor((Float)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -263,6 +451,18 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
 				getSolutions().clear();
 				return;
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				setAbsoluteMinEmployeeNrJob(ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				setAbsoluteMaxEmployeeNrJobs(ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_PREDECESSOR:
+				setMaxOverlapPredecessor(MAX_OVERLAP_PREDECESSOR_EDEFAULT);
+				return;
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
+				setMaxOverlapSuccessor(MAX_OVERLAP_SUCCESSOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -283,6 +483,14 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
 				return solutions != null && !solutions.isEmpty();
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+				return absoluteMinEmployeeNrJob != ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT;
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+				return absoluteMaxEmployeeNrJobs != ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT;
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_PREDECESSOR:
+				return maxOverlapPredecessor != MAX_OVERLAP_PREDECESSOR_EDEFAULT;
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
+				return maxOverlapSuccessor != MAX_OVERLAP_SUCCESSOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -299,6 +507,14 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (Name: ");
 		result.append(name);
+		result.append(", AbsoluteMinEmployeeNrJob: ");
+		result.append(absoluteMinEmployeeNrJob);
+		result.append(", AbsoluteMaxEmployeeNrJobs: ");
+		result.append(absoluteMaxEmployeeNrJobs);
+		result.append(", MaxOverlapPredecessor: ");
+		result.append(maxOverlapPredecessor);
+		result.append(", MaxOverlapSuccessor: ");
+		result.append(maxOverlapSuccessor);
 		result.append(')');
 		return result.toString();
 	}

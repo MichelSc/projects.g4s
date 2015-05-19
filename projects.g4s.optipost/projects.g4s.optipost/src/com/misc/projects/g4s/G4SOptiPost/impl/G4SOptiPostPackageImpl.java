@@ -454,6 +454,42 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getScenario_AbsoluteMinEmployeeNrJob() {
+		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getScenario_AbsoluteMaxEmployeeNrJobs() {
+		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getScenario_MaxOverlapPredecessor() {
+		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getScenario_MaxOverlapSuccessor() {
+		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLpOptiPostFlow() {
 		return lpOptiPostFlowEClass;
 	}
@@ -472,26 +508,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getLpOptiPostFlow_MaxOverlapPredecessor() {
-		return (EAttribute)lpOptiPostFlowEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLpOptiPostFlow_MaxOverlapSuccessor() {
-		return (EAttribute)lpOptiPostFlowEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getLpOptiPostFlow_Scenario() {
-		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(3);
+		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -500,25 +518,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * @generated
 	 */
 	public EReference getLpOptiPostFlow_CplexSolver() {
-		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLpOptiPostFlow_AbsoluteMinEmployeeNrJob() {
-		return (EAttribute)lpOptiPostFlowEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs() {
-		return (EAttribute)lpOptiPostFlowEClass.getEStructuralFeatures().get(6);
+		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1191,15 +1191,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(scenarioEClass, SCENARIO__SELECTED_SHIFTS);
 		createEAttribute(scenarioEClass, SCENARIO__NAME);
 		createEReference(scenarioEClass, SCENARIO__SOLUTIONS);
+		createEAttribute(scenarioEClass, SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB);
+		createEAttribute(scenarioEClass, SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS);
+		createEAttribute(scenarioEClass, SCENARIO__MAX_OVERLAP_PREDECESSOR);
+		createEAttribute(scenarioEClass, SCENARIO__MAX_OVERLAP_SUCCESSOR);
 
 		lpOptiPostFlowEClass = createEClass(LP_OPTI_POST_FLOW);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__LP_ROOT);
-		createEAttribute(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__MAX_OVERLAP_PREDECESSOR);
-		createEAttribute(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__MAX_OVERLAP_SUCCESSOR);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__SCENARIO);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__CPLEX_SOLVER);
-		createEAttribute(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__ABSOLUTE_MIN_EMPLOYEE_NR_JOB);
-		createEAttribute(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS);
 
 		lpRootEClass = createEClass(LP_ROOT);
 		createEReference(lpRootEClass, LP_ROOT__JOBS);
@@ -1352,15 +1352,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getScenario_SelectedShifts(), this.getShift(), null, "SelectedShifts", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Solutions(), this.getOptiPostSolution(), this.getOptiPostSolution_Scenario(), "Solutions", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScenario_AbsoluteMinEmployeeNrJob(), ecorePackage.getEInt(), "AbsoluteMinEmployeeNrJob", "10", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScenario_AbsoluteMaxEmployeeNrJobs(), ecorePackage.getEInt(), "AbsoluteMaxEmployeeNrJobs", "50", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScenario_MaxOverlapPredecessor(), ecorePackage.getEFloat(), "MaxOverlapPredecessor", "0.25", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScenario_MaxOverlapSuccessor(), ecorePackage.getEFloat(), "MaxOverlapSuccessor", "0.25", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpOptiPostFlowEClass, LpOptiPostFlow.class, "LpOptiPostFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), this.getLpRoot_LpOptiPostFlow(), "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpOptiPostFlow_MaxOverlapPredecessor(), ecorePackage.getEFloat(), "MaxOverlapPredecessor", "0.25", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpOptiPostFlow_MaxOverlapSuccessor(), ecorePackage.getEFloat(), "MaxOverlapSuccessor", "0.25", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_Scenario(), this.getScenario(), this.getScenario_LpOptiPostFlows(), "Scenario", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_CplexSolver(), theSolvercplexPackage.getSolverCplex(), null, "CplexSolver", null, 0, -1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpOptiPostFlow_AbsoluteMinEmployeeNrJob(), ecorePackage.getEInt(), "AbsoluteMinEmployeeNrJob", "10", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLpOptiPostFlow_AbsoluteMaxEmployeeNrJobs(), ecorePackage.getEInt(), "AbsoluteMaxEmployeeNrJobs", "50", 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpRootEClass, LpRoot.class, "LpRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpRoot_Jobs(), this.getLpJob(), this.getLpJob_LpRoot(), "Jobs", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -18,6 +18,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getSelectedShifts <em>Selected Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getName <em>Name</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getSolutions <em>Solutions</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,5 +107,113 @@ public interface Scenario extends EObject {
 	 * @generated
 	 */
 	EList<OptiPostSolution> getSolutions();
+
+	/**
+	 * Returns the value of the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute.
+	 * The default value is <code>"10"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Absolute Min Employee Nr Job</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Absolute Min Employee Nr Job</em>' attribute.
+	 * @see #setAbsoluteMinEmployeeNrJob(int)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_AbsoluteMinEmployeeNrJob()
+	 * @model default="10"
+	 * @generated
+	 */
+	int getAbsoluteMinEmployeeNrJob();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMinEmployeeNrJob <em>Absolute Min Employee Nr Job</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Absolute Min Employee Nr Job</em>' attribute.
+	 * @see #getAbsoluteMinEmployeeNrJob()
+	 * @generated
+	 */
+	void setAbsoluteMinEmployeeNrJob(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute.
+	 * The default value is <code>"50"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Absolute Max Employee Nr Jobs</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Absolute Max Employee Nr Jobs</em>' attribute.
+	 * @see #setAbsoluteMaxEmployeeNrJobs(int)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_AbsoluteMaxEmployeeNrJobs()
+	 * @model default="50"
+	 * @generated
+	 */
+	int getAbsoluteMaxEmployeeNrJobs();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Absolute Max Employee Nr Jobs</em>' attribute.
+	 * @see #getAbsoluteMaxEmployeeNrJobs()
+	 * @generated
+	 */
+	void setAbsoluteMaxEmployeeNrJobs(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Overlap Predecessor</b></em>' attribute.
+	 * The default value is <code>"0.25"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Overlap Predecessor</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Overlap Predecessor</em>' attribute.
+	 * @see #setMaxOverlapPredecessor(float)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_MaxOverlapPredecessor()
+	 * @model default="0.25"
+	 * @generated
+	 */
+	float getMaxOverlapPredecessor();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Overlap Predecessor</em>' attribute.
+	 * @see #getMaxOverlapPredecessor()
+	 * @generated
+	 */
+	void setMaxOverlapPredecessor(float value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Overlap Successor</b></em>' attribute.
+	 * The default value is <code>"0.25"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Max Overlap Successor</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Overlap Successor</em>' attribute.
+	 * @see #setMaxOverlapSuccessor(float)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_MaxOverlapSuccessor()
+	 * @model default="0.25"
+	 * @generated
+	 */
+	float getMaxOverlapSuccessor();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Overlap Successor</em>' attribute.
+	 * @see #getMaxOverlapSuccessor()
+	 * @generated
+	 */
+	void setMaxOverlapSuccessor(float value);
 
 } // Scenario

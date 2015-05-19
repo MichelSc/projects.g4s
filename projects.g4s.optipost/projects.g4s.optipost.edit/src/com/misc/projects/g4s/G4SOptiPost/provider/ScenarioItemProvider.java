@@ -65,6 +65,10 @@ public class ScenarioItemProvider
 
 			addSelectedShiftsPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addAbsoluteMinEmployeeNrJobPropertyDescriptor(object);
+			addAbsoluteMaxEmployeeNrJobsPropertyDescriptor(object);
+			addMaxOverlapPredecessorPropertyDescriptor(object);
+			addMaxOverlapSuccessorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +113,94 @@ public class ScenarioItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Absolute Min Employee Nr Job feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAbsoluteMinEmployeeNrJobPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_AbsoluteMinEmployeeNrJob_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_AbsoluteMinEmployeeNrJob_feature", "_UI_Scenario_type"),
+				 G4SOptiPostPackage.Literals.SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Absolute Max Employee Nr Jobs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAbsoluteMaxEmployeeNrJobsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_AbsoluteMaxEmployeeNrJobs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_AbsoluteMaxEmployeeNrJobs_feature", "_UI_Scenario_type"),
+				 G4SOptiPostPackage.Literals.SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Max Overlap Predecessor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxOverlapPredecessorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_MaxOverlapPredecessor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_MaxOverlapPredecessor_feature", "_UI_Scenario_type"),
+				 G4SOptiPostPackage.Literals.SCENARIO__MAX_OVERLAP_PREDECESSOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Max Overlap Successor feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxOverlapSuccessorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_MaxOverlapSuccessor_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_MaxOverlapSuccessor_feature", "_UI_Scenario_type"),
+				 G4SOptiPostPackage.Literals.SCENARIO__MAX_OVERLAP_SUCCESSOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -182,6 +274,10 @@ public class ScenarioItemProvider
 
 		switch (notification.getFeatureID(Scenario.class)) {
 			case G4SOptiPostPackage.SCENARIO__NAME:
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MIN_EMPLOYEE_NR_JOB:
+			case G4SOptiPostPackage.SCENARIO__ABSOLUTE_MAX_EMPLOYEE_NR_JOBS:
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_PREDECESSOR:
+			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS:
