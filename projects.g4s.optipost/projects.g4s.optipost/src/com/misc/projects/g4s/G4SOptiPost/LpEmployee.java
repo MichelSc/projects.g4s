@@ -103,17 +103,21 @@ public interface LpEmployee extends GeneratorTuple {
 
 	/**
 	 * Returns the value of the '<em><b>Min Nr Jobs</b></em>' attribute.
-	 * The default value is <code>"20"</code>.
+	 * The default value is <code>"5"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Min Nr Jobs</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * MinNrJobs is the numbers of jobs the employee has to do in the month to qualify for the benefit
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Nr Jobs</em>' attribute.
 	 * @see #setMinNrJobs(int)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpEmployee_MinNrJobs()
-	 * @model default="20"
+	 * @model default="5"
 	 * @generated
 	 */
 	int getMinNrJobs();

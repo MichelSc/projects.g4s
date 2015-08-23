@@ -98,7 +98,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT = 10;
+	protected static final int ABSOLUTE_MIN_EMPLOYEE_NR_JOB_EDEFAULT = 2;
 
 	/**
 	 * The cached value of the '{@link #getAbsoluteMinEmployeeNrJob() <em>Absolute Min Employee Nr Job</em>}' attribute.
@@ -118,7 +118,7 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT = 50;
+	protected static final int ABSOLUTE_MAX_EMPLOYEE_NR_JOBS_EDEFAULT = 15;
 
 	/**
 	 * The cached value of the '{@link #getAbsoluteMaxEmployeeNrJobs() <em>Absolute Max Employee Nr Jobs</em>}' attribute.

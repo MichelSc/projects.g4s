@@ -71,7 +71,7 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int MIN_NR_JOBS_EDEFAULT = 20;
+	protected static final int MIN_NR_JOBS_EDEFAULT = 5;
 
 	/**
 	 * The cached value of the '{@link #getMinNrJobs() <em>Min Nr Jobs</em>}' attribute.

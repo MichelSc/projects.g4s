@@ -110,7 +110,7 @@ public interface Scenario extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Absolute Min Employee Nr Job</b></em>' attribute.
-	 * The default value is <code>"10"</code>.
+	 * The default value is <code>"2"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Absolute Min Employee Nr Job</em>' attribute isn't clear,
@@ -120,7 +120,7 @@ public interface Scenario extends EObject {
 	 * @return the value of the '<em>Absolute Min Employee Nr Job</em>' attribute.
 	 * @see #setAbsoluteMinEmployeeNrJob(int)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_AbsoluteMinEmployeeNrJob()
-	 * @model default="10"
+	 * @model default="2"
 	 * @generated
 	 */
 	int getAbsoluteMinEmployeeNrJob();
@@ -137,17 +137,20 @@ public interface Scenario extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Absolute Max Employee Nr Jobs</b></em>' attribute.
-	 * The default value is <code>"50"</code>.
+	 * The default value is <code>"15"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Absolute Max Employee Nr Jobs</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * This is an upper bound on the minumun nr of jobs an employee has to do in a month to qualify.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Absolute Max Employee Nr Jobs</em>' attribute.
 	 * @see #setAbsoluteMaxEmployeeNrJobs(int)
 	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_AbsoluteMaxEmployeeNrJobs()
-	 * @model default="50"
+	 * @model default="15"
 	 * @generated
 	 */
 	int getAbsoluteMaxEmployeeNrJobs();
