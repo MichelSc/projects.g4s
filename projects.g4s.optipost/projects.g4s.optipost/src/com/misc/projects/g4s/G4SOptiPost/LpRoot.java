@@ -13,12 +13,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getJobs <em>Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpRoot#getLpEmployees <em>Lp Employees</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpRoot()
  * @model

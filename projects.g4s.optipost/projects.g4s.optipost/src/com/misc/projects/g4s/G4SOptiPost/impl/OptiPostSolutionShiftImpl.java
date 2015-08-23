@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl#getShift <em>Shift</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionShiftImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

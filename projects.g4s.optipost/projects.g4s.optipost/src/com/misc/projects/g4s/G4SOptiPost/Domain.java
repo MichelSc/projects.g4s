@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getSubDomains <em>Sub Domains</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getShifts <em>Shifts</em>}</li>
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getJobsImporter <em>Jobs Importer</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Domain#getSpreadsheets <em>Spreadsheets</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getDomain()
  * @model

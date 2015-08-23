@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getLpOptiPostFlows <em>Lp Opti Post Flows</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getSelectedShifts <em>Selected Shifts</em>}</li>
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario()
  * @model

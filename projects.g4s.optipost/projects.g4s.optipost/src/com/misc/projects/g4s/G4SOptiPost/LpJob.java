@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getShift <em>Shift</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getJobsAfter <em>Jobs After</em>}</li>
@@ -29,7 +30,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarIsFirstInPost <em>Var Is First In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpJob#getVarIsLastInPost <em>Var Is Last In Post</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpJob()
  * @model

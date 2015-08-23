@@ -41,12 +41,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getJobs <em>Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getLpOptiPostFlow <em>Lp Opti Post Flow</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl#getLpEmployees <em>Lp Employees</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

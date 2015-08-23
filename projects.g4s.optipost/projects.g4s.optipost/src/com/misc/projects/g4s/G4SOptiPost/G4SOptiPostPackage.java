@@ -669,6 +669,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The number of operations of the '<em>Lp Opti Post Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -740,6 +749,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_ROOT__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Members</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_ROOT__MEMBERS = SolverPackage.GENERATOR_TUPLE__MEMBERS;
 
 	/**
 	 * The feature id for the '<em><b>Jobs</b></em>' containment reference list.
@@ -823,6 +841,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_ROOT___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The number of operations of the '<em>Lp Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -894,6 +921,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_JOB__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Members</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB__MEMBERS = SolverPackage.GENERATOR_TUPLE__MEMBERS;
 
 	/**
 	 * The feature id for the '<em><b>Shift</b></em>' reference.
@@ -1058,6 +1094,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The number of operations of the '<em>Lp Job</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1129,6 +1174,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_PRECEDENCE__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Members</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_PRECEDENCE__MEMBERS = SolverPackage.GENERATOR_TUPLE__MEMBERS;
 
 	/**
 	 * The feature id for the '<em><b>Job Before</b></em>' reference.
@@ -1212,6 +1266,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_PRECEDENCE___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The number of operations of the '<em>Lp Precedence</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1284,6 +1347,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_EMPLOYEE__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+
+	/**
+	 * The feature id for the '<em><b>Members</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__MEMBERS = SolverPackage.GENERATOR_TUPLE__MEMBERS;
 
 	/**
 	 * The feature id for the '<em><b>Lp Root</b></em>' container reference.
@@ -1392,6 +1464,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_EMPLOYEE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
+
+	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
 
 	/**
 	 * The number of operations of the '<em>Lp Employee</em>' class.

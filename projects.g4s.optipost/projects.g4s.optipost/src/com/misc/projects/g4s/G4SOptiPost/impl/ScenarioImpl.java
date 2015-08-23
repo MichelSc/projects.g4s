@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getLpOptiPostFlows <em>Lp Opti Post Flows</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getSelectedShifts <em>Selected Shifts</em>}</li>
@@ -35,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

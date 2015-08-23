@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getLocation <em>Location</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getEmployee <em>Employee</em>}</li>
@@ -21,7 +22,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getShiftEnd <em>Shift End</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Shift#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getShift()
  * @model

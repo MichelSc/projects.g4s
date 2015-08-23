@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getLp <em>Lp</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getPosts <em>Posts</em>}</li>
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getShiftsInPost <em>Shifts In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution#getScenario <em>Scenario</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getOptiPostSolution()
  * @model

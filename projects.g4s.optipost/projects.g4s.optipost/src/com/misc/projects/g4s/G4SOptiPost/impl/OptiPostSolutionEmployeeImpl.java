@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#getShifts <em>Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#getEmployee <em>Employee</em>}</li>
@@ -30,7 +31,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionEmployeeImpl#isInPost <em>In Post</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

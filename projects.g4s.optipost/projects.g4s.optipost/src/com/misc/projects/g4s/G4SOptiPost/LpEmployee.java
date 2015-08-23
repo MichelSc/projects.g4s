@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getLpJobs <em>Lp Jobs</em>}</li>
@@ -22,7 +23,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getVarInPost <em>Var In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpEmployee#getConsEnoughJobsInPost <em>Cons Enough Jobs In Post</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpEmployee()
  * @model

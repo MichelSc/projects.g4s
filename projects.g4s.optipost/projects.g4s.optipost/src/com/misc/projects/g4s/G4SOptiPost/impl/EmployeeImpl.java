@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.EmployeeImpl#getEmployeeID <em>Employee ID</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

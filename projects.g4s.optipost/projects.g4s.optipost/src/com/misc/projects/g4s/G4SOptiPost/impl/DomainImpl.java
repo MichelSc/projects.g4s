@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getSubDomains <em>Sub Domains</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getShifts <em>Shifts</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getJobsImporter <em>Jobs Importer</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.DomainImpl#getSpreadsheets <em>Spreadsheets</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

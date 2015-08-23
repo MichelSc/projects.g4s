@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl#getJobBefore <em>Job Before</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl#getJobAfter <em>Job After</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpPrecedenceImpl#getVarInPost <em>Var In Post</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

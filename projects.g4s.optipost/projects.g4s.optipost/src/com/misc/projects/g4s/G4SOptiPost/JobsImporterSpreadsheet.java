@@ -11,6 +11,7 @@ import com.misc.common.moplaf.spreadsheet.Spreadsheet;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getSpreadsheet <em>Spreadsheet</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getDataSheetNr <em>Data Sheet Nr</em>}</li>
@@ -21,7 +22,6 @@ import com.misc.common.moplaf.spreadsheet.Spreadsheet;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobEndColNr <em>Job End Col Nr</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getLocationDescriptionColNr <em>Location Description Col Nr</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getJobsImporterSpreadsheet()
  * @model

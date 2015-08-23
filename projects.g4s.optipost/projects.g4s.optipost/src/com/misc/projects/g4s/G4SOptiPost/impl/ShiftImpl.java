@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getEmployee <em>Employee</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getShiftEnd <em>Shift End</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ShiftImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getLpJobs <em>Lp Jobs</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getVarInPost <em>Var In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpEmployeeImpl#getConsEnoughJobsInPost <em>Cons Enough Jobs In Post</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

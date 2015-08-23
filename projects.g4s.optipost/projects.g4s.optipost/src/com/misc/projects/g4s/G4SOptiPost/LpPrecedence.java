@@ -12,12 +12,12 @@ import com.misc.common.moplaf.solver.GeneratorTuple;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobBefore <em>Job Before</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getJobAfter <em>Job After</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpPrecedence#getVarInPost <em>Var In Post</em>}</li>
  * </ul>
- * </p>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpPrecedence()
  * @model

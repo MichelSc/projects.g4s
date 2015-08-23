@@ -116,8 +116,6 @@ import org.eclipse.emf.edit.ui.provider.UnwrappingSelectionProvider;
 import org.eclipse.emf.edit.ui.util.EditUIMarkerHelper;
 import org.eclipse.emf.edit.ui.util.EditUIUtil;
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
-
-import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.provider.G4SOptiPostItemProviderAdapterFactory;
 import com.misc.common.moplaf.emf.editor.AdapterFactoryContentProviderExtended;
 import com.misc.common.moplaf.solver.provider.SolverItemProviderAdapterFactory;
@@ -923,7 +921,7 @@ public class G4SOptiPostEditor
 	 * @generated
 	 */
 	public void createModel() {
-		URI resourceURI = EditUIUtil.getURI(getEditorInput());
+		URI resourceURI = EditUIUtil.getURI(getEditorInput(), editingDomain.getResourceSet().getURIConverter());
 		Exception exception = null;
 		Resource resource = null;
 		try {
@@ -951,10 +949,11 @@ public class G4SOptiPostEditor
 	 * @generated
 	 */
 	public Diagnostic analyzeResourceProblems(Resource resource, Exception exception) {
-		if (!resource.getErrors().isEmpty() || !resource.getWarnings().isEmpty()) {
+		boolean hasErrors = !resource.getErrors().isEmpty();
+		if (hasErrors || !resource.getWarnings().isEmpty()) {
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
-					(Diagnostic.ERROR,
+					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
 					 "projects.g4s.optipost.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),

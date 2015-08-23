@@ -29,10 +29,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterImpl#getDomain <em>Domain</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getSpreadsheet <em>Spreadsheet</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getDataSheetNr <em>Data Sheet Nr</em>}</li>
@@ -36,7 +37,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getJobEndColNr <em>Job End Col Nr</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getLocationDescriptionColNr <em>Location Description Col Nr</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

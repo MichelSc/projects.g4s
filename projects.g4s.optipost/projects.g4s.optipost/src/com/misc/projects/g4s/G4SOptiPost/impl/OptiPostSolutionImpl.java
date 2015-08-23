@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getLp <em>Lp</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getPosts <em>Posts</em>}</li>
@@ -38,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getShiftsInPost <em>Shifts In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl#getScenario <em>Scenario</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getShift <em>Shift</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getJobsAfter <em>Jobs After</em>}</li>
@@ -49,7 +50,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getVarIsFirstInPost <em>Var Is First In Post</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpJobImpl#getVarIsLastInPost <em>Var Is Last In Post</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

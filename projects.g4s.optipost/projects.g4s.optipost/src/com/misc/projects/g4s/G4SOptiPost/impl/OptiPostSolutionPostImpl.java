@@ -28,13 +28,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getShifts <em>Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getNrShifts <em>Nr Shifts</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionPostImpl#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
