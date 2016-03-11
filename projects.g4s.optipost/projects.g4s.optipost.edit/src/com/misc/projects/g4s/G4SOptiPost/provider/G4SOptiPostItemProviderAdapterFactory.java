@@ -2,6 +2,8 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
+import com.misc.common.moplaf.timeview.impl.IItemIntervalEventProvider;
+import com.misc.common.moplaf.timeview.impl.IItemIntervalEventsProvider;
 import com.misc.projects.g4s.G4SOptiPost.util.G4SOptiPostAdapterFactory;
 
 import java.util.ArrayList;
@@ -70,7 +72,6 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	 * This constructs an instance.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public G4SOptiPostItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
@@ -78,6 +79,8 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
 		supportedTypes.add(IItemPropertySource.class);
+		supportedTypes.add(IItemIntervalEventProvider.class); // non emf interface
+		supportedTypes.add(IItemIntervalEventsProvider.class); // non emf interface
 	}
 
 	/**
