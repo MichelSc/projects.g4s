@@ -1658,13 +1658,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR = JOBS_IMPORTER_FEATURE_COUNT + 7;
 
 	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOBS_IMPORTER_SPREADSHEET__DESCRIPTION = JOBS_IMPORTER_FEATURE_COUNT + 8;
+
+	/**
 	 * The number of structural features of the '<em>Jobs Importer Spreadsheet</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JOBS_IMPORTER_SPREADSHEET_FEATURE_COUNT = JOBS_IMPORTER_FEATURE_COUNT + 8;
+	int JOBS_IMPORTER_SPREADSHEET_FEATURE_COUNT = JOBS_IMPORTER_FEATURE_COUNT + 9;
 
 	/**
 	 * The operation id for the '<em>Format Worker ID</em>' operation.
@@ -2855,6 +2864,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getJobsImporterSpreadsheet_LocationDescriptionColNr();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getDescription()
+	 * @see #getJobsImporterSpreadsheet()
+	 * @generated
+	 */
+	EAttribute getJobsImporterSpreadsheet_Description();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolution <em>Opti Post Solution</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3783,6 +3803,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR = eINSTANCE.getJobsImporterSpreadsheet_LocationDescriptionColNr();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JOBS_IMPORTER_SPREADSHEET__DESCRIPTION = eINSTANCE.getJobsImporterSpreadsheet_Description();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.OptiPostSolutionImpl <em>Opti Post Solution</em>}' class.

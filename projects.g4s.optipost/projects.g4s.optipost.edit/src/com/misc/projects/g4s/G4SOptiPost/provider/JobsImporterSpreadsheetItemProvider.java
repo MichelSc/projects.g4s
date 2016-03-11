@@ -53,6 +53,7 @@ public class JobsImporterSpreadsheetItemProvider extends JobsImporterItemProvide
 			addJobStartColNrPropertyDescriptor(object);
 			addJobEndColNrPropertyDescriptor(object);
 			addLocationDescriptionColNrPropertyDescriptor(object);
+			addDescriptionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -234,6 +235,28 @@ public class JobsImporterSpreadsheetItemProvider extends JobsImporterItemProvide
 	}
 
 	/**
+	 * This adds a property descriptor for the Description feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDescriptionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_JobsImporterSpreadsheet_Description_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_JobsImporterSpreadsheet_Description_feature", "_UI_JobsImporterSpreadsheet_type"),
+				 G4SOptiPostPackage.Literals.JOBS_IMPORTER_SPREADSHEET__DESCRIPTION,
+				 false,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -241,8 +264,10 @@ public class JobsImporterSpreadsheetItemProvider extends JobsImporterItemProvide
 	 */
 	@Override
 	public String getText(Object object) {
-		JobsImporterSpreadsheet jobsImporterSpreadsheet = (JobsImporterSpreadsheet)object;
-		return getString("_UI_JobsImporterSpreadsheet_type") + " " + jobsImporterSpreadsheet.getDataSheetNr();
+		String label = ((JobsImporterSpreadsheet)object).getDescription();
+		return label == null || label.length() == 0 ?
+			getString("_UI_JobsImporterSpreadsheet_type") :
+			getString("_UI_JobsImporterSpreadsheet_type") + " " + label;
 	}
 	
 
@@ -258,6 +283,7 @@ public class JobsImporterSpreadsheetItemProvider extends JobsImporterItemProvide
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(JobsImporterSpreadsheet.class)) {
+			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__SPREADSHEET:
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__DATA_SHEET_NR:
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__WORKER_ID_COL_NR:
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__LOCATION_ID_COL_NR:
@@ -265,6 +291,7 @@ public class JobsImporterSpreadsheetItemProvider extends JobsImporterItemProvide
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__JOB_START_COL_NR:
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__JOB_END_COL_NR:
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR:
+			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__DESCRIPTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

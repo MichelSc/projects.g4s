@@ -3,10 +3,13 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+import com.misc.common.moplaf.timeview.impl.IItemIntervalEventProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
+
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -30,17 +33,14 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift} object.
  * <!-- begin-user-doc -->
+ * @implements IItemIntervalEventProvider
  * <!-- end-user-doc -->
  * @generated
  */
 public class OptiPostSolutionShiftItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemIntervalEventProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -210,4 +210,25 @@ public class OptiPostSolutionShiftItemProvider
 		return G4SOptiPostEditPlugin.INSTANCE;
 	}
 
+	@Override
+	public Date getIntervalEventStart(Object element) {
+		OptiPostSolutionShift shift = (OptiPostSolutionShift) element;
+		return shift.getShift().getShiftStart();
+	}
+
+	@Override
+	public Date getIntervalEventEnd(Object element) {
+		OptiPostSolutionShift shift = (OptiPostSolutionShift) element;
+		return shift.getShift().getShiftEnd();
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#isAdapterForType(java.lang.Object)
+	 */
+	@Override
+	public boolean isAdapterForType(Object type) {
+		if ( super.isAdapterForType(type) ){ return true; }
+		if ( type == IItemIntervalEventProvider.class) { return true; }
+		return false;
+	}
 }

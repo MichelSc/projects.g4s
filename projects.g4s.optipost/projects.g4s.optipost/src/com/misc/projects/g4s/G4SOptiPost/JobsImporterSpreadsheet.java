@@ -21,6 +21,7 @@ import com.misc.common.moplaf.spreadsheet.Spreadsheet;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobStartColNr <em>Job Start Col Nr</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getJobEndColNr <em>Job End Col Nr</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getLocationDescriptionColNr <em>Location Description Col Nr</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.JobsImporterSpreadsheet#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getJobsImporterSpreadsheet()
@@ -241,5 +242,20 @@ public interface JobsImporterSpreadsheet extends JobsImporter {
 	 * @generated
 	 */
 	void setLocationDescriptionColNr(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Description</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getJobsImporterSpreadsheet_Description()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getDescription();
 
 } // JobsImporterSpreadsheet

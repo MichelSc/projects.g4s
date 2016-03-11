@@ -8,11 +8,11 @@
   <foreignModel>G4SOptiPost.ecore</foreignModel>
   <genPackages prefix="G4SOptiPost" basePackage="com.misc.projects.g4s" disposableProviderFactory="true"
       ecorePackage="G4SOptiPost.ecore#/">
-    <genClasses ecoreClass="G4SOptiPost.ecore#//Domain">
+    <genClasses provider="Stateful" ecoreClass="G4SOptiPost.ecore#//Domain">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/SubDomains"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Shifts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Employees"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Locations"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Shifts"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Employees"/>
+      <genFeatures property="None" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Locations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/Scenarios"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Domain/Name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Domain/JobsImporter"/>
@@ -38,16 +38,15 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/SelectedShifts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/Name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/Solutions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/AbsoluteMinEmployeeNrJob"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/AbsoluteMaxEmployeeNrJobs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/MaxOverlapPredecessor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/MaxOverlapSuccessor"/>
     </genClasses>
     <genClasses image="false" ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow" labelFeature="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver/Generator/Code">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
-      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MaxOverlapPredecessor"/>
-      <genFeatures createChild="false" propertyCategory="40 G4S" propertyDescription=""
-          ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/MaxOverlapSuccessor"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/Scenario"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/CplexSolver"/>
-      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/AbsoluteMinEmployeeNrJob"/>
-      <genFeatures createChild="false" propertyCategory="40 G4S" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//LpOptiPostFlow/AbsoluteMaxEmployeeNrJobs"/>
     </genClasses>
     <genClasses image="false" ecoreClass="G4SOptiPost.ecore#//LpRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/Jobs"/>
@@ -108,8 +107,9 @@
       </genOperations>
       <genOperations ecoreOperation="G4SOptiPost.ecore#//JobsImporter/importJobs"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="G4SOptiPost.ecore#//JobsImporterSpreadsheet">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//JobsImporterSpreadsheet/Spreadsheet"/>
+    <genClasses image="false" ecoreClass="G4SOptiPost.ecore#//JobsImporterSpreadsheet"
+        labelFeature="#//G4SOptiPost/JobsImporterSpreadsheet/Description">
+      <genFeatures createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//JobsImporterSpreadsheet/Spreadsheet"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/DataSheetNr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/WorkerIdColNr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/LocationIdColNr"/>
@@ -117,6 +117,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/JobStartColNr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/JobEndColNr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/LocationDescriptionColNr"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//JobsImporterSpreadsheet/Description"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//OptiPostSolution" labelFeature="#//G4SOptiPost/OptiPostSolution/Description">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//OptiPostSolution/Lp"/>

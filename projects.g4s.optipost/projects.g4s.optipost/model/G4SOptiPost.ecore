@@ -162,6 +162,8 @@
         defaultValueLiteral="4"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="LocationDescriptionColNr"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="9"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OptiPostSolution">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Lp" eType="#//LpOptiPostFlow"/>

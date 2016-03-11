@@ -3,6 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+import com.misc.common.moplaf.timeview.impl.IItemIntervalEventsProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost;
@@ -31,17 +32,14 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost} object.
  * <!-- begin-user-doc -->
+ * @implements IItemIntervalEventsProvider
  * <!-- end-user-doc -->
  * @generated
  */
 public class OptiPostSolutionPostItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemIntervalEventsProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -243,4 +241,19 @@ public class OptiPostSolutionPostItemProvider
 		return G4SOptiPostEditPlugin.INSTANCE;
 	}
 
+	@Override
+	public Collection<?> getIntervalEvents(Object element) {
+		OptiPostSolutionPost post = (OptiPostSolutionPost)element;
+		return post.getShifts(); 
+	}
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#isAdapterForType(java.lang.Object)
+	 */
+	@Override
+	public boolean isAdapterForType(Object type) {
+		if ( super.isAdapterForType(type) ){ return true; }
+		if ( type == IItemIntervalEventsProvider.class) { return true; }
+		return false;
+	}
 }

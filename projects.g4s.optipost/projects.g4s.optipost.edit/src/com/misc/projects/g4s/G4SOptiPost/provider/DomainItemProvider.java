@@ -7,6 +7,8 @@ import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetpoiFactory;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -99,9 +101,6 @@ public class DomainItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__SUB_DOMAINS);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__SHIFTS);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__EMPLOYEES);
-			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__LOCATIONS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__SCENARIOS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__JOBS_IMPORTER);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.DOMAIN__SPREADSHEETS);
@@ -159,13 +158,13 @@ public class DomainItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Domain.class)) {
+			case G4SOptiPostPackage.DOMAIN__SHIFTS:
+			case G4SOptiPostPackage.DOMAIN__EMPLOYEES:
+			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
 			case G4SOptiPostPackage.DOMAIN__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case G4SOptiPostPackage.DOMAIN__SUB_DOMAINS:
-			case G4SOptiPostPackage.DOMAIN__SHIFTS:
-			case G4SOptiPostPackage.DOMAIN__EMPLOYEES:
-			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
 			case G4SOptiPostPackage.DOMAIN__SCENARIOS:
 			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
 			case G4SOptiPostPackage.DOMAIN__SPREADSHEETS:
@@ -233,4 +232,39 @@ public class DomainItemProvider
 		return G4SOptiPostEditPlugin.INSTANCE;
 	}
 
+	
+	/* (non-Javadoc)
+	 * Manage the children nodes 
+	 * @see com.misc.common.moplaf.emf.edit.ui.provider.TransientItemProviderAdapter
+	 */
+	protected List<Object> children = null;
+
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getChildren(java.lang.Object)
+	 */
+	@Override
+	public Collection<?> getChildren(Object object) {
+		Collection<Object> superchildren = (Collection<Object>) super.getChildren(object);
+		if ( children == null){
+			Domain domain= (Domain) object;
+			children = new ArrayList<Object>();
+			children.add(new DomainLocationsItemProvider(adapterFactory, domain));
+			children.add(new DomainEmployeesItemProvider(adapterFactory, domain));
+			children.add(new DomainShiftsItemProvider   (adapterFactory, domain));
+		}
+		superchildren.addAll(children);
+		return superchildren;
+	}
+	
+	public Object getLocations(){
+		return this.children.get(0);
+	}
+
+	public Object getEmployees(){
+		return this.children.get(1);
+	}
+
+	public Object getShifts(){
+		return this.children.get(2);
+	}
 }

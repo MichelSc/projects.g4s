@@ -268,4 +268,14 @@ public class ShiftItemProvider
 		return G4SOptiPostEditPlugin.INSTANCE;
 	}
 
+	/* (non-Javadoc)
+	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#getParent(java.lang.Object)
+	 */
+	@Override
+	public Object getParent(Object object) {
+		Object domain = super.getParent(object);
+		DomainItemProvider domainIP = (DomainItemProvider)adapterFactory.adapt(domain, IEditingDomainItemProvider.class);
+		return domainIP==null ? null : domainIP.getLocations();
+	}
+
 }

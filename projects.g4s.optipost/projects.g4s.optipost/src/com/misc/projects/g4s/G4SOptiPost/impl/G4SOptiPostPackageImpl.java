@@ -922,6 +922,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getJobsImporterSpreadsheet_Description() {
+		return (EAttribute)jobsImporterSpreadsheetEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOptiPostSolution() {
 		return optiPostSolutionEClass;
 	}
@@ -1250,6 +1259,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEAttribute(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__JOB_START_COL_NR);
 		createEAttribute(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__JOB_END_COL_NR);
 		createEAttribute(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR);
+		createEAttribute(jobsImporterSpreadsheetEClass, JOBS_IMPORTER_SPREADSHEET__DESCRIPTION);
 
 		optiPostSolutionEClass = createEClass(OPTI_POST_SOLUTION);
 		createEReference(optiPostSolutionEClass, OPTI_POST_SOLUTION__LP);
@@ -1425,6 +1435,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getJobsImporterSpreadsheet_JobStartColNr(), ecorePackage.getEInt(), "JobStartColNr", "3", 0, 1, JobsImporterSpreadsheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobsImporterSpreadsheet_JobEndColNr(), ecorePackage.getEInt(), "JobEndColNr", "4", 0, 1, JobsImporterSpreadsheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJobsImporterSpreadsheet_LocationDescriptionColNr(), ecorePackage.getEInt(), "LocationDescriptionColNr", "9", 0, 1, JobsImporterSpreadsheet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJobsImporterSpreadsheet_Description(), ecorePackage.getEString(), "Description", null, 0, 1, JobsImporterSpreadsheet.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(optiPostSolutionEClass, OptiPostSolution.class, "OptiPostSolution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOptiPostSolution_Lp(), this.getLpOptiPostFlow(), null, "Lp", null, 0, 1, OptiPostSolution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

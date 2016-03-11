@@ -14,6 +14,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
+import org.eclipse.emf.edit.provider.Disposable;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
@@ -50,6 +51,14 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
 	/**
+	 * This keeps track of all the item providers created, so that they can be {@link #dispose disposed}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Disposable disposable = new Disposable();
+
+	/**
 	 * This keeps track of all the supported types checked by {@link #isFactoryForType isFactoryForType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,14 +81,6 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.misc.projects.g4s.G4SOptiPost.Domain} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DomainItemProvider domainItemProvider;
-
-	/**
 	 * This creates an adapter for a {@link com.misc.projects.g4s.G4SOptiPost.Domain}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -87,11 +88,7 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	 */
 	@Override
 	public Adapter createDomainAdapter() {
-		if (domainItemProvider == null) {
-			domainItemProvider = new DomainItemProvider(this);
-		}
-
-		return domainItemProvider;
+		return new DomainItemProvider(this);
 	}
 
 	/**
@@ -475,6 +472,20 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	}
 
 	/**
+	 * Associates an adapter with a notifier via the base implementation, then records it to ensure it will be disposed.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected void associate(Adapter adapter, Notifier target) {
+		super.associate(adapter, target);
+		if (adapter != null) {
+			disposable.add(adapter);
+		}
+	}
+
+	/**
 	 * This adds a listener.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -515,21 +526,7 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 	 * @generated
 	 */
 	public void dispose() {
-		if (domainItemProvider != null) domainItemProvider.dispose();
-		if (shiftItemProvider != null) shiftItemProvider.dispose();
-		if (employeeItemProvider != null) employeeItemProvider.dispose();
-		if (locationItemProvider != null) locationItemProvider.dispose();
-		if (scenarioItemProvider != null) scenarioItemProvider.dispose();
-		if (lpOptiPostFlowItemProvider != null) lpOptiPostFlowItemProvider.dispose();
-		if (lpRootItemProvider != null) lpRootItemProvider.dispose();
-		if (lpJobItemProvider != null) lpJobItemProvider.dispose();
-		if (lpPrecedenceItemProvider != null) lpPrecedenceItemProvider.dispose();
-		if (lpEmployeeItemProvider != null) lpEmployeeItemProvider.dispose();
-		if (jobsImporterSpreadsheetItemProvider != null) jobsImporterSpreadsheetItemProvider.dispose();
-		if (optiPostSolutionItemProvider != null) optiPostSolutionItemProvider.dispose();
-		if (optiPostSolutionPostItemProvider != null) optiPostSolutionPostItemProvider.dispose();
-		if (optiPostSolutionEmployeeItemProvider != null) optiPostSolutionEmployeeItemProvider.dispose();
-		if (optiPostSolutionShiftItemProvider != null) optiPostSolutionShiftItemProvider.dispose();
+		disposable.dispose();
 	}
 
 }

@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getJobStartColNr <em>Job Start Col Nr</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getJobEndColNr <em>Job End Col Nr</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getLocationDescriptionColNr <em>Location Description Col Nr</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.JobsImporterSpreadsheetImpl#getDescription <em>Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -177,6 +178,16 @@ public class JobsImporterSpreadsheetImpl extends JobsImporterImpl implements Job
 	 * @ordered
 	 */
 	protected int locationDescriptionColNr = LOCATION_DESCRIPTION_COL_NR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDescription()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DESCRIPTION_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -385,6 +396,15 @@ public class JobsImporterSpreadsheetImpl extends JobsImporterImpl implements Job
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	public String getDescription() {
+		String description = this.getSpreadsheet()==null ? "No spread sheet" : this.getSpreadsheet().getLabel();
+		return description;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -407,6 +427,8 @@ public class JobsImporterSpreadsheetImpl extends JobsImporterImpl implements Job
 				return getJobEndColNr();
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR:
 				return getLocationDescriptionColNr();
+			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__DESCRIPTION:
+				return getDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -507,6 +529,8 @@ public class JobsImporterSpreadsheetImpl extends JobsImporterImpl implements Job
 				return jobEndColNr != JOB_END_COL_NR_EDEFAULT;
 			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__LOCATION_DESCRIPTION_COL_NR:
 				return locationDescriptionColNr != LOCATION_DESCRIPTION_COL_NR_EDEFAULT;
+			case G4SOptiPostPackage.JOBS_IMPORTER_SPREADSHEET__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? getDescription() != null : !DESCRIPTION_EDEFAULT.equals(getDescription());
 		}
 		return super.eIsSet(featureID);
 	}
