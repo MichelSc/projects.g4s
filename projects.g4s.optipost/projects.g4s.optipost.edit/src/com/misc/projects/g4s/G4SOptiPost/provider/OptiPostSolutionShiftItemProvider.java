@@ -3,6 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+import com.misc.common.moplaf.emf.Util;
 import com.misc.common.moplaf.timeview.impl.IItemIntervalEventProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
@@ -29,18 +31,22 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.RGB;
+import org.eclipse.swt.widgets.Display;
 
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift} object.
  * <!-- begin-user-doc -->
  * @implements IItemIntervalEventProvider
+ * @implements IItemColorProvider
  * <!-- end-user-doc -->
  * @generated
  */
 public class OptiPostSolutionShiftItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemIntervalEventProvider {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemIntervalEventProvider, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -230,5 +236,20 @@ public class OptiPostSolutionShiftItemProvider
 		if ( super.isAdapterForType(type) ){ return true; }
 		if ( type == IItemIntervalEventProvider.class) { return true; }
 		return false;
+	}
+	
+	@Override
+	public Object getForeground(Object element) {
+		int color = 0; // black
+		RGB rgb = Util.integerToRgb(color);
+		return new Color(Display.getCurrent(), rgb);
+	}
+	
+	@Override
+	public Object getBackground(Object element) {
+		OptiPostSolutionShift shift = (OptiPostSolutionShift) element;
+		int color = shift.getShift().getEmployee().getColor();
+		RGB rgb = Util.integerToRgb(color);
+		return new Color(Display.getCurrent(), rgb);
 	}
 }

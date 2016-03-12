@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.emf.Util;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
@@ -13,6 +14,7 @@ import com.misc.projects.g4s.G4SOptiPost.Shift;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Random;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.swt.graphics.RGB;
 
 /**
  * <!-- begin-user-doc -->
@@ -122,6 +125,12 @@ public abstract class JobsImporterImpl extends MinimalEObjectImpl.Container impl
 		if ( employee==null){
 			employee = G4SOptiPostFactory.eINSTANCE.createEmployee();
 			employee.setEmployeeID(id);
+			float hue = randomNumberGenerator.nextFloat()*360.0f;
+			float saturation = 1.0f;
+			float brightness = 1.0f;
+			RGB color = new RGB(hue, saturation, brightness);
+			int colorAsInt = Util.rgbToInt(color);
+			employee.setColor(colorAsInt);
 			this.getDomain().getEmployees().add(employee);
 			this.employeeIndex.put(id, employee);
 		}
@@ -129,6 +138,8 @@ public abstract class JobsImporterImpl extends MinimalEObjectImpl.Container impl
 	}
 
 	private HashMap<String, Location> locationIndex = null;
+	
+	private Random randomNumberGenerator = new Random();
 
 	/**
 	 * <!-- begin-user-doc -->

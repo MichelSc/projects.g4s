@@ -31,6 +31,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Employee">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="EmployeeID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Location">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="LocationID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

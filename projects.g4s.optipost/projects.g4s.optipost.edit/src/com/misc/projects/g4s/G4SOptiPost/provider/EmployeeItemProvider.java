@@ -61,6 +61,7 @@ public class EmployeeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEmployeeIDPropertyDescriptor(object);
+			addColorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,6 +84,28 @@ public class EmployeeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Color feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addColorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Employee_Color_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Employee_Color_feature", "_UI_Employee_type"),
+				 G4SOptiPostPackage.Literals.EMPLOYEE__COLOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -125,6 +148,7 @@ public class EmployeeItemProvider
 
 		switch (notification.getFeatureID(Employee.class)) {
 			case G4SOptiPostPackage.EMPLOYEE__EMPLOYEE_ID:
+			case G4SOptiPostPackage.EMPLOYEE__COLOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

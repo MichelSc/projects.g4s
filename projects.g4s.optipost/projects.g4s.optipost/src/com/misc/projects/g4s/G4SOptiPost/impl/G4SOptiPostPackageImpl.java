@@ -382,6 +382,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEmployee_Color() {
+		return (EAttribute)employeeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLocation() {
 		return locationEClass;
 	}
@@ -1190,6 +1199,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		employeeEClass = createEClass(EMPLOYEE);
 		createEAttribute(employeeEClass, EMPLOYEE__EMPLOYEE_ID);
+		createEAttribute(employeeEClass, EMPLOYEE__COLOR);
 
 		locationEClass = createEClass(LOCATION);
 		createEAttribute(locationEClass, LOCATION__LOCATION_ID);
@@ -1352,6 +1362,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		initEClass(employeeEClass, Employee.class, "Employee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEmployee_EmployeeID(), ecorePackage.getEString(), "EmployeeID", null, 0, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEmployee_Color(), ecorePackage.getEInt(), "Color", null, 0, 1, Employee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLocation_LocationID(), ecorePackage.getEString(), "LocationID", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -261,13 +261,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int EMPLOYEE__EMPLOYEE_ID = 0;
 
 	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPLOYEE__COLOR = 1;
+
+	/**
 	 * The number of structural features of the '<em>Employee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EMPLOYEE_FEATURE_COUNT = 1;
+	int EMPLOYEE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Employee</em>' class.
@@ -2218,6 +2227,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getEmployee_EmployeeID();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.misc.projects.g4s.G4SOptiPost.Employee#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Employee#getColor()
+	 * @see #getEmployee()
+	 * @generated
+	 */
+	EAttribute getEmployee_Color();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.Location <em>Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3305,6 +3325,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute EMPLOYEE__EMPLOYEE_ID = eINSTANCE.getEmployee_EmployeeID();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMPLOYEE__COLOR = eINSTANCE.getEmployee_Color();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LocationImpl <em>Location</em>}' class.

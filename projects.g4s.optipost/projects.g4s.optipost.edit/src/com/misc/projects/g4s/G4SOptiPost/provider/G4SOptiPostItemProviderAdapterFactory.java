@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.Disposable;
 import org.eclipse.emf.edit.provider.IChangeNotifier;
 import org.eclipse.emf.edit.provider.IDisposable;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemColorProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
@@ -81,6 +82,7 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		supportedTypes.add(IItemPropertySource.class);
 		supportedTypes.add(IItemIntervalEventProvider.class); // non emf interface
 		supportedTypes.add(IItemIntervalEventsProvider.class); // non emf interface
+		supportedTypes.add(IItemColorProvider.class); // non emf interface
 	}
 
 	/**
