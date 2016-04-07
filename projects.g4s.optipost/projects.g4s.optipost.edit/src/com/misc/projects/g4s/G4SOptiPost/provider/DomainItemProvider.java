@@ -151,19 +151,20 @@ public class DomainItemProvider
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Domain.class)) {
-			case G4SOptiPostPackage.DOMAIN__SHIFTS:
-			case G4SOptiPostPackage.DOMAIN__EMPLOYEES:
-			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
 			case G4SOptiPostPackage.DOMAIN__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
+				// from here on
+			case G4SOptiPostPackage.DOMAIN__SHIFTS:
+			case G4SOptiPostPackage.DOMAIN__EMPLOYEES:
+			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
+				// until here, added because they are part of the contents, although not declared children
 			case G4SOptiPostPackage.DOMAIN__SUB_DOMAINS:
 			case G4SOptiPostPackage.DOMAIN__SCENARIOS:
 			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
