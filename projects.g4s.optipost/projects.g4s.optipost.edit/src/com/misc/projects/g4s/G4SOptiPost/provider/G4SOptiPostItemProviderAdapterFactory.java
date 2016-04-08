@@ -80,9 +80,9 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
 		supportedTypes.add(IItemPropertySource.class);
-		supportedTypes.add(IItemIntervalEventProvider.class); // non emf interface
+		supportedTypes.add(IItemIntervalEventProvider.class);  // non emf interface
 		supportedTypes.add(IItemIntervalEventsProvider.class); // non emf interface
-		supportedTypes.add(IItemColorProvider.class); // non emf interface
+		supportedTypes.add(IItemColorProvider.class);          // non emf interface
 	}
 
 	/**
