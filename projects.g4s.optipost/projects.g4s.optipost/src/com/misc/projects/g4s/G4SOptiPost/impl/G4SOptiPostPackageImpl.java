@@ -535,6 +535,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getLpOptiPostFlow_GoalNofEmployees() {
+		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLpRoot() {
 		return lpRootEClass;
 	}
@@ -1219,6 +1228,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__LP_ROOT);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__SCENARIO);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__CPLEX_SOLVER);
+		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES);
 
 		lpRootEClass = createEClass(LP_ROOT);
 		createEReference(lpRootEClass, LP_ROOT__JOBS);
@@ -1382,6 +1392,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), this.getLpRoot_LpOptiPostFlow(), "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_Scenario(), this.getScenario(), this.getScenario_LpOptiPostFlows(), "Scenario", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_CplexSolver(), theSolvercplexPackage.getSolverCplex(), null, "CplexSolver", null, 0, -1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpOptiPostFlow_GoalNofEmployees(), theSolverPackage.getGeneratorLpGoal(), null, "GoalNofEmployees", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpRootEClass, LpRoot.class, "LpRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpRoot_Jobs(), this.getLpJob(), this.getLpJob_LpRoot(), "Jobs", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

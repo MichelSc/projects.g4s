@@ -3,6 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost;
 
 import com.misc.common.moplaf.solver.Generator;
+import com.misc.common.moplaf.solver.GeneratorLpGoal;
 import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
 import org.eclipse.emf.common.util.EList;
 
@@ -18,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGoalNofEmployees <em>Goal Nof Employees</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow()
@@ -96,5 +98,31 @@ public interface LpOptiPostFlow extends Generator {
 	 * @generated
 	 */
 	EList<SolverCplex> getCplexSolver();
+
+	/**
+	 * Returns the value of the '<em><b>Goal Nof Employees</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Goal Nof Employees</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Goal Nof Employees</em>' containment reference.
+	 * @see #setGoalNofEmployees(GeneratorLpGoal)
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_GoalNofEmployees()
+	 * @model containment="true"
+	 * @generated
+	 */
+	GeneratorLpGoal getGoalNofEmployees();
+
+	/**
+	 * Sets the value of the '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGoalNofEmployees <em>Goal Nof Employees</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Goal Nof Employees</em>' containment reference.
+	 * @see #getGoalNofEmployees()
+	 * @generated
+	 */
+	void setGoalNofEmployees(GeneratorLpGoal value);
 
 } // LpOptiPostFlow

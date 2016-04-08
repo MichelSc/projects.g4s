@@ -513,7 +513,6 @@ public class LpEmployeeImpl extends GeneratorTupleImpl implements LpEmployee {
 		newVar.setUpperBound(1.0f);
 		newVar.setType(EnumLpVarType.ENUM_LITERAL_LP_VAR_INTEGER);
 		newVar.setName("inpost");
-		newVar.setObjectiveCoeff(1.0f);
 		this.setVarInPost(newVar);
 	}
 

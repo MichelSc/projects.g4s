@@ -3,6 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.provider.GeneratorItemProvider;
 import com.misc.common.moplaf.solver.solvercplex.SolvercplexFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
@@ -63,6 +64,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__LP_ROOT);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__CPLEX_SOLVER);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES);
 		}
 		return childrenFeatures;
 	}
@@ -109,6 +111,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		switch (notification.getFeatureID(LpOptiPostFlow.class)) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -135,6 +138,11 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__CPLEX_SOLVER,
 				 SolvercplexFactory.eINSTANCE.createSolverCplex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES,
+				 SolverFactory.eINSTANCE.createGeneratorLpGoal()));
 	}
 
 	/**

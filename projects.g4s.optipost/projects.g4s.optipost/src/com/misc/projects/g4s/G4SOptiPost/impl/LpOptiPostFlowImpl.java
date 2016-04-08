@@ -2,13 +2,16 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.solver.GeneratorLpGoal;
 import com.misc.common.moplaf.solver.GeneratorLpVar;
 import com.misc.common.moplaf.solver.Solution;
+import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.impl.GeneratorImpl;
 import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
+import com.misc.projects.g4s.G4SOptiPost.LpEmployee;
 import com.misc.projects.g4s.G4SOptiPost.LpJob;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
 import com.misc.projects.g4s.G4SOptiPost.LpPrecedence;
@@ -18,7 +21,6 @@ import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionEmployee;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
 import com.misc.projects.g4s.G4SOptiPost.Scenario;
-
 import java.util.Collection;
 import java.util.HashMap;
 
@@ -43,6 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getCplexSolver <em>Cplex Solver</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getGoalNofEmployees <em>Goal Nof Employees</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +70,16 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * @ordered
 	 */
 	protected EList<SolverCplex> cplexSolver;
+
+	/**
+	 * The cached value of the '{@link #getGoalNofEmployees() <em>Goal Nof Employees</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGoalNofEmployees()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeneratorLpGoal goalNofEmployees;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,6 +201,49 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GeneratorLpGoal getGoalNofEmployees() {
+		return goalNofEmployees;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetGoalNofEmployees(GeneratorLpGoal newGoalNofEmployees, NotificationChain msgs) {
+		GeneratorLpGoal oldGoalNofEmployees = goalNofEmployees;
+		goalNofEmployees = newGoalNofEmployees;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES, oldGoalNofEmployees, newGoalNofEmployees);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGoalNofEmployees(GeneratorLpGoal newGoalNofEmployees) {
+		if (newGoalNofEmployees != goalNofEmployees) {
+			NotificationChain msgs = null;
+			if (goalNofEmployees != null)
+				msgs = ((InternalEObject)goalNofEmployees).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES, null, msgs);
+			if (newGoalNofEmployees != null)
+				msgs = ((InternalEObject)newGoalNofEmployees).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES, null, msgs);
+			msgs = basicSetGoalNofEmployees(newGoalNofEmployees, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES, newGoalNofEmployees, newGoalNofEmployees));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -217,6 +273,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return basicSetScenario(null, msgs);
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				return ((InternalEList<?>)getCplexSolver()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
+				return basicSetGoalNofEmployees(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -249,6 +307,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return getScenario();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				return getCplexSolver();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
+				return getGoalNofEmployees();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,6 +332,9 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				getCplexSolver().clear();
 				getCplexSolver().addAll((Collection<? extends SolverCplex>)newValue);
 				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
+				setGoalNofEmployees((GeneratorLpGoal)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -293,6 +356,9 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				getCplexSolver().clear();
 				return;
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
+				setGoalNofEmployees((GeneratorLpGoal)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -311,6 +377,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return getScenario() != null;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				return cplexSolver != null && !cplexSolver.isEmpty();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
+				return goalNofEmployees != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -321,6 +389,22 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 		tupleroot.setCode("root");
 		this.setLpRoot(tupleroot); // owning
 	}
+
+	@Override
+	public void generateGoals() {
+		this.generateGoalNumberOfEmployeesInPost();
+	}
+
+	private void generateGoalNumberOfEmployeesInPost() {
+		GeneratorLpGoal goal = SolverFactory.eINSTANCE.createGeneratorLpGoal();
+		goal.setName("NofEmployees");
+		this.setGoalNofEmployees(goal); // owning
+		LpRoot root = this.getLpRoot();
+		for ( LpEmployee employee: root.getLpEmployees()){
+			goal.constructTerm(employee.getVarInPost(), 1.0f);
+		}
+	}
+
 
 	/* (non-Javadoc)
 	 * @see com.misc.common.moplaf.solver.impl.GeneratorImpl#acceptSolution(com.misc.common.moplaf.solver.SolutionProvider)
