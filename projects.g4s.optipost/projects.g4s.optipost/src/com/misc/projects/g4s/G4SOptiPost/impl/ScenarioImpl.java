@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolution;
@@ -15,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -35,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getCplexSolver <em>Cplex Solver</em>}</li>
  * </ul>
  *
  * @generated
@@ -169,6 +172,16 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected float maxOverlapSuccessor = MAX_OVERLAP_SUCCESSOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCplexSolver() <em>Cplex Solver</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCplexSolver()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SolverCplex> cplexSolver;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -335,6 +348,18 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<SolverCplex> getCplexSolver() {
+		if (cplexSolver == null) {
+			cplexSolver = new EObjectContainmentEList<SolverCplex>(SolverCplex.class, this, G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER);
+		}
+		return cplexSolver;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -359,6 +384,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return ((InternalEList<?>)getLpOptiPostFlows()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
 				return ((InternalEList<?>)getSolutions()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
+				return ((InternalEList<?>)getCplexSolver()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -387,6 +414,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return getMaxOverlapPredecessor();
 			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
 				return getMaxOverlapSuccessor();
+			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
+				return getCplexSolver();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -427,6 +456,10 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
 				setMaxOverlapSuccessor((Float)newValue);
 				return;
+			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
+				getCplexSolver().clear();
+				getCplexSolver().addAll((Collection<? extends SolverCplex>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -463,6 +496,9 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
 				setMaxOverlapSuccessor(MAX_OVERLAP_SUCCESSOR_EDEFAULT);
 				return;
+			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
+				getCplexSolver().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -491,6 +527,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return maxOverlapPredecessor != MAX_OVERLAP_PREDECESSOR_EDEFAULT;
 			case G4SOptiPostPackage.SCENARIO__MAX_OVERLAP_SUCCESSOR:
 				return maxOverlapSuccessor != MAX_OVERLAP_SUCCESSOR_EDEFAULT;
+			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
+				return cplexSolver != null && !cplexSolver.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

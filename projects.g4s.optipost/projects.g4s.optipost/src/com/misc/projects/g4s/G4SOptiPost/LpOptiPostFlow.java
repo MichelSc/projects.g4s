@@ -4,8 +4,6 @@ package com.misc.projects.g4s.G4SOptiPost;
 
 import com.misc.common.moplaf.solver.Generator;
 import com.misc.common.moplaf.solver.GeneratorLpGoal;
-import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGoalNofEmployees <em>Goal Nof Employees</em>}</li>
  * </ul>
  *
@@ -82,22 +79,6 @@ public interface LpOptiPostFlow extends Generator {
 	 * @generated
 	 */
 	void setScenario(Scenario value);
-
-	/**
-	 * Returns the value of the '<em><b>Cplex Solver</b></em>' containment reference list.
-	 * The list contents are of type {@link com.misc.common.moplaf.solver.solvercplex.SolverCplex}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cplex Solver</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cplex Solver</em>' containment reference list.
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_CplexSolver()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<SolverCplex> getCplexSolver();
 
 	/**
 	 * Returns the value of the '<em><b>Goal Nof Employees</b></em>' containment reference.

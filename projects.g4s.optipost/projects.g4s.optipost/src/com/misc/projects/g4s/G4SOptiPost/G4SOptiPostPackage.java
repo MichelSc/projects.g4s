@@ -416,13 +416,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int SCENARIO__MAX_OVERLAP_SUCCESSOR = 7;
 
 	/**
+	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__CPLEX_SOLVER = 8;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 8;
+	int SCENARIO_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -588,22 +597,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__SCENARIO = SolverPackage.GENERATOR_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__CPLEX_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Goal Nof Employees</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
+	int LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Lp Opti Post Flow</em>' class.
@@ -612,7 +612,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
+	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Generate</em>' operation.
@@ -2386,6 +2386,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getScenario_MaxOverlapSuccessor();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getCplexSolver <em>Cplex Solver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Cplex Solver</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getCplexSolver()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_CplexSolver();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow <em>Lp Opti Post Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2416,17 +2427,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpOptiPostFlow_Scenario();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Cplex Solver</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver()
-	 * @see #getLpOptiPostFlow()
-	 * @generated
-	 */
-	EReference getLpOptiPostFlow_CplexSolver();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGoalNofEmployees <em>Goal Nof Employees</em>}'.
@@ -3464,6 +3464,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		EAttribute SCENARIO__MAX_OVERLAP_SUCCESSOR = eINSTANCE.getScenario_MaxOverlapSuccessor();
 
 		/**
+		 * The meta object literal for the '<em><b>Cplex Solver</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__CPLEX_SOLVER = eINSTANCE.getScenario_CplexSolver();
+
+		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl <em>Lp Opti Post Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3488,14 +3496,6 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_OPTI_POST_FLOW__SCENARIO = eINSTANCE.getLpOptiPostFlow_Scenario();
-
-		/**
-		 * The meta object literal for the '<em><b>Cplex Solver</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LP_OPTI_POST_FLOW__CPLEX_SOLVER = eINSTANCE.getLpOptiPostFlow_CplexSolver();
 
 		/**
 		 * The meta object literal for the '<em><b>Goal Nof Employees</b></em>' containment reference feature.
