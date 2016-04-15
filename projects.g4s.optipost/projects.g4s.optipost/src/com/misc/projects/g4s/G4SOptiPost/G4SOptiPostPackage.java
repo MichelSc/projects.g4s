@@ -561,13 +561,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__SELECTED = SolverPackage.GENERATOR__SELECTED;
 
 	/**
-	 * The feature id for the '<em><b>Goals</b></em>' reference list.
+	 * The feature id for the '<em><b>Goals Root</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__GOALS = SolverPackage.GENERATOR__GOALS;
+	int LP_OPTI_POST_FLOW__GOALS_ROOT = SolverPackage.GENERATOR__GOALS_ROOT;
 
 	/**
 	 * The feature id for the '<em><b>Lp Root</b></em>' containment reference.
