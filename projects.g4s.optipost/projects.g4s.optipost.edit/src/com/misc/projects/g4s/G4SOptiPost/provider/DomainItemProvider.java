@@ -157,20 +157,14 @@ public class DomainItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Domain.class)) {
+				// label refresh
 			case G4SOptiPostPackage.DOMAIN__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-<<<<<<< HEAD
+				// content refresh
 			case G4SOptiPostPackage.DOMAIN__SHIFTS:
 			case G4SOptiPostPackage.DOMAIN__EMPLOYEES:
 			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
-=======
-				// from here on
-			case G4SOptiPostPackage.DOMAIN__SHIFTS:
-			case G4SOptiPostPackage.DOMAIN__EMPLOYEES:
-			case G4SOptiPostPackage.DOMAIN__LOCATIONS:
-				// until here, added because they are part of the contents, although not declared children
->>>>>>> branch 'master' of https://github.com/MichelSc/projects.g4s.git
 			case G4SOptiPostPackage.DOMAIN__SUB_DOMAINS:
 			case G4SOptiPostPackage.DOMAIN__SCENARIOS:
 			case G4SOptiPostPackage.DOMAIN__JOBS_IMPORTER:
