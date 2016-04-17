@@ -221,6 +221,7 @@ public class ScenarioItemProvider
 			childrenFeatures.add(G4SOptiPostPackage.Literals.SCENARIO__LP_OPTI_POST_FLOWS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.SCENARIO__SOLUTIONS);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.SCENARIO__CPLEX_SOLVER);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.SCENARIO__GLPK_SOLVER);
 		}
 		return childrenFeatures;
 	}
@@ -285,6 +286,7 @@ public class ScenarioItemProvider
 			case G4SOptiPostPackage.SCENARIO__LP_OPTI_POST_FLOWS:
 			case G4SOptiPostPackage.SCENARIO__SOLUTIONS:
 			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
+			case G4SOptiPostPackage.SCENARIO__GLPK_SOLVER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -316,6 +318,11 @@ public class ScenarioItemProvider
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.SCENARIO__CPLEX_SOLVER,
 				 SolvercplexFactory.eINSTANCE.createSolverCplex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.SCENARIO__GLPK_SOLVER,
+				 com.misc.common.moplaf.solver.solverglpk.SolverglpkFactory.eINSTANCE.createSolverGLPK()));
 	}
 
 	/**

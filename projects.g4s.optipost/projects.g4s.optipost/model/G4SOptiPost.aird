@@ -6,6 +6,7 @@
   <semanticResources>platform:/resource/com.misc.common.moplaf.solver.emf/model/solver.ecore</semanticResources>
   <semanticResources>platform:/resource/com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore</semanticResources>
   <semanticResources>platform:/resource/com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.ecore</semanticResources>
+  <semanticResources>platform:/resource/com.misc.common.moplaf.solver.glpk.emf/model/solverglpk.ecore</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_RtRc8ANIEeatl_yYaMGQ7Q">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_XmEcUANIEeatl_yYaMGQ7Q" name="G4SOptiPost class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_XmEcUQNIEeatl_yYaMGQ7Q" source="DANNOTATION_CUSTOMIZATION_KEY">

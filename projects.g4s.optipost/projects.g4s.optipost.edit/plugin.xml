@@ -19,4 +19,5 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
+
 </plugin>

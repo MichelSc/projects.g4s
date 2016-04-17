@@ -5,6 +5,7 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 import com.misc.common.moplaf.solver.provider.SolverEditPlugin;
 
 import com.misc.common.moplaf.solver.solvercplex.provider.SolvercplexEditPlugin;
+import com.misc.common.moplaf.solver.solverglpk.provider.SolverglpkEditPlugin;
 import com.misc.common.moplaf.spreadsheet.provider.SpreadsheetEditPlugin;
 import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.provider.SpreadsheetpoiEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
@@ -45,6 +46,7 @@ public final class G4SOptiPostEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     SolverEditPlugin.INSTANCE,
 		     SolvercplexEditPlugin.INSTANCE,
+		     SolverglpkEditPlugin.INSTANCE,
 		     SpreadsheetEditPlugin.INSTANCE,
 		     SpreadsheetpoiEditPlugin.INSTANCE,
 		   });

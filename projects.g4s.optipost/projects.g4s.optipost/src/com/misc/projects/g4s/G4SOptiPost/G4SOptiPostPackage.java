@@ -425,13 +425,22 @@ public interface G4SOptiPostPackage extends EPackage {
 	int SCENARIO__CPLEX_SOLVER = 8;
 
 	/**
+	 * The feature id for the '<em><b>GLPK Solver</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__GLPK_SOLVER = 9;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 9;
+	int SCENARIO_FEATURE_COUNT = 10;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -2397,6 +2406,17 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getScenario_CplexSolver();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getGLPKSolver <em>GLPK Solver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>GLPK Solver</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getGLPKSolver()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EReference getScenario_GLPKSolver();
+
+	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow <em>Lp Opti Post Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3470,6 +3490,14 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCENARIO__CPLEX_SOLVER = eINSTANCE.getScenario_CplexSolver();
+
+		/**
+		 * The meta object literal for the '<em><b>GLPK Solver</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCENARIO__GLPK_SOLVER = eINSTANCE.getScenario_GLPKSolver();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl <em>Lp Opti Post Flow</em>}' class.

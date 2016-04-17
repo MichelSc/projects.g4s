@@ -122,6 +122,7 @@ import com.misc.projects.g4s.G4SOptiPost.provider.G4SOptiPostItemProviderAdapter
 import com.misc.common.moplaf.emf.editor.AdapterFactoryContentProviderExtended;
 import com.misc.common.moplaf.solver.provider.SolverItemProviderAdapterFactory;
 import com.misc.common.moplaf.solver.solvercplex.provider.SolvercplexItemProviderAdapterFactory;
+import com.misc.common.moplaf.solver.solverglpk.provider.SolverglpkItemProviderAdapterFactory;
 import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
 import com.misc.common.moplaf.spreadsheet.provider.SpreadsheetItemProviderAdapterFactory;
 import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.provider.SpreadsheetpoiItemProviderAdapterFactory;
@@ -674,6 +675,7 @@ public class G4SOptiPostEditor
 		adapterFactory.addAdapterFactory(new G4SOptiPostItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SolverItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SolvercplexItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SolverglpkItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SpreadsheetItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SpreadsheetpoiItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());

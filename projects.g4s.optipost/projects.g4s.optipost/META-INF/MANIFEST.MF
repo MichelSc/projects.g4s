@@ -16,6 +16,7 @@ Require-Bundle: org.eclipse.core.runtime,
  com.misc.common.moplaf.solver.cplex.emf;visibility:=reexport,
  com.misc.common.moplaf.spreadsheet.emf;visibility:=reexport,
  com.misc.common.moplaf.spreadsheet.poi.emf;visibility:=reexport,
- com.misc.common.moplaf.emf;bundle-version="1.0.0"
+ com.misc.common.moplaf.emf;bundle-version="1.0.0",
+ com.misc.common.moplaf.solver.glpk.emf;bundle-version="0.1.0";visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.swt.graphics

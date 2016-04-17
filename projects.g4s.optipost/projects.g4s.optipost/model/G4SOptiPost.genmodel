@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.g4s.optipost/src" modelPluginID="projects.g4s.optipost"
     modelName="G4SOptiPost" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.genmodel#//solvercplex ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.genmodel#//spreadsheet ../../com.misc.common.moplaf.spreadsheet.poi.emf/model/spreadsheetpoi.genmodel#//spreadsheetpoi"
+    usedGenPackages="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.genmodel#//solvercplex ../../com.misc.common.moplaf.solver.glpk.emf/model/solverglpk.genmodel#//solverglpk ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.genmodel#//spreadsheet ../../com.misc.common.moplaf.spreadsheet.poi.emf/model/spreadsheetpoi.genmodel#//spreadsheetpoi"
     operationReflection="true" importOrganizing="true">
   <foreignModel>G4SOptiPost.ecore</foreignModel>
   <genPackages prefix="G4SOptiPost" basePackage="com.misc.projects.g4s" disposableProviderFactory="true"
@@ -28,6 +28,7 @@
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//Employee">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Employee/EmployeeID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Employee/Color"/>
     </genClasses>
     <genClasses ecoreClass="G4SOptiPost.ecore#//Location">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Location/LocationID"/>
@@ -42,11 +43,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/AbsoluteMaxEmployeeNrJobs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/MaxOverlapPredecessor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute G4SOptiPost.ecore#//Scenario/MaxOverlapSuccessor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/CplexSolver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//Scenario/GLPKSolver"/>
     </genClasses>
     <genClasses image="false" ecoreClass="G4SOptiPost.ecore#//LpOptiPostFlow" labelFeature="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver/Generator/Code">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/LpRoot"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/Scenario"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/CplexSolver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpOptiPostFlow/GoalNofEmployees"/>
     </genClasses>
     <genClasses image="false" ecoreClass="G4SOptiPost.ecore#//LpRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference G4SOptiPost.ecore#//LpRoot/Jobs"/>

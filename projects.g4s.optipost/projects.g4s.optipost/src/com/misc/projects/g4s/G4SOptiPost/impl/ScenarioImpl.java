@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getCplexSolver <em>Cplex Solver</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.ScenarioImpl#getGLPKSolver <em>GLPK Solver</em>}</li>
  * </ul>
  *
  * @generated
@@ -182,6 +183,16 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected EList<SolverCplex> cplexSolver;
+
+	/**
+	 * The cached value of the '{@link #getGLPKSolver() <em>GLPK Solver</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGLPKSolver()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<com.misc.common.moplaf.solver.solverglpk.SolverGLPK> glpkSolver;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -360,6 +371,18 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<com.misc.common.moplaf.solver.solverglpk.SolverGLPK> getGLPKSolver() {
+		if (glpkSolver == null) {
+			glpkSolver = new EObjectContainmentEList<com.misc.common.moplaf.solver.solverglpk.SolverGLPK>(com.misc.common.moplaf.solver.solverglpk.SolverGLPK.class, this, G4SOptiPostPackage.SCENARIO__GLPK_SOLVER);
+		}
+		return glpkSolver;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -386,6 +409,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return ((InternalEList<?>)getSolutions()).basicRemove(otherEnd, msgs);
 			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
 				return ((InternalEList<?>)getCplexSolver()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.SCENARIO__GLPK_SOLVER:
+				return ((InternalEList<?>)getGLPKSolver()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -416,6 +441,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return getMaxOverlapSuccessor();
 			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
 				return getCplexSolver();
+			case G4SOptiPostPackage.SCENARIO__GLPK_SOLVER:
+				return getGLPKSolver();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -460,6 +487,10 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				getCplexSolver().clear();
 				getCplexSolver().addAll((Collection<? extends SolverCplex>)newValue);
 				return;
+			case G4SOptiPostPackage.SCENARIO__GLPK_SOLVER:
+				getGLPKSolver().clear();
+				getGLPKSolver().addAll((Collection<? extends com.misc.common.moplaf.solver.solverglpk.SolverGLPK>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -499,6 +530,9 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
 				getCplexSolver().clear();
 				return;
+			case G4SOptiPostPackage.SCENARIO__GLPK_SOLVER:
+				getGLPKSolver().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -529,6 +563,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return maxOverlapSuccessor != MAX_OVERLAP_SUCCESSOR_EDEFAULT;
 			case G4SOptiPostPackage.SCENARIO__CPLEX_SOLVER:
 				return cplexSolver != null && !cplexSolver.isEmpty();
+			case G4SOptiPostPackage.SCENARIO__GLPK_SOLVER:
+				return glpkSolver != null && !glpkSolver.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

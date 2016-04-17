@@ -4,6 +4,7 @@ package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.common.moplaf.solver.SolverPackage;
 import com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage;
+import com.misc.common.moplaf.solver.solverglpk.SolverglpkPackage;
 import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
 import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetpoiPackage;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
@@ -198,6 +199,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		// Initialize simple dependencies
 		SolvercplexPackage.eINSTANCE.eClass();
+		SolverglpkPackage.eINSTANCE.eClass();
 		SpreadsheetpoiPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -501,6 +503,15 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 */
 	public EReference getScenario_CplexSolver() {
 		return (EReference)scenarioEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getScenario_GLPKSolver() {
+		return (EReference)scenarioEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1224,6 +1235,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEAttribute(scenarioEClass, SCENARIO__MAX_OVERLAP_PREDECESSOR);
 		createEAttribute(scenarioEClass, SCENARIO__MAX_OVERLAP_SUCCESSOR);
 		createEReference(scenarioEClass, SCENARIO__CPLEX_SOLVER);
+		createEReference(scenarioEClass, SCENARIO__GLPK_SOLVER);
 
 		lpOptiPostFlowEClass = createEClass(LP_OPTI_POST_FLOW);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__LP_ROOT);
@@ -1336,6 +1348,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		// Obtain other dependent packages
 		SpreadsheetpoiPackage theSpreadsheetpoiPackage = (SpreadsheetpoiPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetpoiPackage.eNS_URI);
 		SolvercplexPackage theSolvercplexPackage = (SolvercplexPackage)EPackage.Registry.INSTANCE.getEPackage(SolvercplexPackage.eNS_URI);
+		SolverglpkPackage theSolverglpkPackage = (SolverglpkPackage)EPackage.Registry.INSTANCE.getEPackage(SolverglpkPackage.eNS_URI);
 		SolverPackage theSolverPackage = (SolverPackage)EPackage.Registry.INSTANCE.getEPackage(SolverPackage.eNS_URI);
 		SpreadsheetPackage theSpreadsheetPackage = (SpreadsheetPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetPackage.eNS_URI);
 
@@ -1388,6 +1401,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEAttribute(getScenario_MaxOverlapPredecessor(), ecorePackage.getEFloat(), "MaxOverlapPredecessor", "0.25", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScenario_MaxOverlapSuccessor(), ecorePackage.getEFloat(), "MaxOverlapSuccessor", "0.25", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_CplexSolver(), theSolvercplexPackage.getSolverCplex(), null, "CplexSolver", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScenario_GLPKSolver(), theSolverglpkPackage.getSolverGLPK(), null, "GLPKSolver", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpOptiPostFlowEClass, LpOptiPostFlow.class, "LpOptiPostFlow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), this.getLpRoot_LpOptiPostFlow(), "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
