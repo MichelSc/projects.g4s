@@ -345,7 +345,7 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	@Override
 	public void generateRootTuples() {
 		LpRoot tupleroot = G4SOptiPostFactory.eINSTANCE.createLpRoot();
-		tupleroot.setCode("root");
+		tupleroot.setName("root");
 		this.setLpRoot(tupleroot); // owning
 	}
 

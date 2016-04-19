@@ -306,7 +306,7 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
         for (Shift shift: scenario.getSelectedShifts()){
         	LpJob lpjob = G4SOptiPostFactory.eINSTANCE.createLpJob();
         	lpjob.setShift(shift);
-        	lpjob.setCode(shift.getDescription());
+        	lpjob.setName(shift.getDescription());
         	Employee employee = shift.getEmployee();
         	if ( employee != null ) {
             	LpEmployee lpemployee = employees.get(employee);
@@ -321,7 +321,7 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
                 	}
                 	lpemployee.setMinNrJobs(minJobs);
                 	lpemployee.setEmployee(employee);
-                	lpemployee.setCode(employee.getEmployeeID());
+                	lpemployee.setName(employee.getEmployeeID());
                 	employees.put(employee, lpemployee);
                 	this.getLpEmployees().add(lpemployee);
             	}
@@ -435,7 +435,7 @@ public class LpRootImpl extends GeneratorTupleImpl implements LpRoot {
         	LpPrecedence lpprecedence = G4SOptiPostFactory.eINSTANCE.createLpPrecedence();
         	lpprecedence.setJobBefore(jobStartBefore);
         	lpprecedence.setJobAfter(jobStartAfter);
-        	lpprecedence.setCode(jobStartBefore.getCode()+"_"+jobStartAfter.getCode());
+        	lpprecedence.setName(jobStartBefore.getCode()+"_"+jobStartAfter.getCode());
 		}
 	}
 
