@@ -416,31 +416,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int SCENARIO__MAX_OVERLAP_SUCCESSOR = 7;
 
 	/**
-	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__CPLEX_SOLVER = 8;
-
-	/**
-	 * The feature id for the '<em><b>GLPK Solver</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__GLPK_SOLVER = 9;
-
-	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 10;
+	int SCENARIO_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -579,13 +561,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__SELECTED = SolverPackage.GENERATOR__SELECTED;
 
 	/**
-	 * The feature id for the '<em><b>Goals Root</b></em>' reference list.
+	 * The feature id for the '<em><b>Goals</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__GOALS_ROOT = SolverPackage.GENERATOR__GOALS_ROOT;
+	int LP_OPTI_POST_FLOW__GOALS = SolverPackage.GENERATOR__GOALS;
 
 	/**
 	 * The feature id for the '<em><b>Lp Root</b></em>' containment reference.
@@ -615,13 +597,31 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>GLPK Solver</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__GLPK_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__CPLEX_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Lp Opti Post Flow</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
+	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Generate</em>' operation.
@@ -733,6 +733,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT = 6;
 
 	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_ROOT__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+
+	/**
 	 * The feature id for the '<em><b>Generator As Root</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -778,13 +787,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT__CONS = SolverPackage.GENERATOR_TUPLE__CONS;
 
 	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_ROOT__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+	int LP_ROOT__NAME = SolverPackage.GENERATOR_TUPLE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Members</b></em>' reference list.
@@ -832,6 +841,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Generator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_ROOT___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -857,15 +875,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_ROOT___GENERATE_TUPLES = SolverPackage.GENERATOR_TUPLE___GENERATE_TUPLES;
-
-	/**
-	 * The operation id for the '<em>Get Generator</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_ROOT___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
 	 * The operation id for the '<em>Visit Tuples</em>' operation.
@@ -903,6 +912,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	int LP_JOB = 7;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Generator As Root</b></em>' reference.
@@ -950,13 +968,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB__CONS = SolverPackage.GENERATOR_TUPLE__CONS;
 
 	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_JOB__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+	int LP_JOB__NAME = SolverPackage.GENERATOR_TUPLE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Members</b></em>' reference list.
@@ -1085,6 +1103,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 12;
 
 	/**
+	 * The operation id for the '<em>Get Generator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1110,15 +1137,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_JOB___GENERATE_TUPLES = SolverPackage.GENERATOR_TUPLE___GENERATE_TUPLES;
-
-	/**
-	 * The operation id for the '<em>Get Generator</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_JOB___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
 	 * The operation id for the '<em>Visit Tuples</em>' operation.
@@ -1156,6 +1174,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	int LP_PRECEDENCE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_PRECEDENCE__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Generator As Root</b></em>' reference.
@@ -1203,13 +1230,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE__CONS = SolverPackage.GENERATOR_TUPLE__CONS;
 
 	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_PRECEDENCE__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+	int LP_PRECEDENCE__NAME = SolverPackage.GENERATOR_TUPLE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Members</b></em>' reference list.
@@ -1257,6 +1284,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Generator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_PRECEDENCE___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1282,15 +1318,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_PRECEDENCE___GENERATE_TUPLES = SolverPackage.GENERATOR_TUPLE___GENERATE_TUPLES;
-
-	/**
-	 * The operation id for the '<em>Get Generator</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_PRECEDENCE___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
 	 * The operation id for the '<em>Visit Tuples</em>' operation.
@@ -1329,6 +1356,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	int LP_EMPLOYEE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
 
 	/**
 	 * The feature id for the '<em><b>Generator As Root</b></em>' reference.
@@ -1376,13 +1412,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_EMPLOYEE__CONS = SolverPackage.GENERATOR_TUPLE__CONS;
 
 	/**
-	 * The feature id for the '<em><b>Code</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_EMPLOYEE__CODE = SolverPackage.GENERATOR_TUPLE__CODE;
+	int LP_EMPLOYEE__NAME = SolverPackage.GENERATOR_TUPLE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Members</b></em>' reference list.
@@ -1457,6 +1493,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_EMPLOYEE_FEATURE_COUNT = SolverPackage.GENERATOR_TUPLE_FEATURE_COUNT + 6;
 
 	/**
+	 * The operation id for the '<em>Get Generator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1482,15 +1527,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_EMPLOYEE___GENERATE_TUPLES = SolverPackage.GENERATOR_TUPLE___GENERATE_TUPLES;
-
-	/**
-	 * The operation id for the '<em>Get Generator</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_EMPLOYEE___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
 	 * The operation id for the '<em>Visit Tuples</em>' operation.
@@ -2395,28 +2431,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	EAttribute getScenario_MaxOverlapSuccessor();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getCplexSolver <em>Cplex Solver</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Cplex Solver</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getCplexSolver()
-	 * @see #getScenario()
-	 * @generated
-	 */
-	EReference getScenario_CplexSolver();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getGLPKSolver <em>GLPK Solver</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>GLPK Solver</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.Scenario#getGLPKSolver()
-	 * @see #getScenario()
-	 * @generated
-	 */
-	EReference getScenario_GLPKSolver();
-
-	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow <em>Lp Opti Post Flow</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2458,6 +2472,28 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getLpOptiPostFlow_GoalNofEmployees();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGLPKSolver <em>GLPK Solver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>GLPK Solver</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGLPKSolver()
+	 * @see #getLpOptiPostFlow()
+	 * @generated
+	 */
+	EReference getLpOptiPostFlow_GLPKSolver();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Cplex Solver</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver()
+	 * @see #getLpOptiPostFlow()
+	 * @generated
+	 */
+	EReference getLpOptiPostFlow_CplexSolver();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot <em>Lp Root</em>}'.
@@ -3484,22 +3520,6 @@ public interface G4SOptiPostPackage extends EPackage {
 		EAttribute SCENARIO__MAX_OVERLAP_SUCCESSOR = eINSTANCE.getScenario_MaxOverlapSuccessor();
 
 		/**
-		 * The meta object literal for the '<em><b>Cplex Solver</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCENARIO__CPLEX_SOLVER = eINSTANCE.getScenario_CplexSolver();
-
-		/**
-		 * The meta object literal for the '<em><b>GLPK Solver</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCENARIO__GLPK_SOLVER = eINSTANCE.getScenario_GLPKSolver();
-
-		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl <em>Lp Opti Post Flow</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3532,6 +3552,22 @@ public interface G4SOptiPostPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES = eINSTANCE.getLpOptiPostFlow_GoalNofEmployees();
+
+		/**
+		 * The meta object literal for the '<em><b>GLPK Solver</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_OPTI_POST_FLOW__GLPK_SOLVER = eINSTANCE.getLpOptiPostFlow_GLPKSolver();
+
+		/**
+		 * The meta object literal for the '<em><b>Cplex Solver</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LP_OPTI_POST_FLOW__CPLEX_SOLVER = eINSTANCE.getLpOptiPostFlow_CplexSolver();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl <em>Lp Root</em>}' class.

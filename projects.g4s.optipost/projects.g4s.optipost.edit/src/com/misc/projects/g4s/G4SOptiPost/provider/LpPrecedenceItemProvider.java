@@ -140,7 +140,7 @@ public class LpPrecedenceItemProvider extends GeneratorTupleItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LpPrecedence)object).getCode();
+		String label = ((LpPrecedence)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_LpPrecedence_type") :
 			getString("_UI_LpPrecedence_type") + " " + label;

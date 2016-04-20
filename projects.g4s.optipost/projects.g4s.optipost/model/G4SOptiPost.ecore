@@ -57,12 +57,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat" defaultValueLiteral="0.25"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="MaxOverlapSuccessor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"
         defaultValueLiteral="0.25"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CplexSolver" upperBound="-1"
-        eType="ecore:EClass ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore#//SolverCplex"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="GLPKSolver" upperBound="-1"
-        eType="ecore:EClass ../../com.misc.common.moplaf.solver.glpk.emf/model/solverglpk.ecore#//SolverGLPK"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpOptiPostFlow" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//Generator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpRoot" eType="#//LpRoot"
@@ -70,6 +64,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Scenario" eType="#//Scenario"
         eOpposite="#//Scenario/LpOptiPostFlows"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GoalNofEmployees" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpGoal"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="GLPKSolver" upperBound="-1"
+        eType="ecore:EClass ../../com.misc.common.moplaf.solver.glpk.emf/model/solverglpk.ecore#//SolverGLPK"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="CplexSolver" upperBound="-1"
+        eType="ecore:EClass ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore#//SolverCplex"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpRoot" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">

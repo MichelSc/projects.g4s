@@ -2,7 +2,6 @@
  */
 package com.misc.projects.g4s.G4SOptiPost;
 
-import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -24,8 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getAbsoluteMaxEmployeeNrJobs <em>Absolute Max Employee Nr Jobs</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapPredecessor <em>Max Overlap Predecessor</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getMaxOverlapSuccessor <em>Max Overlap Successor</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getCplexSolver <em>Cplex Solver</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.Scenario#getGLPKSolver <em>GLPK Solver</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario()
@@ -221,37 +218,5 @@ public interface Scenario extends EObject {
 	 * @generated
 	 */
 	void setMaxOverlapSuccessor(float value);
-
-	/**
-	 * Returns the value of the '<em><b>Cplex Solver</b></em>' containment reference list.
-	 * The list contents are of type {@link com.misc.common.moplaf.solver.solvercplex.SolverCplex}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cplex Solver</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cplex Solver</em>' containment reference list.
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_CplexSolver()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<SolverCplex> getCplexSolver();
-
-	/**
-	 * Returns the value of the '<em><b>GLPK Solver</b></em>' containment reference list.
-	 * The list contents are of type {@link com.misc.common.moplaf.solver.solverglpk.SolverGLPK}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>GLPK Solver</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>GLPK Solver</em>' containment reference list.
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getScenario_GLPKSolver()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<com.misc.common.moplaf.solver.solverglpk.SolverGLPK> getGLPKSolver();
 
 } // Scenario

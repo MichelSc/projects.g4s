@@ -160,7 +160,7 @@ public class LpEmployeeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LpEmployee)object).getCode();
+		String label = ((LpEmployee)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_LpEmployee_type") :
 			getString("_UI_LpEmployee_type") + " " + label;

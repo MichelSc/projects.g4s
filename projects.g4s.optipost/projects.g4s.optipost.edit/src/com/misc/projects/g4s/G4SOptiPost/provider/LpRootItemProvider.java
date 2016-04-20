@@ -93,7 +93,7 @@ public class LpRootItemProvider extends GeneratorTupleItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((LpRoot)object).getCode();
+		String label = ((LpRoot)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_LpRoot_type") :
 			getString("_UI_LpRoot_type") + " " + label;

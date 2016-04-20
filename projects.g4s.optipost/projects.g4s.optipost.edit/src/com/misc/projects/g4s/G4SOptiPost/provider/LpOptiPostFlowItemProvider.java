@@ -5,6 +5,8 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 
 import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.provider.GeneratorItemProvider;
+import com.misc.common.moplaf.solver.solvercplex.SolvercplexFactory;
+import com.misc.common.moplaf.solver.solverglpk.SolverglpkFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow;
@@ -63,6 +65,8 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__LP_ROOT);
 			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__GLPK_SOLVER);
+			childrenFeatures.add(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__CPLEX_SOLVER);
 		}
 		return childrenFeatures;
 	}
@@ -109,6 +113,8 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 		switch (notification.getFeatureID(LpOptiPostFlow.class)) {
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__LP_ROOT:
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GLPK_SOLVER:
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -135,6 +141,16 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 			(createChildParameter
 				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES,
 				 SolverFactory.eINSTANCE.createGeneratorLpGoal()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__GLPK_SOLVER,
+				 SolverglpkFactory.eINSTANCE.createSolverGLPK()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__CPLEX_SOLVER,
+				 SolvercplexFactory.eINSTANCE.createSolverCplex()));
 	}
 
 	/**
