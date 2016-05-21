@@ -5,10 +5,9 @@ package com.misc.projects.g4s.G4SOptiPost.impl;
 import com.misc.common.moplaf.solver.GeneratorLpGoal;
 import com.misc.common.moplaf.solver.GeneratorLpVar;
 import com.misc.common.moplaf.solver.Solution;
+import com.misc.common.moplaf.solver.Solver;
 import com.misc.common.moplaf.solver.SolverFactory;
 import com.misc.common.moplaf.solver.impl.GeneratorImpl;
-import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
-import com.misc.common.moplaf.solver.solverglpk.SolverGLPK;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
@@ -46,8 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getGoalNofEmployees <em>Goal Nof Employees</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getGLPKSolver <em>GLPK Solver</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getCplexSolver <em>Cplex Solver</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.impl.LpOptiPostFlowImpl#getSolvers <em>Solvers</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,24 +72,14 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	protected GeneratorLpGoal goalNofEmployees;
 
 	/**
-	 * The cached value of the '{@link #getGLPKSolver() <em>GLPK Solver</em>}' containment reference list.
+	 * The cached value of the '{@link #getSolvers() <em>Solvers</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGLPKSolver()
+	 * @see #getSolvers()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SolverGLPK> glpkSolver;
-
-	/**
-	 * The cached value of the '{@link #getCplexSolver() <em>Cplex Solver</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCplexSolver()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<SolverCplex> cplexSolver;
+	protected EList<Solver> solvers;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -244,23 +232,11 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SolverGLPK> getGLPKSolver() {
-		if (glpkSolver == null) {
-			glpkSolver = new EObjectContainmentEList<SolverGLPK>(SolverGLPK.class, this, G4SOptiPostPackage.LP_OPTI_POST_FLOW__GLPK_SOLVER);
+	public EList<Solver> getSolvers() {
+		if (solvers == null) {
+			solvers = new EObjectContainmentEList<Solver>(Solver.class, this, G4SOptiPostPackage.LP_OPTI_POST_FLOW__SOLVERS);
 		}
-		return glpkSolver;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<SolverCplex> getCplexSolver() {
-		if (cplexSolver == null) {
-			cplexSolver = new EObjectContainmentEList<SolverCplex>(SolverCplex.class, this, G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER);
-		}
-		return cplexSolver;
+		return solvers;
 	}
 
 	/**
@@ -297,10 +273,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return basicSetScenario(null, msgs);
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
 				return basicSetGoalNofEmployees(null, msgs);
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GLPK_SOLVER:
-				return ((InternalEList<?>)getGLPKSolver()).basicRemove(otherEnd, msgs);
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				return ((InternalEList<?>)getCplexSolver()).basicRemove(otherEnd, msgs);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SOLVERS:
+				return ((InternalEList<?>)getSolvers()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -333,10 +307,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return getScenario();
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
 				return getGoalNofEmployees();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GLPK_SOLVER:
-				return getGLPKSolver();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				return getCplexSolver();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SOLVERS:
+				return getSolvers();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -359,13 +331,9 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
 				setGoalNofEmployees((GeneratorLpGoal)newValue);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GLPK_SOLVER:
-				getGLPKSolver().clear();
-				getGLPKSolver().addAll((Collection<? extends SolverGLPK>)newValue);
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				getCplexSolver().clear();
-				getCplexSolver().addAll((Collection<? extends SolverCplex>)newValue);
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SOLVERS:
+				getSolvers().clear();
+				getSolvers().addAll((Collection<? extends Solver>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -388,11 +356,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
 				setGoalNofEmployees((GeneratorLpGoal)null);
 				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GLPK_SOLVER:
-				getGLPKSolver().clear();
-				return;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				getCplexSolver().clear();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SOLVERS:
+				getSolvers().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -412,10 +377,8 @@ public class LpOptiPostFlowImpl extends GeneratorImpl implements LpOptiPostFlow 
 				return getScenario() != null;
 			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES:
 				return goalNofEmployees != null;
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__GLPK_SOLVER:
-				return glpkSolver != null && !glpkSolver.isEmpty();
-			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__CPLEX_SOLVER:
-				return cplexSolver != null && !cplexSolver.isEmpty();
+			case G4SOptiPostPackage.LP_OPTI_POST_FLOW__SOLVERS:
+				return solvers != null && !solvers.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

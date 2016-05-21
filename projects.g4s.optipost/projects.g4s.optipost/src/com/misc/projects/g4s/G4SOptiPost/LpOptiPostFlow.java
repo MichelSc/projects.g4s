@@ -4,8 +4,7 @@ package com.misc.projects.g4s.G4SOptiPost;
 
 import com.misc.common.moplaf.solver.Generator;
 import com.misc.common.moplaf.solver.GeneratorLpGoal;
-import com.misc.common.moplaf.solver.solvercplex.SolverCplex;
-import com.misc.common.moplaf.solver.solverglpk.SolverGLPK;
+import com.misc.common.moplaf.solver.Solver;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -20,8 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getLpRoot <em>Lp Root</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getScenario <em>Scenario</em>}</li>
  *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGoalNofEmployees <em>Goal Nof Employees</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGLPKSolver <em>GLPK Solver</em>}</li>
- *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}</li>
+ *   <li>{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getSolvers <em>Solvers</em>}</li>
  * </ul>
  *
  * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow()
@@ -112,35 +110,19 @@ public interface LpOptiPostFlow extends Generator {
 	void setGoalNofEmployees(GeneratorLpGoal value);
 
 	/**
-	 * Returns the value of the '<em><b>GLPK Solver</b></em>' containment reference list.
-	 * The list contents are of type {@link com.misc.common.moplaf.solver.solverglpk.SolverGLPK}.
+	 * Returns the value of the '<em><b>Solvers</b></em>' containment reference list.
+	 * The list contents are of type {@link com.misc.common.moplaf.solver.Solver}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>GLPK Solver</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Solvers</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>GLPK Solver</em>' containment reference list.
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_GLPKSolver()
+	 * @return the value of the '<em>Solvers</em>' containment reference list.
+	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_Solvers()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SolverGLPK> getGLPKSolver();
-
-	/**
-	 * Returns the value of the '<em><b>Cplex Solver</b></em>' containment reference list.
-	 * The list contents are of type {@link com.misc.common.moplaf.solver.solvercplex.SolverCplex}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cplex Solver</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cplex Solver</em>' containment reference list.
-	 * @see com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage#getLpOptiPostFlow_CplexSolver()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<SolverCplex> getCplexSolver();
+	EList<Solver> getSolvers();
 
 } // LpOptiPostFlow

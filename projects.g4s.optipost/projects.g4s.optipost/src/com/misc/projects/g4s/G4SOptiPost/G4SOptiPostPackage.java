@@ -597,22 +597,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES = SolverPackage.GENERATOR_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>GLPK Solver</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Solvers</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__GLPK_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Cplex Solver</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__CPLEX_SOLVER = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
+	int LP_OPTI_POST_FLOW__SOLVERS = SolverPackage.GENERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Lp Opti Post Flow</em>' class.
@@ -621,7 +612,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 5;
+	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Generate</em>' operation.
@@ -850,6 +841,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_ROOT___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_ROOT___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -884,15 +884,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_ROOT___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
-
-	/**
-	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_ROOT___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
 
 	/**
 	 * The number of operations of the '<em>Lp Root</em>' class.
@@ -1112,6 +1103,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_JOB___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_JOB___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1146,15 +1146,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_JOB___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
-
-	/**
-	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_JOB___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
 
 	/**
 	 * The number of operations of the '<em>Lp Job</em>' class.
@@ -1293,6 +1284,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_PRECEDENCE___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_PRECEDENCE___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1327,15 +1327,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_PRECEDENCE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
-
-	/**
-	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_PRECEDENCE___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
 
 	/**
 	 * The number of operations of the '<em>Lp Precedence</em>' class.
@@ -1502,6 +1493,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_EMPLOYEE___GET_GENERATOR = SolverPackage.GENERATOR_TUPLE___GET_GENERATOR;
 
 	/**
+	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_EMPLOYEE___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
+
+	/**
 	 * The operation id for the '<em>Generate Vars</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1536,15 +1536,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_EMPLOYEE___VISIT_TUPLES__ITUPLEVISITOR = SolverPackage.GENERATOR_TUPLE___VISIT_TUPLES__ITUPLEVISITOR;
-
-	/**
-	 * The operation id for the '<em>Refresh Selected Solution</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_EMPLOYEE___REFRESH_SELECTED_SOLUTION = SolverPackage.GENERATOR_TUPLE___REFRESH_SELECTED_SOLUTION;
 
 	/**
 	 * The number of operations of the '<em>Lp Employee</em>' class.
@@ -2474,26 +2465,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	EReference getLpOptiPostFlow_GoalNofEmployees();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGLPKSolver <em>GLPK Solver</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getSolvers <em>Solvers</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>GLPK Solver</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getGLPKSolver()
+	 * @return the meta object for the containment reference list '<em>Solvers</em>'.
+	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getSolvers()
 	 * @see #getLpOptiPostFlow()
 	 * @generated
 	 */
-	EReference getLpOptiPostFlow_GLPKSolver();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver <em>Cplex Solver</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Cplex Solver</em>'.
-	 * @see com.misc.projects.g4s.G4SOptiPost.LpOptiPostFlow#getCplexSolver()
-	 * @see #getLpOptiPostFlow()
-	 * @generated
-	 */
-	EReference getLpOptiPostFlow_CplexSolver();
+	EReference getLpOptiPostFlow_Solvers();
 
 	/**
 	 * Returns the meta object for class '{@link com.misc.projects.g4s.G4SOptiPost.LpRoot <em>Lp Root</em>}'.
@@ -3554,20 +3534,12 @@ public interface G4SOptiPostPackage extends EPackage {
 		EReference LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES = eINSTANCE.getLpOptiPostFlow_GoalNofEmployees();
 
 		/**
-		 * The meta object literal for the '<em><b>GLPK Solver</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Solvers</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LP_OPTI_POST_FLOW__GLPK_SOLVER = eINSTANCE.getLpOptiPostFlow_GLPKSolver();
-
-		/**
-		 * The meta object literal for the '<em><b>Cplex Solver</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LP_OPTI_POST_FLOW__CPLEX_SOLVER = eINSTANCE.getLpOptiPostFlow_CplexSolver();
+		EReference LP_OPTI_POST_FLOW__SOLVERS = eINSTANCE.getLpOptiPostFlow_Solvers();
 
 		/**
 		 * The meta object literal for the '{@link com.misc.projects.g4s.G4SOptiPost.impl.LpRootImpl <em>Lp Root</em>}' class.

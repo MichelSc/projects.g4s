@@ -65,11 +65,8 @@
         eOpposite="#//Scenario/LpOptiPostFlows"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GoalNofEmployees" eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorLpGoal"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="GLPKSolver" upperBound="-1"
-        eType="ecore:EClass ../../com.misc.common.moplaf.solver.glpk.emf/model/solverglpk.ecore#//SolverGLPK"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="CplexSolver" upperBound="-1"
-        eType="ecore:EClass ../../com.misc.common.moplaf.solver.cplex.emf/model/solvercplex.ecore#//SolverCplex"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Solvers" upperBound="-1"
+        eType="ecore:EClass ../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//Solver"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LpRoot" eSuperTypes="../../com.misc.common.moplaf.solver.emf/model/solver.ecore#//GeneratorTuple">

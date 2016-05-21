@@ -3,8 +3,6 @@
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
 import com.misc.common.moplaf.solver.SolverPackage;
-import com.misc.common.moplaf.solver.solvercplex.SolvercplexPackage;
-import com.misc.common.moplaf.solver.solverglpk.SolverglpkPackage;
 import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
 import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetpoiPackage;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
@@ -198,8 +196,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		isInited = true;
 
 		// Initialize simple dependencies
-		SolvercplexPackage.eINSTANCE.eClass();
-		SolverglpkPackage.eINSTANCE.eClass();
+		SolverPackage.eINSTANCE.eClass();
 		SpreadsheetpoiPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -537,17 +534,8 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLpOptiPostFlow_GLPKSolver() {
+	public EReference getLpOptiPostFlow_Solvers() {
 		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLpOptiPostFlow_CplexSolver() {
-		return (EReference)lpOptiPostFlowEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1239,8 +1227,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__LP_ROOT);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__SCENARIO);
 		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES);
-		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__GLPK_SOLVER);
-		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__CPLEX_SOLVER);
+		createEReference(lpOptiPostFlowEClass, LP_OPTI_POST_FLOW__SOLVERS);
 
 		lpRootEClass = createEClass(LP_ROOT);
 		createEReference(lpRootEClass, LP_ROOT__JOBS);
@@ -1348,8 +1335,6 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		// Obtain other dependent packages
 		SpreadsheetpoiPackage theSpreadsheetpoiPackage = (SpreadsheetpoiPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetpoiPackage.eNS_URI);
 		SolverPackage theSolverPackage = (SolverPackage)EPackage.Registry.INSTANCE.getEPackage(SolverPackage.eNS_URI);
-		SolverglpkPackage theSolverglpkPackage = (SolverglpkPackage)EPackage.Registry.INSTANCE.getEPackage(SolverglpkPackage.eNS_URI);
-		SolvercplexPackage theSolvercplexPackage = (SolvercplexPackage)EPackage.Registry.INSTANCE.getEPackage(SolvercplexPackage.eNS_URI);
 		SpreadsheetPackage theSpreadsheetPackage = (SpreadsheetPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetPackage.eNS_URI);
 
 		// Create type parameters
@@ -1405,8 +1390,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getLpOptiPostFlow_LpRoot(), this.getLpRoot(), this.getLpRoot_LpOptiPostFlow(), "LpRoot", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_Scenario(), this.getScenario(), this.getScenario_LpOptiPostFlows(), "Scenario", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLpOptiPostFlow_GoalNofEmployees(), theSolverPackage.getGeneratorLpGoal(), null, "GoalNofEmployees", null, 0, 1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLpOptiPostFlow_GLPKSolver(), theSolverglpkPackage.getSolverGLPK(), null, "GLPKSolver", null, 0, -1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLpOptiPostFlow_CplexSolver(), theSolvercplexPackage.getSolverCplex(), null, "CplexSolver", null, 0, -1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLpOptiPostFlow_Solvers(), theSolverPackage.getSolver(), null, "Solvers", null, 0, -1, LpOptiPostFlow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lpRootEClass, LpRoot.class, "LpRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLpRoot_Jobs(), this.getLpJob(), this.getLpJob_LpRoot(), "Jobs", null, 0, -1, LpRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
