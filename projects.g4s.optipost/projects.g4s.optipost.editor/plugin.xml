@@ -108,5 +108,13 @@
             contributorClass="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostActionBarContributor">
       </editor>
    </extension>
+   <extension
+         id="product_extension"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="projects.g4s.optipost.editor.G4SOptiPostEditorAdvisorApplication"
+            name="Name of product OptiPost">
+      </product>
+   </extension>
 
 </plugin>
