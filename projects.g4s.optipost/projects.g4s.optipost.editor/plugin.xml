@@ -73,6 +73,13 @@
                class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisor$OpenAction"
                menubarPath="file/additions"
                id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenAction"/>
+         <action
+               class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisor$PreferencesAction"
+               definitionId="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorPreferencesCommand"
+               id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorPreferencesAction"
+               label="%_UI_Menu_Preferences_label"
+               menubarPath="window/additions">
+         </action>
       </actionSet>
    </extension>
 

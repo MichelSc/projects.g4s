@@ -14,6 +14,7 @@ import org.eclipse.jface.action.IMenuManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
@@ -38,7 +39,7 @@ import org.eclipse.ui.application.IWorkbenchConfigurer;
 import org.eclipse.ui.application.IWorkbenchWindowConfigurer;
 import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
-
+import org.eclipse.ui.dialogs.PreferencesUtil;
 import org.eclipse.emf.common.ui.URIEditorInput;
 import org.eclipse.emf.common.ui.action.WorkbenchWindowActionDelegate;
 import org.eclipse.emf.common.util.URI;
@@ -363,6 +364,7 @@ public final class G4SOptiPostEditorAdvisor extends WorkbenchAdvisor {
 		}
 	}
 	
+	
 	/**
 	 * Open action for the objects from the G4SOptiPost model.
 	 * <!-- begin-user-doc -->
@@ -381,6 +383,24 @@ public final class G4SOptiPostEditorAdvisor extends WorkbenchAdvisor {
 			if (filePaths.length > 0) {
 				openEditor(getWindow().getWorkbench(), URI.createFileURI(filePaths[0]));
 			}
+		}
+	}
+	
+	/**
+	 * Open preferences dialog
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public static class PreferencesAction extends WorkbenchWindowActionDelegate {
+		/**
+		 * Opens the editors for the files selected using the file dialog.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 */
+		public void run(IAction action) {
+			Shell shell = getWindow().getShell();
+			PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell, null, null, null);
+			dialog.open();
 		}
 	}
 	
