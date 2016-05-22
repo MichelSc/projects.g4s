@@ -12,12 +12,9 @@ Export-Package: com.misc.projects.g4s.G4SOptiPost,
  com.misc.projects.g4s.G4SOptiPost.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- com.misc.common.moplaf.solver.emf;visibility:=reexport,
- com.misc.common.moplaf.solver.cplex.emf;resolution:=optional;visibility:=reexport,
  com.misc.common.moplaf.spreadsheet.emf;visibility:=reexport,
  com.misc.common.moplaf.spreadsheet.poi.emf;visibility:=reexport,
  com.misc.common.moplaf.emf;bundle-version="1.0.0",
- com.misc.common.moplaf.solver.glpk.emf;bundle-version="0.1.0";resolution:=optional;visibility:=reexport,
- com.misc.common.moplaf.solver.scip.emf;bundle-version="0.1.0";resolution:=optional;visibility:=reexport
+ com.misc.common.moplaf.solver.emf;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.swt.graphics
