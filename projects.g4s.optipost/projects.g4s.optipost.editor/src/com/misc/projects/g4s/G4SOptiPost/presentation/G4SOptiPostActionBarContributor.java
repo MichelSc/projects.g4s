@@ -37,6 +37,11 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
+import com.misc.common.moplaf.emf.editor.action.AcceptAction;
+import com.misc.common.moplaf.emf.editor.action.ReadAction;
+import com.misc.common.moplaf.emf.editor.action.RunAction;
+
+
 
 /**
  * This is the action bar contributor for the G4SOptiPost model editor.
@@ -138,33 +143,29 @@ public class G4SOptiPostActionBarContributor
 	protected Collection<IAction> createChildActions;
 
 	/**
-	 * This action runs the object
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	protected RunAction runAction = new RunAction();
-
-	/**
-	 * This action reads the object
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	protected ReadAction readAction = new ReadAction();
-
-	/**
-	 * This action accepts the object
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 */
-	protected AcceptAction acceptAction = new AcceptAction();
-
-	/**
 	 * This is the menu manager into which menu contribution items should be added for CreateChild actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected IMenuManager createChildMenuManager;
+
+	/**
+	 * This will contain one {@link org.eclipse.emf.edit.ui.action.ApplicationPopUpMenuAction} 
+	 * generated for the current selection by the item provider.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Collection<IAction> applicationPopUpMenuActions;
+
+	/**
+	 * This is the menu manager into which menu contribution items should be added for G4SOptiPost actions.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IMenuManager applicationPopUpMenuManager;
 
 	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding to each descriptor
@@ -213,7 +214,6 @@ public class G4SOptiPostActionBarContributor
 	 * as well as the sub-menus for object creation items.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public void contributeToMenu(IMenuManager menuManager) {
@@ -235,6 +235,11 @@ public class G4SOptiPostActionBarContributor
 		//
 		createSiblingMenuManager = new MenuManager(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_CreateSibling_menu_item"));
 		submenuManager.insertBefore("additions", createSiblingMenuManager);
+
+		// Prepare for G4SOptiPost item addition or removal.
+		//
+		applicationPopUpMenuManager = new MenuManager("G4SOptiPost");
+		submenuManager.insertBefore("additions", applicationPopUpMenuManager);
 
 		// Force an update because Eclipse hides empty menus now.
 		//
@@ -295,6 +300,9 @@ public class G4SOptiPostActionBarContributor
 		if (createSiblingMenuManager != null) {
 			depopulateManager(createSiblingMenuManager, createSiblingActions);
 		}
+		if (applicationPopUpMenuManager != null) {
+			depopulateManager(applicationPopUpMenuManager, applicationPopUpMenuActions);
+		}
 
 		// Query the new selection for appropriate new child/sibling descriptors
 		//
@@ -316,6 +324,11 @@ public class G4SOptiPostActionBarContributor
 		createChildActions = generateCreateChildActions(newChildDescriptors, selection);
 		createSiblingActions = generateCreateSiblingActions(newSiblingDescriptors, selection);
 
+		applicationPopUpMenuActions = new ArrayList<IAction>();
+		applicationPopUpMenuActions.add(new RunAction(activeEditorPart, selection));
+		applicationPopUpMenuActions.add(new AcceptAction(activeEditorPart, selection));
+		applicationPopUpMenuActions.add(new ReadAction(activeEditorPart, selection));
+
 		if (createChildMenuManager != null) {
 			populateManager(createChildMenuManager, createChildActions, null);
 			createChildMenuManager.update(true);
@@ -324,10 +337,11 @@ public class G4SOptiPostActionBarContributor
 			populateManager(createSiblingMenuManager, createSiblingActions, null);
 			createSiblingMenuManager.update(true);
 		}
+		if (applicationPopUpMenuManager!= null) {
+			populateManager(applicationPopUpMenuManager, applicationPopUpMenuActions, null);
+			applicationPopUpMenuManager.update(true);
+		}
 
-		this.readAction  .selectionChanged(activeEditorPart, selection);
-		this.runAction   .selectionChanged(activeEditorPart, selection);
-		this.acceptAction.selectionChanged(activeEditorPart, selection);
 }
 
 	/**
@@ -434,11 +448,9 @@ public class G4SOptiPostActionBarContributor
 		populateManager(submenuManager, createSiblingActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 
-		submenuManager = new MenuManager("G4S");
+		submenuManager = new MenuManager("G4SOptiPost");
+		populateManager(submenuManager, applicationPopUpMenuActions, null);
 		menuManager.insertBefore("edit", submenuManager);
-		submenuManager.add(this.readAction);
-		submenuManager.add(this.runAction);
-		submenuManager.add(this.acceptAction);
 }
 
 	/**
