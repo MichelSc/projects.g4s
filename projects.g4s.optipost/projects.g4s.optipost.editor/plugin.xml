@@ -113,7 +113,11 @@
          point="org.eclipse.core.runtime.products">
       <product
             application="projects.g4s.optipost.editor.G4SOptiPostEditorAdvisorApplication"
-            name="Name of product OptiPost">
+            name="Product G4SOptiPost">
+         <property
+               name="appName"
+               value="Product G4SOptiPost">
+         </property>
       </product>
    </extension>
 
