@@ -151,23 +151,6 @@ public class G4SOptiPostActionBarContributor
 	protected IMenuManager createChildMenuManager;
 
 	/**
-	 * This will contain one {@link org.eclipse.emf.edit.ui.action.ApplicationPopUpMenuAction} 
-	 * generated for the current selection by the item provider.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Collection<IAction> applicationPopUpMenuActions;
-
-	/**
-	 * This is the menu manager into which menu contribution items should be added for G4SOptiPost actions.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IMenuManager applicationPopUpMenuManager;
-
-	/**
 	 * This will contain one {@link org.eclipse.emf.edit.ui.action.CreateSiblingAction} corresponding to each descriptor
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
@@ -183,6 +166,23 @@ public class G4SOptiPostActionBarContributor
 	 * @generated
 	 */
 	protected IMenuManager createSiblingMenuManager;
+
+	/**
+	 * This will contain one {@link org.eclipse.emf.edit.ui.action.ApplicationPopUpMenuAction} 
+	 * generated for the current selection by the item provider.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Collection<IAction> applicationPopUpMenuActions;
+
+	/**
+	 * This is the menu manager into which menu contribution items should be added for G4SOptiPost actions.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IMenuManager applicationPopUpMenuManager;
 
 	/**
 	 * This creates an instance of the contributor.
