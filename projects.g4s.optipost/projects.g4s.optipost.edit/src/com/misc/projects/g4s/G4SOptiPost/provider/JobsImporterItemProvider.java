@@ -127,11 +127,6 @@ public class JobsImporterItemProvider
 		public JobsImporterRunCommand(JobsImporter anImporter)	{
 			super();
 			this.jobsImporter = anImporter;
-			String tmp = "Import the Jobs";
-			String label = "label:"+tmp;
-			String description = "desc:"+tmp;
-			this.setDescription(description);
-			this.setLabel(label);
 		}
 
 		@Override

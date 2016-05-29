@@ -37,6 +37,7 @@ import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
+import com.misc.common.moplaf.emf.editor.Util;
 import com.misc.common.moplaf.emf.editor.action.AcceptAction;
 import com.misc.common.moplaf.emf.editor.action.ReadAction;
 import com.misc.common.moplaf.emf.editor.action.RunAction;
@@ -172,7 +173,6 @@ public class G4SOptiPostActionBarContributor
 	 * generated for the current selection by the item provider.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected Collection<IAction> applicationPopUpMenuActions;
 
@@ -180,7 +180,6 @@ public class G4SOptiPostActionBarContributor
 	 * This is the menu manager into which menu contribution items should be added for G4SOptiPost actions.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	protected IMenuManager applicationPopUpMenuManager;
 
@@ -338,7 +337,7 @@ public class G4SOptiPostActionBarContributor
 			createSiblingMenuManager.update(true);
 		}
 		if (applicationPopUpMenuManager!= null) {
-			populateManager(applicationPopUpMenuManager, applicationPopUpMenuActions, null);
+			Util.populateManager(applicationPopUpMenuManager, applicationPopUpMenuActions, null);
 			applicationPopUpMenuManager.update(true);
 		}
 
@@ -390,11 +389,13 @@ public class G4SOptiPostActionBarContributor
 	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
 		if (actions != null) {
 			for (IAction action : actions) {
-				if (contributionID != null) {
-					manager.insertBefore(contributionID, action);
-				}
-				else {
-					manager.add(action);
+				if ( true ){
+					if (contributionID != null) {
+						manager.insertBefore(contributionID, action);
+					}
+					else {
+						manager.add(action);
+					}
 				}
 			}
 		}
@@ -449,7 +450,7 @@ public class G4SOptiPostActionBarContributor
 		menuManager.insertBefore("edit", submenuManager);
 
 		submenuManager = new MenuManager("G4SOptiPost");
-		populateManager(submenuManager, applicationPopUpMenuActions, null);
+		Util.populateManager(submenuManager, applicationPopUpMenuActions, null);
 		menuManager.insertBefore("edit", submenuManager);
 }
 
