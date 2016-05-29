@@ -240,6 +240,8 @@ public class G4SOptiPostActionBarContributor
 		applicationPopUpMenuManager = new MenuManager("G4SOptiPost");
 		submenuManager.insertBefore("additions", applicationPopUpMenuManager);
 
+		submenuManager.insertBefore("additions", new Separator("generic part"));
+		
 		// Force an update because Eclipse hides empty menus now.
 		//
 		submenuManager.addMenuListener
