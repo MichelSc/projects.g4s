@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.util;
 
+import com.misc.common.moplaf.common.Run;
 import com.misc.common.moplaf.solver.Generator;
 import com.misc.common.moplaf.solver.GeneratorElement;
 import com.misc.common.moplaf.solver.GeneratorTuple;
@@ -104,6 +105,7 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 				LpOptiPostFlow lpOptiPostFlow = (LpOptiPostFlow)theEObject;
 				T result = caseLpOptiPostFlow(lpOptiPostFlow);
 				if (result == null) result = caseGenerator(lpOptiPostFlow);
+				if (result == null) result = caseRun(lpOptiPostFlow);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -417,6 +419,21 @@ public class G4SOptiPostSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOptiPostSolutionShift(OptiPostSolutionShift object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Run</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Run</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRun(Run object) {
 		return null;
 	}
 

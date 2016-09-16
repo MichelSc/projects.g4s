@@ -2,7 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
-import com.misc.common.moplaf.emf.Util;
+import com.misc.common.moplaf.common.Color;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.swt.graphics.RGB;
 
 /**
  * <!-- begin-user-doc -->
@@ -125,11 +124,11 @@ public abstract class JobsImporterImpl extends MinimalEObjectImpl.Container impl
 		if ( employee==null){
 			employee = G4SOptiPostFactory.eINSTANCE.createEmployee();
 			employee.setEmployeeID(id);
-			float hue = randomNumberGenerator.nextFloat()*360.0f;
+			float hue = randomNumberGenerator.nextFloat()*1.0f;
 			float saturation = 1.0f;
 			float brightness = 1.0f;
-			RGB color = new RGB(hue, saturation, brightness);
-			int colorAsInt = Util.rgbToInt(color);
+			Color color = Color.colorFromHueSaturation(hue, saturation, brightness);
+			int colorAsInt = color.toInt();
 			employee.setColor(colorAsInt);
 			this.getDomain().getEmployees().add(employee);
 			this.employeeIndex.put(id, employee);

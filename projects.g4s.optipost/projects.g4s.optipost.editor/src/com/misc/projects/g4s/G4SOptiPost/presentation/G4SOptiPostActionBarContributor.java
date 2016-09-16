@@ -4,8 +4,6 @@ package com.misc.projects.g4s.G4SOptiPost.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-import org.eclipse.emf.common.ui.action.WorkbenchWindowActionDelegate;
 import org.eclipse.emf.common.ui.viewer.IViewerProvider;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
@@ -31,9 +29,7 @@ import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.SelectionChangedEvent;
-import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
-import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
@@ -53,27 +49,6 @@ import com.misc.common.moplaf.emf.editor.action.RunAction;
 public class G4SOptiPostActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
-	/**
-	 * Action to create objects from the G4SOptiPost model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static class NewAction extends WorkbenchWindowActionDelegate {
-		/**
-		 * @see org.eclipse.ui.IActionDelegate#run(org.eclipse.jface.action.IAction)
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public void run(IAction action) {
-			G4SOptiPostModelWizard wizard = new G4SOptiPostModelWizard();
-			wizard.init(getWindow().getWorkbench(), StructuredSelection.EMPTY);
-			WizardDialog wizardDialog = new WizardDialog(getWindow().getShell(), wizard);
-			wizardDialog.open();
-		}
-	}
-
 	/**
 	 * This keeps track of the active editor.
 	 * <!-- begin-user-doc -->
@@ -391,13 +366,11 @@ public class G4SOptiPostActionBarContributor
 	protected void populateManager(IContributionManager manager, Collection<? extends IAction> actions, String contributionID) {
 		if (actions != null) {
 			for (IAction action : actions) {
-				if ( true ){
-					if (contributionID != null) {
-						manager.insertBefore(contributionID, action);
-					}
-					else {
-						manager.add(action);
-					}
+				if (contributionID != null) {
+					manager.insertBefore(contributionID, action);
+				}
+				else {
+					manager.add(action);
 				}
 			}
 		}

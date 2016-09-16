@@ -19,7 +19,8 @@ Require-Bundle: org.eclipse.core.runtime,
  com.misc.common.moplaf.spreadsheet.poi.emf;visibility:=reexport,
  com.misc.common.moplaf.spreadsheet.poi.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.timeview;bundle-version="1.0.0",
- com.misc.common.moplaf.emf;bundle-version="1.0.0"
+ com.misc.common.moplaf.emf;bundle-version="1.0.0";visibility:=reexport,
+ com.misc.common.moplaf.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.swt.graphics,
  org.eclipse.swt.widgets

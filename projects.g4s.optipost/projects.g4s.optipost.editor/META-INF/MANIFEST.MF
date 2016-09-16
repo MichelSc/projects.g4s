@@ -10,11 +10,14 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: com.misc.projects.g4s.G4SOptiPost.presentation
 Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources;visibility:=reexport,
  projects.g4s.optipost.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
  org.eclipse.emf.edit.ui;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport,
  com.misc.common.moplaf.solver.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.spreadsheet.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.spreadsheet.poi.emf.edit;visibility:=reexport,
+ com.misc.common.moplaf.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.emf.editor;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
