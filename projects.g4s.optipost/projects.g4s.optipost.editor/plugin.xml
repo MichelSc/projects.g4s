@@ -6,22 +6,90 @@
 
 <plugin>
 
-   <extension point="org.eclipse.ui.newWizards">
+   <extension
+         point="org.eclipse.core.runtime.applications"
+         id="G4SOptiPostEditorAdvisorApplication">
       <!-- @generated G4SOptiPost -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostModelWizardID"
-            name="%_UI_G4SOptiPostModelWizard_label"
-            class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/G4SOptiPostModelFile.gif">
-         <description>%_UI_G4SOptiPostModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
+      <application>
+         <run class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisor$Application"/>
+      </application>
    </extension>
 
+
+   <extension point="org.eclipse.ui.perspectives">
+      <!-- @generated G4SOptiPost -->
+      <perspective
+            name="%_UI_Perspective_label"
+            class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisor$Perspective"
+            id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorPerspective">
+      </perspective>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands">
+      <!-- @generated G4SOptiPost -->
+      <command
+            name="%_UI_Menu_OpenURI_label"
+            description="%_UI_Menu_OpenURI_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenURICommand"/>
+      <command
+            name="%_UI_Menu_Open_label"
+            description="%_UI_Menu_Open_description"
+            categoryId="org.eclipse.ui.category.file"
+            id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenCommand"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.bindings">
+      <!-- @generated G4SOptiPost -->
+      <key
+            commandId="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenURICommand"
+            sequence="M1+U"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+      <key
+            commandId="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenCommand"
+            sequence="M1+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated G4SOptiPost -->
+      <actionSet
+            label="%_UI_G4SOptiPostEditorAdvisor_ActionSet_label"
+            visible="true"
+            id="G4SOptiPostEditorAdvisorActionSet">
+         <action
+               label="%_UI_Menu_About_label"
+               class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisor$AboutAction"
+               menubarPath="help/additions"
+               id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorAboutAction"/>
+         <action
+               label="%_UI_Menu_OpenURI_label"
+               definitionId="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenURICommand"
+               class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisor$OpenURIAction"
+               menubarPath="file/additions"
+               id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenURIAction"/>
+         <action
+               label="%_UI_Menu_Open_label"
+               definitionId="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenCommand"
+               class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisor$OpenAction"
+               menubarPath="file/additions"
+               id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostEditorAdvisorOpenAction"/>
+      </actionSet>
+   </extension>
+
+   <extension point="org.eclipse.ui.actionSets">
+      <!-- @generated G4SOptiPost -->
+      <actionSet
+            label="%_UI_G4SOptiPostModelWizard_ActionSet_label"
+            visible="true"
+            id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostActionBarContributorActionSet">
+         <action
+               label="%_UI_G4SOptiPostModelWizard_label"
+               class="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostActionBarContributor$NewAction"
+               menubarPath="file/new/additions"
+               id="com.misc.projects.g4s.G4SOptiPost.presentation.G4SOptiPostActionBarContributorNewAction"/>
+      </actionSet>
+   </extension>
    <extension point="org.eclipse.ui.editors">
       <!-- @generated G4SOptiPost -->
       <editor

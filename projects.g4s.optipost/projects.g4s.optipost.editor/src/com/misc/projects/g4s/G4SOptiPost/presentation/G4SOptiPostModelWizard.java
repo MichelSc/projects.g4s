@@ -12,9 +12,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.MissingResourceException;
 import java.util.StringTokenizer;
-import org.eclipse.emf.common.CommonPlugin;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.operation.IRunnableWithProgress;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
@@ -30,12 +32,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.xmi.XMLResource;
 
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-import org.eclipse.core.resources.IContainer;
-import org.eclipse.core.resources.IFile;
-import org.eclipse.core.resources.IFolder;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -59,18 +55,10 @@ import org.eclipse.swt.widgets.Label;
 
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-import org.eclipse.ui.actions.WorkspaceModifyOperation;
-import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-import org.eclipse.ui.part.FileEditorInput;
-import org.eclipse.ui.part.ISetSelectionTarget;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.provider.G4SOptiPostEditPlugin;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.ui.IWorkbenchPage;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.IWorkbenchWindow;
-import org.eclipse.ui.PartInitException;
+import java.io.File;
 
 
 /**
@@ -113,14 +101,6 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	protected G4SOptiPostFactory g4SOptiPostFactory = g4SOptiPostPackage.getG4SOptiPostFactory();
-
-	/**
-	 * This is the file creation page.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected G4SOptiPostModelWizardNewFileCreationPage newFileCreationPage;
 
 	/**
 	 * This is the initial object creation page.
@@ -184,7 +164,7 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 					}
 				}
 			}
-			Collections.sort(initialObjectNames, CommonPlugin.INSTANCE.getComparator());
+			Collections.sort(initialObjectNames, java.text.Collator.getInstance());
 		}
 		return initialObjectNames;
 	}
@@ -210,24 +190,27 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 	@Override
 	public boolean performFinish() {
 		try {
-			// Remember the file.
+			// Get the URI of the model file.
 			//
-			final IFile modelFile = getModelFile();
-
+			final URI fileURI = getModelURI();
+			if (new File(fileURI.toFileString()).exists()) {
+				if (!MessageDialog.openQuestion
+						(getShell(),
+						 G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_Question_title"),
+						 G4SOptiPostEditorPlugin.INSTANCE.getString("_WARN_FileConflict", new String []{ fileURI.toFileString() }))) {
+					initialObjectCreationPage.selectFileField();
+					return false;
+				}
+			}
+			
 			// Do the work within an operation.
 			//
-			WorkspaceModifyOperation operation =
-				new WorkspaceModifyOperation() {
-					@Override
-					protected void execute(IProgressMonitor progressMonitor) {
+			IRunnableWithProgress operation = new IRunnableWithProgress() {
+				public void run(IProgressMonitor progressMonitor) {
 						try {
 							// Create a resource set
 							//
 							ResourceSet resourceSet = new ResourceSetImpl();
-
-							// Get the URI of the model file.
-							//
-							URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
 
 							// Create a resource for this file.
 							//
@@ -257,85 +240,11 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 
 			getContainer().run(false, false, operation);
 
-			// Select the new file resource in the current view.
-			//
-			IWorkbenchWindow workbenchWindow = workbench.getActiveWorkbenchWindow();
-			IWorkbenchPage page = workbenchWindow.getActivePage();
-			final IWorkbenchPart activePart = page.getActivePart();
-			if (activePart instanceof ISetSelectionTarget) {
-				final ISelection targetSelection = new StructuredSelection(modelFile);
-				getShell().getDisplay().asyncExec
-					(new Runnable() {
-						 public void run() {
-							 ((ISetSelectionTarget)activePart).selectReveal(targetSelection);
-						 }
-					 });
-			}
-
-			// Open an editor on the new file.
-			//
-			try {
-				page.openEditor
-					(new FileEditorInput(modelFile),
-					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
-			}
-			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
-				return false;
-			}
-
-			return true;
+			return G4SOptiPostEditorAdvisor.openEditor(workbench, fileURI);			
 		}
 		catch (Exception exception) {
 			G4SOptiPostEditorPlugin.INSTANCE.log(exception);
 			return false;
-		}
-	}
-
-	/**
-	 * This is the one page of the wizard.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public class G4SOptiPostModelWizardNewFileCreationPage extends WizardNewFileCreationPage {
-		/**
-		 * Pass in the selection.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public G4SOptiPostModelWizardNewFileCreationPage(String pageId, IStructuredSelection selection) {
-			super(pageId, selection);
-		}
-
-		/**
-		 * The framework calls this to see if the file is correct.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		@Override
-		protected boolean validatePage() {
-			if (super.validatePage()) {
-				String extension = new Path(getFileName()).getFileExtension();
-				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
-					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(G4SOptiPostEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
-					return false;
-				}
-				return true;
-			}
-			return false;
-		}
-
-		/**
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		public IFile getModelFile() {
-			return ResourcesPlugin.getWorkspace().getRoot().getFile(getContainerFullPath().append(getFileName()));
 		}
 	}
 
@@ -346,6 +255,13 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public class G4SOptiPostModelWizardInitialObjectCreationPage extends WizardPage {
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		protected Text fileField;
+
 		/**
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -395,7 +311,55 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 				data.horizontalAlignment = GridData.FILL;
 				composite.setLayoutData(data);
 			}
+			
+			Label resourceURILabel = new Label(composite, SWT.LEFT);
+			{
+				resourceURILabel.setText(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_File_label"));
 
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				resourceURILabel.setLayoutData(data);
+			}
+
+			Composite fileComposite = new Composite(composite, SWT.NONE);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.END;
+				fileComposite.setLayoutData(data);
+
+				GridLayout layout = new GridLayout();
+				data.horizontalAlignment = GridData.FILL;
+				layout.marginHeight = 0;
+				layout.marginWidth = 0;
+				layout.numColumns = 2;
+				fileComposite.setLayout(layout);
+			}
+
+			fileField = new Text(fileComposite, SWT.BORDER);
+			{
+				GridData data = new GridData();
+				data.horizontalAlignment = GridData.FILL;
+				data.grabExcessHorizontalSpace = true;
+				data.horizontalSpan = 1;
+				fileField.setLayoutData(data);
+			}
+
+			fileField.addModifyListener(validator);
+
+			Button resourceURIBrowseFileSystemButton = new Button(fileComposite, SWT.PUSH);
+			resourceURIBrowseFileSystemButton.setText(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_Browse_label"));
+
+			resourceURIBrowseFileSystemButton.addSelectionListener
+				(new SelectionAdapter() {
+					 @Override
+					 public void widgetSelected(SelectionEvent event) {
+						 String[] filters = G4SOptiPostEditor.FILE_EXTENSION_FILTERS.toArray(new String[G4SOptiPostEditor.FILE_EXTENSION_FILTERS.size()]);
+						 String[] files = G4SOptiPostEditorAdvisor.openFilePathDialog(getShell(), SWT.SAVE, filters);
+						 if (files.length > 0) {
+							 fileField.setText(files[0]);
+						 }
+					 }
+				 });
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
 				containerLabel.setText(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
@@ -467,6 +431,20 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		protected boolean validatePage() {
+			URI fileURI = getFileURI();
+			if (fileURI == null || fileURI.isEmpty()) {
+				setErrorMessage(null);
+				return false;
+			}
+
+			String extension = fileURI.fileExtension();
+			if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+				String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
+				setErrorMessage(G4SOptiPostEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+				return false;
+			}
+
+			setErrorMessage(null);
 			return getInitialObjectName() != null && getEncodings().contains(encodingField.getText());
 		}
 
@@ -479,14 +457,9 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 		public void setVisible(boolean visible) {
 			super.setVisible(visible);
 			if (visible) {
-				if (initialObjectField.getItemCount() == 1) {
-					initialObjectField.clearSelection();
-					encodingField.setFocus();
-				}
-				else {
-					encodingField.clearSelection();
-					initialObjectField.setFocus();
-				}
+				initialObjectField.clearSelection();
+				encodingField.clearSelection();
+				fileField.setFocus();
 			}
 		}
 
@@ -513,6 +486,33 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 		 */
 		public String getEncoding() {
 			return encodingField.getText();
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public URI getFileURI() {
+			try {
+				return URI.createFileURI(fileField.getText());
+			}
+			catch (Exception exception) {
+				// Ignore
+			}
+			return null;
+		}
+
+		/**
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		public void selectFileField() {
+				initialObjectField.clearSelection();
+				encodingField.clearSelection();
+				fileField.selectAll();
+				fileField.setFocus();
 		}
 
 		/**
@@ -555,47 +555,6 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 	 */
 		@Override
 	public void addPages() {
-		// Create a page, set the title, and the initial model file name.
-		//
-		newFileCreationPage = new G4SOptiPostModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_G4SOptiPostModelWizard_label"));
-		newFileCreationPage.setDescription(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_G4SOptiPostModelWizard_description"));
-		newFileCreationPage.setFileName(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_G4SOptiPostEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
-		addPage(newFileCreationPage);
-
-		// Try and get the resource selection to determine a current directory for the file dialog.
-		//
-		if (selection != null && !selection.isEmpty()) {
-			// Get the resource...
-			//
-			Object selectedElement = selection.iterator().next();
-			if (selectedElement instanceof IResource) {
-				// Get the resource parent, if its a file.
-				//
-				IResource selectedResource = (IResource)selectedElement;
-				if (selectedResource.getType() == IResource.FILE) {
-					selectedResource = selectedResource.getParent();
-				}
-
-				// This gives us a directory...
-				//
-				if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
-					// Set this for the container.
-					//
-					newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
-
-					// Make up a unique new name here.
-					//
-					String defaultModelBaseFilename = G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_G4SOptiPostEditorFilenameDefaultBase");
-					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
-					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
-						modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
-					}
-					newFileCreationPage.setFileName(modelFilename);
-				}
-			}
-		}
 		initialObjectCreationPage = new G4SOptiPostModelWizardInitialObjectCreationPage("Whatever2");
 		initialObjectCreationPage.setTitle(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_G4SOptiPostModelWizard_label"));
 		initialObjectCreationPage.setDescription(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
@@ -603,13 +562,13 @@ public class G4SOptiPostModelWizard extends Wizard implements INewWizard {
 	}
 
 	/**
-	 * Get the file from the page.
+	 * Get the URI from the page.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IFile getModelFile() {
-		return newFileCreationPage.getModelFile();
+	public URI getModelURI() {
+		return initialObjectCreationPage.getFileURI();
 	}
 
 }
