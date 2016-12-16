@@ -444,24 +444,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW = 5;
 
 	/**
-	 * The feature id for the '<em><b>Canceled</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__CANCELED = SolverPackage.GENERATOR__CANCELED;
-
-	/**
-	 * The feature id for the '<em><b>Parent Run</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__PARENT_RUN = SolverPackage.GENERATOR__PARENT_RUN;
-
-	/**
 	 * The feature id for the '<em><b>Run Feedback</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,6 +462,51 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__CANCEL_FEEDBACK = SolverPackage.GENERATOR__CANCEL_FEEDBACK;
 
 	/**
+	 * The feature id for the '<em><b>Reset Feedback</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__RESET_FEEDBACK = SolverPackage.GENERATOR__RESET_FEEDBACK;
+
+	/**
+	 * The feature id for the '<em><b>Canceled</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__CANCELED = SolverPackage.GENERATOR__CANCELED;
+
+	/**
+	 * The feature id for the '<em><b>Return Success</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__RETURN_SUCCESS = SolverPackage.GENERATOR__RETURN_SUCCESS;
+
+	/**
+	 * The feature id for the '<em><b>Return Feedback</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__RETURN_FEEDBACK = SolverPackage.GENERATOR__RETURN_FEEDBACK;
+
+	/**
+	 * The feature id for the '<em><b>Return Information</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__RETURN_INFORMATION = SolverPackage.GENERATOR__RETURN_INFORMATION;
+
+	/**
 	 * The feature id for the '<em><b>Tuple Root</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -489,6 +516,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__TUPLE_ROOT = SolverPackage.GENERATOR__TUPLE_ROOT;
 
 	/**
+	 * The feature id for the '<em><b>Goals</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__GOALS = SolverPackage.GENERATOR__GOALS;
+
+	/**
 	 * The feature id for the '<em><b>Generator Feature Modes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -496,6 +532,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_OPTI_POST_FLOW__GENERATOR_FEATURE_MODES = SolverPackage.GENERATOR__GENERATOR_FEATURE_MODES;
+
+	/**
+	 * The feature id for the '<em><b>Solution Provider</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW__SOLUTION_PROVIDER = SolverPackage.GENERATOR__SOLUTION_PROVIDER;
 
 	/**
 	 * The feature id for the '<em><b>Remarks</b></em>' attribute.
@@ -579,15 +624,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__CODE = SolverPackage.GENERATOR__CODE;
 
 	/**
-	 * The feature id for the '<em><b>Solution Provider</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__SOLUTION_PROVIDER = SolverPackage.GENERATOR__SOLUTION_PROVIDER;
-
-	/**
 	 * The feature id for the '<em><b>Selected</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -595,15 +631,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_OPTI_POST_FLOW__SELECTED = SolverPackage.GENERATOR__SELECTED;
-
-	/**
-	 * The feature id for the '<em><b>Goals</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__GOALS = SolverPackage.GENERATOR__GOALS;
 
 	/**
 	 * The feature id for the '<em><b>Lp Root</b></em>' containment reference.
@@ -651,6 +678,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>Reset</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW___RESET = SolverPackage.GENERATOR___RESET;
+
+	/**
 	 * The operation id for the '<em>Run</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -666,16 +702,7 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___RUN__RUN = SolverPackage.GENERATOR___RUN__RUN;
-
-	/**
-	 * The operation id for the '<em>Run Background</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW___RUN_BACKGROUND = SolverPackage.GENERATOR___RUN_BACKGROUND;
+	int LP_OPTI_POST_FLOW___RUN__RUNCONTEXT = SolverPackage.GENERATOR___RUN__RUNCONTEXT;
 
 	/**
 	 * The operation id for the '<em>Cancel</em>' operation.
@@ -687,13 +714,40 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW___CANCEL = SolverPackage.GENERATOR___CANCEL;
 
 	/**
-	 * The operation id for the '<em>On Progress</em>' operation.
+	 * The operation id for the '<em>Set Progress</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW___ON_PROGRESS__STRING_FLOAT = SolverPackage.GENERATOR___ON_PROGRESS__STRING_FLOAT;
+	int LP_OPTI_POST_FLOW___SET_PROGRESS__STRING_FLOAT = SolverPackage.GENERATOR___SET_PROGRESS__STRING_FLOAT;
+
+	/**
+	 * The operation id for the '<em>Set Progress</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW___SET_PROGRESS__PROGRESSFEEDBACK = SolverPackage.GENERATOR___SET_PROGRESS__PROGRESSFEEDBACK;
+
+	/**
+	 * The operation id for the '<em>Get Return</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW___GET_RETURN = SolverPackage.GENERATOR___GET_RETURN;
+
+	/**
+	 * The operation id for the '<em>Set Return</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW___SET_RETURN__RETURNFEEDBACK = SolverPackage.GENERATOR___SET_RETURN__RETURNFEEDBACK;
 
 	/**
 	 * The operation id for the '<em>Generate</em>' operation.

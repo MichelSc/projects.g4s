@@ -104,8 +104,8 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.provider.G4SOptiPostItemProviderAdapterFactory;
-import com.misc.common.moplaf.common.provider.CommonItemProviderAdapterFactory;
 import com.misc.common.moplaf.emf.editor.AdapterFactoryContentProviderExtended;
+import com.misc.common.moplaf.job.provider.JobItemProviderAdapterFactory;
 import com.misc.common.moplaf.solver.provider.SolverItemProviderAdapterFactory;
 import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
 import com.misc.common.moplaf.spreadsheet.provider.SpreadsheetItemProviderAdapterFactory;
@@ -580,7 +580,7 @@ public class G4SOptiPostEditor
 		adapterFactory.addAdapterFactory(new SolverItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SpreadsheetItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SpreadsheetpoiItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new CommonItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new JobItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

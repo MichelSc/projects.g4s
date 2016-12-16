@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/projects.g4s.optipost/src" modelPluginID="projects.g4s.optipost"
     modelName="G4SOptiPost" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    usedGenPackages="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.genmodel#//spreadsheet ../../com.misc.common.moplaf.spreadsheet.poi.emf/model/spreadsheetpoi.genmodel#//spreadsheetpoi ../../com.misc.common.moplaf.emf/model/common.genmodel#//common"
+    usedGenPackages="../../com.misc.common.moplaf.solver.emf/model/solver.genmodel#//solver ../../com.misc.common.moplaf.spreadsheet.emf/model/spreadsheet.genmodel#//spreadsheet ../../com.misc.common.moplaf.spreadsheet.poi.emf/model/spreadsheetpoi.genmodel#//spreadsheetpoi ../../com.misc.common.moplaf.job.emf/model/job.genmodel#//job"
     operationReflection="true" runtimePlatform="RCP" importOrganizing="true">
   <foreignModel>G4SOptiPost.ecore</foreignModel>
   <genPackages prefix="G4SOptiPost" basePackage="com.misc.projects.g4s" disposableProviderFactory="true"

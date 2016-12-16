@@ -2,7 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.util;
 
-import com.misc.common.moplaf.common.Run;
+import com.misc.common.moplaf.job.Run;
 import com.misc.common.moplaf.solver.Generator;
 import com.misc.common.moplaf.solver.GeneratorElement;
 import com.misc.common.moplaf.solver.GeneratorTuple;

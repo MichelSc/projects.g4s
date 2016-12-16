@@ -2,7 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.presentation;
 
-import com.misc.common.moplaf.common.provider.CommonEditPlugin;
+import com.misc.common.moplaf.job.provider.JobEditPlugin;
 import com.misc.common.moplaf.solver.provider.SolverEditPlugin;
 import com.misc.common.moplaf.spreadsheet.provider.SpreadsheetEditPlugin;
 import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.provider.SpreadsheetpoiEditPlugin;
@@ -47,7 +47,7 @@ public final class G4SOptiPostEditorPlugin extends EMFPlugin {
 				SolverEditPlugin.INSTANCE,
 				SpreadsheetEditPlugin.INSTANCE,
 				SpreadsheetpoiEditPlugin.INSTANCE,
-				CommonEditPlugin.INSTANCE,
+				JobEditPlugin.INSTANCE,
 			});
 	}
 
