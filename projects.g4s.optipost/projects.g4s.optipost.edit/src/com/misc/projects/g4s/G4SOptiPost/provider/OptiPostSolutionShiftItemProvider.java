@@ -3,7 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
-import com.misc.common.moplaf.emf.edit.Util;
+import com.misc.common.moplaf.common.Color;
 import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 
@@ -17,7 +17,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -31,9 +31,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.RGB;
-import org.eclipse.swt.widgets.Display;
 
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift} object.
@@ -238,18 +235,24 @@ public class OptiPostSolutionShiftItemProvider
 		return false;
 	}
 	
+	/**
+	 * 
+	 */
+	private URI SOLUTION_SHIFT_FOREGROUND = Color.COLOR_BLACK.toURI();
+	
+	/**
+	 * 
+	 */
 	@Override
 	public Object getForeground(Object element) {
-		int color = 0; // black
-		RGB rgb = Util.integerToRgb(color);
-		return new Color(Display.getCurrent(), rgb);
+		return SOLUTION_SHIFT_FOREGROUND;
 	}
 	
 	@Override
 	public Object getBackground(Object element) {
 		OptiPostSolutionShift shift = (OptiPostSolutionShift) element;
-		int color = shift.getShift().getEmployee().getColor();
-		RGB rgb = Util.integerToRgb(color);
-		return new Color(Display.getCurrent(), rgb);
+		int rgb = shift.getShift().getEmployee().getColor();
+		Color color = new Color(rgb);
+		return color.toURI();
 	}
 }
