@@ -4,7 +4,7 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
 import com.misc.common.moplaf.emf.edit.Util;
-import com.misc.common.moplaf.timeview.impl.IItemIntervalEventProvider;
+import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;

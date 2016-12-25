@@ -33,6 +33,9 @@
       <plugin id="com.misc.common.moplaf.emf"/>
       <plugin id="com.misc.common.moplaf.emf.edit"/>
       <plugin id="com.misc.common.moplaf.emf.editor"/>
+      <plugin id="com.misc.common.moplaf.job.emf"/>
+      <plugin id="com.misc.common.moplaf.job.emf.edit"/>
+      <plugin id="com.misc.common.moplaf.job.preference"/>
       <plugin id="com.misc.common.moplaf.preference"/>
       <plugin id="com.misc.common.moplaf.solver.emf"/>
       <plugin id="com.misc.common.moplaf.solver.emf.edit"/>
@@ -44,7 +47,9 @@
       <plugin id="com.misc.common.moplaf.spreadsheet.poi.emf"/>
       <plugin id="com.misc.common.moplaf.spreadsheet.poi.emf.edit"/>
       <plugin id="com.misc.common.moplaf.timeview"/>
-      <plugin id="javax.annotation"/>
+      <plugin id="com.misc.common.moplaf.timeview.emf.edit"/>
+      <plugin id="com.misc.common.moplaf.timeview.emf.editor"/>
+      <plugin id="com.misc.common.moplaf.timeview.jaret"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>
       <plugin id="org.apache.batik.css"/>
@@ -57,9 +62,11 @@
       <plugin id="org.eclipse.core.databinding.observable"/>
       <plugin id="org.eclipse.core.databinding.property"/>
       <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.linux.x86_64" fragment="true"/>
       <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.resources"/>
       <plugin id="org.eclipse.core.runtime"/>
-      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
       <plugin id="org.eclipse.e4.core.commands"/>
       <plugin id="org.eclipse.e4.core.contexts"/>
       <plugin id="org.eclipse.e4.core.di"/>
@@ -86,32 +93,39 @@
       <plugin id="org.eclipse.emf.common.ui"/>
       <plugin id="org.eclipse.emf.ecore"/>
       <plugin id="org.eclipse.emf.ecore.change"/>
+      <plugin id="org.eclipse.emf.ecore.edit"/>
       <plugin id="org.eclipse.emf.ecore.xmi"/>
       <plugin id="org.eclipse.emf.edit"/>
       <plugin id="org.eclipse.emf.edit.ui"/>
       <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.bidi"/>
       <plugin id="org.eclipse.equinox.common"/>
       <plugin id="org.eclipse.equinox.ds"/>
       <plugin id="org.eclipse.equinox.event"/>
+      <plugin id="org.eclipse.equinox.p2.core"/>
+      <plugin id="org.eclipse.equinox.p2.engine"/>
+      <plugin id="org.eclipse.equinox.p2.metadata"/>
+      <plugin id="org.eclipse.equinox.p2.metadata.repository"/>
+      <plugin id="org.eclipse.equinox.p2.repository"/>
       <plugin id="org.eclipse.equinox.preferences"/>
       <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.security"/>
       <plugin id="org.eclipse.equinox.util"/>
       <plugin id="org.eclipse.help"/>
       <plugin id="org.eclipse.jface"/>
       <plugin id="org.eclipse.jface.databinding"/>
-      <plugin id="org.eclipse.nebula.cwt"/>
-      <plugin id="org.eclipse.nebula.widgets.cdatetime"/>
+      <plugin id="org.eclipse.jface.text"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
       <plugin id="org.eclipse.osgi.services"/>
-      <plugin id="org.eclipse.platform"/>
       <plugin id="org.eclipse.swt"/>
       <plugin id="org.eclipse.swt.gtk.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.text"/>
       <plugin id="org.eclipse.ui"/>
-      <plugin id="org.eclipse.ui.forms"/>
-      <plugin id="org.eclipse.ui.intro"/>
+      <plugin id="org.eclipse.ui.ide"/>
       <plugin id="org.eclipse.ui.views"/>
       <plugin id="org.eclipse.ui.workbench"/>
+      <plugin id="org.tukaani.xz"/>
       <plugin id="org.w3c.css.sac"/>
       <plugin id="org.w3c.dom.events"/>
       <plugin id="org.w3c.dom.smil"/>
@@ -121,12 +135,6 @@
       <plugin id="projects.g4s.optipost.editor"/>
    </plugins>
 
-   <configurations>
-      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
-      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="1" />
-      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
-   </configurations>
 
    <preferencesInfo>
       <targetfile overwrite="false"/>

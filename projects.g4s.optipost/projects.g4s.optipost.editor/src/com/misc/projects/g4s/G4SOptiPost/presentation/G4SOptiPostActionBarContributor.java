@@ -25,6 +25,7 @@ import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.SubContributionItem;
+import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.ISelectionProvider;
@@ -33,8 +34,11 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.StructuredSelection;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.dialogs.PreferencesUtil;
 
 import com.misc.common.moplaf.emf.editor.Util;
 import com.misc.common.moplaf.emf.editor.action.AcceptAction;
@@ -90,6 +94,28 @@ public class G4SOptiPostActionBarContributor
 	protected ISelectionProvider selectionProvider;
 
 	/**
+	 * This action opens the Preferences dialog.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	protected IAction showPreferencesDialogAction =
+		new Action("Preferences") {
+			@Override
+			public void run() {
+				Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+				PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(shell, null, null, null);
+				dialog.open();
+//				try {
+//					getPage().showView("org.eclipse.ui.console.ConsoleView");
+//				}
+//				catch (PartInitException exception) {
+//					DemurropEditorPlugin.INSTANCE.log(exception);
+//				}
+				
+			}
+		};
+
+		/**
 	 * This action opens the Properties view.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -216,6 +242,11 @@ public class G4SOptiPostActionBarContributor
 	@Override
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
+
+		IContributionItem windowMenuManager = menuManager.find("window")  ;
+		IMenuManager windowMenuManager2 = (IMenuManager)windowMenuManager;
+		windowMenuManager2.add(new Separator("prefs"));
+		windowMenuManager2.add(this.showPreferencesDialogAction);
 
 		IMenuManager submenuManager = new MenuManager(G4SOptiPostEditorPlugin.INSTANCE.getString("_UI_G4SOptiPostEditor_menu"), "com.misc.projects.g4s.G4SOptiPostMenuID");
 		menuManager.insertAfter("additions", submenuManager);

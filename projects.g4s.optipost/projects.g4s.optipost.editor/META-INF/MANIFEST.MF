@@ -20,5 +20,7 @@ Require-Bundle: org.eclipse.core.runtime,
  com.misc.common.moplaf.spreadsheet.poi.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.job.emf.edit;visibility:=reexport,
  com.misc.common.moplaf.emf.edit;visibility:=reexport,
- com.misc.common.moplaf.emf.editor;bundle-version="1.0.0"
+ com.misc.common.moplaf.emf.editor;bundle-version="1.0.0",
+ com.misc.common.moplaf.timeview.emf.editor;bundle-version="1.0.0",
+ org.eclipse.swt
 Bundle-ActivationPolicy: lazy

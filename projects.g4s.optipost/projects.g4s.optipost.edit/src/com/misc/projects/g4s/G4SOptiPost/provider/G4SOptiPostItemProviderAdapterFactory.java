@@ -2,8 +2,8 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
-import com.misc.common.moplaf.timeview.impl.IItemIntervalEventProvider;
-import com.misc.common.moplaf.timeview.impl.IItemIntervalEventsProvider;
+import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventProvider;
+import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventsProvider;
 import com.misc.projects.g4s.G4SOptiPost.util.G4SOptiPostAdapterFactory;
 
 import java.util.ArrayList;

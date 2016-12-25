@@ -143,17 +143,25 @@ public final class G4SOptiPostEditorAdvisor extends WorkbenchAdvisor {
 		 * @see org.eclipse.ui.IPerspectiveFactory#createInitialLayout(org.eclipse.ui.IPageLayout)
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
 		 */
 		public void createInitialLayout(IPageLayout layout) {
 			layout.setEditorAreaVisible(true);
 			layout.addPerspectiveShortcut(ID_PERSPECTIVE);
 
-			IFolderLayout right = layout.createFolder("right", IPageLayout.RIGHT, (float)0.66, layout.getEditorArea());
-			right.addView(IPageLayout.ID_OUTLINE);
+//			IFolderLayout right = layout.createFolder("right", IPageLayout.RIGHT, (float)0.66, layout.getEditorArea());
+//			right.addView(IPageLayout.ID_OUTLINE);
+//
+//			IFolderLayout bottonRight = layout.createFolder("bottonRight", IPageLayout.BOTTOM, (float)0.60, "right");
+//			bottonRight.addView(IPageLayout.ID_PROP_SHEET);
 
+			IFolderLayout right = layout.createFolder("right", IPageLayout.RIGHT, (float)0.66, layout.getEditorArea());
+//			right.addView(IPageLayout.ID_OUTLINE);
+			right.addView(IPageLayout.ID_PROP_SHEET);
+			right.addView("org.eclipse.ui.console.ConsoleView");
+			
 			IFolderLayout bottonRight = layout.createFolder("bottonRight", IPageLayout.BOTTOM, (float)0.60, "right");
-			bottonRight.addView(IPageLayout.ID_PROP_SHEET);
+//			bottonRight.addView(IPageLayout.ID_PROP_SHEET);
+			bottonRight.addView("com.misc.common.moplaf.timeview.jaret.views.GanttView");
 		}
 	}
 	

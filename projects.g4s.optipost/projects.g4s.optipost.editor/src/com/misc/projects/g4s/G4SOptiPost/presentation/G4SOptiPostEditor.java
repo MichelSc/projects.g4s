@@ -104,7 +104,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.provider.G4SOptiPostItemProviderAdapterFactory;
-import com.misc.common.moplaf.emf.editor.AdapterFactoryContentProviderExtended;
+import com.misc.common.moplaf.emf.editor.provider.AdapterFactoryContentProviderExtended;
 import com.misc.common.moplaf.job.provider.JobItemProviderAdapterFactory;
 import com.misc.common.moplaf.solver.provider.SolverItemProviderAdapterFactory;
 import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
