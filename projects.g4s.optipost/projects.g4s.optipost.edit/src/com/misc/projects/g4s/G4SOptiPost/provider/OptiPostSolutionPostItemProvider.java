@@ -3,19 +3,22 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
-import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventsProvider;
+import com.misc.common.moplaf.common.Color;
+import com.misc.common.moplaf.timeview.emf.edit.IItemTimeLinesEventsProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost;
+import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -39,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 public class OptiPostSolutionPostItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemIntervalEventsProvider {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemTimeLinesEventsProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -242,18 +245,56 @@ public class OptiPostSolutionPostItemProvider
 	}
 
 	@Override
-	public Collection<?> getIntervalEvents(Object element) {
+	public Collection<?> getTimeLines(Object element) {
+		// one timeLine for this Post
+		return null;
+	}
+
+	@Override
+	public String getText(Object element, Object timeline) {
+		return this.getText(element);
+	}
+
+	@Override
+	public Collection<?> getEvents(Object element, Object timeline) {
 		OptiPostSolutionPost post = (OptiPostSolutionPost)element;
 		return post.getShifts(); 
 	}
 
-	/* (non-Javadoc)
-	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#isAdapterForType(java.lang.Object)
-	 */
 	@Override
-	public boolean isAdapterForType(Object type) {
-		if ( super.isAdapterForType(type) ){ return true; }
-		if ( type == IItemIntervalEventsProvider.class) { return true; }
-		return false;
+	public Date getStart(Object element, Object timeline, Object event) {
+		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
+		return shift.getShift().getShiftStart();
+	}
+
+	@Override
+	public Date getEnd(Object element, Object timeline, Object event) {
+		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
+		return shift.getShift().getShiftEnd();
+	}
+
+	
+	/**
+	 * 
+	 */
+	private URI SOLUTION_SHIFT_FOREGROUND = Color.COLOR_BLACK.toURI();
+	
+	@Override
+	public Object getForeground(Object element, Object timeline, Object event) {
+		return SOLUTION_SHIFT_FOREGROUND;
+	}
+
+	@Override
+	public Object getBackground(Object element, Object timeline, Object event) {
+		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
+		int rgb = shift.getShift().getEmployee().getColor();
+		Color color = new Color(rgb);
+		return color.toURI();
+	}
+
+	@Override
+	public String getText(Object element, Object timeline, Object event) {
+		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
+		return shift.getDescription();
 	}
 }

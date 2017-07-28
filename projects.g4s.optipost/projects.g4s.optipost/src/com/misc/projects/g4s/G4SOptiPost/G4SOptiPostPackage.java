@@ -525,13 +525,13 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW__GOALS = SolverPackage.GENERATOR__GOALS;
 
 	/**
-	 * The feature id for the '<em><b>Generator Feature Modes</b></em>' reference list.
+	 * The feature id for the '<em><b>Var Binders</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LP_OPTI_POST_FLOW__GENERATOR_FEATURE_MODES = SolverPackage.GENERATOR__GENERATOR_FEATURE_MODES;
+	int LP_OPTI_POST_FLOW__VAR_BINDERS = SolverPackage.GENERATOR__VAR_BINDERS;
 
 	/**
 	 * The feature id for the '<em><b>Solution Provider</b></em>' reference list.
@@ -577,42 +577,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_OPTI_POST_FLOW__FOOTPRINT_NOF_TERMS = SolverPackage.GENERATOR__FOOTPRINT_NOF_TERMS;
-
-	/**
-	 * The feature id for the '<em><b>Count Cons</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__COUNT_CONS = SolverPackage.GENERATOR__COUNT_CONS;
-
-	/**
-	 * The feature id for the '<em><b>Count Vars</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__COUNT_VARS = SolverPackage.GENERATOR__COUNT_VARS;
-
-	/**
-	 * The feature id for the '<em><b>ELp Var Count</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__ELP_VAR_COUNT = SolverPackage.GENERATOR__ELP_VAR_COUNT;
-
-	/**
-	 * The feature id for the '<em><b>ELp Cons Count</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW__ELP_CONS_COUNT = SolverPackage.GENERATOR__ELP_CONS_COUNT;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -676,6 +640,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_OPTI_POST_FLOW_FEATURE_COUNT = SolverPackage.GENERATOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Copy Params</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW___COPY_PARAMS__RUNPARAMS = SolverPackage.GENERATOR___COPY_PARAMS__RUNPARAMS;
 
 	/**
 	 * The operation id for the '<em>Reset</em>' operation.
@@ -750,6 +723,15 @@ public interface G4SOptiPostPackage extends EPackage {
 	int LP_OPTI_POST_FLOW___SET_RETURN__RETURNFEEDBACK = SolverPackage.GENERATOR___SET_RETURN__RETURNFEEDBACK;
 
 	/**
+	 * The operation id for the '<em>Construct Params</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LP_OPTI_POST_FLOW___CONSTRUCT_PARAMS = SolverPackage.GENERATOR___CONSTRUCT_PARAMS;
+
+	/**
 	 * The operation id for the '<em>Generate</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -820,15 +802,6 @@ public interface G4SOptiPostPackage extends EPackage {
 	 * @ordered
 	 */
 	int LP_OPTI_POST_FLOW___ACCEPT_SOLUTION__SOLUTION = SolverPackage.GENERATOR___ACCEPT_SOLUTION__SOLUTION;
-
-	/**
-	 * The operation id for the '<em>Select Feature Mode</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LP_OPTI_POST_FLOW___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE = SolverPackage.GENERATOR___SELECT_FEATURE_MODE__GENERATORFEATUREMODE_GENERATORTUPLE;
 
 	/**
 	 * The operation id for the '<em>Visit Tuples</em>' operation.

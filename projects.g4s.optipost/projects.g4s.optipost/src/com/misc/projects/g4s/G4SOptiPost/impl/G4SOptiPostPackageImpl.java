@@ -2,9 +2,10 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.impl;
 
+import com.misc.common.moplaf.job.JobPackage;
 import com.misc.common.moplaf.solver.SolverPackage;
 import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
-import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetpoiPackage;
+import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.SpreadsheetPOIPackage;
 import com.misc.projects.g4s.G4SOptiPost.Domain;
 import com.misc.projects.g4s.G4SOptiPost.Employee;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
@@ -197,7 +198,9 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 
 		// Initialize simple dependencies
 		SolverPackage.eINSTANCE.eClass();
-		SpreadsheetpoiPackage.eINSTANCE.eClass();
+		SpreadsheetPackage.eINSTANCE.eClass();
+		SpreadsheetPOIPackage.eINSTANCE.eClass();
+		JobPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theG4SOptiPostPackage.createPackageContents();
@@ -1333,7 +1336,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SpreadsheetpoiPackage theSpreadsheetpoiPackage = (SpreadsheetpoiPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetpoiPackage.eNS_URI);
+		SpreadsheetPOIPackage theSpreadsheetPOIPackage = (SpreadsheetPOIPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetPOIPackage.eNS_URI);
 		SolverPackage theSolverPackage = (SolverPackage)EPackage.Registry.INSTANCE.getEPackage(SolverPackage.eNS_URI);
 		SpreadsheetPackage theSpreadsheetPackage = (SpreadsheetPackage)EPackage.Registry.INSTANCE.getEPackage(SpreadsheetPackage.eNS_URI);
 
@@ -1358,7 +1361,7 @@ public class G4SOptiPostPackageImpl extends EPackageImpl implements G4SOptiPostP
 		initEReference(getDomain_Scenarios(), this.getScenario(), null, "Scenarios", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDomain_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDomain_JobsImporter(), this.getJobsImporter(), this.getJobsImporter_Domain(), "JobsImporter", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDomain_Spreadsheets(), theSpreadsheetpoiPackage.getSpreadsheetPOI(), null, "Spreadsheets", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDomain_Spreadsheets(), theSpreadsheetPOIPackage.getSpreadsheetPOI(), null, "Spreadsheets", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shiftEClass, Shift.class, "Shift", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getShift_Location(), this.getLocation(), null, "Location", null, 0, 1, Shift.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

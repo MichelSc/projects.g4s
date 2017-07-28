@@ -139,7 +139,7 @@ public class LpOptiPostFlowItemProvider extends GeneratorItemProvider {
 				(G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__GOAL_NOF_EMPLOYEES,
 				 SolverFactory.eINSTANCE.createGeneratorLpGoal()));
 		
-		Util.collectNewChildSolverDescriptors(newChildDescriptors, 
+		Util.collectNewChildSolverDescriptors2(newChildDescriptors, 
                 object, 
                 G4SOptiPostPackage.Literals.LP_OPTI_POST_FLOW__SOLVERS);
 	}

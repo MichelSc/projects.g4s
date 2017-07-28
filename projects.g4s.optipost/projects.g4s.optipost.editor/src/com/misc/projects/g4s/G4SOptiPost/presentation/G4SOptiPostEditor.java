@@ -109,7 +109,7 @@ import com.misc.common.moplaf.job.provider.JobItemProviderAdapterFactory;
 import com.misc.common.moplaf.solver.provider.SolverItemProviderAdapterFactory;
 import com.misc.common.moplaf.spreadsheet.SpreadsheetPackage;
 import com.misc.common.moplaf.spreadsheet.provider.SpreadsheetItemProviderAdapterFactory;
-import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.provider.SpreadsheetpoiItemProviderAdapterFactory;
+import com.misc.common.moplaf.spreadsheet.spreadsheetpoi.provider.SpreadsheetPOIItemProviderAdapterFactory;
 
 
 /**
@@ -370,6 +370,8 @@ public class G4SOptiPostEditor
 	 */
 	protected EContentAdapter problemIndicationAdapter =
 		new EContentAdapter() {
+			protected boolean dispatching;
+
 			@Override
 			public void notifyChanged(Notification notification) {
 				if (notification.getNotifier() instanceof Resource) {
@@ -385,21 +387,26 @@ public class G4SOptiPostEditor
 							else {
 								resourceToDiagnosticMap.remove(resource);
 							}
-
-							if (updateProblemIndication) {
-								getSite().getShell().getDisplay().asyncExec
-									(new Runnable() {
-										 public void run() {
-											 updateProblemIndication();
-										 }
-									 });
-							}
+							dispatchUpdateProblemIndication();
 							break;
 						}
 					}
 				}
 				else {
 					super.notifyChanged(notification);
+				}
+			}
+
+			protected void dispatchUpdateProblemIndication() {
+				if (updateProblemIndication && !dispatching) {
+					dispatching = true;
+					getSite().getShell().getDisplay().asyncExec
+						(new Runnable() {
+							 public void run() {
+								 dispatching = false;
+								 updateProblemIndication();
+							 }
+						 });
 				}
 			}
 
@@ -412,14 +419,7 @@ public class G4SOptiPostEditor
 			protected void unsetTarget(Resource target) {
 				basicUnsetTarget(target);
 				resourceToDiagnosticMap.remove(target);
-				if (updateProblemIndication) {
-					getSite().getShell().getDisplay().asyncExec
-						(new Runnable() {
-							 public void run() {
-								 updateProblemIndication();
-							 }
-						 });
-				}
+				dispatchUpdateProblemIndication();
 			}
 		};
 
@@ -579,7 +579,7 @@ public class G4SOptiPostEditor
 		adapterFactory.addAdapterFactory(new G4SOptiPostItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SolverItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SpreadsheetItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new SpreadsheetpoiItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SpreadsheetPOIItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new JobItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
@@ -918,6 +918,7 @@ public class G4SOptiPostEditor
 
 				selectionViewer = (TreeViewer)viewerPane.getViewer();
 				selectionViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
+				selectionViewer.setUseHashlookup(true);
 
 				selectionViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 				selectionViewer.setInput(editingDomain.getResourceSet());
@@ -1220,6 +1221,7 @@ public class G4SOptiPostEditor
 
 					// Set up the tree viewer.
 					//
+					contentOutlineViewer.setUseHashlookup(true);
 					contentOutlineViewer.setContentProvider(new AdapterFactoryContentProvider(adapterFactory));
 					contentOutlineViewer.setLabelProvider(new AdapterFactoryLabelProvider(adapterFactory));
 					contentOutlineViewer.setInput(editingDomain.getResourceSet());
@@ -1369,7 +1371,9 @@ public class G4SOptiPostEditor
 					// Save the resources to the file system.
 					//
 					boolean first = true;
-					for (Resource resource : editingDomain.getResourceSet().getResources()) {
+					List<Resource> resources = editingDomain.getResourceSet().getResources();
+					for (int i = 0; i < resources.size(); ++i) {
+						Resource resource = resources.get(i);
 						if ((first || !resource.getContents().isEmpty() || isPersisted(resource)) && !editingDomain.isReadOnly(resource)) {
 							try {
 								long timeStamp = resource.getTimeStamp();

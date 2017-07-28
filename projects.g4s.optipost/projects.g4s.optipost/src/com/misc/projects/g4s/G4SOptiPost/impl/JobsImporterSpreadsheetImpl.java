@@ -398,7 +398,7 @@ public class JobsImporterSpreadsheetImpl extends JobsImporterImpl implements Job
 	 * <!-- end-user-doc -->
 	 */
 	public String getDescription() {
-		String description = this.getSpreadsheet()==null ? "No spread sheet" : this.getSpreadsheet().getLabel();
+		String description = this.getSpreadsheet()==null ? "No spread sheet" : this.getSpreadsheet().getName();
 		return description;
 	}
 
@@ -578,7 +578,7 @@ public class JobsImporterSpreadsheetImpl extends JobsImporterImpl implements Job
 		Column columnJobStart    = sheet.getColumn(this.getJobStartColNr());
 		Column columnJobEnd      = sheet.getColumn(this.getJobEndColNr());
 		
-		for ( Row row : sheet.getRow() ){
+		for ( Row row : sheet.getRows() ){
 			if ( row.getRowIndex()>0 ){
 				// skip the first row
 				

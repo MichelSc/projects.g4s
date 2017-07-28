@@ -2,8 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
-import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventProvider;
-import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventsProvider;
+import com.misc.common.moplaf.timeview.emf.edit.IItemTimeLinesProvider;
 import com.misc.projects.g4s.G4SOptiPost.util.G4SOptiPostAdapterFactory;
 
 import java.util.ArrayList;
@@ -80,8 +79,7 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		supportedTypes.add(ITreeItemContentProvider.class);
 		supportedTypes.add(IItemLabelProvider.class);
 		supportedTypes.add(IItemPropertySource.class);
-		supportedTypes.add(IItemIntervalEventProvider.class);  // non emf interface
-		supportedTypes.add(IItemIntervalEventsProvider.class); // non emf interface
+		supportedTypes.add(IItemTimeLinesProvider.class);  // non emf interface
 		supportedTypes.add(IItemColorProvider.class);          // non emf interface
 	}
 

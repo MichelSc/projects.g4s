@@ -3,6 +3,7 @@
 package com.misc.projects.g4s.G4SOptiPost.util;
 
 import com.misc.common.moplaf.job.Run;
+import com.misc.common.moplaf.job.RunParams;
 import com.misc.common.moplaf.solver.Generator;
 import com.misc.common.moplaf.solver.GeneratorElement;
 import com.misc.common.moplaf.solver.GeneratorTuple;
@@ -135,6 +136,10 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseOptiPostSolutionShift(OptiPostSolutionShift object) {
 				return createOptiPostSolutionShiftAdapter();
+			}
+			@Override
+			public Adapter caseRunParams(RunParams object) {
+				return createRunParamsAdapter();
 			}
 			@Override
 			public Adapter caseRun(Run object) {
@@ -393,6 +398,20 @@ public class G4SOptiPostAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOptiPostSolutionShiftAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.misc.common.moplaf.job.RunParams <em>Run Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.misc.common.moplaf.job.RunParams
+	 * @generated
+	 */
+	public Adapter createRunParamsAdapter() {
 		return null;
 	}
 

@@ -3,8 +3,8 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+
 import com.misc.common.moplaf.common.Color;
-import com.misc.common.moplaf.timeview.emf.edit.IItemIntervalEventProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
@@ -35,7 +35,6 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift} object.
  * <!-- begin-user-doc -->
- * @implements IItemIntervalEventProvider
  * @implements IItemColorProvider
  * <!-- end-user-doc -->
  * @generated
@@ -43,7 +42,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 public class OptiPostSolutionShiftItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemIntervalEventProvider, IItemColorProvider {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemColorProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -213,46 +212,4 @@ public class OptiPostSolutionShiftItemProvider
 		return G4SOptiPostEditPlugin.INSTANCE;
 	}
 
-	@Override
-	public Date getIntervalEventStart(Object element) {
-		OptiPostSolutionShift shift = (OptiPostSolutionShift) element;
-		return shift.getShift().getShiftStart();
-	}
-
-	@Override
-	public Date getIntervalEventEnd(Object element) {
-		OptiPostSolutionShift shift = (OptiPostSolutionShift) element;
-		return shift.getShift().getShiftEnd();
-	}
-
-	/* (non-Javadoc)
-	 * @see org.eclipse.emf.edit.provider.ItemProviderAdapter#isAdapterForType(java.lang.Object)
-	 */
-	@Override
-	public boolean isAdapterForType(Object type) {
-		if ( super.isAdapterForType(type) ){ return true; }
-		if ( type == IItemIntervalEventProvider.class) { return true; }
-		return false;
-	}
-	
-	/**
-	 * 
-	 */
-	private URI SOLUTION_SHIFT_FOREGROUND = Color.COLOR_BLACK.toURI();
-	
-	/**
-	 * 
-	 */
-	@Override
-	public Object getForeground(Object element) {
-		return SOLUTION_SHIFT_FOREGROUND;
-	}
-	
-	@Override
-	public Object getBackground(Object element) {
-		OptiPostSolutionShift shift = (OptiPostSolutionShift) element;
-		int rgb = shift.getShift().getEmployee().getColor();
-		Color color = new Color(rgb);
-		return color.toURI();
-	}
 }
