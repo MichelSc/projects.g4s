@@ -148,11 +148,10 @@ public class OptiPostSolutionShiftItemProvider
 	 * This returns OptiPostSolutionShift.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OptiPostSolutionShift"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/cog3.png"));
 	}
 
 	/**

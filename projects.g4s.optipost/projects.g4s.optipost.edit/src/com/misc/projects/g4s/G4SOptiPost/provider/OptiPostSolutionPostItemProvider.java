@@ -171,11 +171,10 @@ public class OptiPostSolutionPostItemProvider
 	 * This returns OptiPostSolutionPost.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OptiPostSolutionPost"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/pin56.png"));
 	}
 
 	/**

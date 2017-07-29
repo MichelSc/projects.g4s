@@ -134,6 +134,25 @@ public class G4SOptiPostActionBarContributor
 			}
 		};
 
+		/**
+		 * This action opens the Moplaf Gantt view.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 */
+		protected IAction showMoplafGanttViewAction =
+				new Action("Show Gantt View") {
+				@Override
+				public void run() {
+					try {
+						getPage().showView("com.misc.common.moplaf.timeview.jaret.views.GanttView");
+					}
+					catch (PartInitException exception) {
+						G4SOptiPostEditorPlugin.INSTANCE.log(exception);
+					}
+				}
+			};
+
+
 	/**
 	 * This action refreshes the viewer of the current editor if the editor
 	 * implements {@link org.eclipse.emf.common.ui.viewer.IViewerProvider}.
@@ -488,15 +507,17 @@ public class G4SOptiPostActionBarContributor
 	 * This inserts global actions before the "additions-end" separator.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	protected void addGlobalActions(IMenuManager menuManager) {
+		menuManager.insertAfter("additions-end", new Separator("ui-actions2"));
 		menuManager.insertAfter("additions-end", new Separator("ui-actions"));
-		menuManager.insertAfter("ui-actions", showPropertiesViewAction);
 
 		refreshViewerAction.setEnabled(refreshViewerAction.isEnabled());		
 		menuManager.insertAfter("ui-actions", refreshViewerAction);
+
+		menuManager.insertAfter("ui-actions2", this.showPropertiesViewAction);
+		menuManager.insertAfter("ui-actions2", this.showMoplafGanttViewAction);
 
 		super.addGlobalActions(menuManager);
 	}
