@@ -2,6 +2,7 @@
  */
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
+import com.misc.common.moplaf.gridview.emf.edit.IItemGridsProvider;
 import com.misc.common.moplaf.timeview.emf.edit.IItemTimeLinesProvider;
 import com.misc.projects.g4s.G4SOptiPost.util.G4SOptiPostAdapterFactory;
 
@@ -81,6 +82,7 @@ public class G4SOptiPostItemProviderAdapterFactory extends G4SOptiPostAdapterFac
 		supportedTypes.add(IItemPropertySource.class);
 		supportedTypes.add(IItemTimeLinesProvider.class);  // non emf interface
 		supportedTypes.add(IItemColorProvider.class);          // non emf interface
+		supportedTypes.add(IItemGridsProvider.class);          // non emf interface
 	}
 
 	/**
