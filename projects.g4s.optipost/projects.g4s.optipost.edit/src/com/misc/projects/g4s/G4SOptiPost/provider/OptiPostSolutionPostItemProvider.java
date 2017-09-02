@@ -3,8 +3,9 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
+
 import com.misc.common.moplaf.common.Color;
-import com.misc.common.moplaf.timeview.emf.edit.IItemTimeLinesEventsProvider;
+import com.misc.common.moplaf.timeview.emf.edit.IItemTimeLinesProvider;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostFactory;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost;
@@ -35,14 +36,14 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 /**
  * This is the item provider adapter for a {@link com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionPost} object.
  * <!-- begin-user-doc -->
- * @implements IItemIntervalEventsProvider
+ * @implements IItemTimeLinesProvider
  * <!-- end-user-doc -->
  * @generated
  */
 public class OptiPostSolutionPostItemProvider 
 	extends ItemProviderAdapter
 	implements
-		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemTimeLinesEventsProvider {
+		IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource, IItemTimeLinesProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -261,13 +262,13 @@ public class OptiPostSolutionPostItemProvider
 	}
 
 	@Override
-	public Date getStart(Object element, Object timeline, Object event) {
+	public Date getStart(Object element, Object timeline, Object event, Object interval) {
 		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
 		return shift.getShift().getShiftStart();
 	}
 
 	@Override
-	public Date getEnd(Object element, Object timeline, Object event) {
+	public Date getEnd(Object element, Object timeline, Object event, Object interval) {
 		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
 		return shift.getShift().getShiftEnd();
 	}
@@ -279,12 +280,12 @@ public class OptiPostSolutionPostItemProvider
 	private URI SOLUTION_SHIFT_FOREGROUND = Color.COLOR_BLACK.toURI();
 	
 	@Override
-	public Object getForeground(Object element, Object timeline, Object event) {
+	public Object getForeground(Object element, Object timeline, Object event, Object interval) {
 		return SOLUTION_SHIFT_FOREGROUND;
 	}
 
 	@Override
-	public Object getBackground(Object element, Object timeline, Object event) {
+	public Object getBackground(Object element, Object timeline, Object event, Object interval) {
 		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
 		int rgb = shift.getShift().getEmployee().getColor();
 		Color color = new Color(rgb);
@@ -292,7 +293,7 @@ public class OptiPostSolutionPostItemProvider
 	}
 
 	@Override
-	public String getText(Object element, Object timeline, Object event) {
+	public String getText(Object element, Object timeline, Object event, Object interval) {
 		OptiPostSolutionShift shift = (OptiPostSolutionShift) event;
 		return shift.getDescription();
 	}

@@ -4,20 +4,17 @@ package com.misc.projects.g4s.G4SOptiPost.provider;
 
 
 
-import com.misc.common.moplaf.common.Color;
 import com.misc.projects.g4s.G4SOptiPost.G4SOptiPostPackage;
 
 import com.misc.projects.g4s.G4SOptiPost.OptiPostSolutionShift;
 
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
