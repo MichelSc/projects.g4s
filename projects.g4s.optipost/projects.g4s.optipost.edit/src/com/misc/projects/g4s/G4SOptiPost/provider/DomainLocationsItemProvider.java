@@ -1,10 +1,8 @@
 package com.misc.projects.g4s.G4SOptiPost.provider;
 
 import java.util.Collection;
-import java.util.LinkedList;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import com.misc.common.moplaf.gridview.emf.edit.IItemGridsProvider;
@@ -46,7 +44,7 @@ public class DomainLocationsItemProvider extends TransientDomainItemProvider imp
 	}
 	
 	static GridColumnsProvider columns = GridColumnsProvider.constructGridColumnsProvider()
-			.addAttribute(G4SOptiPostPackage.Literals.LOCATION__DESCRIPTION);
+			.addColumn(G4SOptiPostPackage.Literals.LOCATION__DESCRIPTION);
 	
 	@Override
 	public String getGridText(Object element, Object grid) {
@@ -73,12 +71,12 @@ public class DomainLocationsItemProvider extends TransientDomainItemProvider imp
 	@Override
 	public String getColumnText(Object element, Object grid, Object column) {
 		ColumnDelegate delegate = (ColumnDelegate)column;
-		return delegate.getColumnText(element, grid);
+		return delegate.getColumnText();
 	}
 
 	@Override
 	public Object getCellValue(Object element, Object grid, Object row, Object column) {
 		ColumnDelegate delegate = (ColumnDelegate)column;
-		return delegate.getCellValue(element, grid, row);
+		return delegate.getCellValue(row);
 	}
 }
