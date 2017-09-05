@@ -152,6 +152,24 @@ public class G4SOptiPostActionBarContributor
 				}
 			};
 
+			/**
+			 * This action opens the Moplaf Grid view.
+			 * <!-- begin-user-doc -->
+			 * <!-- end-user-doc -->
+			 */
+			protected IAction showMoplafGridViewAction =
+					new Action("Show Grid View") {
+					@Override
+					public void run() {
+						try {
+							getPage().showView("com.misc.common.moplaf.gridview.views.GridView");
+						}
+						catch (PartInitException exception) {
+							G4SOptiPostEditorPlugin.INSTANCE.log(exception);
+						}
+					}
+				};
+
 
 	/**
 	 * This action refreshes the viewer of the current editor if the editor
@@ -517,6 +535,7 @@ public class G4SOptiPostActionBarContributor
 		menuManager.insertAfter("ui-actions", refreshViewerAction);
 
 		menuManager.insertAfter("ui-actions2", this.showPropertiesViewAction);
+		menuManager.insertAfter("ui-actions2", this.showMoplafGridViewAction);
 		menuManager.insertAfter("ui-actions2", this.showMoplafGanttViewAction);
 
 		super.addGlobalActions(menuManager);
